@@ -35,7 +35,7 @@ const CLIENTS = [
     agents: 5,
     mcpTools: 5,
     knowledgeEntries: 0,
-    health: 91,
+    health: 93,
     revenue: "$0",
     description: "Deep vertical AI layer that embeds into restaurant operations. Captures data at the moment it happens, compounds intelligence over time.",
     highlights: [
