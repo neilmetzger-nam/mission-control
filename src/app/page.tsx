@@ -35,13 +35,13 @@ const CLIENTS = [
     agents: 5,
     mcpTools: 5,
     knowledgeEntries: 0,
-    health: 93,
+    health: 88,
     revenue: "$0",
     description: "Deep vertical AI layer that embeds into restaurant operations. Captures data at the moment it happens, compounds intelligence over time.",
     highlights: [
       "Red Bar Sushi live deployment (Mar 2) — real orders, Apple Pay, Star SP700/TSP100 printers confirmed",
       "DB-primary sync live — localStorage removed, iPhone↔iPad sync in ~3s; fire route reads printer IPs from DB",
-      "Beta splash + invoice photo capture (Claude Vision) built; SP700 Star-mode print commands locked in",
+      "Smart Menu system (AR-026 critical), CFO demo (AR-027), Plaid integration (AR-028) in active queue",
     ],
     access: ["neil", "obie"],
   },
@@ -53,7 +53,7 @@ const AGENCY_STATS = {
   activeAgents: 4,
   totalMcpTools: 37,
   totalLearnings: 43,
-  reusablePatterns: 7,
+  reusablePatterns: 8,
   claudeCodeSessions: 18,
   sharedLearnings: 12,
 };
@@ -232,7 +232,7 @@ export default function PortfolioHome() {
 
           <p className="text-xs text-zinc-600 leading-relaxed">
             Patterns learned building AI-R (MCP architecture, agent specs, knowledge loops) feed into how Studio and future clients are built.
-            Each project benefits from all others at the system level — humans see only their own project's data.
+            Each project benefits from all others at the system level — humans see only their own project&apos;s data.
           </p>
         </div>
 
