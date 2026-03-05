@@ -62,9 +62,18 @@ const API_STATUS = [
   { api: "DoorDash Marketplace", status: "Not applied", emoji: "🔴" },
   { api: "DoorDash Drive", status: "Portal active — needs sandbox test", emoji: "✅" },
   { api: "OpenTable", status: "Applied — pending", emoji: "⏳" },
+  { api: "Resy", status: "Not applied", emoji: "🔴" },
+  { api: "Yelp Reservations", status: "Not applied", emoji: "🔴" },
   { api: "Plaid", status: "Approved", emoji: "✅" },
+  { api: "Square", status: "Connected", emoji: "✅" },
+  { api: "Stripe", status: "Key set — terminal location needed", emoji: "⚠️" },
   { api: "ElevenLabs", status: "Connected", emoji: "✅" },
   { api: "Clerk", status: "Connected", emoji: "✅" },
+  { api: "Check Payroll (checkhq.com)", status: "Not applied", emoji: "🔴" },
+  { api: "Google Ads API", status: "Not applied", emoji: "🔴" },
+  { api: "Meta Marketing API", status: "Not applied", emoji: "🔴" },
+  { api: "TikTok Marketing API", status: "Not applied", emoji: "🔴" },
+  { api: "Google Business Profile API", status: "Not applied", emoji: "🔴" },
 ];
 
 const TARGET = new Date("2026-03-15T23:59:59");
