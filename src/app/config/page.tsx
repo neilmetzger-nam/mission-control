@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CheckCircle2, XCircle, Puzzle, Settings, Shield, AlertTriangle } from "lucide-react";
+import { CheckCircle2, XCircle, Puzzle, Settings, Shield, AlertTriangle, Info } from "lucide-react";
 
 interface EnvStatus {
   key: string;
@@ -24,17 +24,20 @@ export default function ConfigPage() {
   const [envStatus, setEnvStatus] = useState<EnvStatus[]>([]);
   const [skills, setSkills] = useState<SkillEntry[]>([]);
   const [criticalFiles, setCriticalFiles] = useState<CriticalFile[]>([]);
+  const [vercelConfigured, setVercelConfigured] = useState<boolean | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     Promise.all([
       fetch("/api/config").then((r) => r.json()),
       fetch("/api/config/critical-files").then((r) => r.json()),
+      fetch("/api/vercel/env-status").then((r) => r.json()),
     ])
-      .then(([configData, cfData]) => {
+      .then(([configData, cfData, vercelData]) => {
         setEnvStatus(configData.envStatus ?? []);
         setSkills(configData.skills ?? []);
         setCriticalFiles(cfData.files ?? []);
+        setVercelConfigured(vercelData.configured ?? false);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -71,6 +74,21 @@ export default function ConfigPage() {
               </span>
             </div>
           ))}
+        </div>
+      )}
+
+      {/* Vercel setup instructions */}
+      {vercelConfigured === false && (
+        <div className="mb-6 flex items-start gap-2 bg-blue-500/5 border border-blue-500/20 rounded-xl px-4 py-3">
+          <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+          <div className="text-sm text-zinc-400">
+            <span className="text-blue-400 font-medium">Live API status not configured.</span>{" "}
+            To enable: create a Vercel token at{" "}
+            <span className="text-zinc-300">vercel.com/account/tokens</span>{" "}
+            and add <span className="font-mono text-xs text-zinc-300">VERCEL_TOKEN</span> +{" "}
+            <span className="font-mono text-xs text-zinc-300">VERCEL_PROJECT_ID</span> to{" "}
+            <span className="font-mono text-xs text-zinc-300">.env.local</span>
+          </div>
         </div>
       )}
 
