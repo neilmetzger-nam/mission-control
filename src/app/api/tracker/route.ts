@@ -26,7 +26,9 @@ function parseStatus(raw: string): { status: string; statusEmoji: string } {
   return { status: raw.trim(), statusEmoji: "" };
 }
 
-export async function GET() {
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
+  const projectFilter = searchParams.get("project");
   const trackerPath = path.join(WORKSPACE, "agency", "TRACKER.md");
 
   if (!fs.existsSync(trackerPath)) {
@@ -68,5 +70,9 @@ export async function GET() {
     }
   }
 
-  return NextResponse.json({ issues, raw });
+  const filtered = projectFilter
+    ? issues.filter((i) => i.project.toLowerCase().includes(projectFilter.toLowerCase()))
+    : issues;
+
+  return NextResponse.json({ issues: filtered, raw });
 }
