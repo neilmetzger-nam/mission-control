@@ -70,10 +70,12 @@ const API_STATUS = [
   { api: "ElevenLabs", status: "Connected", emoji: "✅" },
   { api: "Clerk", status: "Connected", emoji: "✅" },
   { api: "Check Payroll (checkhq.com)", status: "Not applied", emoji: "🔴" },
-  { api: "Google Ads API", status: "Not applied", emoji: "🔴" },
+  { api: "Google Ads API", status: "Enabled — key in Vercel", emoji: "✅" },
   { api: "Meta Marketing API", status: "Not applied", emoji: "🔴" },
   { api: "TikTok Marketing API", status: "Not applied", emoji: "🔴" },
-  { api: "Google Business Profile API", status: "Not applied", emoji: "🔴" },
+  { api: "Google Business Profile API", status: "Enabled — GOOGLE_API_KEY in Vercel", emoji: "✅" },
+  { api: "Google Places API", status: "Enabled — GOOGLE_API_KEY in Vercel", emoji: "✅" },
+  { api: "Gemini API", status: "Enabled — GEMINI_API_KEY in Vercel", emoji: "✅" },
 ];
 
 const TARGET = new Date("2026-03-15T23:59:59");
