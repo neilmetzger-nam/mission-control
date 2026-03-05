@@ -22,6 +22,7 @@ const PROJECTS = [
       { href: "/projects/ai-r/sprint", label: "Sprint", emoji: "🎯" },
       { href: "/projects/ai-r/docs", label: "Docs", emoji: "📄" },
       { href: "/projects/ai-r/issues", label: "Issues", emoji: "🐛" },
+      { href: "/projects/ai-r/settings", label: "Settings", emoji: "⚙️" },
     ],
   },
   {
@@ -32,6 +33,7 @@ const PROJECTS = [
       { href: "/projects/studio/sprint", label: "Sprint", emoji: "🎯" },
       { href: "/projects/studio/docs", label: "Docs", emoji: "📄" },
       { href: "/projects/studio/issues", label: "Issues", emoji: "🐛" },
+      { href: "/projects/studio/settings", label: "Settings", emoji: "⚙️" },
     ],
   },
 ];
