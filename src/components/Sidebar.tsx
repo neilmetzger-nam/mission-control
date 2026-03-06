@@ -26,6 +26,16 @@ const PROJECTS = [
     ],
   },
   {
+    id: 'plateai',
+    label: 'PlateAI',
+    emoji: '📸',
+    children: [
+      { href: '/projects/plateai', label: 'Overview', emoji: '📊' },
+      { href: '/projects/plateai/leads', label: 'Leads', emoji: '📬' },
+      { href: '/projects/plateai/customers', label: 'Customers', emoji: '💰' },
+    ],
+  },
+  {
     id: "studio",
     label: "Studio",
     emoji: "🎬",
