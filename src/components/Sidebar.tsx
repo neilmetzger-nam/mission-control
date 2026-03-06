@@ -41,6 +41,7 @@ const PROJECTS = [
 // ─── SYSTEM ────────────────────────────────────────────
 const SYSTEM_NAV = [
   { href: "/config", label: "Config", emoji: "⚙️" },
+  { href: "/infrastructure", label: "Infrastructure", emoji: "🖥️" },
 ];
 
 const LS_KEY = "mc-expanded-projects";

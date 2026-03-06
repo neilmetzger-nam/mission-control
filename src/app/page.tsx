@@ -26,7 +26,7 @@ const CLIENTS = [
     status: "active" as const,
     agents: 5,
     mcpTools: 5,
-    health: 88,
+    health: 78,
   },
 ];
 
@@ -36,7 +36,7 @@ const AGENCY_STATS = {
   totalMcpTools: 37,
   totalLearnings: 43,
   reusablePatterns: 8,
-  claudeCodeSessions: 18,
+  claudeCodeSessions: 20,
   sharedLearnings: 12,
 };
 
