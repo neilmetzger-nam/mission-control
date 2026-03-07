@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   Clapperboard, UtensilsCrossed, Zap, BookOpen, TrendingUp,
-  ChevronRight, Activity, Clock,
+  ChevronRight, Activity, Clock, Camera, Building2,
 } from "lucide-react";
 
 const CLIENTS = [
@@ -26,7 +26,27 @@ const CLIENTS = [
     status: "active" as const,
     agents: 5,
     mcpTools: 5,
-    health: 78,
+    health: 82,
+  },
+  {
+    id: "plateai",
+    name: "PlateAI",
+    icon: Camera,
+    entity: "Internal",
+    status: "onboarding" as const,
+    agents: 0,
+    mcpTools: 0,
+    health: 55,
+  },
+  {
+    id: "backstreet",
+    name: "Backstreet",
+    icon: Building2,
+    entity: "Internal",
+    status: "onboarding" as const,
+    agents: 0,
+    mcpTools: 0,
+    health: 35,
   },
 ];
 
@@ -36,7 +56,7 @@ const AGENCY_STATS = {
   totalMcpTools: 37,
   totalLearnings: 43,
   reusablePatterns: 8,
-  claudeCodeSessions: 20,
+  claudeCodeSessions: 25,
   sharedLearnings: 12,
 };
 
