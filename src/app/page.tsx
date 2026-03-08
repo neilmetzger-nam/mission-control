@@ -26,7 +26,7 @@ const CLIENTS = [
     status: "active" as const,
     agents: 5,
     mcpTools: 5,
-    health: 82,
+    health: 88,
   },
   {
     id: "plateai",
@@ -36,7 +36,7 @@ const CLIENTS = [
     status: "onboarding" as const,
     agents: 0,
     mcpTools: 0,
-    health: 55,
+    health: 60,
   },
   {
     id: "backstreet",
@@ -46,7 +46,7 @@ const CLIENTS = [
     status: "onboarding" as const,
     agents: 0,
     mcpTools: 0,
-    health: 35,
+    health: 42,
   },
 ];
 
@@ -56,7 +56,7 @@ const AGENCY_STATS = {
   totalMcpTools: 37,
   totalLearnings: 43,
   reusablePatterns: 8,
-  claudeCodeSessions: 25,
+  claudeCodeSessions: 30,
   sharedLearnings: 12,
 };
 
