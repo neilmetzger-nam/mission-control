@@ -7,8 +7,8 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dave Console — Mission Control",
-  description: "AI Staffing Agency Operations Dashboard",
+  title: "Orion OS",
+  description: "AI venture portfolio command center",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

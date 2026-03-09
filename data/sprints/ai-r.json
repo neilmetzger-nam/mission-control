@@ -1,0 +1,872 @@
+{
+  "projectId": "ai-r",
+  "updatedAt": "2026-03-08",
+  "milestones": [
+    {
+      "id": "m1",
+      "title": "Demo",
+      "description": "7-step onboarding wizard, menu import, POS demo",
+      "targetDate": "2026-03-15",
+      "status": "in-progress",
+      "sprints": [
+        {
+          "id": "s1",
+          "title": "Menu Intelligence",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "t1",
+              "title": "Square catalog CSV import (538 items)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t2",
+              "title": "Liam menu agent — LLM-based category matching",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t3",
+              "title": "Modifier groups (Protein + Spice Level)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t4",
+              "title": "Food photo sync — Google Drive → Shopify CDN",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t5",
+              "title": "imageUrl column in Neon MenuItem table",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "title": "POS + Payments",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "t6",
+              "title": "Square Terminal integration",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t7",
+              "title": "Stripe WisePOS integration",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t8",
+              "title": "Terminal adapter (Square + Stripe unified interface)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t9",
+              "title": "Tableside tipping (autocomplete + smart tipping)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t10",
+              "title": "PosModal + PaymentModal portal pattern",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t11",
+              "title": "Split checks by seat + PAID badges",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "title": "Printer System",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "t12",
+              "title": "Network printer discovery (port scan + ARP MAC lookup)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t13",
+              "title": "Epson (WebSocket) + Star (HTTP) drivers",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t14",
+              "title": "7-station routing config (thai-kitchen, japan-kitchen, sushi-bar, bar, expo, host-stand, thai-receipt)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t15",
+              "title": "7-language test print",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t16",
+              "title": "Pi print server running at 192.168.1.74:3333",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "title": "PWA Two-Device Architecture",
+          "status": "in-progress",
+          "tasks": [
+            {
+              "id": "t17",
+              "title": "Phone mode (server/waiter) — voice-first, their tables only",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t18",
+              "title": "iPad mode (station) — shared, no login, PIN-gated manager tab",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t19",
+              "title": "Real hardware test — Square Terminal + new printers",
+              "status": "queued",
+              "assignee": "human",
+              "notes": [
+                "Bring Square Terminal + new Epson printers",
+                "Test: printer discovery, card auth, tip entry, receipt print",
+                "Goal: full POS loop on real hardware at Red Bar"
+              ]
+            },
+            {
+              "id": "t20",
+              "title": "QR pay-at-table flow",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "title": "Online Ordering (Gloria)",
+          "status": "in-progress",
+          "tasks": [
+            {
+              "id": "t21",
+              "title": "Public menu API endpoint (/api/online-ordering/menu)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t22",
+              "title": "Gloria ordering page — hero, pills, item grid, SEO",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t23",
+              "title": "Commit Gloria page to neil branch + Obie review",
+              "status": "needs-review",
+              "assignee": "human",
+              "notes": [
+                "Gloria page built locally on neil branch — NOT committed yet",
+                "Waiting on Obie to cherry-pick to staging",
+                "Dev URL: http://localhost:3000/home/online-ordering"
+              ]
+            },
+            {
+              "id": "t24",
+              "title": "Cart + checkout flow",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "title": "MVP",
+      "description": "Full POS loop, online ordering live, Maestro voice agent",
+      "targetDate": "2026-04-15",
+      "status": "queued",
+      "sprints": [
+        {
+          "id": "s5b",
+          "title": "Database Rebuild",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "t-db1",
+              "title": "Create new Neon DB instance in Orion org",
+              "status": "queued",
+              "assignee": "human",
+              "notes": [
+                "Schema is at ~/Desktop/AIR-Web/database/schema.sql — 39 tables, 1878 lines",
+                "Go to console.neon.tech → Orion org → New project"
+              ]
+            },
+            {
+              "id": "t-db2",
+              "title": "Run schema.sql against new Neon instance",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "psql $DATABASE_URL < ~/Desktop/AIR-Web/database/schema.sql",
+                "Or use Neon SQL editor — paste schema.sql"
+              ]
+            },
+            {
+              "id": "t-db3",
+              "title": "Update DATABASE_URL in Vercel + .env.local",
+              "status": "queued",
+              "assignee": "human",
+              "notes": [
+                "Update in Vercel env vars for all environments",
+                "Update ~/Desktop/AIR-Web/.env.local"
+              ]
+            },
+            {
+              "id": "t-db4",
+              "title": "Run migrations (docs/migrations/*.sql)",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Run in order: 001-008 + beta-001",
+                "All at ~/Desktop/AIR-Web/docs/migrations/"
+              ]
+            },
+            {
+              "id": "t-db5",
+              "title": "Re-seed Red Bar Sushi data (restaurantId=7)",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Menu items from Square CSV: ~/Desktop/ML5CQXBJ175FH_catalog-2026-02-05-1326.csv",
+                "~650 food photos already on Shopify CDN",
+                "Run scripts/sync-food-photos.mjs + scripts/seed-modifiers.mjs"
+              ]
+            },
+            {
+              "id": "t-db6",
+              "title": "Verify tenant isolation — add tenant_id + restaurant_id to any missing tables",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Reference: ~/.openclaw/workspace/agency/standards/tenant-middleware-reference.ts",
+                "Every table must have tenant_id + restaurant_id"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "title": "Delivery Statement Intelligence",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "t25",
+              "title": "DoorDash + UberEats statement parsers",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t26",
+              "title": "Revenue waterfall + effective commission rate",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t27",
+              "title": "Chargeback detection + dispute templates",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t28",
+              "title": "Grubhub parser",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "title": "Owner Dashboard V2",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "t29",
+              "title": "/home Command Center",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t30",
+              "title": "/home/inbox Action Center",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t31",
+              "title": "/home/numbers Numbers Room",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t32",
+              "title": "Delivery Conversion Engine (bag insert → direct order)",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "title": "Maestro Voice Agent",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "t33",
+              "title": "ElevenLabs Concierge (phones)",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "ElevenLabs agent wired — renamed from Dave to Concierge",
+                "~1000-line page at /home/phone-ai/",
+                "Agent IDs in Vercel env"
+              ]
+            },
+            {
+              "id": "t34",
+              "title": "Liam (kitchen intelligence) voice integration",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t35",
+              "title": "Molly (marketing) voice integration",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t36",
+              "title": "Magellan (analyst) voice integration",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t37b",
+              "title": "Maestro outbound calls — scheduled weekly business review",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "EL outbound call API: POST /v1/convai/conversations/outbound",
+                "Owner sets schedule: call me every Monday 9am",
+                "Maestro pre-loads week data before calling (revenue, labor, chargebacks)",
+                "5-min weekly review on their personal phone — no app needed",
+                "Owner can take action mid-call: dispute, approve, schedule — all via voice"
+              ]
+            },
+            {
+              "id": "t37c",
+              "title": "On-demand status call — owner calls or texts Maestro anytime",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "\"Hey Maestro, how are labor estimates holding up?\"",
+                "Maestro pulls live data from MCP tools mid-call",
+                "Works from anywhere — beach, car, other restaurant",
+                "This is the sticky feature — no POS does this"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s-onboard2",
+          "title": "Smart Onboarding — Post-Menu Steps",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "to1",
+              "title": "Floor plan photo → table map (Claude Vision)",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Step 8 in demo wizard: upload photo of floor plan (paper, POS screenshot, napkin)",
+                "Claude Vision extracts: table numbers, positions, shapes, seats, sections",
+                "Output: [{id, x, y, shape, seats, section}] JSON → renders as interactive table map",
+                "Owner can drag/edit tables after generation",
+                "DB: floor_plans + floor_plan_elements tables already in schema",
+                "Fallback: blank grid builder if no photo available"
+              ]
+            },
+            {
+              "id": "to2",
+              "title": "ElevenLabs Maestro widget on demo/onboarding pages",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Floating chat button bottom-right, out of the way",
+                "Already built at /home/phone-ai — just needs surfacing on demo pages",
+                "Phase 1: general help (EL handles it)",
+                "Phase 2: context-aware via MCP v2 (knows what page owner is on)"
+              ]
+            },
+            {
+              "id": "to3",
+              "title": "Context-aware MCP task types — priority list",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "1. floor_plan_import — photo → Vision → table map",
+                "2. menu_cleanup — analyze menu, surface issues, auto-fix with approval",
+                "3. delivery_statement_upload — DoorDash/UberEats → chargeback detection",
+                "4. go_live_assistant — final checklist walkthrough before launch",
+                "Each = specific MCP task type with known input/output",
+                "Chat is just the trigger — MCP does the work"
+              ]
+            },
+            {
+              "id": "to4",
+              "title": "Post-menu onboarding CTA: test AIR in your restaurant",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "After demo wizard complete: show next steps screen",
+                "CTA 1: Send us your floor plan (photo upload or message)",
+                "CTA 2: Book a 30-min setup call",
+                "CTA 3: Download the PWA and test at your restaurant",
+                "Reinforces: we make their life easy, we do the heavy lifting"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s-pi-queue-done",
+          "title": "Pi MCP Queue (COMPLETE)",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "pq1",
+              "title": "POST /api/pi/heartbeat — Pi checks in, gets queued jobs",
+              "status": "done"
+            },
+            {
+              "id": "pq2",
+              "title": "POST /api/pi/queue — app submits print jobs",
+              "status": "done"
+            },
+            {
+              "id": "pq3",
+              "title": "POST /api/pi/confirm — Pi confirms printed/failed",
+              "status": "done"
+            },
+            {
+              "id": "pq4",
+              "title": "GET /api/pi/status — check Pi online status",
+              "status": "done"
+            },
+            {
+              "id": "pq5",
+              "title": "GET /api/pi/config — Pi pulls full restaurant config on boot",
+              "status": "done",
+              "notes": [
+                "All 7 printers, routing, tax rate, receipt layouts"
+              ]
+            },
+            {
+              "id": "pq6",
+              "title": "pi-poller.sh v2 — ESC/POS format, all 7 printer IPs",
+              "status": "done",
+              "notes": [
+                "Deployed to Pi at Red Bar via Tailscale SSH",
+                "Confirmed printing Thai receipt successfully"
+              ]
+            },
+            {
+              "id": "pq7",
+              "title": "No ngrok needed — Pi outbound HTTP only",
+              "status": "done"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "title": "Beta",
+      "description": "First paying customers, multi-tenant, 3rd party API integrations",
+      "targetDate": "2026-06-01",
+      "status": "queued",
+      "sprints": [
+        {
+          "id": "s9",
+          "title": "3rd Party Integrations",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "t37",
+              "title": "UberEats Marketplace API (applied 2/22, pending)",
+              "status": "blocked",
+              "assignee": "human",
+              "notes": [
+                "Applied 2/22/2026 via developer.uber.com",
+                "App: AI-R PROD APP",
+                "Blocker: Privacy Policy URL missing (need ai-restaurant.net/privacy)",
+                "Public Display Name/Description empty — needs to be filled"
+              ]
+            },
+            {
+              "id": "t38",
+              "title": "DoorDash Marketplace API (not applied)",
+              "status": "queued",
+              "assignee": "human",
+              "notes": [
+                "Portal: developer.doordash.com",
+                "NextGen Restaurants org already exists",
+                "Separate from Drive API — needed for inbound order injection"
+              ]
+            },
+            {
+              "id": "t39",
+              "title": "OpenTable integration (applied, pending)",
+              "status": "blocked",
+              "assignee": "human",
+              "notes": [
+                "Applied, no response yet",
+                "Follow up if no response by Mar 21"
+              ]
+            },
+            {
+              "id": "t40",
+              "title": "Plaid bank sync (approved, sandbox)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": [
+                "APPROVED. Sandbox mode active",
+                "react-plaid-link wired into demo",
+                "create-link-token + exchange-token API routes built"
+              ]
+            },
+            {
+              "id": "t41",
+              "title": "Google Ads API integration",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            }
+          ]
+        },
+        {
+          "id": "s10",
+          "title": "Multi-tenant + MCP",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "t42",
+              "title": "air-mcp repo — enforcement layer between agents and backend",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Own repo: air-mcp",
+                "Enforcement layer between agents and backend",
+                "Handles: tenant isolation, agent auth, permissions, schema validation, rate limiting, audit logging",
+                "Agents never get direct DB access"
+              ]
+            },
+            {
+              "id": "t43",
+              "title": "Tenant isolation + agent auth + audit logging",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t44",
+              "title": "Onboarding pipeline (7-min self-serve)",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            }
+          ]
+        },
+        {
+          "id": "s-pi-prod",
+          "title": "Pi — Production Ready",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "pi1",
+              "title": "Local config cache on Pi (offline fallback)",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Pi saves config to ~/.air-config.json after first successful MCP pull",
+                "Uses cached file if MCP unreachable on boot",
+                "Survives internet outages mid-shift"
+              ]
+            },
+            {
+              "id": "pi2",
+              "title": "Pi auto-discovery → push printer scan to MCP",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Pi scans network on boot, sends discovered printers to /api/pi/discovered-printers",
+                "We assign station names remotely in MC",
+                "Routing config pushed back to Pi via next heartbeat"
+              ]
+            },
+            {
+              "id": "pi3",
+              "title": "Pi config persisted to Neon DB",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Currently in Redis only — needs Neon for durability",
+                "Pi config table: restaurantId, printers JSON, routing JSON, updatedAt"
+              ]
+            },
+            {
+              "id": "pi4",
+              "title": "Pi URL auto-pushed to restaurant config on registration",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "When Pi first checks in, MCP stores its identity against restaurantId",
+                "App reads Pi URL from restaurant config — owner never enters it manually"
+              ]
+            },
+            {
+              "id": "pi5",
+              "title": "Pi poller as systemd service (auto-start on boot)",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Add /etc/systemd/system/air-poller.service alongside existing air-box.service",
+                "Restarts automatically on crash",
+                "Runs as air user"
+              ]
+            },
+            {
+              "id": "pi6",
+              "title": "Pre-ship Pi setup script",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "One script we run before shipping: set RESTAURANT_ID + PI_AUTH_TOKEN + MCP_URL",
+                "Installs both systemd services",
+                "Verifies connectivity to MCP before marking ready to ship"
+              ]
+            },
+            {
+              "id": "pi7",
+              "title": "Smart print routing — direct vs MCP queue",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "App pings Pi directly first (GET http://pi-url/status, timeout 1s)",
+                "If reachable → fire direct (fast path, ~50ms)",
+                "If not reachable → fall back to MCP queue (remote path, ~3s)",
+                "Works on any network including cell failover",
+                "Kitchen tickets always fast when staff on restaurant wifi",
+                "Remote ops (Neil at home, Maestro) always work via queue"
+              ]
+            },
+            {
+              "id": "pi8",
+              "title": "Print job confirmation callback",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "When Pi confirms job printed → push notification to app",
+                "Toast message: Kitchen ticket printed ✓",
+                "Maestro can confirm: Your order fired to the kitchen",
+                "Failed jobs → alert + retry logic"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m4",
+      "title": "Security Hardening",
+      "description": "Production-ready security before public launch",
+      "targetDate": "2026-06-15",
+      "status": "queued",
+      "sprints": [
+        {
+          "id": "s-sec1",
+          "title": "Auth & Access Control",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "ts1",
+              "title": "Server-side tenant validation middleware on all API routes",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Reference: ~/.openclaw/workspace/agency/standards/tenant-middleware-reference.ts",
+                "Every route must verify Clerk session → org membership → inject tenantId"
+              ]
+            },
+            {
+              "id": "ts2",
+              "title": "Add Clerk auth to Mission Control before public deploy",
+              "status": "todo",
+              "assignee": "agent",
+              "notes": [
+                "MC currently has zero auth — anyone with URL sees everything"
+              ]
+            },
+            {
+              "id": "ts3",
+              "title": "requireInternalAuth() wired into all Orion MCP routes",
+              "status": "todo",
+              "assignee": "agent",
+              "notes": [
+                "lib/auth.ts exists in orion-mcp — needs wiring into each route handler"
+              ]
+            },
+            {
+              "id": "ts4",
+              "title": "Rate limiting on all public API routes",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Use Vercel Edge middleware or upstash/ratelimit package"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s-sec2",
+          "title": "Code Scanning",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "ts5",
+              "title": "Dependabot enabled on all 8 repos",
+              "status": "done",
+              "assignee": "agent",
+              "notes": [
+                "Enabled Mar 8 via GitHub API — weekly Monday scans, auto-PRs for vulnerabilities"
+              ]
+            },
+            {
+              "id": "ts6",
+              "title": "Add eslint-plugin-security to all projects",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "npm install eslint-plugin-security --save-dev",
+                "Catches: unsafe regex, unvalidated input, prototype pollution"
+              ]
+            },
+            {
+              "id": "ts7",
+              "title": "Run Snyk scan on AIR-Web before beta launch",
+              "status": "queued",
+              "assignee": "human",
+              "notes": [
+                "npx snyk test from ~/Desktop/AIR-Web",
+                "Free tier covers this"
+              ]
+            },
+            {
+              "id": "ts8",
+              "title": "Build Sentinel — Orion-specific security agent",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Scans for: missing auth middleware on new routes, tables missing tenant_id, secrets in .md files",
+                "Runs on every PR via GitHub Actions",
+                "Reports to MC security page",
+                "Build during MCP v2 sprint"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s-sec3",
+          "title": "Agent Permission Layer",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "ts9",
+              "title": "air-mcp enforcement layer — agents never touch DB directly",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Own repo: air-mcp",
+                "All agent DB access via MCP tools with tenant scope",
+                "Handles: permissions, schema validation, rate limiting, audit logging"
+              ]
+            },
+            {
+              "id": "ts10",
+              "title": "GCP IAM service account with least-privilege for Cloud Run",
+              "status": "queued",
+              "assignee": "human",
+              "notes": [
+                "Set up before first Cloud Run deploy",
+                "GCP project: gen-lang-client-0696759433"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

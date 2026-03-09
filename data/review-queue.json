@@ -1,0 +1,24 @@
+[
+  {
+    "id": "rv1",
+    "projectId": "ai-r",
+    "taskId": "t4",
+    "title": "Implement user authentication flow",
+    "agent": "Claude Code",
+    "summary": "Added NextAuth.js with Google OAuth provider, session management, and protected API routes. Includes middleware for auth checks.",
+    "output": "15 files changed — auth config, middleware, login page, session provider",
+    "status": "pending",
+    "createdAt": "2026-03-07T14:30:00Z"
+  },
+  {
+    "id": "rv2",
+    "projectId": "studio",
+    "taskId": "ps-t3",
+    "title": "Add prompt version history",
+    "agent": "Claude Code",
+    "summary": "Implemented version tracking for prompts with diff viewer. Each save creates a new version with timestamp and change summary.",
+    "output": "8 files changed — version model, diff component, history sidebar",
+    "status": "pending",
+    "createdAt": "2026-03-08T09:15:00Z"
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "id": "ai-r",
+    "name": "AI-R",
+    "tagline": "Replace your POS, website, and delivery apps with one AI platform",
+    "status": "active",
+    "phase": "MVP",
+    "url": "https://ai-r.vercel.app",
+    "repo": "neilmetzger/ai-r",
+    "stack": [
+      "Next.js",
+      "Vercel",
+      "Neon",
+      "OpenAI"
+    ],
+    "color": "#f97316"
+  },
+  {
+    "id": "plateai",
+    "name": "PlateAI",
+    "tagline": "Visual menu intelligence for restaurants",
+    "status": "active",
+    "phase": "Beta",
+    "url": "https://plateai.vercel.app",
+    "repo": "neilmetzger/plateai",
+    "stack": [
+      "Next.js",
+      "Vercel",
+      "OpenAI Vision"
+    ],
+    "color": "#8b5cf6"
+  },
+  {
+    "id": "studio",
+    "name": "Prompt Studio",
+    "tagline": "The AI content factory powering every Orion product",
+    "status": "active",
+    "phase": "Alpha",
+    "url": null,
+    "repo": "neilmetzger/prompt-studio",
+    "stack": [
+      "Next.js",
+      "Vercel",
+      "Claude API"
+    ],
+    "color": "#3b82f6"
+  },
+  {
+    "id": "time-trek",
+    "name": "Time Trek",
+    "tagline": "Learn a language by living inside AI-generated worlds",
+    "status": "planned",
+    "phase": "Ideation",
+    "url": null,
+    "repo": null,
+    "stack": [
+      "Next.js",
+      "Vercel",
+      "OpenAI"
+    ],
+    "color": "#10b981"
+  },
+  {
+    "id": "ember-azure",
+    "name": "Ember & Azure",
+    "tagline": "Pan-Asian wood-fire dining coming to Village at Leesburg",
+    "status": "planned",
+    "phase": "Ideation",
+    "url": null,
+    "repo": null,
+    "stack": [
+      "Next.js",
+      "Vercel",
+      "DALL-E",
+      "OpenAI"
+    ],
+    "color": "#ef4444"
+  },
+  {
+    "id": "orion-mcp",
+    "name": "Orion MCP",
+    "tagline": "The agent orchestration layer connecting every Orion product",
+    "status": "active",
+    "phase": "Alpha",
+    "url": null,
+    "repo": "neilmetzger/orion-mcp",
+    "stack": [
+      "TypeScript",
+      "MCP SDK",
+      "Node.js"
+    ],
+    "color": "#f59e0b"
+  }
+]

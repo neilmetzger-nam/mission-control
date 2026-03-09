@@ -3,14 +3,9 @@ import fs from "fs";
 import path from "path";
 
 const ENV_KEYS = [
-  "ANTHROPIC_API_KEY",
-  "OPENAI_API_KEY",
-  "CLERK_SECRET_KEY",
-  "SQUARE_ACCESS_TOKEN",
-  "STRIPE_SECRET_KEY",
-  "ELEVENLABS_API_KEY",
-  "NEON_DATABASE_URL",
-  "BRAVE_API_KEY",
+  { key: "ORION_INTERNAL_KEY", label: "Orion Internal Key", required: true },
+  { key: "VERCEL_TOKEN", label: "Vercel Token", required: true },
+  { key: "VERCEL_PROJECT_ID", label: "Vercel Project ID (AIR-Web)", required: true },
 ];
 
 const SKILLS_DIR = "/Users/neilmetzger/.nvm/versions/node/v22.21.1/lib/node_modules/openclaw/skills/";
@@ -25,9 +20,10 @@ export interface SkillEntry {
 }
 
 export async function GET() {
-  const envStatus: EnvStatus[] = ENV_KEYS.map((key) => ({
-    key,
+  const envStatus: EnvStatus[] = ENV_KEYS.map(({ key, label, required }) => ({
+    key: label,
     set: !!process.env[key],
+    required,
   }));
 
   let skills: SkillEntry[] = [];

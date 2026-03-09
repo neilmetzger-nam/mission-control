@@ -1,0 +1,173 @@
+{
+  "services": [
+    {
+      "id": "air-web",
+      "name": "AI-R Web",
+      "project": "ai-r",
+      "description": "Restaurant management frontend + API",
+      "type": "frontend",
+      "platform": "vercel",
+      "url": "https://ai-restaurant.net",
+      "repo": "neilmetzger-nam/AIR-Web",
+      "branch": "main",
+      "region": "us-east4",
+      "status": "live",
+      "lastDeployed": "2026-03-05",
+      "stack": ["Next.js 16", "Clerk", "Neon", "Drizzle", "Square", "Stripe"]
+    },
+    {
+      "id": "prompt-studio-v2",
+      "name": "Prompt Studio v2",
+      "project": "studio",
+      "description": "AI video production studio",
+      "type": "frontend",
+      "platform": "vercel",
+      "url": "https://ai-promptstudio.net",
+      "repo": "neilmetzger-nam/prompt-studio-v2",
+      "branch": "main",
+      "status": "live",
+      "lastDeployed": "2026-03-07",
+      "stack": ["Next.js 15", "Clerk", "Neon", "Drizzle"]
+    },
+    {
+      "id": "plate-ai",
+      "name": "PlateAI",
+      "project": "plate-ai",
+      "description": "Menu intelligence SaaS",
+      "type": "frontend",
+      "platform": "vercel",
+      "url": "https://getplateai.com",
+      "repo": "neilmetzger-nam/plate-ai",
+      "branch": "main",
+      "status": "live",
+      "lastDeployed": "2026-03-07",
+      "stack": ["Next.js", "Clerk", "Neon", "Square"]
+    },
+    {
+      "id": "time-trek",
+      "name": "Time Trek",
+      "project": "time-trek",
+      "description": "Language learning game marketing site",
+      "type": "frontend",
+      "platform": "vercel",
+      "url": "https://timetrekgame.com",
+      "repo": "neilmetzger-nam/time-trek",
+      "branch": "main",
+      "status": "live",
+      "lastDeployed": "2026-03-07",
+      "stack": ["Next.js", "Vercel"]
+    },
+    {
+      "id": "ember-azure",
+      "name": "Ember & Azure",
+      "project": "ember-azure",
+      "description": "Restaurant website",
+      "type": "frontend",
+      "platform": "vercel",
+      "url": "https://emberandazure.com",
+      "repo": "neilmetzger-nam/ember-azure-website",
+      "branch": "main",
+      "status": "live",
+      "lastDeployed": "2026-03-07",
+      "stack": ["Next.js", "Vercel"]
+    },
+    {
+      "id": "orion-mcp",
+      "name": "Orion MCP",
+      "project": "orion-mcp",
+      "description": "Agent orchestration + tool registry",
+      "type": "api",
+      "platform": "vercel",
+      "url": "https://orion-mcp.vercel.app",
+      "repo": "neilmetzger-nam/orion-mcp",
+      "branch": "main",
+      "status": "live",
+      "lastDeployed": "2026-03-07",
+      "stack": ["Next.js", "Upstash KV"]
+    },
+    {
+      "id": "orion-portfolio",
+      "name": "Orion Portfolio",
+      "project": "orion",
+      "description": "Corporate portfolio + Command Center",
+      "type": "frontend",
+      "platform": "vercel",
+      "url": "https://orionportfolio.net",
+      "repo": "neilmetzger-nam/orion",
+      "branch": "main",
+      "status": "live",
+      "lastDeployed": "2026-03-07",
+      "stack": ["Next.js", "Clerk", "Upstash KV"]
+    },
+    {
+      "id": "mission-control",
+      "name": "Mission Control",
+      "project": "orion",
+      "description": "Internal portfolio OS — this app",
+      "type": "internal",
+      "platform": "local",
+      "url": "http://neils-mac-mini.tail45495a.ts.net:3001",
+      "repo": "neilmetzger-nam/mission-control",
+      "branch": "main",
+      "status": "live",
+      "lastDeployed": "2026-03-08",
+      "stack": ["Next.js 16", "Tailwind v4"]
+    }
+  ],
+  "databases": [
+    {
+      "id": "neon-air",
+      "name": "AI-R DB",
+      "project": "ai-r",
+      "provider": "neon",
+      "plan": "free",
+      "region": "us-east-1",
+      "status": "active"
+    },
+    {
+      "id": "neon-studio",
+      "name": "Prompt Studio DB",
+      "project": "studio",
+      "provider": "neon",
+      "endpoint": "ep-crimson-lake-aj7ntzoz",
+      "org": "Orion",
+      "plan": "free",
+      "status": "active"
+    },
+    {
+      "id": "upstash-orion",
+      "name": "Orion KV",
+      "project": "orion",
+      "provider": "upstash",
+      "host": "special-griffon-4768.upstash.io",
+      "status": "active",
+      "usedBy": ["orion-mcp", "orion-portfolio"]
+    }
+  ],
+  "gcp": {
+    "projectId": "gen-lang-client-0696759433",
+    "projectName": "Default Gemini Project",
+    "projectNumber": "852464874796",
+    "region": "us-east4",
+    "registry": "us-east4-docker.pkg.dev/gen-lang-client-0696759433/orion",
+    "services": []
+  },
+  "devices": [
+    {
+      "id": "mac-mini",
+      "name": "Mac Mini",
+      "role": "Dev server + Dave's brain",
+      "tailscaleIp": "100.101.120.24",
+      "tailscaleHost": "neils-mac-mini.tail45495a.ts.net",
+      "localIp": "192.168.1.78"
+    },
+    {
+      "id": "pi",
+      "name": "Raspberry Pi",
+      "role": "Print server",
+      "tailscaleIp": "100.68.30.87",
+      "localIp": "192.168.1.74",
+      "services": ["print-server:3333"]
+    }
+  ]
+}

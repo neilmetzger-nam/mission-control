@@ -1,0 +1,283 @@
+{
+  "projectId": "orion-mcp",
+  "updatedAt": "2026-03-08",
+  "milestones": [
+    {
+      "id": "m1",
+      "title": "MCP v1 — Live",
+      "description": "Core agent orchestration layer deployed",
+      "targetDate": "2026-03-07",
+      "status": "done",
+      "sprints": [
+        {
+          "id": "s1",
+          "title": "Foundation",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "t1",
+              "title": "10 API routes, 7 model routes, 6 agents seeded",
+              "status": "done",
+              "assignee": "agent",
+              "notes": [
+                "Live at orion-mcp.vercel.app",
+                "Admin key rotated Mar 8"
+              ]
+            },
+            {
+              "id": "t2",
+              "title": "Upstash KV wired (special-griffon-4768)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t3",
+              "title": "Orion internal auth (x-orion-key)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": [
+                "lib/auth.ts written Mar 8",
+                "Still needs wiring into route handlers"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "title": "MCP v2 — Agentic Chat Widget",
+      "description": "Embeddable widget: chat → intent → agent executes → human approves → live",
+      "targetDate": "2026-07-01",
+      "status": "queued",
+      "sprints": [
+        {
+          "id": "s2",
+          "title": "Task Queue + Intent Router",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "t4",
+              "title": "POST /api/tasks/create — accepts intent + tenant + context",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Core of MCP v2",
+                "Intent detected → task created → agent assigned"
+              ]
+            },
+            {
+              "id": "t5",
+              "title": "Task queue in Upstash — agents poll for work",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t6",
+              "title": "Intent router — map natural language to task types",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Train on real AI-R owner requests from beta",
+                "Kill feature: owner types request → agent does it → owner approves"
+              ]
+            },
+            {
+              "id": "t6b",
+              "title": "AI-R context-aware task types (first 4)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": [
+                "floor_plan_import: photo → Claude Vision → table map JSON",
+                "menu_cleanup: analyze menu → surface issues → auto-fix with approval",
+                "delivery_statement_upload: statement → chargeback detection",
+                "go_live_assistant: final checklist walkthrough",
+                "EL widget = voice/UI layer, MCP = brain behind it",
+                "Page context injected into every agent call so agent knows what owner is doing"
+              ]
+            },
+            {
+              "id": "t6c",
+              "title": "generate_report — natural language → SQL → visual chart via Nano",
+              "status": "done",
+              "assignee": "agent",
+              "notes": [
+                "Owner: \"show me Tuesday 3-5pm sales by category\"",
+                "MCP: parse intent → query Neon → structure data → send to Nano Pro 2",
+                "Nano: generates visual chart image",
+                "Maestro: responds with image",
+                "Reference: agency/projects/ai-r/strategy/operator-faqs.md"
+              ]
+            },
+            {
+              "id": "t6d",
+              "title": "AI-R ops task types — daily voice commands",
+              "status": "done",
+              "assignee": "agent",
+              "notes": [
+                "fix_time_punch — Tom forgot to clock out",
+                "add_special — O-Toro platter tonight, limit 5",
+                "86_item — we are out of salmon",
+                "reprint_receipt — table 4",
+                "move_table — 7 to 12",
+                "update_price — Pad Thai to 17",
+                "get_shift_summary — how are we doing tonight",
+                "apply_comp — comp table 3 dessert",
+                "These are the daily value — why owners dont churn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "title": "Embeddable Widget",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "t7",
+              "title": "Chat widget — <script> tag drop-in for any product",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "<script src=\"orion-mcp.vercel.app/widget.js\" data-tenant=\"X\">"
+              ]
+            },
+            {
+              "id": "t8",
+              "title": "Shared context store — all chats write to same KV",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Hive mind: every team member + agent sees same current reality",
+                "Real-time sync via Upstash pub/sub"
+              ]
+            },
+            {
+              "id": "t9",
+              "title": "Approval flow — task updates push back to widget",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "SSE or polling",
+                "Human approves → live"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "title": "Sentinel Security Agent",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "t10",
+              "title": "Sentinel v1 — Orion-specific security scanner",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Scans: missing auth middleware, tables missing tenant_id, secrets in .md files",
+                "Runs on every PR via GitHub Actions",
+                "Reports to MC security page",
+                "Building tonight (Mar 8)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "title": "Molly — Marketing Agent",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "t11",
+              "title": "Molly v1 — draft posts from sprint completions",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Monitors sprint completions → drafts LinkedIn/X/HN content → routes to review queue",
+                "Building tonight (Mar 8)"
+              ]
+            },
+            {
+              "id": "t12",
+              "title": "Campaign tracker page in MC",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Post queue, channel status, scheduled content",
+                "Building tonight (Mar 8)"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s-mcp-v2-done",
+          "title": "MCP v2 — Task Queue + Intent Router (COMPLETE)",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "mv1",
+              "title": "POST /api/tasks — create task with intent classification",
+              "status": "done",
+              "notes": [
+                "Intent router maps natural language → taskType",
+                "Agent router maps taskType → specialist agent",
+                "Returns taskId, taskType, estimatedAgent, needsConfirmation"
+              ]
+            },
+            {
+              "id": "mv2",
+              "title": "GET /api/tasks — list tasks by restaurant + status",
+              "status": "done"
+            },
+            {
+              "id": "mv3",
+              "title": "PATCH /api/tasks/[taskId] — update task status",
+              "status": "done"
+            },
+            {
+              "id": "mv4",
+              "title": "Confirmation queue — /api/tasks/confirm",
+              "status": "done",
+              "notes": [
+                "Destructive actions flagged: menu_delete, bulk_update, 10+ items",
+                "Raw intent fallback catches delete/remove language",
+                "60s TTL auto-cancel",
+                "confirm/cancel with source tracking"
+              ]
+            },
+            {
+              "id": "mv5",
+              "title": "Role-based delegation schema",
+              "status": "done",
+              "notes": [
+                "Owner → GM → Manager escalation chain",
+                "Configurable permissions per agent",
+                "Auth middleware checks role"
+              ]
+            },
+            {
+              "id": "mv6",
+              "title": "LLM routing + model config endpoints",
+              "status": "done",
+              "notes": [
+                "Bonus: Claude Code also built model routing, agent briefs, audit logs, learnings"
+              ]
+            },
+            {
+              "id": "mv7",
+              "title": "Deploy to Vercel production",
+              "status": "done",
+              "notes": [
+                "orion-mcp.vercel.app",
+                "Deployed Mar 9 4:17am"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

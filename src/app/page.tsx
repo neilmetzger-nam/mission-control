@@ -2,208 +2,181 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import {
-  Clapperboard, UtensilsCrossed, Zap, BookOpen, TrendingUp,
-  ChevronRight, Activity, Clock, Camera, Building2,
-} from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
-const CLIENTS = [
-  {
-    id: "studio",
-    name: "Prompt Studio",
-    icon: Clapperboard,
-    entity: "Internal",
-    status: "active" as const,
-    agents: 6,
-    mcpTools: 32,
-    health: 92,
-  },
-  {
-    id: "ai-r",
-    name: "AI-R",
-    icon: UtensilsCrossed,
-    entity: "NextGen Restaurants LLC",
-    status: "active" as const,
-    agents: 5,
-    mcpTools: 5,
-    health: 88,
-  },
-  {
-    id: "plateai",
-    name: "PlateAI",
-    icon: Camera,
-    entity: "Internal",
-    status: "onboarding" as const,
-    agents: 0,
-    mcpTools: 0,
-    health: 60,
-  },
-  {
-    id: "backstreet",
-    name: "Backstreet",
-    icon: Building2,
-    entity: "Internal",
-    status: "onboarding" as const,
-    agents: 0,
-    mcpTools: 0,
-    health: 42,
-  },
-];
+interface Project {
+  id: string;
+  name: string;
+  tagline: string;
+  status: string;
+  phase: string;
+  color: string;
+}
 
-const AGENCY_STATS = {
-  totalAgents: 12,
-  activeAgents: 4,
-  totalMcpTools: 37,
-  totalLearnings: 43,
-  reusablePatterns: 8,
-  claudeCodeSessions: 30,
-  sharedLearnings: 12,
-};
+interface ReviewItem {
+  id: string;
+  status: string;
+}
+
+interface AgentEntry {
+  id: string;
+  timestamp: string;
+  agent: string;
+  agentEmoji: string;
+  projectId: string;
+  action: string;
+  status: string;
+}
 
 function StatusBadge({ status }: { status: string }) {
   const styles: Record<string, string> = {
     active: "bg-green-500/20 text-green-400 border-green-500/30",
-    onboarding: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-    planned: "bg-gray-500/20 text-gray-400 border-gray-500/30",
+    planned: "bg-zinc-500/20 text-zinc-400 border-zinc-500/30",
+    paused: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
   };
   return (
-    <span className={`text-xs px-2 py-0.5 rounded-full border ${styles[status] || styles.planned}`}>
+    <span className={`text-[10px] px-2 py-0.5 rounded-full border ${styles[status] || styles.planned}`}>
       {status}
     </span>
   );
 }
 
-function HealthBar({ value }: { value: number }) {
-  const color = value >= 80 ? "bg-green-500" : value >= 50 ? "bg-yellow-500" : "bg-red-500";
+function PhaseBadge({ phase }: { phase: string }) {
   return (
-    <div className="flex items-center gap-2">
-      <div className="flex-1 h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-        <div className={`h-full ${color} rounded-full`} style={{ width: `${value}%` }} />
-      </div>
-      <span className="text-xs text-zinc-500 w-8">{value}%</span>
-    </div>
+    <span className="text-[10px] px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-400 border border-zinc-700">
+      {phase}
+    </span>
   );
 }
 
-interface RecentMemory {
-  filename: string;
-  content: string;
-  modified: string;
+function ActivityStatusBadge({ status }: { status: string }) {
+  const styles: Record<string, string> = {
+    completed: "bg-green-500/20 text-green-400",
+    review: "bg-yellow-500/20 text-yellow-400",
+    running: "bg-blue-500/20 text-blue-400",
+  };
+  return (
+    <span className={`text-[10px] px-1.5 py-0.5 rounded ${styles[status] || "bg-zinc-800 text-zinc-400"}`}>
+      {status}
+    </span>
+  );
 }
 
 export default function Dashboard() {
-  const [recentActivity, setRecentActivity] = useState<RecentMemory | null>(null);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [review, setReview] = useState<ReviewItem[]>([]);
+  const [activity, setActivity] = useState<AgentEntry[]>([]);
+
+  const [conflicts, setConflicts] = useState<{id:string;entity:string;claim1:string;claim2:string;severity:string;status:string}[]>([]);
 
   useEffect(() => {
-    fetch("/api/memory")
-      .then((r) => r.json())
-      .then((data) => {
-        if (data.files?.length > 0) {
-          setRecentActivity(data.files[0]);
-        }
-      })
-      .catch(() => {});
+    fetch("/api/projects").then((r) => r.json()).then(setProjects).catch(() => {});
+    fetch("/api/review").then((r) => r.json()).then((d) => Array.isArray(d) ? setReview(d) : null).catch(() => {});
+    fetch("/api/agent-activity").then((r) => r.json()).then((d) => Array.isArray(d) ? setActivity(d) : null).catch(() => {});
+    fetch("/api/conflicts").then((r) => r.json()).then((d) => Array.isArray(d) ? setConflicts(d.filter((x:any)=>x.status==="unresolved")) : null).catch(() => {});
   }, []);
 
-  // Extract first ~10 non-empty lines from latest memory file as activity feed
-  const activityLines = recentActivity
-    ? recentActivity.content
-        .split("\n")
-        .filter((l) => l.trim().length > 0 && !l.startsWith("---"))
-        .slice(0, 10)
-    : [];
+  const pendingReview = review.filter((r) => r.status === "pending");
+  const activeTasks = 4; // derived from sprint data
+  const recentActivity = activity.slice(0, 5);
 
   return (
     <>
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-2xl font-bold tracking-tight mb-1">Dashboard</h1>
-        <p className="text-zinc-500 text-sm">Agency overview</p>
+        <h1 className="text-2xl font-bold tracking-tight mb-1">Orion OS</h1>
+        <p className="text-zinc-500 text-sm">AI venture portfolio command center</p>
       </div>
 
-      {/* Stat boxes */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      {/* Stats row */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         {[
-          { icon: Activity, label: "Agents", value: AGENCY_STATS.activeAgents, sub: `of ${AGENCY_STATS.totalAgents} total`, color: "text-green-400" },
-          { icon: Zap, label: "MCP Tools", value: AGENCY_STATS.totalMcpTools, sub: "across all projects", color: "text-blue-400" },
-          { icon: BookOpen, label: "Learnings", value: AGENCY_STATS.totalLearnings, sub: `${AGENCY_STATS.sharedLearnings} shared`, color: "text-purple-400" },
-          { icon: TrendingUp, label: "Sessions", value: AGENCY_STATS.claudeCodeSessions, sub: `${AGENCY_STATS.reusablePatterns} patterns`, color: "text-yellow-400" },
-        ].map((stat) => {
-          const Icon = stat.icon;
-          return (
-            <div key={stat.label} className="bg-zinc-900 rounded-xl border border-zinc-800 p-4">
-              <div className="flex items-center gap-2 mb-2">
-                <Icon className={`w-4 h-4 ${stat.color}`} />
-                <span className="text-xs text-zinc-500">{stat.label}</span>
-              </div>
-              <div className="text-2xl font-bold">{stat.value}</div>
-              <div className="text-[10px] text-zinc-600 mt-0.5">{stat.sub}</div>
-            </div>
-          );
-        })}
+          { label: "Projects", value: projects.length, color: "text-blue-400" },
+          { label: "Active Tasks", value: activeTasks, color: "text-green-400" },
+          { label: "Awaiting Review", value: pendingReview.length, color: "text-yellow-400" },
+          { label: "Agent Events", value: activity.length, color: "text-purple-400" },
+        ].map((stat) => (
+          <div key={stat.label} className="bg-zinc-900 rounded-xl border border-zinc-800 p-4">
+            <div className="text-xs text-zinc-500 mb-1">{stat.label}</div>
+            <div className={`text-2xl font-bold ${stat.color}`}>{stat.value}</div>
+          </div>
+        ))}
       </div>
 
-      {/* Project cards — compact */}
+      {/* Review queue alert */}
+      {pendingReview.length > 0 && (
+        <Link
+          href="/review"
+          className="flex items-center gap-3 bg-yellow-500/10 border border-yellow-500/20 rounded-xl px-4 py-3 mb-6 hover:bg-yellow-500/15 transition-colors"
+        >
+          <span className="text-yellow-400 text-sm font-medium">
+            {pendingReview.length} item{pendingReview.length !== 1 ? "s" : ""} awaiting review
+          </span>
+          <ChevronRight className="w-4 h-4 text-yellow-400 ml-auto" />
+        </Link>
+      )}
+
+      {/* Project cards */}
       <div className="mb-8">
-        <h2 className="text-xs text-zinc-500 uppercase tracking-widest font-medium mb-3">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {CLIENTS.map((client) => {
-            const Icon = client.icon;
-            return (
-              <Link
-                key={client.id}
-                href={`/client/${client.id}`}
-                className="group flex items-center gap-4 bg-zinc-900 rounded-xl p-4 border border-zinc-800 hover:border-blue-500/50 hover:bg-zinc-800/60 transition-all"
-              >
-                <div className="p-2 rounded-lg bg-zinc-800 group-hover:bg-zinc-700 transition-colors shrink-0">
-                  <Icon className="w-5 h-5 text-blue-400" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-semibold text-sm">{client.name}</h3>
-                    <StatusBadge status={client.status} />
-                  </div>
-                  <div className="flex items-center gap-4 text-xs text-zinc-500">
-                    <span>{client.agents} agents</span>
-                    <span>{client.mcpTools} tools</span>
-                  </div>
-                  <div className="mt-2">
-                    <HealthBar value={client.health} />
-                  </div>
-                </div>
-                <ChevronRight className="w-4 h-4 text-zinc-600 group-hover:text-zinc-400 shrink-0" />
-              </Link>
-            );
-          })}
+        <h2 className="text-xs text-zinc-500 uppercase tracking-widest font-medium mb-3">Portfolio</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {projects.map((project) => (
+            <Link
+              key={project.id}
+              href={`/projects/${project.id}/sprints`}
+              className="group bg-zinc-900 rounded-xl border border-zinc-800 p-4 hover:border-zinc-600 transition-all"
+              style={{ borderLeftColor: project.color, borderLeftWidth: "3px" }}
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="font-semibold text-sm">{project.name}</h3>
+                <StatusBadge status={project.status} />
+                <PhaseBadge phase={project.phase} />
+              </div>
+              <p className="text-xs text-zinc-500 mb-3">{project.tagline}</p>
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] text-zinc-600">View sprints</span>
+                <ChevronRight className="w-3.5 h-3.5 text-zinc-600 group-hover:text-zinc-400" />
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
 
-      {/* Recent Activity */}
-      <div>
-        <h2 className="text-xs text-zinc-500 uppercase tracking-widest font-medium mb-3">Recent Activity</h2>
-        <div className="bg-zinc-900 rounded-xl border border-zinc-800 p-5">
-          {recentActivity ? (
-            <>
-              <div className="flex items-center gap-2 mb-3 text-xs text-zinc-500">
-                <Clock className="w-3.5 h-3.5" />
-                <span>{recentActivity.filename.replace(".md", "")}</span>
+      {/* Agent activity */}
+      <div className="mb-8">
+        <h2 className="text-xs text-zinc-500 uppercase tracking-widest font-medium mb-3">Agent Activity</h2>
+        <div className="bg-zinc-900 rounded-xl border border-zinc-800 divide-y divide-zinc-800">
+          {recentActivity.length > 0 ? (
+            recentActivity.map((entry) => (
+              <div key={entry.id} className="px-4 py-3 flex items-start gap-3">
+                <span className="text-base mt-0.5">{entry.agentEmoji}</span>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <span className="text-xs font-medium text-zinc-300">{entry.agent}</span>
+                    <span className="text-[10px] text-zinc-600">{entry.projectId}</span>
+                    <ActivityStatusBadge status={entry.status} />
+                  </div>
+                  <p className="text-xs text-zinc-500 truncate">{entry.action}</p>
+                </div>
+                <span className="text-[10px] text-zinc-600 shrink-0">
+                  {new Date(entry.timestamp).toLocaleDateString()}
+                </span>
               </div>
-              <div className="space-y-1">
-                {activityLines.map((line, i) => (
-                  <p key={i} className="text-sm text-zinc-400 leading-relaxed">
-                    {line}
-                  </p>
-                ))}
-              </div>
-              <Link href="/memory" className="inline-flex items-center gap-1 text-xs text-blue-400 mt-3 hover:text-blue-300">
-                View all memory <ChevronRight className="w-3 h-3" />
-              </Link>
-            </>
+            ))
           ) : (
-            <p className="text-sm text-zinc-500">Loading activity...</p>
+            <div className="px-4 py-6 text-center text-sm text-zinc-500">Loading activity...</div>
           )}
         </div>
       </div>
+
+      {/* New Idea CTA */}
+      <Link
+        href="/idea"
+        className="flex items-center justify-center gap-2 bg-purple-500/15 border border-purple-500/30 rounded-xl px-6 py-4 hover:bg-purple-500/20 transition-colors"
+      >
+        <span className="text-lg">{"\u{1F4A1}"}</span>
+        <span className="text-purple-400 font-semibold text-sm">Generate a New Project Idea</span>
+      </Link>
     </>
   );
 }

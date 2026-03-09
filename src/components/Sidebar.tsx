@@ -2,254 +2,182 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useMemo } from "react";
-import { ChevronRight, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 
-// ─── GLOBAL ────────────────────────────────────────────
 const GLOBAL_NAV = [
-  { href: "/", label: "Dashboard", emoji: "📊" },
+  { href: "/", label: "Dashboard", emoji: "🏠" },
+  { href: "/idea", label: "New Idea", emoji: "💡", highlight: true },
+  { href: "/review", label: "Review Queue", emoji: "🔄", badge: true },
+  { href: "/agents", label: "Agent Activity", emoji: "🤖" },
+  { href: "/infrastructure", label: "Infrastructure", emoji: "📊" },
+  { href: "/security", label: "Security", emoji: "🔒" },
   { href: "/memory", label: "Memory", emoji: "🧠" },
-  { href: "/agents", label: "Agents", emoji: "🤖" },
-];
-
-// ─── PROJECTS ──────────────────────────────────────────
-const PROJECTS = [
-  {
-    id: "ai-r",
-    label: "AI-R",
-    emoji: "🍽️",
-    children: [
-      { href: "/projects/ai-r/sprint", label: "Sprint", emoji: "🎯" },
-      { href: "/projects/ai-r/docs", label: "Docs", emoji: "📄" },
-      { href: "/projects/ai-r/issues", label: "Issues", emoji: "🐛" },
-      { href: "/projects/ai-r/settings", label: "Settings", emoji: "⚙️" },
-    ],
-  },
-  {
-    id: 'plateai',
-    label: 'PlateAI',
-    emoji: '📸',
-    children: [
-      { href: '/projects/plateai', label: 'Overview', emoji: '📊' },
-      { href: '/projects/plateai/leads', label: 'Leads', emoji: '📬' },
-      { href: '/projects/plateai/customers', label: 'Customers', emoji: '💰' },
-    ],
-  },
-  {
-    id: "studio",
-    label: "Studio",
-    emoji: "🎬",
-    children: [
-      { href: "/projects/studio/sprint", label: "Sprint", emoji: "🎯" },
-      { href: "/projects/studio/docs", label: "Docs", emoji: "📄" },
-      { href: "/projects/studio/issues", label: "Issues", emoji: "🐛" },
-      { href: "/projects/studio/settings", label: "Settings", emoji: "⚙️" },
-    ],
-  },
-];
-
-// ─── SYSTEM ────────────────────────────────────────────
-const SYSTEM_NAV = [
   { href: "/config", label: "Config", emoji: "⚙️" },
-  { href: "/infrastructure", label: "Infrastructure", emoji: "🖥️" },
 ];
 
-const LS_KEY = "mc-expanded-projects";
+const PROJECTS = [
+  { id: "ai-r", label: "AI-R", emoji: "🍽️", color: "text-orange-400" },
+  { id: "plate-ai", label: "PlateAI", emoji: "🥗", color: "text-green-400" },
+  { id: "studio", label: "Studio", emoji: "🎬", color: "text-purple-400" },
+  { id: "time-trek", label: "Time Trek", emoji: "🌍", color: "text-blue-400" },
+  { id: "ember-azure", label: "Ember & Azure", emoji: "🔥", color: "text-red-400" },
+  { id: "orion-mcp", label: "Orion MCP", emoji: "⚡", color: "text-cyan-400" },
+];
 
-function SectionLabel({ label }: { label: string }) {
-  return (
-    <div className="px-3 pt-5 pb-1.5 text-[10px] text-zinc-500 uppercase tracking-widest font-medium">
-      {label}
-    </div>
-  );
-}
+const PROJECT_SUB = [
+  { suffix: "", label: "Plan", emoji: "📋" },
+  { suffix: "/review", label: "Review Queue", emoji: "🔄" },
+  { suffix: "/agents", label: "Agent Activity", emoji: "🤖" },
+  { suffix: "/docs", label: "Docs", emoji: "📄" },
+  { suffix: "/marketing", label: "Marketing", emoji: "📣" },
+];
 
-function isActivePath(pathname: string, href: string) {
+function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(href + "/");
 }
 
-function loadExpanded(pathname: string): Record<string, boolean> {
-  let parsed: Record<string, boolean> = {};
-  try {
-    const stored = typeof window !== "undefined" ? localStorage.getItem(LS_KEY) : null;
-    if (stored) parsed = JSON.parse(stored);
-  } catch {}
-  // Auto-expand the project whose sub-route is active
-  for (const project of PROJECTS) {
-    if (project.children.some((c) => pathname.startsWith(c.href))) {
-      parsed[project.id] = true;
-    }
-  }
-  return parsed;
-}
-
 export default function Sidebar({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [pendingCount, setPendingCount] = useState(0);
 
-  // Compute expanded state: merge localStorage + auto-expand active project
-  const initialExpanded = useMemo(() => loadExpanded(pathname), [pathname]);
-  const [expanded, setExpanded] = useState<Record<string, boolean>>(initialExpanded);
+  // Auto-expand the project that matches current path
+  const activeProject = PROJECTS.find(p => pathname.startsWith(`/projects/${p.id}`));
+  const [expandedProjects, setExpandedProjects] = useState<Set<string>>(
+    new Set(activeProject ? [activeProject.id] : [])
+  );
 
-  // Keep in sync when pathname changes (auto-expand active project)
-  const expandedWithActive = useMemo(() => {
-    const result = { ...expanded };
-    for (const project of PROJECTS) {
-      if (project.children.some((c) => pathname.startsWith(c.href))) {
-        result[project.id] = true;
-      }
-    }
-    return result;
-  }, [expanded, pathname]);
+  useEffect(() => {
+    fetch("/api/review").then(r => r.json()).then(items => {
+      if (Array.isArray(items)) setPendingCount(items.filter((i: {status:string}) => i.status === "pending").length);
+    }).catch(() => {});
+  }, []);
 
-  function toggleProject(id: string) {
-    setExpanded((prev) => {
-      const next = { ...prev, [id]: !prev[id] };
-      try { localStorage.setItem(LS_KEY, JSON.stringify(next)); } catch {}
+  // Auto-expand active project when navigating
+  useEffect(() => {
+    const p = PROJECTS.find(p => pathname.startsWith(`/projects/${p.id}`));
+    if (p) setExpandedProjects(prev => new Set([...prev, p.id]));
+  }, [pathname]);
+
+  const toggleProject = (id: string) => {
+    setExpandedProjects(prev => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
       return next;
     });
-  }
+  };
+
+  const NavLink = ({ href, emoji, label, highlight, showBadge, indent = false, color = "" }: {
+    href: string; emoji: string; label: string;
+    highlight?: boolean; showBadge?: boolean; indent?: boolean; color?: string;
+  }) => {
+    const active = isActive(pathname, href);
+    return (
+      <Link href={href} onClick={() => setMobileOpen(false)}
+        className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm transition-colors ${indent ? "ml-4 pl-2" : ""}
+          ${active ? "bg-zinc-800 text-white"
+            : highlight ? "text-purple-400 hover:text-purple-300 hover:bg-purple-500/10 border border-purple-500/20"
+            : `${color || "text-zinc-400"} hover:text-white hover:bg-zinc-800/50`}`}>
+        <span className="text-sm shrink-0">{emoji}</span>
+        <span className="flex-1 truncate">{label}</span>
+        {showBadge && pendingCount > 0 && (
+          <span className="text-[10px] bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 px-1.5 py-0.5 rounded-full">{pendingCount}</span>
+        )}
+      </Link>
+    );
+  };
+
+  const sidebar = (
+    <aside className="h-screen w-56 bg-zinc-950 border-r border-zinc-800 flex flex-col">
+      {/* Logo */}
+      <div className="flex items-center gap-2 px-4 py-5 border-b border-zinc-800 shrink-0">
+        <span className="text-lg">🔮</span>
+        <span className="font-semibold text-sm tracking-tight">Orion OS</span>
+      </div>
+
+      <nav className="flex-1 px-2 pt-3 pb-3 overflow-y-auto space-y-0.5">
+
+        {/* Global nav */}
+        {GLOBAL_NAV.map(item => (
+          <NavLink key={item.href} href={item.href} emoji={item.emoji} label={item.label}
+            highlight={item.highlight} showBadge={item.badge} />
+        ))}
+
+        {/* Projects section */}
+        <div className="pt-3 pb-1 px-3">
+          <span className="text-[10px] font-semibold text-zinc-600 uppercase tracking-wider">Projects</span>
+        </div>
+
+        {PROJECTS.map(project => {
+          const isExpanded = expandedProjects.has(project.id);
+          const projectBase = `/projects/${project.id}`;
+          const projectActive = pathname.startsWith(projectBase);
+
+          return (
+            <div key={project.id}>
+              {/* Project row */}
+              <div className={`flex items-center gap-1 rounded-lg transition-colors ${projectActive ? "bg-zinc-800/60" : "hover:bg-zinc-800/30"}`}>
+                <Link href={projectBase}
+                  onClick={() => setMobileOpen(false)}
+                  className={`flex items-center gap-2 px-3 py-1.5 text-sm flex-1 min-w-0 ${project.color}`}>
+                  <span className="text-sm shrink-0">{project.emoji}</span>
+                  <span className="truncate">{project.label}</span>
+                </Link>
+                <button onClick={() => toggleProject(project.id)}
+                  className="px-1.5 py-1.5 text-zinc-600 hover:text-zinc-400 shrink-0 transition-colors">
+                  {isExpanded ? <ChevronDown className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
+                </button>
+              </div>
+
+              {/* Sub-nav */}
+              {isExpanded && (
+                <div className="space-y-0.5 mt-0.5">
+                  {PROJECT_SUB.map(sub => (
+                    <NavLink key={sub.suffix}
+                      href={`${projectBase}${sub.suffix}`}
+                      emoji={sub.emoji} label={sub.label}
+                      indent color="text-zinc-500" />
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </nav>
+
+      {/* Status */}
+      <div className="px-4 py-3 border-t border-zinc-800 shrink-0">
+        <div className="flex items-center gap-2 text-xs text-zinc-500">
+          <span className="w-2 h-2 rounded-full bg-green-500" />
+          Orion online
+        </div>
+      </div>
+    </aside>
+  );
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white flex">
       {/* Mobile overlay */}
-      {open && (
-        <div
-          className="fixed inset-0 bg-black/60 z-40 md:hidden"
-          onClick={() => setOpen(false)}
-        />
-      )}
+      {mobileOpen && <div className="fixed inset-0 bg-black/60 z-40 md:hidden" onClick={() => setMobileOpen(false)} />}
 
-      {/* Sidebar */}
-      <aside
-        className={`fixed md:sticky top-0 left-0 z-50 h-screen w-56 bg-zinc-950 border-r border-zinc-800 flex flex-col transition-transform md:translate-x-0 ${
-          open ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        {/* Logo */}
-        <div className="flex items-center gap-2 px-4 py-5 border-b border-zinc-800">
-          <span className="text-lg">🧠</span>
-          <span className="font-semibold text-sm tracking-tight">Dave Console</span>
-        </div>
+      {/* Desktop sidebar */}
+      <div className="hidden md:block sticky top-0 h-screen shrink-0">{sidebar}</div>
 
-        {/* Nav */}
-        <nav className="flex-1 px-2 overflow-y-auto">
-          {/* GLOBAL */}
-          <SectionLabel label="Global" />
-          <div className="space-y-0.5">
-            {GLOBAL_NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-colors ${
-                  isActivePath(pathname, item.href)
-                    ? "bg-zinc-800 text-white"
-                    : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
-                }`}
-              >
-                <span className="text-base">{item.emoji}</span>
-                {item.label}
-              </Link>
-            ))}
-          </div>
+      {/* Mobile sidebar */}
+      <div className={`fixed top-0 left-0 z-50 h-screen md:hidden transition-transform ${mobileOpen ? "translate-x-0" : "-translate-x-full"}`}>
+        {sidebar}
+      </div>
 
-          {/* PROJECTS */}
-          <SectionLabel label="Projects" />
-          <div className="space-y-0.5">
-            {PROJECTS.map((project) => {
-              const isExpanded = expandedWithActive[project.id] ?? false;
-              const projectActive = project.children.some((c) => isActivePath(pathname, c.href));
-
-              return (
-                <div key={project.id}>
-                  {/* Project row */}
-                  <button
-                    onClick={() => toggleProject(project.id)}
-                    className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-colors ${
-                      projectActive && !isExpanded
-                        ? "bg-zinc-800 text-white"
-                        : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
-                    }`}
-                  >
-                    <span className="text-base">{project.emoji}</span>
-                    <span className="flex-1 text-left">{project.label}</span>
-                    <ChevronRight
-                      className={`w-3.5 h-3.5 text-zinc-600 transition-transform ${
-                        isExpanded ? "rotate-90" : ""
-                      }`}
-                    />
-                  </button>
-
-                  {/* Sub-items */}
-                  {isExpanded && (
-                    <div className="ml-5 pl-3 border-l border-zinc-800 space-y-0.5 mt-0.5 mb-1">
-                      {project.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          onClick={() => setOpen(false)}
-                          className={`flex items-center gap-2 px-2 py-1.5 rounded-md text-xs transition-colors ${
-                            isActivePath(pathname, child.href)
-                              ? "bg-zinc-800 text-white"
-                              : "text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/50"
-                          }`}
-                        >
-                          <span className="text-sm">{child.emoji}</span>
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* SYSTEM */}
-          <SectionLabel label="System" />
-          <div className="space-y-0.5">
-            {SYSTEM_NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-colors ${
-                  isActivePath(pathname, item.href)
-                    ? "bg-zinc-800 text-white"
-                    : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
-                }`}
-              >
-                <span className="text-base">{item.emoji}</span>
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </nav>
-
-        {/* Status */}
-        <div className="px-4 py-3 border-t border-zinc-800">
-          <div className="flex items-center gap-2 text-xs text-zinc-500">
-            <span className="w-2 h-2 rounded-full bg-green-500" />
-            Dave online
-          </div>
-        </div>
-      </aside>
-
-      {/* Main content */}
+      {/* Main */}
       <div className="flex-1 min-w-0">
-        {/* Mobile header */}
         <header className="sticky top-0 z-30 flex items-center gap-3 px-4 py-3 bg-zinc-950/80 backdrop-blur border-b border-zinc-800 md:hidden">
-          <button
-            onClick={() => setOpen(true)}
-            className="p-1.5 rounded-lg hover:bg-zinc-800 text-zinc-400"
-          >
-            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          <button onClick={() => setMobileOpen(o => !o)} className="p-1.5 rounded-lg hover:bg-zinc-800 text-zinc-400">
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
-          <span className="text-sm font-semibold">🧠 Dave Console</span>
+          <span className="text-sm font-semibold">🔮 Orion OS</span>
         </header>
-
         <main className="max-w-5xl mx-auto px-6 py-8">{children}</main>
       </div>
     </div>

@@ -1,0 +1,109 @@
+{
+  "projectId": "studio",
+  "updatedAt": "2026-03-08",
+  "milestones": [
+    {
+      "id": "m1",
+      "title": "Phase 1 — Live",
+      "description": "Projects, Storyboard, Characters, Locations, Generate",
+      "targetDate": "2026-03-07",
+      "status": "done",
+      "sprints": [
+        {
+          "id": "s1",
+          "title": "Studio v2 Launch",
+          "status": "done",
+          "tasks": [
+            {
+              "id": "t1",
+              "title": "Migrate from Netlify/Auth0 to Vercel/Clerk",
+              "status": "done",
+              "assignee": "agent",
+              "notes": [
+                "Old Studio lost DB + repo locked by previous dev",
+                "Clean rewrite as prompt-studio-v2",
+                "Live at ai-promptstudio.net"
+              ]
+            },
+            {
+              "id": "t2",
+              "title": "Neon DB (prompt-studio DB, ep-crimson-lake)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t3",
+              "title": "VISION.md written — full product north star",
+              "status": "done",
+              "assignee": "agent",
+              "notes": [
+                "Location: workspace/projects/studio/VISION.md",
+                "3 project tiers, real directors, concept art pipeline, engine intelligence"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "title": "Phase 2 — Production Floor",
+      "description": "Timeline, scrubber, sequence player, AI co-pilot",
+      "targetDate": "2026-05-01",
+      "status": "queued",
+      "sprints": [
+        {
+          "id": "s2",
+          "title": "Database Rebuild (multi-tenant)",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "t4",
+              "title": "Create new Neon DB with AI-R tenant pattern",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Use workspaces table (not restaurants)",
+                "Reference: agency/projects/studio/db-standards.md",
+                "AI-R pattern is better than old Studio pattern — use it"
+              ]
+            },
+            {
+              "id": "t5",
+              "title": "workspace_users join table with roles",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "roles: owner, admin, member"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "title": "Concept Art Pipeline",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "t6",
+              "title": "AI extracts characters/locations/wardrobe from treatment",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": []
+            },
+            {
+              "id": "t7",
+              "title": "Generate reference images → lock as reference assets",
+              "status": "queued",
+              "assignee": "agent",
+              "notes": [
+                "Shot consistency across Time Trek episodes"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "c-1",
+    "entity": "AI-R MCP Tools",
+    "claim1": "MCP Tools: 0 built, 5 designed (analyze_menu, estimate_plate_cost, compare_to_market, save_agent_learning, get_agent_learnings) (agency/PORTFOLIO.md)",
+    "claim2": "MCP tools: analyze_menu, estimate_plate_cost, compare_to_market, save_agent_learning, get_agent_learnings (agency/ROSTER.md)",
+    "severity": "high",
+    "detectedAt": "2026-03-08",
+    "status": "resolved",
+    "resolution": "Clarified: MCP tools designed but not yet built. Updated ROSTER.md to say \"designed, 0 built yet\""
+  },
+  {
+    "id": "c-2",
+    "entity": "AI-R Agent Status",
+    "claim1": "Status: Active — demo wizard built, MCP architecture defined, agent specs written. Blocked on OPENAI_API_KEY for AI menu analysis. (agency/PORTFOLIO.md)",
+    "claim2": "Status: draft (agency/ROSTER.md)",
+    "severity": "high",
+    "detectedAt": "2026-03-08",
+    "status": "resolved",
+    "resolution": "Updated ROSTER.md agent statuses from draft → active (Maestro, Liam, Concierge) and draft → planned (Molly, Magellan)"
+  }
+]

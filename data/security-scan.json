@@ -1,0 +1,132 @@
+{
+  "lastRun": "2026-03-09T02:42:33.005Z",
+  "score": 10,
+  "findings": [
+    {
+      "id": "s001",
+      "severity": "high",
+      "check": "secrets_in_md",
+      "description": "Possible secret found near keyword in memory/2026-02-25.md",
+      "file": "memory/2026-02-25.md",
+      "line": 31,
+      "status": "open"
+    },
+    {
+      "id": "s002",
+      "severity": "high",
+      "check": "secrets_in_md",
+      "description": "Possible secret found near keyword in memory/2026-03-07.md",
+      "file": "memory/2026-03-07.md",
+      "line": 36,
+      "status": "open"
+    },
+    {
+      "id": "s003",
+      "severity": "high",
+      "check": "secrets_in_md",
+      "description": "Possible secret found near keyword in memory/2026-03-07.md",
+      "file": "memory/2026-03-07.md",
+      "line": 79,
+      "status": "open"
+    },
+    {
+      "id": "s004",
+      "severity": "high",
+      "check": "secrets_in_md",
+      "description": "Possible secret found near keyword in memory/2026-03-08.md",
+      "file": "memory/2026-03-08.md",
+      "line": 54,
+      "status": "open"
+    },
+    {
+      "id": "s005",
+      "severity": "medium",
+      "check": "missing_tenant_id",
+      "description": "Table \"modifier_options\" missing restaurant_id column",
+      "file": "database/schema.sql",
+      "line": 316,
+      "status": "open"
+    },
+    {
+      "id": "s006",
+      "severity": "medium",
+      "check": "missing_tenant_id",
+      "description": "Table \"menu_item_modifier_groups\" missing restaurant_id column",
+      "file": "database/schema.sql",
+      "line": 340,
+      "status": "open"
+    },
+    {
+      "id": "s007",
+      "severity": "medium",
+      "check": "missing_tenant_id",
+      "description": "Table \"recipes\" missing restaurant_id column",
+      "file": "database/schema.sql",
+      "line": 463,
+      "status": "open"
+    },
+    {
+      "id": "s008",
+      "severity": "medium",
+      "check": "missing_tenant_id",
+      "description": "Table \"recipe_ingredients\" missing restaurant_id column",
+      "file": "database/schema.sql",
+      "line": 489,
+      "status": "open"
+    },
+    {
+      "id": "s009",
+      "severity": "medium",
+      "check": "missing_tenant_id",
+      "description": "Table \"purchase_order_items\" missing restaurant_id column",
+      "file": "database/schema.sql",
+      "line": 593,
+      "status": "open"
+    },
+    {
+      "id": "s010",
+      "severity": "medium",
+      "check": "missing_tenant_id",
+      "description": "Table \"floor_plan_elements\" missing restaurant_id column",
+      "file": "database/schema.sql",
+      "line": 643,
+      "status": "open"
+    },
+    {
+      "id": "s011",
+      "severity": "medium",
+      "check": "missing_tenant_id",
+      "description": "Table \"transaction_items\" missing restaurant_id column",
+      "file": "database/schema.sql",
+      "line": 1036,
+      "status": "open"
+    },
+    {
+      "id": "s012",
+      "severity": "medium",
+      "check": "missing_tenant_id",
+      "description": "Table \"payments\" missing restaurant_id column",
+      "file": "database/schema.sql",
+      "line": 1088,
+      "status": "open"
+    },
+    {
+      "id": "s013",
+      "severity": "medium",
+      "check": "missing_tenant_id",
+      "description": "Table \"transaction_discounts\" missing restaurant_id column",
+      "file": "database/schema.sql",
+      "line": 1128,
+      "status": "open"
+    },
+    {
+      "id": "s014",
+      "severity": "medium",
+      "check": "missing_tenant_id",
+      "description": "Table \"integration_sync_logs\" missing restaurant_id column",
+      "file": "database/schema.sql",
+      "line": 1344,
+      "status": "open"
+    }
+  ]
+}
