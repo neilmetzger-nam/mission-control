@@ -14,6 +14,7 @@ const GLOBAL_NAV = [
   { href: "/security", label: "Security", emoji: "🔒" },
   { href: "/memory", label: "Memory", emoji: "🧠" },
   { href: "/config", label: "Config", emoji: "⚙️" },
+  { href: "/briefing", label: "Briefing", emoji: "📋", highlight: true },
 ];
 
 const PROJECTS = [
@@ -26,6 +27,10 @@ const PROJECTS = [
 ];
 
 const PROJECT_SUB = [
+  { suffix: "/roadmap", label: "Roadmap", emoji: "🗺️" },
+  { suffix: "/timeline", label: "Timeline", emoji: "📅" },
+  { suffix: "/ideas", label: "Ideas", emoji: "💡" },
+  { suffix: "/research", label: "Research", emoji: "🔬" },
   { suffix: "", label: "Plan", emoji: "📋" },
   { suffix: "/review", label: "Review Queue", emoji: "🔄" },
   { suffix: "/agents", label: "Agent Activity", emoji: "🤖" },
