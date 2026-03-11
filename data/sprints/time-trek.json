@@ -1,1 +1,154 @@
-{ "projectId": "time-trek", "milestones": [] }
+{
+  "projectId": "time-trek",
+  "updatedAt": "2026-03-11",
+  "milestones": [
+    {
+      "id": "m0",
+      "title": "Phase 0 — Foundation",
+      "description": "Episode 1 shippable. Internal demo quality.",
+      "targetDate": "2026-03-21",
+      "status": "in-progress",
+      "sprints": [
+        {
+          "id": "s1",
+          "title": "Sprint 1 — Pipeline + Audio",
+          "status": "in-progress",
+          "tasks": [
+            {
+              "id": "t1",
+              "title": "Game Bible written and locked",
+              "status": "done",
+              "assignee": "agent",
+              "notes": ["docs/time-trek/GAME_BIBLE.md", "Flash/Hero/GuildHall/Regen mechanics", "Miyagi Style + Hero Scene confirmed"]
+            },
+            {
+              "id": "t2",
+              "title": "Episode 1 curriculum mapped (10 vocab items)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": ["docs/time-trek/episode-1-curriculum.md", "All items pulled from transcript"]
+            },
+            {
+              "id": "t3",
+              "title": "API keys wired (EL, Fal, Deepgram)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": ["All 3 keys in BuilderIO .env", "Tested and confirmed live"]
+            },
+            {
+              "id": "t4",
+              "title": "EL voice IDs mapped (10 voices)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": ["Ranbir, Aeon Index, Sentinel Colonel/Lt/Comms, Samurai, Japanese voices"]
+            },
+            {
+              "id": "t5",
+              "title": "35 Episode 1 audio files generated",
+              "status": "done",
+              "assignee": "agent",
+              "notes": ["10 vocab x 3 speeds + 5 Ranbir mission lines", "Committed to git: public/audio/ep1/"]
+            },
+            {
+              "id": "t6",
+              "title": "PM2 dev servers running (5 servers)",
+              "status": "done",
+              "assignee": "agent",
+              "notes": ["air-web:3000, mc:3001, orion:3002, studio-api:4000, studio-ui:8080", "Auto-restart on reboot via launchd"]
+            },
+            {
+              "id": "t7",
+              "title": "Map Episode 1 into Prompt Studio storyboard",
+              "status": "todo",
+              "assignee": "agent",
+              "notes": ["8 scenes needed", "2 missing: market scene + victory outro"]
+            },
+            {
+              "id": "t8",
+              "title": "Generate 2 missing video scenes via Fal",
+              "status": "todo",
+              "assignee": "agent",
+              "notes": ["Market scene (feudal Japan crowd)", "Victory outro (spire restored)"]
+            },
+            {
+              "id": "t9",
+              "title": "Build review queue UI in Prompt Studio",
+              "status": "todo",
+              "assignee": "agent",
+              "notes": ["Thin wrapper over existing video-rating.ts route", "Approve/Reject/Regen buttons"]
+            },
+            {
+              "id": "t10",
+              "title": "ffmpeg mux pipeline (video + EL audio)",
+              "status": "todo",
+              "assignee": "agent",
+              "notes": ["Server-side mux", "Output to R2/CDN"]
+            },
+            {
+              "id": "t11",
+              "title": "Anchor mechanic UI (temporal alignment bar)",
+              "status": "todo",
+              "assignee": "agent",
+              "notes": ["Red/Blue/Gold color system", "Pulses on player speech"]
+            },
+            {
+              "id": "t12",
+              "title": "Pronunciation scoring (Deepgram + phonetic match)",
+              "status": "todo",
+              "assignee": "agent",
+              "notes": ["Deepgram key wired", "Japanese phonetic matching needs tuning"]
+            },
+            {
+              "id": "t13",
+              "title": "Get Tomoe season treatments from Neil's daughter (Thailand)",
+              "status": "waiting",
+              "assignee": "neil",
+              "notes": ["She is in Thailand, will send when available"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "title": "Phase 1 — Game Shell",
+      "description": "Next.js web shell + Unity bridge. iPhone playable.",
+      "targetDate": "2026-04-04",
+      "status": "queued",
+      "sprints": []
+    },
+    {
+      "id": "m2",
+      "title": "Phase 2 — Content Pipeline",
+      "description": "Episode 2+ fast and repeatable.",
+      "targetDate": "2026-04-18",
+      "status": "queued",
+      "sprints": []
+    },
+    {
+      "id": "m3",
+      "title": "Phase 3 — Launch",
+      "description": "Public beta. First paying users.",
+      "targetDate": "2026-05-01",
+      "status": "queued",
+      "sprints": []
+    }
+  ],
+  "delegated": [
+    {
+      "item": "Tomoe season treatments",
+      "waitingOn": "Neil's daughter (Thailand)",
+      "since": "2026-03-11",
+      "staleAfterDays": 3
+    }
+  ],
+  "keyLinks": {
+    "gameplayVideo": "https://youtu.be/m-AABG1mGt4",
+    "introVideo": "https://youtu.be/i7Ia8fo8Vps",
+    "website": "https://timetrekgame.com",
+    "gameBible": "docs/time-trek/GAME_BIBLE.md",
+    "gdd": "docs/time-trek/GDD-nov2025.txt",
+    "audioFiles": "public/audio/ep1/",
+    "repo": "https://github.com/neilmetzger-nam/prompt-studio"
+  }
+}
