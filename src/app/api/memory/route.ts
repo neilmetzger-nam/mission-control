@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
+const IS_CLOUD = process.env.NEXT_PUBLIC_IS_CLOUD === "true";
 const WORKSPACE = process.env.HOME
   ? path.join(process.env.HOME, ".openclaw", "workspace")
   : "/Users/neilmetzger/.openclaw/workspace";
@@ -14,6 +15,10 @@ export interface MemoryFile {
 }
 
 export async function GET() {
+  if (IS_CLOUD) {
+    return NextResponse.json({ longTermMemory: "", files: [], _cloud: true });
+  }
+
   const memoryDir = path.join(WORKSPACE, "memory");
   const memoryMdPath = path.join(WORKSPACE, "MEMORY.md");
 

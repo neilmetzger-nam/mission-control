@@ -7,6 +7,7 @@ interface Task {
   title: string;
   status: string;
   assignee: string;
+  migration_notes?: string;
 }
 
 interface Sprint {
@@ -30,15 +31,21 @@ const STATUS_ORDER = ["queued", "agent-working", "needs-review", "done", "blocke
 
 const STATUS_STYLES: Record<string, string> = {
   queued: "bg-zinc-700 text-zinc-300",
+  "in-progress": "bg-blue-500/20 text-blue-400 border border-blue-500/30",
   "agent-working": "bg-blue-500/20 text-blue-400 border border-blue-500/30 animate-pulse",
   "needs-review": "bg-yellow-500/20 text-yellow-400 border border-yellow-500/30",
   done: "bg-green-500/20 text-green-400 border border-green-500/30",
   blocked: "bg-red-500/20 text-red-400 border border-red-500/30",
+  ready_for_staging: "bg-amber-500/20 text-amber-400 border border-amber-500/30",
+  in_staging: "bg-purple-500/20 text-purple-400 border border-purple-500/30",
+  in_prod: "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30",
 };
 
 const ASSIGNEE_LABELS: Record<string, string> = {
   agent: "\u{1F916} Agent",
   human: "\u{1F464} Human",
+  neil: "\u{1F464} Neil",
+  obie: "\u{1F477} Obie",
   tbd: "\u2753 TBD",
 };
 
@@ -47,6 +54,11 @@ export default function SprintBoard({ params }: { params: Promise<{ id: string }
   const [data, setData] = useState<SprintData | null>(null);
   const [activeMilestone, setActiveMilestone] = useState(0);
   const [error, setError] = useState("");
+
+  // Staging modal state
+  const [stagingModal, setStagingModal] = useState<{ taskId: string; title: string } | null>(null);
+  const [migrationNotes, setMigrationNotes] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     fetch(`/api/sprints/${id}`)
@@ -62,16 +74,17 @@ export default function SprintBoard({ params }: { params: Promise<{ id: string }
     const nextIdx = (STATUS_ORDER.indexOf(currentStatus) + 1) % STATUS_ORDER.length;
     const nextStatus = STATUS_ORDER[nextIdx];
 
-    const res = await fetch(`/api/sprints/${id}`, {
+    const res = await fetch(`/api/sprints/${id}/task/${taskId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ taskId, status: nextStatus }),
+      body: JSON.stringify({ status: nextStatus }),
     });
 
     if (res.ok) {
       setData((prev) => {
         if (!prev) return prev;
         const updated = JSON.parse(JSON.stringify(prev));
+
         for (const ms of updated.milestones) {
           for (const sprint of ms.sprints) {
             for (const task of sprint.tasks) {
@@ -79,9 +92,49 @@ export default function SprintBoard({ params }: { params: Promise<{ id: string }
             }
           }
         }
+
         return updated;
       });
     }
+  }
+
+  async function markReadyForStaging() {
+    if (!stagingModal) return;
+    setSubmitting(true);
+
+    const body: Record<string, string> = { status: "ready_for_staging" };
+
+    if (migrationNotes.trim()) body.migration_notes = migrationNotes.trim();
+
+    const res = await fetch(`/api/sprints/${id}/task/${stagingModal.taskId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+
+    if (res.ok) {
+      setData((prev) => {
+        if (!prev) return prev;
+        const updated = JSON.parse(JSON.stringify(prev));
+
+        for (const ms of updated.milestones) {
+          for (const sprint of ms.sprints) {
+            for (const task of sprint.tasks) {
+              if (task.id === stagingModal.taskId) {
+                task.status = "ready_for_staging";
+                if (migrationNotes.trim()) task.migration_notes = migrationNotes.trim();
+              }
+            }
+          }
+        }
+
+        return updated;
+      });
+    }
+
+    setStagingModal(null);
+    setMigrationNotes("");
+    setSubmitting(false);
   }
 
   if (error) {
@@ -99,9 +152,10 @@ export default function SprintBoard({ params }: { params: Promise<{ id: string }
 
   const milestone = data.milestones[activeMilestone];
   const allTasks = data.milestones.flatMap((ms) => ms.sprints.flatMap((s) => s.tasks));
-  const doneCount = allTasks.filter((t) => t.status === "done").length;
-  const inProgressCount = allTasks.filter((t) => t.status === "agent-working").length;
+  const doneCount = allTasks.filter((t) => t.status === "done" || t.status === "in_prod").length;
+  const inProgressCount = allTasks.filter((t) => t.status === "agent-working" || t.status === "in-progress").length;
   const blockedCount = allTasks.filter((t) => t.status === "blocked").length;
+  const stagingCount = allTasks.filter((t) => t.status === "ready_for_staging" || t.status === "in_staging").length;
 
   return (
     <>
@@ -113,6 +167,9 @@ export default function SprintBoard({ params }: { params: Promise<{ id: string }
           <span className="text-green-400">{doneCount} done</span>
           <span className="text-blue-400">{inProgressCount} in progress</span>
           <span className="text-red-400">{blockedCount} blocked</span>
+          {stagingCount > 0 && (
+            <span className="text-amber-400">{stagingCount} staging</span>
+          )}
         </div>
       </div>
 
@@ -153,6 +210,14 @@ export default function SprintBoard({ params }: { params: Promise<{ id: string }
                       {task.status}
                     </button>
                     <span className="flex-1 text-sm text-zinc-300">{task.title}</span>
+                    {task.status === "done" && (
+                      <button
+                        onClick={() => setStagingModal({ taskId: task.id, title: task.title })}
+                        className="text-[10px] px-2 py-1 rounded bg-amber-500/20 text-amber-400 hover:bg-amber-500/30 transition whitespace-nowrap"
+                      >
+                        &rarr; Stage
+                      </button>
+                    )}
                     <span className="text-xs text-zinc-500">
                       {ASSIGNEE_LABELS[task.assignee] || ASSIGNEE_LABELS.tbd}
                     </span>
@@ -164,6 +229,46 @@ export default function SprintBoard({ params }: { params: Promise<{ id: string }
         </div>
       ) : (
         <div className="text-center py-12 text-zinc-500 text-sm">No milestones yet</div>
+      )}
+
+      {/* Staging Modal */}
+      {stagingModal && (
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+          <div className="bg-zinc-900 border border-zinc-700 rounded-xl w-full max-w-md p-6">
+            <h3 className="text-lg font-bold mb-1">Mark Ready for Staging</h3>
+            <p className="text-sm text-zinc-400 mb-4">{stagingModal.title}</p>
+
+            <label className="block text-xs text-zinc-500 mb-1">
+              Migration notes (optional)
+            </label>
+            <textarea
+              className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-amber-500 resize-none"
+              placeholder="e.g. Run db/migrations/xyz.sql before pulling..."
+              rows={3}
+              value={migrationNotes}
+              onChange={(e) => setMigrationNotes(e.target.value)}
+            />
+
+            <div className="flex justify-end gap-2 mt-4">
+              <button
+                className="px-4 py-2 text-sm text-zinc-400 hover:text-white transition"
+                onClick={() => {
+                  setStagingModal(null);
+                  setMigrationNotes("");
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                className="px-4 py-2 text-sm font-bold bg-amber-500 text-black rounded-lg hover:bg-amber-400 transition disabled:opacity-50"
+                disabled={submitting}
+                onClick={markReadyForStaging}
+              >
+                {submitting ? "Updating..." : "Confirm"}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </>
   );

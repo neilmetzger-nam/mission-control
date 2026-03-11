@@ -23,7 +23,7 @@ export default function BriefingPage() {
           <li>- Dark zinc theme: zinc-900/800/700 backgrounds.</li>
           <li>- Working branch: feature/beta-onboarding. Never push to main directly.</li>
           <li>- Test files live in ~/Desktop/AIR-Web/tests/</li>
-          <li>- If uncertain, write a comment and move on. Don&apos;t block on ambiguity.</li>
+          <li>- If uncertain, write a comment and move on. Don&apos;t block on ambiguity.</li>          <li>- <strong>BEFORE ENDING ANY SESSION:</strong> Update ~/Desktop/mission-control/data/sprints/ai-r.json — mark completed tasks as done, add new tasks if built. No silent changes.</li>          <li>- Every feature built = sprint entry. Every bug fixed = sprint entry. Dave reads this to brief Neil each morning.</li>          <li>- <strong>Always git push after committing.</strong> Never leave commits unpushed. Vercel auto-deploys on push — if you don't push, nothing deploys.</li>
         </ul>
       </section>
 

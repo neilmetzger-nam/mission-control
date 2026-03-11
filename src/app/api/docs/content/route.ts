@@ -16,7 +16,11 @@ function isAllowed(filePath: string): boolean {
   return ALLOWED_ROOTS.some((root) => resolved.startsWith(root)) && resolved.endsWith(".md");
 }
 
+const IS_CLOUD = process.env.NEXT_PUBLIC_IS_CLOUD === "true";
+
 export async function GET(req: NextRequest) {
+  if (IS_CLOUD) return NextResponse.json({ content: "", _cloud: true });
+
   const filePath = req.nextUrl.searchParams.get("path");
 
   if (!filePath) {

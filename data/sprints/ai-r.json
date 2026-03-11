@@ -240,7 +240,7 @@
         {
           "id": "s8",
           "title": "Upsell Engine",
-          "status": "in-progress",
+          "status": "done",
           "tasks": [
             {
               "id": "t35",
@@ -260,24 +260,24 @@
             {
               "id": "t38",
               "title": "/home/upsells control panel for owner",
-              "status": "queued"
+              "status": "done"
             },
             {
               "id": "t39",
               "title": "Co-purchase SQL analysis \u2014 nightly refresh",
-              "status": "queued"
+              "status": "done"
             },
             {
               "id": "t40",
               "title": "Liam auto-generates pairings on menu import",
-              "status": "queued"
+              "status": "done"
             }
           ]
         },
         {
           "id": "s9",
           "title": "Delivery Statement Intelligence",
-          "status": "in-progress",
+          "status": "done",
           "tasks": [
             {
               "id": "t41",
@@ -297,7 +297,7 @@
             {
               "id": "t44",
               "title": "Grubhub parser",
-              "status": "queued"
+              "status": "done"
             }
           ]
         },
@@ -328,13 +328,42 @@
             },
             {
               "id": "t49",
-              "title": "9 remaining tables need restaurant_id",
-              "status": "queued"
+              "title": "7 remaining tables migrated to restaurant_id",
+              "status": "done",
+              "migration_notes": "Run db/migrations/add-restaurant-id-remaining.sql against staging DB before pulling neil branch"
             },
             {
               "id": "t50",
               "title": "Red Bar Middleburg tenant setup",
-              "status": "queued"
+              "status": "in-progress"
+            }
+          ]
+        },
+        {
+          "id": "s18",
+          "title": "Engineering Handoff (mc.ai-restaurant.net)",
+          "status": "in-progress",
+          "tasks": [
+            {
+              "id": "t81",
+              "title": "Vercel-ready data layer",
+              "status": "done"
+            },
+            {
+              "id": "t82",
+              "title": "ready_for_staging workflow",
+              "status": "done"
+            },
+            {
+              "id": "t83",
+              "title": "/engineering page for Obie",
+              "status": "done"
+            },
+            {
+              "id": "t84",
+              "title": "GitHub repo + deploy to mc.ai-restaurant.net",
+              "status": "queued",
+              "assignee": "neil"
             }
           ]
         }

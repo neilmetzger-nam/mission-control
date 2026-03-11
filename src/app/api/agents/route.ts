@@ -51,7 +51,11 @@ function parseTable(lines: string[], section: string): AgentEntry[] {
   return agents;
 }
 
+const IS_CLOUD = process.env.NEXT_PUBLIC_IS_CLOUD === "true";
+
 export async function GET() {
+  if (IS_CLOUD) return NextResponse.json({ agents: [], raw: "", _cloud: true });
+
   const rosterPath = path.join(WORKSPACE, "agency", "ROSTER.md");
 
   if (!fs.existsSync(rosterPath)) {

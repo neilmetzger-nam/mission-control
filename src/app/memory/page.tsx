@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 
 interface FileNode { name: string; type: "file"|"dir"; path: string; size?: number; children?: FileNode[]; }
 
-type Section = "memory" | "ideas" | "daily" | "files";
+type Section = "memory" | "rules" | "ideas" | "daily" | "files";
 
 interface DayEntry { date: string; content: string; }
 
@@ -187,7 +187,16 @@ function FileTree({ nodes, expandedDirs, setExpandedDirs, onSelect, depth = 0 }:
 }
 
 export default function MemoryPage() {
+  return (
+    <Suspense fallback={<div className="text-center py-12 text-zinc-500 text-sm">Loading...</div>}>
+      <MemoryPageInner />
+    </Suspense>
+  );
+}
+
+function MemoryPageInner() {
   const [section, setSection] = useState<Section>("memory");
+  const [rules, setRules] = useState<Record<string,string>>({});
   const [memorySections, setMemorySections] = useState<{ title: string; content: string }[]>([]);
   const [ideas, setIdeas] = useState<{ title: string; content: string; priority: string }[]>([]);
   const [days, setDays] = useState<DayEntry[]>([]);
@@ -195,7 +204,7 @@ export default function MemoryPage() {
   const [loading, setLoading] = useState(false);
   const [fileTree, setFileTree] = useState<FileNode[]>([]);
   const [openFile, setOpenFile] = useState<{path:string;content:string}|null>(null);
-  const [expandedDirs, setExpandedDirs] = useState<Set<string>>(new Set([""]));  
+  const [expandedDirs, setExpandedDirs] = useState<Set<string>>(new Set([""]));
   const searchParams = useSearchParams();
 
   // Auto-open file from ?file= param
@@ -216,6 +225,9 @@ export default function MemoryPage() {
         setMemorySections(parseMemorySections(d.content));
         setLoading(false);
       });
+    } else if (section === "rules") {
+      setLoading(true);
+      fetch("/api/workspace?section=rules").then(r => r.json()).then(d => { setRules(d); setLoading(false); });
     } else if (section === "ideas") {
       fetch("/api/workspace?section=ideas").then(r => r.json()).then(d => {
         setIdeas(parseIdeas(d.content));
@@ -237,7 +249,8 @@ export default function MemoryPage() {
   }, [section]);
 
   const tabs: { id: Section; label: string; emoji: string }[] = [
-    { id: "memory", label: "Long-term Memory", emoji: "🧠" },
+    { id: "memory", label: "Memory", emoji: "🧠" },
+    { id: "rules", label: "Rules", emoji: "⚙️" },
     { id: "ideas", label: "Ideas Board", emoji: "💡" },
     { id: "daily", label: "Daily Logs", emoji: "📅" },
     { id: "files", label: "My Files", emoji: "🗂️" },
@@ -281,6 +294,26 @@ export default function MemoryPage() {
       {section === "memory" && !loading && (
         <div className="space-y-2">
           {filteredMemory.map((s, i) => <MemorySection key={i} title={s.title} content={s.content} />)}
+        </div>
+      )}
+
+      {/* Rules */}
+      {section === "rules" && !loading && (
+        <div className="space-y-3">
+          {Object.entries(rules).map(([key, content]) => (
+            <div key={key} className="rounded-xl border border-zinc-800 bg-zinc-900/40">
+              <div className="px-4 py-3 border-b border-zinc-800">
+                <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-wider">{
+                  key === "heartbeat" ? "⏱ Heartbeat Rules" :
+                  key === "agents" ? "🤖 Agent Behaviour" :
+                  key === "soul" ? "✨ Soul (Who I Am)" :
+                  key === "handoff" ? "🔁 Current Handoff" :
+                  key === "tools" ? "🛠 Tools & Config" : key
+                }</h3>
+              </div>
+              <pre className="px-4 py-3 text-xs text-zinc-400 whitespace-pre-wrap font-mono leading-relaxed overflow-x-auto">{content}</pre>
+            </div>
+          ))}
         </div>
       )}
 

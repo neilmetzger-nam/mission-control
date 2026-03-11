@@ -2,11 +2,16 @@ import { NextResponse } from "next/server";
 import { readFileSync, readdirSync, statSync, existsSync } from "fs";
 import { join } from "path";
 
-const WORKSPACE = "/Users/neilmetzger/.openclaw/workspace";
+const IS_CLOUD = process.env.NEXT_PUBLIC_IS_CLOUD === "true";
+const WORKSPACE = IS_CLOUD
+  ? ""
+  : (process.env.HOME
+      ? join(process.env.HOME, ".openclaw", "workspace")
+      : "/Users/neilmetzger/.openclaw/workspace");
 const IGNORE = ["node_modules", ".git", ".next", "avatars", "__pycache__", "docs"];
 
 function tree(dir: string, depth = 0): object[] {
-  if (depth > 4) return [];
+  if (IS_CLOUD || depth > 4) return [];
   try {
     const entries = readdirSync(dir);
     return entries
@@ -23,6 +28,8 @@ function tree(dir: string, depth = 0): object[] {
 }
 
 export async function GET(req: Request) {
+  if (IS_CLOUD) return NextResponse.json({ tree: [], _cloud: true });
+
   const { searchParams } = new URL(req.url);
   const filePath = searchParams.get("path");
   if (filePath) {

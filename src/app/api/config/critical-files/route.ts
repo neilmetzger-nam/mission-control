@@ -24,7 +24,13 @@ export interface CriticalFile {
   sizeKb: number | null;
 }
 
+const IS_CLOUD = process.env.NEXT_PUBLIC_IS_CLOUD === "true";
+
 export async function GET() {
+  if (IS_CLOUD) {
+    return NextResponse.json({ files: CRITICAL_FILES.map(e => ({ path: e.path, label: e.label, exists: false, lastModified: null, sizeKb: null })), _cloud: true });
+  }
+
   const results: CriticalFile[] = CRITICAL_FILES.map((entry) => {
     const fullPath = path.join(HOME, entry.path);
     try {

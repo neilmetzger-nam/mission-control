@@ -51,7 +51,11 @@ export interface DocEntry {
   filename: string;
 }
 
+const IS_CLOUD = process.env.NEXT_PUBLIC_IS_CLOUD === "true";
+
 export async function GET() {
+  if (IS_CLOUD) return NextResponse.json([]);
+
   const docs: DocEntry[] = [];
 
   for (const { dir, project } of SCAN_PATHS) {

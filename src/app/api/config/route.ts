@@ -8,6 +8,7 @@ const ENV_KEYS = [
   { key: "VERCEL_PROJECT_ID", label: "Vercel Project ID (AIR-Web)", required: true },
 ];
 
+const IS_CLOUD = process.env.NEXT_PUBLIC_IS_CLOUD === "true";
 const SKILLS_DIR = "/Users/neilmetzger/.nvm/versions/node/v22.21.1/lib/node_modules/openclaw/skills/";
 
 export interface EnvStatus {
@@ -27,6 +28,7 @@ export async function GET() {
   }));
 
   let skills: SkillEntry[] = [];
+  if (IS_CLOUD) return NextResponse.json({ envStatus, skills, _cloud: true });
   try {
     const entries = fs.readdirSync(SKILLS_DIR);
     skills = entries

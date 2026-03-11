@@ -26,7 +26,11 @@ function parseStatus(raw: string): { status: string; statusEmoji: string } {
   return { status: raw.trim(), statusEmoji: "" };
 }
 
+const IS_CLOUD = process.env.NEXT_PUBLIC_IS_CLOUD === "true";
+
 export async function GET(req: Request) {
+  if (IS_CLOUD) return NextResponse.json({ issues: [], raw: "", _cloud: true });
+
   const { searchParams } = new URL(req.url);
   const projectFilter = searchParams.get("project");
   const trackerPath = path.join(WORKSPACE, "agency", "TRACKER.md");
