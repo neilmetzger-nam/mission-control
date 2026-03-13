@@ -9,6 +9,7 @@ const GLOBAL_NAV = [
   { href: "/", label: "Dashboard", emoji: "🏠" },
   { href: "/idea", label: "New Idea", emoji: "💡", highlight: true },
   { href: "/review", label: "Review Queue", emoji: "🔄", badge: true },
+  { href: "/calendar", label: "Calendar", emoji: "📅" },
   { href: "/agents", label: "Agent Activity", emoji: "🤖" },
   { href: "/infrastructure", label: "Infrastructure", emoji: "📊" },
   { href: "/security", label: "Security", emoji: "🔒" },
