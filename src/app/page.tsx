@@ -37,10 +37,13 @@ export default function Home() {
   const [expanded, setExpanded] = useState<string|null>(null);
   const [research, setResearch] = useState<string>("");
   const [researchOpen, setResearchOpen] = useState(false);
+  const [digest, setDigest] = useState<string>("");
+  const [digestOpen, setDigestOpen] = useState(false);
 
   useEffect(() => {
     fetch("/api/roadmap").then(r => r.json()).then(d => setProjects(d.projects ?? []));
     fetch("/api/workspace?section=nightly-research").then(r => r.json()).then(d => setResearch(d.content ?? ""));
+    fetch("/api/workspace?section=daily").then(r => r.json()).then(d => { const today = new Date().toISOString().split("T")[0]; const todayEntry = (d.days ?? []).find((x: {date:string,content:string}) => x.date === today); setDigest(todayEntry?.content ?? ""); });
     fetch("/api/planner").then(r => r.json()).then(d => {
       setTodayCount((d.today ?? []).filter((t: string) => !t.startsWith("~~")).length);
     });
@@ -121,6 +124,25 @@ export default function Home() {
               </div>
             );
           })}
+        </div>
+      </div>
+
+      {/* Session Digest */}
+      <div className="px-4 mt-3">
+        <div className="rounded-xl border border-zinc-800 bg-zinc-900/40">
+          <button onClick={() => setDigestOpen(!digestOpen)}
+            className="w-full flex items-center justify-between px-4 py-3 min-h-[44px]">
+            <div className="flex items-center gap-2">
+              <span className="text-base">📋</span>
+              <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Today's Session Digest</span>
+            </div>
+            <span className="text-zinc-600 text-xs">{digestOpen ? "▲" : "▼"}</span>
+          </button>
+          {digestOpen && (
+            <div className="px-4 pb-4 border-t border-zinc-800/60 pt-3">
+              <pre className="text-xs text-zinc-400 whitespace-pre-wrap leading-relaxed font-mono">{digest || "No digest yet — runs at 11 PM nightly."}</pre>
+            </div>
+          )}
         </div>
       </div>
 
