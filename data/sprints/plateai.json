@@ -93,12 +93,18 @@
   ],
   "updatedAt": "2026-03-13",
   "lastCommit": {
-    "hash": "a02a9b3",
-    "message": "feat: wire Stripe payment link into YES handler, sharper upsell copy, $29/mo",
+    "hash": "64c45fd",
+    "message": "fix: YES handler sends getplateai.com/#pricing — Square checkout already built",
     "branch": "main",
     "date": "2026-03-13"
   },
   "recentCommits": [
+    {
+      "hash": "64c45fd",
+      "message": "fix: YES handler sends getplateai.com/#pricing — Square checkout already built",
+      "branch": "main",
+      "date": "2026-03-13"
+    },
     {
       "hash": "a02a9b3",
       "message": "feat: wire Stripe payment link into YES handler, sharper upsell copy, $29/mo",
