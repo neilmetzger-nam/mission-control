@@ -651,12 +651,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "24c0392",
-    "message": "fix: PhoneOrdersTab polls DB via /api/pwa/orders/active — orders now visible across all devices",
+    "hash": "265f560",
+    "message": "fix: MoreMenu hydration crash (mounted pattern); PhoneOrdersTab error logging",
     "branch": "feature/beta-onboarding",
     "date": "2026-03-13"
   },
   "recentCommits": [
+    {
+      "hash": "265f560",
+      "message": "fix: MoreMenu hydration crash (mounted pattern); PhoneOrdersTab error logging",
+      "branch": "feature/beta-onboarding",
+      "date": "2026-03-13"
+    },
     {
       "hash": "24c0392",
       "message": "fix: PhoneOrdersTab polls DB via /api/pwa/orders/active — orders now visible across all devices",
