@@ -93,12 +93,18 @@
   ],
   "updatedAt": "2026-03-13",
   "lastCommit": {
-    "hash": "ab97a4e",
-    "message": "feat: update pricing — Starter $29.95, Pro $99, Studio $199 — feature descriptions reflect full commercial pipeline",
+    "hash": "4f42fc6",
+    "message": "feat: update all SMS copy — new pricing, commercial pipeline messaging",
     "branch": "main",
     "date": "2026-03-13"
   },
   "recentCommits": [
+    {
+      "hash": "4f42fc6",
+      "message": "feat: update all SMS copy — new pricing, commercial pipeline messaging",
+      "branch": "main",
+      "date": "2026-03-13"
+    },
     {
       "hash": "ab97a4e",
       "message": "feat: update pricing — Starter $29.95, Pro $99, Studio $199 — feature descriptions reflect full commercial pipeline",
