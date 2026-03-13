@@ -58,5 +58,19 @@
       ]
     }
   ],
-  "updatedAt": "2026-03-13"
+  "updatedAt": "2026-03-13",
+  "lastCommit": {
+    "hash": "451387a",
+    "message": "test: MC sync hook validation",
+    "branch": "main",
+    "date": "2026-03-13"
+  },
+  "recentCommits": [
+    {
+      "hash": "451387a",
+      "message": "test: MC sync hook validation",
+      "branch": "main",
+      "date": "2026-03-13"
+    }
+  ]
 }
