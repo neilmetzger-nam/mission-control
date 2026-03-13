@@ -649,5 +649,19 @@
         }
       ]
     }
+  ],
+  "lastCommit": {
+    "hash": "24c0392",
+    "message": "fix: PhoneOrdersTab polls DB via /api/pwa/orders/active — orders now visible across all devices",
+    "branch": "feature/beta-onboarding",
+    "date": "2026-03-13"
+  },
+  "recentCommits": [
+    {
+      "hash": "24c0392",
+      "message": "fix: PhoneOrdersTab polls DB via /api/pwa/orders/active — orders now visible across all devices",
+      "branch": "feature/beta-onboarding",
+      "date": "2026-03-13"
+    }
   ]
 }
