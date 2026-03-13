@@ -655,12 +655,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "296c0be",
-    "message": "fix: iPad scroll + Add to Order error handling + order creation reliability\n\n1. PwaShell: change overflow-hidden to overflow-y-auto on content wrapper\n   so pages can scroll on iPad (overflow-hidden was clipping content)\n\n2. PwaSettingsPanel: add overscroll-y-contain to scroll container for\n   better iOS scroll behavior inside the fixed-position portal\n\n3. PosModal handleDetailAdd: wrap addItemToOrder in try/catch with\n   finally → setSelectedMenuItem(null). Previously, if addItemToOrder\n   threw (API error), the error was an unhandled rejection and the\n   detail sheet never closed — \"nothing happens\" on tap.\n\n4. PosModal handleItemTap quick-add: same try/catch treatment\n\n5. pos-store createPosOrder: remove silent fallback that returned a fake\n   order with a UUID not backed by DB. Now propagates errors so the\n   caller knows creation failed. Previously, all subsequent addItem\n   calls would fail because the order didn't exist in the database.\n\n6. PosModal init effect: show \"Could not start order\" error with Close\n   button when createPosOrder fails, instead of infinite spinner.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "643d931",
+    "message": "fix: remove server_name from transactions INSERT — column does not exist\n\nThe server_name column was added in 452b0db but the DB schema was never\nmigrated, causing a 500 on every order creation attempt.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "feature/beta-onboarding",
     "date": "2026-03-13"
   },
   "recentCommits": [
+    {
+      "hash": "643d931",
+      "message": "fix: remove server_name from transactions INSERT — column does not exist\n\nThe server_name column was added in 452b0db but the DB schema was never\nmigrated, causing a 500 on every order creation attempt.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "feature/beta-onboarding",
+      "date": "2026-03-13"
+    },
     {
       "hash": "296c0be",
       "message": "fix: iPad scroll + Add to Order error handling + order creation reliability\n\n1. PwaShell: change overflow-hidden to overflow-y-auto on content wrapper\n   so pages can scroll on iPad (overflow-hidden was clipping content)\n\n2. PwaSettingsPanel: add overscroll-y-contain to scroll container for\n   better iOS scroll behavior inside the fixed-position portal\n\n3. PosModal handleDetailAdd: wrap addItemToOrder in try/catch with\n   finally → setSelectedMenuItem(null). Previously, if addItemToOrder\n   threw (API error), the error was an unhandled rejection and the\n   detail sheet never closed — \"nothing happens\" on tap.\n\n4. PosModal handleItemTap quick-add: same try/catch treatment\n\n5. pos-store createPosOrder: remove silent fallback that returned a fake\n   order with a UUID not backed by DB. Now propagates errors so the\n   caller knows creation failed. Previously, all subsequent addItem\n   calls would fail because the order didn't exist in the database.\n\n6. PosModal init effect: show \"Could not start order\" error with Close\n   button when createPosOrder fails, instead of infinite spinner.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
