@@ -623,7 +623,9 @@
             {
               "id": "t2",
               "title": "Vercel DB password confirmed fixed",
-              "status": "todo"
+              "status": "done",
+              "completedAt": "2026-03-13",
+              "completedBy": "296c0be"
             },
             {
               "id": "t3",
@@ -653,12 +655,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "f5d1358",
-    "message": "fix: await DB order creation before showing menu — eliminates iPad add-to-order race\n\nThe \"Add to Order\" button was silently failing on iPad because the menu\nwas shown immediately with a local-only order ID while createPosOrder\nran in the background. Handlers polled dbOrderId ref for up to 5s and\nsilently returned if it never resolved.\n\nNow the \"Starting order...\" spinner stays visible until createPosOrder\nreturns a real DB order ID. The menu is only accessible after that, so\norder.id is always valid. Removes dbOrderId ref, polling loops, local\norder seeding, and migration logic.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "296c0be",
+    "message": "fix: iPad scroll + Add to Order error handling + order creation reliability\n\n1. PwaShell: change overflow-hidden to overflow-y-auto on content wrapper\n   so pages can scroll on iPad (overflow-hidden was clipping content)\n\n2. PwaSettingsPanel: add overscroll-y-contain to scroll container for\n   better iOS scroll behavior inside the fixed-position portal\n\n3. PosModal handleDetailAdd: wrap addItemToOrder in try/catch with\n   finally → setSelectedMenuItem(null). Previously, if addItemToOrder\n   threw (API error), the error was an unhandled rejection and the\n   detail sheet never closed — \"nothing happens\" on tap.\n\n4. PosModal handleItemTap quick-add: same try/catch treatment\n\n5. pos-store createPosOrder: remove silent fallback that returned a fake\n   order with a UUID not backed by DB. Now propagates errors so the\n   caller knows creation failed. Previously, all subsequent addItem\n   calls would fail because the order didn't exist in the database.\n\n6. PosModal init effect: show \"Could not start order\" error with Close\n   button when createPosOrder fails, instead of infinite spinner.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "feature/beta-onboarding",
     "date": "2026-03-13"
   },
   "recentCommits": [
+    {
+      "hash": "296c0be",
+      "message": "fix: iPad scroll + Add to Order error handling + order creation reliability\n\n1. PwaShell: change overflow-hidden to overflow-y-auto on content wrapper\n   so pages can scroll on iPad (overflow-hidden was clipping content)\n\n2. PwaSettingsPanel: add overscroll-y-contain to scroll container for\n   better iOS scroll behavior inside the fixed-position portal\n\n3. PosModal handleDetailAdd: wrap addItemToOrder in try/catch with\n   finally → setSelectedMenuItem(null). Previously, if addItemToOrder\n   threw (API error), the error was an unhandled rejection and the\n   detail sheet never closed — \"nothing happens\" on tap.\n\n4. PosModal handleItemTap quick-add: same try/catch treatment\n\n5. pos-store createPosOrder: remove silent fallback that returned a fake\n   order with a UUID not backed by DB. Now propagates errors so the\n   caller knows creation failed. Previously, all subsequent addItem\n   calls would fail because the order didn't exist in the database.\n\n6. PosModal init effect: show \"Could not start order\" error with Close\n   button when createPosOrder fails, instead of infinite spinner.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "feature/beta-onboarding",
+      "date": "2026-03-13"
+    },
     {
       "hash": "f5d1358",
       "message": "fix: await DB order creation before showing menu — eliminates iPad add-to-order race\n\nThe \"Add to Order\" button was silently failing on iPad because the menu\nwas shown immediately with a local-only order ID while createPosOrder\nran in the background. Handlers polled dbOrderId ref for up to 5s and\nsilently returned if it never resolved.\n\nNow the \"Starting order...\" spinner stays visible until createPosOrder\nreturns a real DB order ID. The menu is only accessible after that, so\norder.id is always valid. Removes dbOrderId ref, polling loops, local\norder seeding, and migration logic.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
