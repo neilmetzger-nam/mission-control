@@ -324,100 +324,131 @@
     {
       "id": "m-orion-studio-launch",
       "title": "Orion Studio \u2014 Public Launch",
-      "description": "Productize Mission Control. orionstudio.ai. Eat what we cook.",
-      "targetDate": "2026-04-01",
+      "description": "Productize Mission Control \u2192 orionstudio.ai. Live product by end of March.",
+      "targetDate": "2026-03-31",
       "status": "in-progress",
       "sprints": [
         {
-          "id": "s-os-1",
-          "title": "Phase 1 \u2014 Foundation",
+          "id": "s-os-w1",
+          "title": "Week 1 (Mar 13-16) \u2014 Foundation",
           "status": "in-progress",
           "tasks": [
             {
-              "id": "os1",
-              "title": "Domain secured: orionstudio.ai \u2705",
+              "id": "os-w1-1",
+              "title": "Domain + site live \u2705",
               "status": "done",
               "completedAt": "2026-03-13"
             },
             {
-              "id": "os2",
-              "title": "Product brief written \u2705",
+              "id": "os-w1-2",
+              "title": "Product brief + build plan \u2705",
               "status": "done",
               "completedAt": "2026-03-13"
             },
             {
-              "id": "os3",
-              "title": "Build plan written \u2705",
-              "status": "done",
-              "completedAt": "2026-03-13"
-            },
-            {
-              "id": "os4",
-              "title": "Stand up orionstudio.ai marketing site (one page, waitlist, Intake CTA)",
+              "id": "os-w1-3",
+              "title": "Create dave@orionstudio.ai mailbox (privateemail.com)",
               "status": "todo"
             },
             {
-              "id": "os5",
-              "title": "Build The Intake \u2014 founder data dump \u2192 Dave structures it",
+              "id": "os-w1-4",
+              "title": "Add 'Under the Hood' collapsed section to site",
               "status": "todo"
             },
             {
-              "id": "os6",
-              "title": "Multi-tenant workspace support in MC",
+              "id": "os-w1-5",
+              "title": "Carol demo \u2014 screen share real MC + send orionstudio.ai",
               "status": "todo"
             },
             {
-              "id": "os7",
-              "title": "Onboard Carol as Design Partner #1",
-              "status": "todo"
-            },
-            {
-              "id": "os8",
-              "title": "Carol demo session",
+              "id": "os-w1-6",
+              "title": "Intake form \u2192 dave@orionstudio.ai email capture wired",
               "status": "todo"
             }
           ]
         },
         {
-          "id": "s-os-2",
-          "title": "Phase 2 \u2014 Design Partners",
+          "id": "s-os-w2",
+          "title": "Week 2 (Mar 17-23) \u2014 First Design Partners",
           "status": "queued",
           "tasks": [
             {
-              "id": "os9",
-              "title": "5 founders through The Intake",
+              "id": "os-w2-1",
+              "title": "Run Intake session with Carol (Design Partner #1)",
               "status": "todo"
             },
             {
-              "id": "os10",
-              "title": "Weekly feedback sessions",
+              "id": "os-w2-2",
+              "title": "Build Carol's MC workspace manually",
               "status": "todo"
             },
             {
-              "id": "os11",
-              "title": "Product playbook from sessions",
+              "id": "os-w2-3",
+              "title": "2-3 more design partners from Carol's network",
+              "status": "todo"
+            },
+            {
+              "id": "os-w2-4",
+              "title": "Document Intake process \u2192 playbook",
+              "status": "todo"
+            },
+            {
+              "id": "os-w2-5",
+              "title": "Collect feedback, identify top 3 missing features",
               "status": "todo"
             }
           ]
         },
         {
-          "id": "s-os-3",
-          "title": "Phase 3 \u2014 Public Launch",
+          "id": "s-os-w3",
+          "title": "Week 3 (Mar 24-28) \u2014 Multi-Tenant + Polish",
           "status": "queued",
           "tasks": [
             {
-              "id": "os12",
-              "title": "Stripe billing ($49/$149/mo)",
+              "id": "os-w3-1",
+              "title": "Multi-tenant workspace support (each founder gets their own MC)",
               "status": "todo"
             },
             {
-              "id": "os13",
-              "title": "Self-serve onboarding",
+              "id": "os-w3-2",
+              "title": "Auth layer (Clerk) \u2014 founders log in at orionstudio.ai/dashboard",
               "status": "todo"
             },
             {
-              "id": "os14",
-              "title": "Product Hunt launch",
+              "id": "os-w3-3",
+              "title": "Automated Intake form processing (Dave reads + structures automatically)",
+              "status": "todo"
+            },
+            {
+              "id": "os-w3-4",
+              "title": "Migrate our own MC to orionstudio.ai/dashboard (eat what we cook)",
+              "status": "todo"
+            }
+          ]
+        },
+        {
+          "id": "s-os-w4",
+          "title": "Week 4 (Mar 29-31) \u2014 Launch",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "os-w4-1",
+              "title": "Stripe billing ($49 Solo / $149 Studio)",
+              "status": "todo"
+            },
+            {
+              "id": "os-w4-2",
+              "title": "5 design partners live and paying",
+              "status": "todo"
+            },
+            {
+              "id": "os-w4-3",
+              "title": "Product Hunt launch prep",
+              "status": "todo"
+            },
+            {
+              "id": "os-w4-4",
+              "title": "Carol intro to her network \u2014 soft launch",
               "status": "todo"
             }
           ]
