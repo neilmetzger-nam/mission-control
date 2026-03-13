@@ -93,12 +93,18 @@
   ],
   "updatedAt": "2026-03-13",
   "lastCommit": {
-    "hash": "40e95e2",
-    "message": "feat: Neil approval gate for first 10 images — call + Telegram alert before sending to customer",
+    "hash": "77d9627",
+    "message": "feat: swap Flux for Nano Banana 2 (Google Imagen 3) — hero shot pipeline, keeps item faithful",
     "branch": "main",
     "date": "2026-03-13"
   },
   "recentCommits": [
+    {
+      "hash": "77d9627",
+      "message": "feat: swap Flux for Nano Banana 2 (Google Imagen 3) — hero shot pipeline, keeps item faithful",
+      "branch": "main",
+      "date": "2026-03-13"
+    },
     {
       "hash": "40e95e2",
       "message": "feat: Neil approval gate for first 10 images — call + Telegram alert before sending to customer",
