@@ -1,1 +1,62 @@
-{ "projectId": "plateai", "milestones": [] }
+{
+  "projectId": "plateai",
+  "milestones": [
+    {
+      "id": "m-meta",
+      "title": "Meta Ads Launch",
+      "description": "Facebook ad account, pixel, and first campaign live",
+      "targetDate": "2026-03-20",
+      "status": "in-progress",
+      "sprints": [
+        {
+          "id": "s-meta-1",
+          "title": "Week 1 Setup",
+          "status": "in-progress",
+          "tasks": [
+            {
+              "id": "t1",
+              "title": "Meta Business Manager created",
+              "status": "done"
+            },
+            {
+              "id": "t2",
+              "title": "Ad account + payment card added",
+              "status": "done"
+            },
+            {
+              "id": "t3",
+              "title": "Facebook Page (Plateai) created",
+              "status": "done"
+            },
+            {
+              "id": "t4",
+              "title": "Meta Pixel installed on getplateai.com",
+              "status": "done"
+            },
+            {
+              "id": "t5",
+              "title": "Before/after ad creative composited",
+              "status": "todo"
+            },
+            {
+              "id": "t6",
+              "title": "Campaign 1 live in Ads Manager",
+              "status": "todo"
+            },
+            {
+              "id": "t7",
+              "title": "Instagram account created + connected",
+              "status": "todo"
+            },
+            {
+              "id": "t8",
+              "title": "First lead via ads or outreach",
+              "status": "todo"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-03-13"
+}

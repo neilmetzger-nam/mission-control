@@ -1,5 +1,5 @@
-[
-  {
+{
+  "0": {
     "id": "aa1",
     "timestamp": "2026-03-08T10:22:00Z",
     "agent": "Claude Code",
@@ -8,7 +8,7 @@
     "action": "Completed location-based filtering for restaurant search — added geospatial queries and radius parameter",
     "status": "completed"
   },
-  {
+  "1": {
     "id": "aa2",
     "timestamp": "2026-03-08T09:15:00Z",
     "agent": "Claude Code",
@@ -17,7 +17,7 @@
     "action": "Submitted prompt version history feature for review — 8 files changed",
     "status": "review"
   },
-  {
+  "2": {
     "id": "aa3",
     "timestamp": "2026-03-07T16:40:00Z",
     "agent": "Claude Code",
@@ -26,7 +26,7 @@
     "action": "Pushed auth flow implementation — NextAuth.js + Google OAuth + middleware",
     "status": "review"
   },
-  {
+  "3": {
     "id": "aa4",
     "timestamp": "2026-03-07T11:05:00Z",
     "agent": "Orion MCP",
@@ -35,7 +35,7 @@
     "action": "Synced portfolio metrics — 6 projects indexed, 12 active tasks tracked",
     "status": "completed"
   },
-  {
+  "4": {
     "id": "aa5",
     "timestamp": "2026-03-06T22:30:00Z",
     "agent": "Claude Code",
@@ -43,5 +43,22 @@
     "projectId": "plateai",
     "action": "Scaffolded leads tracker with customer pipeline — CRM tables + API routes",
     "status": "completed"
-  }
-]
+  },
+  "agents": [
+    {
+      "id": "dave",
+      "name": "Dave",
+      "role": "COO / PlateAI CEO",
+      "status": "active",
+      "lastActive": "2026-03-13T09:20:06.613Z",
+      "currentFocus": "PlateAI Meta ads launch + AI-R CFO testing",
+      "recentActions": [
+        "2026-03-13: Meta Pixel deployed to getplateai.com",
+        "2026-03-13: PlateAI Facebook Page + Ad Account created",
+        "2026-03-13: Campaign 1 creative + targeting planned",
+        "2026-03-13: MC sync script refactored (JSON-only, no React edits)"
+      ]
+    }
+  ],
+  "updatedAt": "2026-03-13"
+}

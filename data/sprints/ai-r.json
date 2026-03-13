@@ -1,11 +1,11 @@
 {
   "projectId": "ai-r",
-  "updatedAt": "2026-03-09",
+  "updatedAt": "2026-03-13",
   "milestones": [
     {
       "id": "m1",
       "title": "Demo",
-      "description": "Full demo flow: menu upload \u2192 Gloria \u2192 POS \u2192 kitchen printing",
+      "description": "Full demo flow: menu upload → Gloria → POS → kitchen printing",
       "targetDate": "2026-03-15",
       "status": "done",
       "sprints": [
@@ -21,7 +21,7 @@
             },
             {
               "id": "t2",
-              "title": "Liam menu agent \u2014 LLM-based category matching",
+              "title": "Liam menu agent — LLM-based category matching",
               "status": "done"
             },
             {
@@ -31,7 +31,7 @@
             },
             {
               "id": "t4",
-              "title": "Food photo sync \u2014 Google Drive \u2192 Shopify CDN",
+              "title": "Food photo sync — Google Drive → Shopify CDN",
               "status": "done"
             },
             {
@@ -58,7 +58,7 @@
             },
             {
               "id": "t8",
-              "title": "PaymentModal \u2014 mixed tender, seat-by-seat",
+              "title": "PaymentModal — mixed tender, seat-by-seat",
               "status": "done"
             },
             {
@@ -68,7 +68,7 @@
             },
             {
               "id": "t10",
-              "title": "Offline POS \u2014 all actions work with local-* orders",
+              "title": "Offline POS — all actions work with local-* orders",
               "status": "done"
             },
             {
@@ -85,7 +85,7 @@
           "tasks": [
             {
               "id": "t12",
-              "title": "Pi MCP queue \u2014 Pi polls outbound every 3s",
+              "title": "Pi MCP queue — Pi polls outbound every 3s",
               "status": "done"
             },
             {
@@ -95,7 +95,7 @@
             },
             {
               "id": "t14",
-              "title": "Kitchen ticket \u2192 all 5 kitchen printers confirmed",
+              "title": "Kitchen ticket → all 5 kitchen printers confirmed",
               "status": "done"
             },
             {
@@ -117,12 +117,12 @@
           "tasks": [
             {
               "id": "t17",
-              "title": "Phone-server mode (PhonePOS \u2014 voice-first, their tables only)",
+              "title": "Phone-server mode (PhonePOS — voice-first, their tables only)",
               "status": "done"
             },
             {
               "id": "t18",
-              "title": "iPad-station mode (PosModal \u2014 shared, PIN-gated)",
+              "title": "iPad-station mode (PosModal — shared, PIN-gated)",
               "status": "done"
             },
             {
@@ -144,7 +144,7 @@
           "tasks": [
             {
               "id": "t21",
-              "title": "Gloria public route /order/[slug] \u2014 no auth",
+              "title": "Gloria public route /order/[slug] — no auth",
               "status": "done"
             },
             {
@@ -159,7 +159,7 @@
             },
             {
               "id": "t24",
-              "title": "Beta signup flow \u2192 /demo redirect",
+              "title": "Beta signup flow → /demo redirect",
               "status": "done"
             }
           ]
@@ -232,7 +232,7 @@
             },
             {
               "id": "t34",
-              "title": "KDS \u2194 POS BroadcastChannel wiring",
+              "title": "KDS ↔ POS BroadcastChannel wiring",
               "status": "done"
             }
           ]
@@ -264,7 +264,7 @@
             },
             {
               "id": "t39",
-              "title": "Co-purchase SQL analysis \u2014 nightly refresh",
+              "title": "Co-purchase SQL analysis — nightly refresh",
               "status": "done"
             },
             {
@@ -383,39 +383,39 @@
           "tasks": [
             {
               "id": "t51",
-              "title": "UberEats Marketplace API \u2014 applied 2/22",
+              "title": "UberEats Marketplace API — applied 2/22",
               "status": "in-progress"
             },
             {
               "id": "t52",
-              "title": "DoorDash Marketplace API \u2014 not applied",
+              "title": "DoorDash Marketplace API — not applied",
               "status": "queued"
             },
             {
               "id": "t53",
-              "title": "Grubhub Marketplace API \u2014 applied, waiting",
+              "title": "Grubhub Marketplace API — applied, waiting",
               "status": "in-progress"
             },
             {
               "id": "t54",
-              "title": "OpenTable \u2014 applied, waiting",
+              "title": "OpenTable — applied, waiting",
               "status": "in-progress"
             },
             {
               "id": "t55",
-              "title": "Plaid \u2014 approved, sandbox mode",
+              "title": "Plaid — approved, sandbox mode",
               "status": "done"
             }
           ]
         },
         {
           "id": "s12",
-          "title": "Chargeback Fighter \u2014 Public Lead Gen",
+          "title": "Chargeback Fighter — Public Lead Gen",
           "status": "queued",
           "tasks": [
             {
               "id": "t56",
-              "title": "Public /chargeback page \u2014 upload statement, see $ found",
+              "title": "Public /chargeback page — upload statement, see $ found",
               "status": "queued"
             },
             {
@@ -432,7 +432,7 @@
         },
         {
           "id": "s13",
-          "title": "PlateAI \u2014 Free Food Photos",
+          "title": "PlateAI — Free Food Photos",
           "status": "queued",
           "tasks": [
             {
@@ -447,14 +447,14 @@
             },
             {
               "id": "t61",
-              "title": "Unlimited photos \u2192 paid tier",
+              "title": "Unlimited photos → paid tier",
               "status": "queued"
             }
           ]
         },
         {
           "id": "s14",
-          "title": "Pi \u2014 Production Ready",
+          "title": "Pi — Production Ready",
           "status": "in-progress",
           "tasks": [
             {
@@ -516,7 +516,7 @@
             },
             {
               "id": "t72",
-              "title": "QR scan \u2192 diner order history",
+              "title": "QR scan → diner order history",
               "status": "queued"
             }
           ]
@@ -569,7 +569,7 @@
             },
             {
               "id": "t76",
-              "title": "MCP enforcement layer \u2014 tenant isolation",
+              "title": "MCP enforcement layer — tenant isolation",
               "status": "queued"
             }
           ]
@@ -581,7 +581,7 @@
           "tasks": [
             {
               "id": "t77",
-              "title": "Sentinel v1 \u2014 6 checks, score 10/100",
+              "title": "Sentinel v1 — 6 checks, score 10/100",
               "status": "done"
             },
             {
@@ -596,8 +596,54 @@
             },
             {
               "id": "t80",
-              "title": "Re-run Sentinel post-migration \u2014 target 60+",
+              "title": "Re-run Sentinel post-migration — target 60+",
               "status": "queued"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m-beta",
+      "title": "Beta Customers",
+      "description": "First 3 paying restaurants on AI-R",
+      "targetDate": "2026-05-01",
+      "status": "todo",
+      "sprints": [
+        {
+          "id": "s-beta-1",
+          "title": "Beta Prep",
+          "status": "todo",
+          "tasks": [
+            {
+              "id": "t1",
+              "title": "CFO execute buttons end-to-end test",
+              "status": "todo"
+            },
+            {
+              "id": "t2",
+              "title": "Vercel DB password confirmed fixed",
+              "status": "todo"
+            },
+            {
+              "id": "t3",
+              "title": "Olo Connect developer access applied",
+              "status": "todo"
+            },
+            {
+              "id": "t4",
+              "title": "UberEats API follow-up (applied 2/22)",
+              "status": "todo"
+            },
+            {
+              "id": "t5",
+              "title": "Stripe key rotation confirmed",
+              "status": "todo"
+            },
+            {
+              "id": "t6",
+              "title": "Multi-tenant restaurant_id enforcement",
+              "status": "todo"
             }
           ]
         }
