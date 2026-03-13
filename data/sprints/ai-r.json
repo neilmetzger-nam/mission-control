@@ -651,12 +651,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "265f560",
-    "message": "fix: MoreMenu hydration crash (mounted pattern); PhoneOrdersTab error logging",
+    "hash": "452b0db",
+    "message": "fix: active orders missing held/check-dropped statuses, server_name not saved\n\nTwo bugs causing \"No active orders\" in PhoneOrdersTab:\n\n1. /api/pwa/orders/active SQL only queried for status IN ('open','fired',\n   'partial_pay') — missing 'held' and 'check-dropped'. Orders in those\n   states disappeared from the list.\n\n2. POST /api/pwa/orders never wrote server_name to the DB despite receiving\n   it in the request body. The \"Your Tables\" split (server_name === user.name)\n   always returned empty.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "feature/beta-onboarding",
     "date": "2026-03-13"
   },
   "recentCommits": [
+    {
+      "hash": "452b0db",
+      "message": "fix: active orders missing held/check-dropped statuses, server_name not saved\n\nTwo bugs causing \"No active orders\" in PhoneOrdersTab:\n\n1. /api/pwa/orders/active SQL only queried for status IN ('open','fired',\n   'partial_pay') — missing 'held' and 'check-dropped'. Orders in those\n   states disappeared from the list.\n\n2. POST /api/pwa/orders never wrote server_name to the DB despite receiving\n   it in the request body. The \"Your Tables\" split (server_name === user.name)\n   always returned empty.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "feature/beta-onboarding",
+      "date": "2026-03-13"
+    },
     {
       "hash": "265f560",
       "message": "fix: MoreMenu hydration crash (mounted pattern); PhoneOrdersTab error logging",
