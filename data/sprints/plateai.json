@@ -89,6 +89,78 @@
           ]
         }
       ]
+    },
+    {
+      "id": "m-sms-pipeline",
+      "title": "SMS Commercial Pipeline",
+      "description": "Full automated commercial photo pipeline via SMS — Nano Banana 2 + Kling",
+      "targetDate": "2026-03-20",
+      "status": "in-progress",
+      "sprints": [
+        {
+          "id": "s-sms-1",
+          "title": "Core Pipeline",
+          "status": "in-progress",
+          "tasks": [
+            {
+              "id": "sms1",
+              "title": "Swap Flux → Nano Banana 2 (Google Imagen 3)",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "sms2",
+              "title": "Hero shot prompt — faithful subject, commercial quality",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "sms3",
+              "title": "SMS copy rewritten — commercial pipeline messaging",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "sms4",
+              "title": "Pricing updated — Starter $29.95 / Pro $99 / Studio $199",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "sms5",
+              "title": "YES handler → getplateai.com/#pricing (Square checkout)",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "sms6",
+              "title": "Neil approval gate for first 10 customers (call + Telegram)",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "sms7",
+              "title": "Add Pro tier — 3 shots per item (hero + lifestyle + action)",
+              "status": "todo"
+            },
+            {
+              "id": "sms8",
+              "title": "Add Studio tier — video commercial via Kling I2V",
+              "status": "todo"
+            },
+            {
+              "id": "sms9",
+              "title": "Wire TELEGRAM_BOT_TOKEN into Vercel for approval gate in prod",
+              "status": "todo"
+            },
+            {
+              "id": "sms10",
+              "title": "First paying customer",
+              "status": "todo"
+            }
+          ]
+        }
+      ]
     }
   ],
   "updatedAt": "2026-03-13",
