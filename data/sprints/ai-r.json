@@ -723,12 +723,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "52b8572",
-    "message": "fix: Settings panel drill-down UI — eliminates iPad scroll issue\n\nRestructured Settings from a single long scrollable page to a drill-down\npattern: main screen shows a compact list of 12 section cards (fits one\nscreen, no scrolling needed), tapping a card opens that section full-screen\nwith a back button. Completely sidesteps the iOS Safari fixed-container\nscroll bug. Inner section detail views use h-dvh flex layout matching\nPosModal's working pattern.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "47a4fb1",
+    "message": "fix: eliminate nested scroll containers across all iPad PWA pages\n\nRoot cause: iOS Safari can't handle nested overflow-y-auto containers.\nPwaShell + SwipeContainer + individual pages = 3 scroll levels.\n\nChanges:\n- PwaShell: content wrapper → overflow-hidden (children own scroll)\n- ManagerOps: all expandable cards → fullScreen drill-down (no page scroll)\n- OpsCard fullScreen portal: h-dvh inner wrapper (matches PosModal pattern)\n- MoreMenu FullScreenPanel: same h-dvh inner wrapper fix\n- ServiceIntel, IpadPaymentsTab: removed redundant overflow-y-auto\n  (SwipeContainer page wrapper handles scroll)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "feature/beta-onboarding",
     "date": "2026-03-13"
   },
   "recentCommits": [
+    {
+      "hash": "47a4fb1",
+      "message": "fix: eliminate nested scroll containers across all iPad PWA pages\n\nRoot cause: iOS Safari can't handle nested overflow-y-auto containers.\nPwaShell + SwipeContainer + individual pages = 3 scroll levels.\n\nChanges:\n- PwaShell: content wrapper → overflow-hidden (children own scroll)\n- ManagerOps: all expandable cards → fullScreen drill-down (no page scroll)\n- OpsCard fullScreen portal: h-dvh inner wrapper (matches PosModal pattern)\n- MoreMenu FullScreenPanel: same h-dvh inner wrapper fix\n- ServiceIntel, IpadPaymentsTab: removed redundant overflow-y-auto\n  (SwipeContainer page wrapper handles scroll)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "feature/beta-onboarding",
+      "date": "2026-03-13"
+    },
     {
       "hash": "52b8572",
       "message": "fix: Settings panel drill-down UI — eliminates iPad scroll issue\n\nRestructured Settings from a single long scrollable page to a drill-down\npattern: main screen shows a compact list of 12 section cards (fits one\nscreen, no scrolling needed), tapping a card opens that section full-screen\nwith a back button. Completely sidesteps the iOS Safari fixed-container\nscroll bug. Inner section detail views use h-dvh flex layout matching\nPosModal's working pattern.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
