@@ -56,6 +56,39 @@
           ]
         }
       ]
+    },
+    {
+      "id": "m-voice",
+      "title": "Voice & Alerts",
+      "description": "Two-way voice calls + proactive notifications",
+      "targetDate": "2026-03-21",
+      "status": "todo",
+      "sprints": [
+        {
+          "id": "s-voice-1",
+          "title": "Dave Phone Agent",
+          "status": "todo",
+          "tasks": [
+            {
+              "id": "tv1",
+              "title": "Two-way voice call with Dave (Twilio + ElevenLabs Conversational AI)",
+              "status": "todo",
+              "addedAt": "2026-03-13",
+              "notes": "Neil wants to call Dave from the car. ElevenLabs agent SDK + Twilio webhook. ~2-3 hours to build. Also a killer feature for restaurant owners calling their AI CFO."
+            },
+            {
+              "id": "tv2",
+              "title": "Dedicated Dave phone number for voice sessions",
+              "status": "todo"
+            },
+            {
+              "id": "tv3",
+              "title": "Call transcript logged to memory + Discord on hangup",
+              "status": "todo"
+            }
+          ]
+        }
+      ]
     }
   ],
   "updatedAt": "2026-03-13",
