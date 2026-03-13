@@ -18,6 +18,7 @@ const MISSIONS: Record<string, string> = {
   "time-trek":   "A 2D adventure game that teaches a language by interacting with the past and helping Sentinels from the future turn the tide in their battle for history.",
   "plateai":     "Image and video on-demand generation to support content creation — from restaurant menus to Facebook posts to full websites. Start with the picture, the rest will follow.",
   "ember-azure": "Pan-Asian wood-fire dining at Village at Leesburg. Theatrical cooking, raw bar, full atmosphere. Opening June 2026.",
+  "backstreet":  "Restaurant website scaffold for Backstreet Brews — Carol pilot, AI-generated food/atmosphere imagery, Vercel-hosted. Bridge to Loudoun County restaurant network.",
 };
 
 function greeting() {
