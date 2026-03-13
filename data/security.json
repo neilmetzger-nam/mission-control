@@ -1,145 +1,37 @@
 {
-  "lastUpdated": "2026-03-08",
-  "checks": [
+  "lastAudit": "2026-03-13",
+  "findings": [
     {
-      "id": "s1",
-      "category": "Auth",
-      "title": "Clerk auth on all user-facing apps",
-      "status": "done",
-      "notes": "AI-R, PlateAI, Studio, Orion — all protected"
-    },
-    {
-      "id": "s2",
-      "category": "Auth",
-      "title": "Mission Control auth (Clerk)",
-      "status": "todo",
-      "notes": "Currently localhost only — must add before any public deploy"
-    },
-    {
-      "id": "s3",
-      "category": "Secrets",
-      "title": "API keys out of MEMORY.md",
-      "status": "done",
-      "notes": "Scrubbed Mar 8 — all keys now in SECRETS.md (gitignored)"
-    },
-    {
-      "id": "s4",
-      "category": "Secrets",
-      "title": "SECRETS.md gitignored",
-      "status": "done",
-      "notes": "Added to .gitignore Mar 8"
-    },
-    {
-      "id": "s5",
-      "category": "Secrets",
-      "title": "No keys in git history",
-      "status": "done",
-      "notes": "Checked Mar 8 — found orion admin key in orion repo history. Rotated immediately, Vercel updated via API. Old key dead."
-    },
-    {
-      "id": "s6",
-      "category": "Service Auth",
-      "title": "Orion internal key (x-orion-key)",
-      "status": "done",
-      "notes": "ORION_INTERNAL_KEY generated Mar 8 — added to all .env.local files + lib/auth.ts in orion-mcp"
-    },
-    {
-      "id": "s7",
-      "category": "Service Auth",
-      "title": "requireInternalAuth() on Orion MCP routes",
-      "status": "todo",
-      "notes": "lib/auth.ts exists — needs to be wired into each API route handler"
-    },
-    {
-      "id": "s8",
-      "category": "Data",
-      "title": "Tenant isolation on all DB tables (tenant_id + restaurant_id)",
-      "status": "partial",
-      "notes": "restaurantId=7 exists. Multi-tenant standard written in obie-standards.md. Not yet enforced on all tables."
-    },
-    {
-      "id": "s9",
-      "category": "Data",
-      "title": "Server-side tenant validation middleware (AI-R API routes)",
-      "status": "todo",
-      "notes": "Every API route must verify Clerk session → org membership → inject tenantId. Required before beta."
-    },
-    {
-      "id": "s10",
-      "category": "Data",
-      "title": "Agent permissions via MCP enforcement layer",
-      "status": "todo",
-      "notes": "air-mcp repo planned. Agents never touch DB directly — all access via MCP tools with tenant scope."
-    },
-    {
-      "id": "s11",
-      "category": "Infrastructure",
-      "title": "HTTPS everywhere",
-      "status": "done",
-      "notes": "All Vercel deployments enforce HTTPS. Neon uses SSL."
-    },
-    {
-      "id": "s12",
-      "category": "Infrastructure",
-      "title": "Env vars encrypted (not in code)",
-      "status": "done",
-      "notes": "All secrets in Vercel env vars or .env.local (gitignored)"
-    },
-    {
-      "id": "s13",
-      "category": "Infrastructure",
-      "title": "Cloud Run deploy auth (GCP IAM)",
-      "status": "todo",
-      "notes": "Set up service account with least-privilege IAM before first Cloud Run deploy"
-    },
-    {
-      "id": "s14",
-      "category": "Agent Risks",
-      "title": "Dave does not security-review generated code",
-      "status": "partial",
-      "notes": "Dave writes working code but misses security edge cases. Mitigation: review agent-written code before shipping to production. Sentinel agent (planned) will catch Orion-specific issues."
-    },
-    {
-      "id": "s15",
-      "category": "Agent Risks",
-      "title": "Dave has access to secrets in workspace",
-      "status": "partial",
-      "notes": "SECRETS.md and .env.local files are readable by Dave. Mitigated: secrets scrubbed from MEMORY.md Mar 8. Never paste raw keys in chat."
-    },
-    {
-      "id": "s16",
-      "category": "Agent Risks",
-      "title": "Dave file writes run with full shell permissions",
-      "status": "partial",
-      "notes": "Scripts and file writes execute as Neil on Mac Mini. No sandbox. Mitigation: review scripts before running, never run unreviewed agent code in production."
-    },
-    {
-      "id": "s17",
-      "category": "Agent Risks",
-      "title": "npm packages not audited on install",
-      "status": "todo",
-      "notes": "Claude Code runs npm install without supply chain verification. Mitigation: Dependabot on all repos (done Mar 8). Run npm audit before release."
-    },
-    {
-      "id": "s18",
-      "category": "Code Scanning",
-      "title": "Dependabot on all 8 active repos",
-      "status": "done",
-      "notes": "Enabled Mar 8 via GitHub API. Weekly Monday scans. Auto-PRs for dependency vulnerabilities."
-    },
-    {
-      "id": "s19",
-      "category": "Code Scanning",
-      "title": "eslint-plugin-security on all projects",
-      "status": "todo",
-      "notes": "Not yet installed. Catches: unsafe regex, unvalidated input, prototype pollution."
-    },
-    {
-      "id": "s20",
-      "category": "Code Scanning",
-      "title": "Sentinel agent (Orion-specific scanner)",
-      "status": "done",
-      "notes": "Sentinel v1 live. 6 checks: secrets in .md, missing auth middleware, hardcoded creds, tenant isolation, open CORS, unrotated keys. Results at /api/sentinel + security page."
+      "severity": "critical",
+      "status": "mitigated-partial",
+      "title": ".env.vercel committed to public GitHub repo",
+      "repo": "NextGen-Restaurants/air-web (public)",
+      "detail": "Real API keys in git history. Files removed from tracking via git rm --cached. Keys still in git history — must be rotated.",
+      "keys_exposed": [
+        "ANTHROPIC_API_KEY",
+        "CLERK_SECRET_KEY", 
+        "GEMINI_API_KEY",
+        "GOOGLE_API_KEY",
+        "OPENAI_API_KEY",
+        "STRIPE_SECRET_KEY",
+        "VERCEL_OIDC_TOKEN"
+      ],
+      "action_required": [
+        "Rotate ANTHROPIC_API_KEY at console.anthropic.com",
+        "Rotate CLERK_SECRET_KEY at dashboard.clerk.com",
+        "Rotate OPENAI_API_KEY at platform.openai.com",
+        "Rotate STRIPE_SECRET_KEY at dashboard.stripe.com",
+        "Rotate GEMINI_API_KEY / GOOGLE_API_KEY at console.cloud.google.com",
+        "Update all rotated keys in Vercel env vars",
+        "Consider making air-web repo private"
+      ],
+      "fixed_at": "2026-03-13",
+      "fixed_by": "Dave"
     }
-  ]
+  ],
+  "repoVisibility": {
+    "NextGen-Restaurants/air-web": "PUBLIC - consider making private",
+    "neilmetzger-nam/plateai-website": "unknown - check",
+    "neilmetzger-nam/orion-studio": "public - no secrets found"
+  }
 }
