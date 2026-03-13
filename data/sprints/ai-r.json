@@ -723,12 +723,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "47a4fb1",
-    "message": "fix: eliminate nested scroll containers across all iPad PWA pages\n\nRoot cause: iOS Safari can't handle nested overflow-y-auto containers.\nPwaShell + SwipeContainer + individual pages = 3 scroll levels.\n\nChanges:\n- PwaShell: content wrapper → overflow-hidden (children own scroll)\n- ManagerOps: all expandable cards → fullScreen drill-down (no page scroll)\n- OpsCard fullScreen portal: h-dvh inner wrapper (matches PosModal pattern)\n- MoreMenu FullScreenPanel: same h-dvh inner wrapper fix\n- ServiceIntel, IpadPaymentsTab: removed redundant overflow-y-auto\n  (SwipeContainer page wrapper handles scroll)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "596311b",
+    "message": "fix: Manager page drill-down layout — all content fits one screen\n\nManager page restructured from scrollable sections to compact card list\nwith full-screen portals (same pattern as Settings). 11 cards with live\nsubtitles (alerts, kitchen load, orders, sales, etc.) fit on one iPad\nscreen. Tap any card → full-screen view with back button.\n\nAlso added overflow-y-auto safety to Settings main menu.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "feature/beta-onboarding",
     "date": "2026-03-13"
   },
   "recentCommits": [
+    {
+      "hash": "596311b",
+      "message": "fix: Manager page drill-down layout — all content fits one screen\n\nManager page restructured from scrollable sections to compact card list\nwith full-screen portals (same pattern as Settings). 11 cards with live\nsubtitles (alerts, kitchen load, orders, sales, etc.) fit on one iPad\nscreen. Tap any card → full-screen view with back button.\n\nAlso added overflow-y-auto safety to Settings main menu.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "feature/beta-onboarding",
+      "date": "2026-03-13"
+    },
     {
       "hash": "47a4fb1",
       "message": "fix: eliminate nested scroll containers across all iPad PWA pages\n\nRoot cause: iOS Safari can't handle nested overflow-y-auto containers.\nPwaShell + SwipeContainer + individual pages = 3 scroll levels.\n\nChanges:\n- PwaShell: content wrapper → overflow-hidden (children own scroll)\n- ManagerOps: all expandable cards → fullScreen drill-down (no page scroll)\n- OpsCard fullScreen portal: h-dvh inner wrapper (matches PosModal pattern)\n- MoreMenu FullScreenPanel: same h-dvh inner wrapper fix\n- ServiceIntel, IpadPaymentsTab: removed redundant overflow-y-auto\n  (SwipeContainer page wrapper handles scroll)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -780,12 +786,6 @@
     {
       "hash": "265f560",
       "message": "fix: MoreMenu hydration crash (mounted pattern); PhoneOrdersTab error logging",
-      "branch": "feature/beta-onboarding",
-      "date": "2026-03-13"
-    },
-    {
-      "hash": "24c0392",
-      "message": "fix: PhoneOrdersTab polls DB via /api/pwa/orders/active — orders now visible across all devices",
       "branch": "feature/beta-onboarding",
       "date": "2026-03-13"
     }
