@@ -165,12 +165,18 @@
   ],
   "updatedAt": "2026-03-13",
   "lastCommit": {
-    "hash": "4f42fc6",
-    "message": "feat: update all SMS copy — new pricing, commercial pipeline messaging",
+    "hash": "4c175da",
+    "message": "fix: ingredients step never disabled — seed from dish name when description is empty (photo flow)",
     "branch": "main",
     "date": "2026-03-13"
   },
   "recentCommits": [
+    {
+      "hash": "4c175da",
+      "message": "fix: ingredients step never disabled — seed from dish name when description is empty (photo flow)",
+      "branch": "main",
+      "date": "2026-03-13"
+    },
     {
       "hash": "4f42fc6",
       "message": "feat: update all SMS copy — new pricing, commercial pipeline messaging",
