@@ -652,6 +652,74 @@
           ]
         }
       ]
+    },
+    {
+      "id": "m-pwa-testing",
+      "title": "PWA iPad Testing",
+      "status": "in-progress",
+      "targetDate": "2026-03-20",
+      "sprints": [
+        {
+          "id": "s-pwa-1",
+          "title": "Bug Fixes",
+          "status": "in-progress",
+          "tasks": [
+            {
+              "id": "pwa1",
+              "title": "Settings white crash — CategoryPrinterRouting title/name mismatch",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "pwa2",
+              "title": "iPad scroll broken — overflow-hidden in PwaShell",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "pwa3",
+              "title": "Add to Order dead — 3-layer silent failure cascade",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "pwa4",
+              "title": "Items invisible in OrderPanel — parseInt(\"main\") → NaN course mismatch",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "pwa5",
+              "title": "Orders not showing across devices — polling local store not DB",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "pwa6",
+              "title": "server_name never saved on order creation",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "pwa7",
+              "title": "Settings UX — drill-down card pattern (no scroll fight)",
+              "status": "done",
+              "completedAt": "2026-03-13"
+            },
+            {
+              "id": "pwa8",
+              "title": "Live server test at Red Bar",
+              "status": "todo",
+              "priority": "high"
+            },
+            {
+              "id": "pwa9",
+              "title": "CFO execute buttons end-to-end test",
+              "status": "todo"
+            }
+          ]
+        }
+      ]
     }
   ],
   "lastCommit": {
