@@ -93,12 +93,18 @@
   ],
   "updatedAt": "2026-03-13",
   "lastCommit": {
-    "hash": "64c45fd",
-    "message": "fix: YES handler sends getplateai.com/#pricing — Square checkout already built",
+    "hash": "ab97a4e",
+    "message": "feat: update pricing — Starter $29.95, Pro $99, Studio $199 — feature descriptions reflect full commercial pipeline",
     "branch": "main",
     "date": "2026-03-13"
   },
   "recentCommits": [
+    {
+      "hash": "ab97a4e",
+      "message": "feat: update pricing — Starter $29.95, Pro $99, Studio $199 — feature descriptions reflect full commercial pipeline",
+      "branch": "main",
+      "date": "2026-03-13"
+    },
     {
       "hash": "64c45fd",
       "message": "fix: YES handler sends getplateai.com/#pricing — Square checkout already built",
