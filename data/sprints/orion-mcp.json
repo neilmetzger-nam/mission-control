@@ -1,6 +1,6 @@
 {
   "projectId": "orion-mcp",
-  "updatedAt": "2026-03-08",
+  "updatedAt": "2026-03-13",
   "milestones": [
     {
       "id": "m1",
@@ -50,7 +50,7 @@
       "title": "MCP v2 — Agentic Chat Widget",
       "description": "Embeddable widget: chat → intent → agent executes → human approves → live",
       "targetDate": "2026-07-01",
-      "status": "queued",
+      "status": "in-progress",
       "sprints": [
         {
           "id": "s2",
@@ -193,12 +193,13 @@
             {
               "id": "t11",
               "title": "Molly v1 — draft posts from sprint completions",
-              "status": "queued",
+              "status": "done",
               "assignee": "agent",
               "notes": [
                 "Monitors sprint completions → drafts LinkedIn/X/HN content → routes to review queue",
                 "Building tonight (Mar 8)"
-              ]
+              ],
+              "completedAt": "2026-03-13"
             },
             {
               "id": "t12",
@@ -274,6 +275,47 @@
                 "orion-mcp.vercel.app",
                 "Deployed Mar 9 4:17am"
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m-new-tools",
+      "title": "New Tool Suite",
+      "description": "5 new tools specced Mar 11",
+      "targetDate": "2026-04-01",
+      "status": "todo",
+      "sprints": [
+        {
+          "id": "s-tools-1",
+          "title": "Tool Build",
+          "status": "todo",
+          "tasks": [
+            {
+              "id": "t1",
+              "title": "generate_media — abstract hardcoded Fal",
+              "status": "todo"
+            },
+            {
+              "id": "t2",
+              "title": "score_pronunciation — Time Trek core mechanic",
+              "status": "todo"
+            },
+            {
+              "id": "t3",
+              "title": "text_to_speech — EL wrapper with R2 caching",
+              "status": "todo"
+            },
+            {
+              "id": "t4",
+              "title": "transcribe_audio — Whisper/Deepgram wrapper",
+              "status": "todo"
+            },
+            {
+              "id": "t5",
+              "title": "get_usage_stats — billing UI",
+              "status": "todo"
             }
           ]
         }

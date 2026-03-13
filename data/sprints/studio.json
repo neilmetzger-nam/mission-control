@@ -1,6 +1,6 @@
 {
   "projectId": "studio",
-  "updatedAt": "2026-03-08",
+  "updatedAt": "2026-03-13",
   "milestones": [
     {
       "id": "m1",
@@ -51,7 +51,7 @@
       "title": "Phase 2 — Production Floor",
       "description": "Timeline, scrubber, sequence player, AI co-pilot",
       "targetDate": "2026-05-01",
-      "status": "queued",
+      "status": "in-progress",
       "sprints": [
         {
           "id": "s2",

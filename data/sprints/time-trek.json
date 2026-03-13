@@ -1,6 +1,6 @@
 {
   "projectId": "time-trek",
-  "updatedAt": "2026-03-11",
+  "updatedAt": "2026-03-13",
   "milestones": [
     {
       "id": "m0",
@@ -19,91 +19,134 @@
               "title": "Game Bible written and locked",
               "status": "done",
               "assignee": "agent",
-              "notes": ["docs/time-trek/GAME_BIBLE.md", "Flash/Hero/GuildHall/Regen mechanics", "Miyagi Style + Hero Scene confirmed"]
+              "notes": [
+                "docs/time-trek/GAME_BIBLE.md",
+                "Flash/Hero/GuildHall/Regen mechanics",
+                "Miyagi Style + Hero Scene confirmed"
+              ],
+              "completedAt": "2026-03-13"
             },
             {
               "id": "t2",
               "title": "Episode 1 curriculum mapped (10 vocab items)",
               "status": "done",
               "assignee": "agent",
-              "notes": ["docs/time-trek/episode-1-curriculum.md", "All items pulled from transcript"]
+              "notes": [
+                "docs/time-trek/episode-1-curriculum.md",
+                "All items pulled from transcript"
+              ],
+              "completedAt": "2026-03-13"
             },
             {
               "id": "t3",
               "title": "API keys wired (EL, Fal, Deepgram)",
               "status": "done",
               "assignee": "agent",
-              "notes": ["All 3 keys in BuilderIO .env", "Tested and confirmed live"]
+              "notes": [
+                "All 3 keys in BuilderIO .env",
+                "Tested and confirmed live"
+              ]
             },
             {
               "id": "t4",
               "title": "EL voice IDs mapped (10 voices)",
               "status": "done",
               "assignee": "agent",
-              "notes": ["Ranbir, Aeon Index, Sentinel Colonel/Lt/Comms, Samurai, Japanese voices"]
+              "notes": [
+                "Ranbir, Aeon Index, Sentinel Colonel/Lt/Comms, Samurai, Japanese voices"
+              ]
             },
             {
               "id": "t5",
               "title": "35 Episode 1 audio files generated",
               "status": "done",
               "assignee": "agent",
-              "notes": ["10 vocab x 3 speeds + 5 Ranbir mission lines", "Committed to git: public/audio/ep1/"]
+              "notes": [
+                "10 vocab x 3 speeds + 5 Ranbir mission lines",
+                "Committed to git: public/audio/ep1/"
+              ],
+              "completedAt": "2026-03-13"
             },
             {
               "id": "t6",
               "title": "PM2 dev servers running (5 servers)",
               "status": "done",
               "assignee": "agent",
-              "notes": ["air-web:3000, mc:3001, orion:3002, studio-api:4000, studio-ui:8080", "Auto-restart on reboot via launchd"]
+              "notes": [
+                "air-web:3000, mc:3001, orion:3002, studio-api:4000, studio-ui:8080",
+                "Auto-restart on reboot via launchd"
+              ]
             },
             {
               "id": "t7",
               "title": "Map Episode 1 into Prompt Studio storyboard",
-              "status": "todo",
+              "status": "done",
               "assignee": "agent",
-              "notes": ["8 scenes needed", "2 missing: market scene + victory outro"]
+              "notes": [
+                "8 scenes needed",
+                "2 missing: market scene + victory outro"
+              ],
+              "completedAt": "2026-03-13"
             },
             {
               "id": "t8",
               "title": "Generate 2 missing video scenes via Fal",
               "status": "todo",
               "assignee": "agent",
-              "notes": ["Market scene (feudal Japan crowd)", "Victory outro (spire restored)"]
+              "notes": [
+                "Market scene (feudal Japan crowd)",
+                "Victory outro (spire restored)"
+              ]
             },
             {
               "id": "t9",
               "title": "Build review queue UI in Prompt Studio",
-              "status": "todo",
+              "status": "done",
               "assignee": "agent",
-              "notes": ["Thin wrapper over existing video-rating.ts route", "Approve/Reject/Regen buttons"]
+              "notes": [
+                "Thin wrapper over existing video-rating.ts route",
+                "Approve/Reject/Regen buttons"
+              ],
+              "completedAt": "2026-03-13"
             },
             {
               "id": "t10",
               "title": "ffmpeg mux pipeline (video + EL audio)",
               "status": "todo",
               "assignee": "agent",
-              "notes": ["Server-side mux", "Output to R2/CDN"]
+              "notes": [
+                "Server-side mux",
+                "Output to R2/CDN"
+              ]
             },
             {
               "id": "t11",
               "title": "Anchor mechanic UI (temporal alignment bar)",
               "status": "todo",
               "assignee": "agent",
-              "notes": ["Red/Blue/Gold color system", "Pulses on player speech"]
+              "notes": [
+                "Red/Blue/Gold color system",
+                "Pulses on player speech"
+              ]
             },
             {
               "id": "t12",
               "title": "Pronunciation scoring (Deepgram + phonetic match)",
               "status": "todo",
               "assignee": "agent",
-              "notes": ["Deepgram key wired", "Japanese phonetic matching needs tuning"]
+              "notes": [
+                "Deepgram key wired",
+                "Japanese phonetic matching needs tuning"
+              ]
             },
             {
               "id": "t13",
               "title": "Get Tomoe season treatments from Neil's daughter (Thailand)",
               "status": "waiting",
               "assignee": "neil",
-              "notes": ["She is in Thailand, will send when available"]
+              "notes": [
+                "She is in Thailand, will send when available"
+              ]
             }
           ]
         }
@@ -150,5 +193,6 @@
     "gdd": "docs/time-trek/GDD-nov2025.txt",
     "audioFiles": "public/audio/ep1/",
     "repo": "https://github.com/neilmetzger-nam/prompt-studio"
-  }
+  },
+  "marketNote": "URGENT Mar 13: Google Little Language Lessons launched (validates situational learning). Duolingo backlash mainstream. Strategy doc update overdue — press angle open now."
 }
