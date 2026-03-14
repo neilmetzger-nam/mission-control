@@ -723,12 +723,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "441f5c8",
-    "message": "fix(device-settings): remove printer routing section, fix tip % input width\n\nRemove duplicate Printer Routing section (already exists in dedicated\nsettings page) and PrinterRoutingSettings interface. Widen tip percentage\ninputs from w-16 to w-20 with max=100 and flex-wrap so all 3 slots\ndisplay without clipping on iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-    "branch": "fix/device-settings-cleanup",
+    "hash": "a509b4b",
+    "message": "fix(device-settings): remove printer routing, fix tip % width, add font size + auto-cut + feed lines\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "branch": "neil",
     "date": "2026-03-14"
   },
   "recentCommits": [
+    {
+      "hash": "a509b4b",
+      "message": "fix(device-settings): remove printer routing, fix tip % width, add font size + auto-cut + feed lines\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-14"
+    },
     {
       "hash": "441f5c8",
       "message": "fix(device-settings): remove printer routing section, fix tip % input width\n\nRemove duplicate Printer Routing section (already exists in dedicated\nsettings page) and PrinterRoutingSettings interface. Widen tip percentage\ninputs from w-16 to w-20 with max=100 and flex-wrap so all 3 slots\ndisplay without clipping on iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -780,12 +786,6 @@
     {
       "hash": "5a5d43d",
       "message": "fix: course mapping breaks item rendering + Settings scroll on iPad\n\n- API was storing parseInt(\"main\",10) → NaN → 1 for ALL courses.\n  Added COURSE_TO_NUM lookup so drink=1, appetizer=2, soup=3, main=4, dessert=5.\n- dbItemToPosItem was converting course_number back as String(1)=\"1\" which\n  didn't match OrderPanel's COURSE_ORDER. Added COURSE_NUM_TO_NAME reverse map.\n- Settings panel: added h-dvh overflow-hidden to fixed motion.div for iOS Safari\n  flex height computation (matches PosModal's working pattern).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "feature/beta-onboarding",
-      "date": "2026-03-13"
-    },
-    {
-      "hash": "643d931",
-      "message": "fix: remove server_name from transactions INSERT — column does not exist\n\nThe server_name column was added in 452b0db but the DB schema was never\nmigrated, causing a 500 on every order creation attempt.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "feature/beta-onboarding",
       "date": "2026-03-13"
     }
