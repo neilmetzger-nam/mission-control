@@ -165,12 +165,18 @@
   ],
   "updatedAt": "2026-03-14",
   "lastCommit": {
-    "hash": "4c175da",
-    "message": "fix: ingredients step never disabled — seed from dish name when description is empty (photo flow)",
+    "hash": "ab95d7e",
+    "message": "Landing page: revenue-first headline + problem-aware subheadline",
     "branch": "main",
-    "date": "2026-03-13"
+    "date": "2026-03-14"
   },
   "recentCommits": [
+    {
+      "hash": "ab95d7e",
+      "message": "Landing page: revenue-first headline + problem-aware subheadline",
+      "branch": "main",
+      "date": "2026-03-14"
+    },
     {
       "hash": "4c175da",
       "message": "fix: ingredients step never disabled — seed from dish name when description is empty (photo flow)",
