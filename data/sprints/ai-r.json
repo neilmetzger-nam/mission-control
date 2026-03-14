@@ -723,12 +723,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "2bbcb16",
-    "message": "feat: add Staff, Schedule, Tips, Clock In, POS links to HomeNav\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "f84e67f",
+    "message": "feat: add Today tab + consolidate iPad tabs (Today/Guests)\n\n- New TodayTab: MOTD, clocked-in roster, TimeclockPad portal,\n  7-day schedule, timesheet — drill-down card pattern\n- Remove duplicate Floor tab, rename Orders to Guests\n- SwipeContainer: add forwardRef with goToPage imperative handle\n- Auto-return to Today after 60s idle (iPad only)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "feature/beta-onboarding",
     "date": "2026-03-14"
   },
   "recentCommits": [
+    {
+      "hash": "f84e67f",
+      "message": "feat: add Today tab + consolidate iPad tabs (Today/Guests)\n\n- New TodayTab: MOTD, clocked-in roster, TimeclockPad portal,\n  7-day schedule, timesheet — drill-down card pattern\n- Remove duplicate Floor tab, rename Orders to Guests\n- SwipeContainer: add forwardRef with goToPage imperative handle\n- Auto-return to Today after 60s idle (iPad only)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "feature/beta-onboarding",
+      "date": "2026-03-14"
+    },
     {
       "hash": "2bbcb16",
       "message": "feat: add Staff, Schedule, Tips, Clock In, POS links to HomeNav\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -780,12 +786,6 @@
     {
       "hash": "f5d1358",
       "message": "fix: await DB order creation before showing menu — eliminates iPad add-to-order race\n\nThe \"Add to Order\" button was silently failing on iPad because the menu\nwas shown immediately with a local-only order ID while createPosOrder\nran in the background. Handlers polled dbOrderId ref for up to 5s and\nsilently returned if it never resolved.\n\nNow the \"Starting order...\" spinner stays visible until createPosOrder\nreturns a real DB order ID. The menu is only accessible after that, so\norder.id is always valid. Removes dbOrderId ref, polling loops, local\norder seeding, and migration logic.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "feature/beta-onboarding",
-      "date": "2026-03-13"
-    },
-    {
-      "hash": "6cf72e0",
-      "message": "fix: Settings panel white-screen crash — property mismatch + ErrorBoundary\n\nRoot cause: CategoryPrinterRouting declared MenuCategory with 'title' but\n/api/pwa/menu returns categories with 'name'. cat.title was undefined, so\n.toLowerCase() threw a TypeError during render. No ErrorBoundary existed,\nso React 19 unmounted the entire root → white screen after ~1s.\n\nFixes:\n1. CategoryPrinterRouting: align MenuCategory interface to API shape\n   (id: string, name: string), fix all cat.title → cat.name refs\n2. CategoryPrinterRouting: normalize printer DB shape (ip_address →\n   ip, printer_type → isKitchenPrinter, is_active → isActive)\n3. PwaSettingsPanel: wrap all settings content in SettingsErrorBoundary\n   — future render crashes show error message + Close button instead\n   of white-screening the PWA\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "feature/beta-onboarding",
       "date": "2026-03-13"
     }
