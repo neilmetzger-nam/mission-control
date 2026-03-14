@@ -165,12 +165,18 @@
   ],
   "updatedAt": "2026-03-14",
   "lastCommit": {
-    "hash": "ab95d7e",
-    "message": "Landing page: revenue-first headline + problem-aware subheadline",
+    "hash": "e1ef25f",
+    "message": "Landing page: first photo free + Made for Restaurants tagline",
     "branch": "main",
     "date": "2026-03-14"
   },
   "recentCommits": [
+    {
+      "hash": "e1ef25f",
+      "message": "Landing page: first photo free + Made for Restaurants tagline",
+      "branch": "main",
+      "date": "2026-03-14"
+    },
     {
       "hash": "ab95d7e",
       "message": "Landing page: revenue-first headline + problem-aware subheadline",
