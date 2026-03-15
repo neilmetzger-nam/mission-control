@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "dbf5cb7",
-    "message": "feat: iPad MenuGrid shows category picker grid before items\n\nWhen opening a table on iPad (PosModal → MenuGrid), show the same\n\"What are they having?\" category grid with emoji tiles that iPhone\nuses, instead of auto-selecting the first category. Adds search\nclear button and \"← All\" back navigation in category pills.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "9f10d52",
+    "message": "feat: quick-add items without required modifiers, add +mods link\n\n- handleItemTap now only shows ItemDetailSheet for items with\n  REQUIRED modifiers; all others quick-add directly to the order\n- Add modifierSelections to ItemDetailSheet handleAdd (was missing)\n- Add \"+mods\" link on order item rows (like \"+note\") to view/edit\n  modifiers on existing items via ItemDetailSheet in edit mode\n- Add updateItemModifiers to pos-store and API PATCH route\n- Network errors on modifier check now quick-add instead of blocking\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "9f10d52",
+      "message": "feat: quick-add items without required modifiers, add +mods link\n\n- handleItemTap now only shows ItemDetailSheet for items with\n  REQUIRED modifiers; all others quick-add directly to the order\n- Add modifierSelections to ItemDetailSheet handleAdd (was missing)\n- Add \"+mods\" link on order item rows (like \"+note\") to view/edit\n  modifiers on existing items via ItemDetailSheet in edit mode\n- Add updateItemModifiers to pos-store and API PATCH route\n- Network errors on modifier check now quick-add instead of blocking\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "dbf5cb7",
       "message": "feat: iPad MenuGrid shows category picker grid before items\n\nWhen opening a table on iPad (PosModal → MenuGrid), show the same\n\"What are they having?\" category grid with emoji tiles that iPhone\nuses, instead of auto-selecting the first category. Adds search\nclear button and \"← All\" back navigation in category pills.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "b0cb2b7",
       "message": "fix: staff API snake_case→camelCase mapping + login name resolution\n\nAll staff API routes (GET /staff, POST /staff, PATCH /staff/:id,\nPOST /staff/verify-pin) were returning raw DB rows with snake_case\nfields (display_name, first_name, restaurant_id) but the client\nexpected camelCase (displayName, firstName, restaurantId).\n\nThis caused:\n- \"undefined undefined\" displayed as staff name after PIN login\n- 401 on order creation (wrong PIN sent from stale cached user)\n- ManageStaffPanel showing blank fields\n\nFixes:\n- Map all staff API responses to camelCase before returning\n- Use input PIN (not m.pin) in PwaUserContext to avoid stale values\n- Robust name fallback: displayName → firstName+lastName → \"Staff\"\n- Console.log on successful login for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "d13f9c2",
-      "message": "fix: iOS touch-action for category pills and item list scroll\n\n- Category pills: add touch-action: pan-x for horizontal scroll on iOS\n- Item list / search / summary: add touch-action: pan-y for vertical scroll\n- Remove touch-action: manipulation from root (blocks panning on iOS)\n- SwipeContainer: add touch-action: pan-y to page content wrappers\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
