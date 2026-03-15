@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "bc1ae70",
-    "message": "chore: update build tag to v0315-h",
+    "hash": "d847a2a",
+    "message": "fix: persist active PIN to localStorage in setPwaPin()\n\nsetPwaPin() only set the in-memory _activePin variable, which was\nlost on re-render. The fallback in pwaFetch read from localStorage\nbut it was never written there by setPwaPin — only by switchUser\nvia a separate localStorage.setItem call that ran later.\n\nRace condition: pwaFetch could fire before the localStorage write\nin switchUser completed, sending a stale/empty PIN → 401.\n\nNow setPwaPin() writes to both memory and localStorage atomically.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "d847a2a",
+      "message": "fix: persist active PIN to localStorage in setPwaPin()\n\nsetPwaPin() only set the in-memory _activePin variable, which was\nlost on re-render. The fallback in pwaFetch read from localStorage\nbut it was never written there by setPwaPin — only by switchUser\nvia a separate localStorage.setItem call that ran later.\n\nRace condition: pwaFetch could fire before the localStorage write\nin switchUser completed, sending a stale/empty PIN → 401.\n\nNow setPwaPin() writes to both memory and localStorage atomically.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "bc1ae70",
       "message": "chore: update build tag to v0315-h",
@@ -791,12 +797,6 @@
       "hash": "f7b503c",
       "message": "chore: add build tag to QuickSwitchBar for cache busting",
       "branch": "main",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "001ee31",
-      "message": "fix: restore TodayTab card layout + fix TableMap horizontal scroll\n\nTodayTab was overwritten with a dashboard layout that removed card\nnavigation, timeclock portal, schedule view, and timesheet drill-downs.\nRestored the previous working version and added a compact inline\n\"Clocked In Now\" card showing active staff on the main view.\n\nTableMap: added overflow-hidden to prevent absolutely-positioned table\nbuttons from causing a horizontal scrollbar at 1024x768.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "fix/todaytab-regression-tablemap-scroll",
       "date": "2026-03-15"
     }
   ]
