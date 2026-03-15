@@ -651,7 +651,9 @@
             {
               "id": "t6",
               "title": "Multi-tenant restaurant_id enforcement",
-              "status": "todo"
+              "status": "done",
+              "completedAt": "2026-03-15",
+              "completedBy": "b0cb2b7"
             }
           ]
         }
@@ -731,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d13f9c2",
-    "message": "fix: iOS touch-action for category pills and item list scroll\n\n- Category pills: add touch-action: pan-x for horizontal scroll on iOS\n- Item list / search / summary: add touch-action: pan-y for vertical scroll\n- Remove touch-action: manipulation from root (blocks panning on iOS)\n- SwipeContainer: add touch-action: pan-y to page content wrappers\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "b0cb2b7",
+    "message": "fix: staff API snake_case→camelCase mapping + login name resolution\n\nAll staff API routes (GET /staff, POST /staff, PATCH /staff/:id,\nPOST /staff/verify-pin) were returning raw DB rows with snake_case\nfields (display_name, first_name, restaurant_id) but the client\nexpected camelCase (displayName, firstName, restaurantId).\n\nThis caused:\n- \"undefined undefined\" displayed as staff name after PIN login\n- 401 on order creation (wrong PIN sent from stale cached user)\n- ManageStaffPanel showing blank fields\n\nFixes:\n- Map all staff API responses to camelCase before returning\n- Use input PIN (not m.pin) in PwaUserContext to avoid stale values\n- Robust name fallback: displayName → firstName+lastName → \"Staff\"\n- Console.log on successful login for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "b0cb2b7",
+      "message": "fix: staff API snake_case→camelCase mapping + login name resolution\n\nAll staff API routes (GET /staff, POST /staff, PATCH /staff/:id,\nPOST /staff/verify-pin) were returning raw DB rows with snake_case\nfields (display_name, first_name, restaurant_id) but the client\nexpected camelCase (displayName, firstName, restaurantId).\n\nThis caused:\n- \"undefined undefined\" displayed as staff name after PIN login\n- 401 on order creation (wrong PIN sent from stale cached user)\n- ManageStaffPanel showing blank fields\n\nFixes:\n- Map all staff API responses to camelCase before returning\n- Use input PIN (not m.pin) in PwaUserContext to avoid stale values\n- Robust name fallback: displayName → firstName+lastName → \"Staff\"\n- Console.log on successful login for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "d13f9c2",
       "message": "fix: iOS touch-action for category pills and item list scroll\n\n- Category pills: add touch-action: pan-x for horizontal scroll on iOS\n- Item list / search / summary: add touch-action: pan-y for vertical scroll\n- Remove touch-action: manipulation from root (blocks panning on iOS)\n- SwipeContainer: add touch-action: pan-y to page content wrappers\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -789,12 +797,6 @@
       "hash": "e65ecc6",
       "message": "Go-live prep: iPad no-scroll layout, clock-in fix, ManageStaffPanel, schedule PATCH, broadcast print mode",
       "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "cdde135",
-      "message": "feat: add broadcast print mode for go-live testing\n\nAdds a \"Print to all printers (test mode)\" toggle in Settings > Device\nthat sends every kitchen ticket to ALL connected printers, bypassing\ncategory-based routing. Needed for Red Bar go-live test.\n\n- broadcastPrint field in DeviceSettings (localStorage, default OFF)\n- Toggle UI with amber warning banner when active\n- fireToKitchenPrinters() passes broadcast flag to API\n- fireOrder() local ESC/POS path respects broadcastPrint setting\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "feature/broadcast-print-mode",
       "date": "2026-03-15"
     }
   ]
