@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b2cc9a6",
-    "message": "debug: show visible error toast when item add fails on iPad\n\nRed toast at top of PosModal shows the actual error message\n(API failure, missing order, empty response) instead of only\nlogging to console which is invisible on iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "a8a42e5",
+    "message": "chore: build tag v0315-i",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "a8a42e5",
+      "message": "chore: build tag v0315-i",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "b2cc9a6",
       "message": "debug: show visible error toast when item add fails on iPad\n\nRed toast at top of PosModal shows the actual error message\n(API failure, missing order, empty response) instead of only\nlogging to console which is invisible on iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "1b9989c",
       "message": "fix: authenticatePwaRequest checks DB instead of hardcoded demo staff\n\nRoot cause of persistent 401 \"Invalid PIN\" on order creation:\nauthenticatePwaRequest() only checked the 5-entry DEMO_STAFF array.\nAny real DB PIN (e.g. 5687) passed verify-pin login but failed\nevery subsequent API call.\n\nNow authenticatePwaRequest:\n1. Fast path: checks hardcoded demo staff first (no DB hit)\n2. Falls back to DB query against staff table\n3. Returns 503 if DB is unreachable\n4. Console.log on every auth showing resolved name + role\n\nAll 67 route files updated: authenticatePwaRequest(req) → await\n\nAlso: PwaSettingsPanel scroll fix — added touch-action: pan-y to\nboth detail and menu list containers.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "d847a2a",
-      "message": "fix: persist active PIN to localStorage in setPwaPin()\n\nsetPwaPin() only set the in-memory _activePin variable, which was\nlost on re-render. The fallback in pwaFetch read from localStorage\nbut it was never written there by setPwaPin — only by switchUser\nvia a separate localStorage.setItem call that ran later.\n\nRace condition: pwaFetch could fire before the localStorage write\nin switchUser completed, sending a stale/empty PIN → 401.\n\nNow setPwaPin() writes to both memory and localStorage atomically.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
