@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "9f10d52",
-    "message": "feat: quick-add items without required modifiers, add +mods link\n\n- handleItemTap now only shows ItemDetailSheet for items with\n  REQUIRED modifiers; all others quick-add directly to the order\n- Add modifierSelections to ItemDetailSheet handleAdd (was missing)\n- Add \"+mods\" link on order item rows (like \"+note\") to view/edit\n  modifiers on existing items via ItemDetailSheet in edit mode\n- Add updateItemModifiers to pos-store and API PATCH route\n- Network errors on modifier check now quick-add instead of blocking\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "49dc7d4",
+    "message": "fix: Clear Local Data now fully resets session\n\n- Broadened localStorage clear to include all air-pwa-* keys\n  (active PIN, menu cache, modifier cache) and device-settings\n- Unregisters service workers and clears SW caches\n- Reloads the page after clearing to reset all in-memory state\n  (order cache, menu data, modifier data, React state)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "49dc7d4",
+      "message": "fix: Clear Local Data now fully resets session\n\n- Broadened localStorage clear to include all air-pwa-* keys\n  (active PIN, menu cache, modifier cache) and device-settings\n- Unregisters service workers and clears SW caches\n- Reloads the page after clearing to reset all in-memory state\n  (order cache, menu data, modifier data, React state)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "9f10d52",
       "message": "feat: quick-add items without required modifiers, add +mods link\n\n- handleItemTap now only shows ItemDetailSheet for items with\n  REQUIRED modifiers; all others quick-add directly to the order\n- Add modifierSelections to ItemDetailSheet handleAdd (was missing)\n- Add \"+mods\" link on order item rows (like \"+note\") to view/edit\n  modifiers on existing items via ItemDetailSheet in edit mode\n- Add updateItemModifiers to pos-store and API PATCH route\n- Network errors on modifier check now quick-add instead of blocking\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "bc1ae70",
       "message": "chore: update build tag to v0315-h",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "b0cb2b7",
-      "message": "fix: staff API snake_case→camelCase mapping + login name resolution\n\nAll staff API routes (GET /staff, POST /staff, PATCH /staff/:id,\nPOST /staff/verify-pin) were returning raw DB rows with snake_case\nfields (display_name, first_name, restaurant_id) but the client\nexpected camelCase (displayName, firstName, restaurantId).\n\nThis caused:\n- \"undefined undefined\" displayed as staff name after PIN login\n- 401 on order creation (wrong PIN sent from stale cached user)\n- ManageStaffPanel showing blank fields\n\nFixes:\n- Map all staff API responses to camelCase before returning\n- Use input PIN (not m.pin) in PwaUserContext to avoid stale values\n- Robust name fallback: displayName → firstName+lastName → \"Staff\"\n- Console.log on successful login for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
