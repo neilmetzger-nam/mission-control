@@ -727,12 +727,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "001ee31",
-    "message": "fix: restore TodayTab card layout + fix TableMap horizontal scroll\n\nTodayTab was overwritten with a dashboard layout that removed card\nnavigation, timeclock portal, schedule view, and timesheet drill-downs.\nRestored the previous working version and added a compact inline\n\"Clocked In Now\" card showing active staff on the main view.\n\nTableMap: added overflow-hidden to prevent absolutely-positioned table\nbuttons from causing a horizontal scrollbar at 1024x768.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-    "branch": "fix/todaytab-regression-tablemap-scroll",
+    "hash": "f7b503c",
+    "message": "chore: add build tag to QuickSwitchBar for cache busting",
+    "branch": "main",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "f7b503c",
+      "message": "chore: add build tag to QuickSwitchBar for cache busting",
+      "branch": "main",
+      "date": "2026-03-15"
+    },
     {
       "hash": "001ee31",
       "message": "fix: restore TodayTab card layout + fix TableMap horizontal scroll\n\nTodayTab was overwritten with a dashboard layout that removed card\nnavigation, timeclock portal, schedule view, and timesheet drill-downs.\nRestored the previous working version and added a compact inline\n\"Clocked In Now\" card showing active staff on the main view.\n\nTableMap: added overflow-hidden to prevent absolutely-positioned table\nbuttons from causing a horizontal scrollbar at 1024x768.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -785,12 +791,6 @@
       "hash": "441f5c8",
       "message": "fix(device-settings): remove printer routing section, fix tip % input width\n\nRemove duplicate Printer Routing section (already exists in dedicated\nsettings page) and PrinterRoutingSettings interface. Widen tip percentage\ninputs from w-16 to w-20 with max=100 and flex-wrap so all 3 slots\ndisplay without clipping on iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "fix/device-settings-cleanup",
-      "date": "2026-03-14"
-    },
-    {
-      "hash": "a48fac4",
-      "message": "feat(device-settings): add full Square-parity receipt & tipping options\n\nNew DeviceSettings data layer with tip collection mode, tip percentages,\nsmart tips, signature collection, kitchen ticket config, and printer\nrouting. Settings page at /home/settings/device with three sections\n(Receipt & Payment, Kitchen Ticket, Printer Routing). Receipt template\nupdated to respect auth slip settings (tip line, signature, item details,\ncustomer copy). Missing fields auto-backfilled from defaults.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "feature/device-settings-square-parity",
       "date": "2026-03-14"
     }
   ]
