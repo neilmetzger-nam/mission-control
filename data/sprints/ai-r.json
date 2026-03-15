@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "57bc417",
-    "message": "feat: iPad category picker matches iPhone grid layout\n\nReplace the compact flex-wrap button list with a visual grid of\ncategory tiles showing emoji + name, matching the iPhone's\n\"What are they having?\" flow. Uses 4 columns (vs iPhone's 3)\nto take advantage of the wider iPad left panel.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "dbf5cb7",
+    "message": "feat: iPad MenuGrid shows category picker grid before items\n\nWhen opening a table on iPad (PosModal → MenuGrid), show the same\n\"What are they having?\" category grid with emoji tiles that iPhone\nuses, instead of auto-selecting the first category. Adds search\nclear button and \"← All\" back navigation in category pills.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "dbf5cb7",
+      "message": "feat: iPad MenuGrid shows category picker grid before items\n\nWhen opening a table on iPad (PosModal → MenuGrid), show the same\n\"What are they having?\" category grid with emoji tiles that iPhone\nuses, instead of auto-selecting the first category. Adds search\nclear button and \"← All\" back navigation in category pills.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "57bc417",
       "message": "feat: iPad category picker matches iPhone grid layout\n\nReplace the compact flex-wrap button list with a visual grid of\ncategory tiles showing emoji + name, matching the iPhone's\n\"What are they having?\" flow. Uses 4 columns (vs iPhone's 3)\nto take advantage of the wider iPad left panel.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "d13f9c2",
       "message": "fix: iOS touch-action for category pills and item list scroll\n\n- Category pills: add touch-action: pan-x for horizontal scroll on iOS\n- Item list / search / summary: add touch-action: pan-y for vertical scroll\n- Remove touch-action: manipulation from root (blocks panning on iOS)\n- SwipeContainer: add touch-action: pan-y to page content wrappers\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "1f9f0ca",
-      "message": "fix: align MenuResponse type and menu-cache with actual API output\n\nThe API route returns categories with { name, id (string), sortOrder }\nbut MenuResponse type expected { title, id (number), uuid } and\nmenu-cache.ts read c.title — which was undefined at runtime.\n\nThis caused the desktop PosModal (via MenuGrid → loadMenu) to show\ncategories with empty names while Phone/Tablet worked fine (they\nfetch directly and use c.name).\n\n- Fix MenuResponse type to match actual /api/pwa/menu response shape\n- Fix menu-cache transformMenuData to use c.name instead of c.title\n- Add dbId/dbCategoryId to menu-cache item transform for parity\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
