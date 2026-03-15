@@ -727,12 +727,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5eedf8f",
-    "message": "fix(api): add scheduledStart/End, staffId, scheduledRole to shifts PATCH\n\nThe PATCH endpoint previously only handled status, actual times,\nhours, labor cost, notes, and station. Drag-drop shift reassignment\nin WeekGrid sends scheduledStart, scheduledEnd, staffId, and\nscheduledRole — these were silently ignored. Now all four fields\nare handled, so schedule edits persist to the database.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-    "branch": "fix/shifts-patch-endpoint",
+    "hash": "cdde135",
+    "message": "feat: add broadcast print mode for go-live testing\n\nAdds a \"Print to all printers (test mode)\" toggle in Settings > Device\nthat sends every kitchen ticket to ALL connected printers, bypassing\ncategory-based routing. Needed for Red Bar go-live test.\n\n- broadcastPrint field in DeviceSettings (localStorage, default OFF)\n- Toggle UI with amber warning banner when active\n- fireToKitchenPrinters() passes broadcast flag to API\n- fireOrder() local ESC/POS path respects broadcastPrint setting\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "branch": "feature/broadcast-print-mode",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "cdde135",
+      "message": "feat: add broadcast print mode for go-live testing\n\nAdds a \"Print to all printers (test mode)\" toggle in Settings > Device\nthat sends every kitchen ticket to ALL connected printers, bypassing\ncategory-based routing. Needed for Red Bar go-live test.\n\n- broadcastPrint field in DeviceSettings (localStorage, default OFF)\n- Toggle UI with amber warning banner when active\n- fireToKitchenPrinters() passes broadcast flag to API\n- fireOrder() local ESC/POS path respects broadcastPrint setting\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "feature/broadcast-print-mode",
+      "date": "2026-03-15"
+    },
     {
       "hash": "5eedf8f",
       "message": "fix(api): add scheduledStart/End, staffId, scheduledRole to shifts PATCH\n\nThe PATCH endpoint previously only handled status, actual times,\nhours, labor cost, notes, and station. Drag-drop shift reassignment\nin WeekGrid sends scheduledStart, scheduledEnd, staffId, and\nscheduledRole — these were silently ignored. Now all four fields\nare handled, so schedule edits persist to the database.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -786,12 +792,6 @@
       "message": "feat: add Staff, Schedule, Tips, Clock In, POS links to HomeNav\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "feature/beta-onboarding",
       "date": "2026-03-14"
-    },
-    {
-      "hash": "72121ba",
-      "message": "security: remove .env.vercel and api/.env from git tracking — contained real API keys",
-      "branch": "feature/beta-onboarding",
-      "date": "2026-03-13"
     }
   ]
 }
