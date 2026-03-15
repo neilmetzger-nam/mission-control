@@ -618,7 +618,9 @@
             {
               "id": "t1",
               "title": "CFO execute buttons end-to-end test",
-              "status": "todo"
+              "status": "done",
+              "completedAt": "2026-03-15",
+              "completedBy": "3b05784"
             },
             {
               "id": "t2",
@@ -715,7 +717,9 @@
             {
               "id": "pwa9",
               "title": "CFO execute buttons end-to-end test",
-              "status": "todo"
+              "status": "done",
+              "completedAt": "2026-03-15",
+              "completedBy": "3b05784"
             }
           ]
         }
@@ -723,12 +727,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "aa59796",
-    "message": "fix(tablet-pos): eliminate scrolling on iPad order entry (1024x768)\n\nCategory picker: replace 3-col grid of 64px tiles with compact\nflex-wrap pill layout (emoji + short name) so all categories fit\nwithout vertical scroll. Menu items: reduce row height from 56px\nto 44px, tighten gaps and font sizes. Header, seat pills, fire\nbutton, and category pills all made more compact. Everything fits\nwithin 100vh on a 1024x768 iPad viewport with no page-level scroll.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-    "branch": "fix/tablet-order-no-scroll",
+    "hash": "3b05784",
+    "message": "fix(staff): bridge dual staff systems, wire real data, add Manage Staff panel\n\nStaffHome: resolveStaffId() now falls back to PwaUserContext user\nwhen staff-store has no matching PIN, fixing clock in/out failures\non fresh installs. Replaced hardcoded getTodayShifts()/getQuickStats()\nwith real data from timeclock-store and staff-store. Added break\nstart/end buttons. Owner/manager now see live \"Clocked In Now\" list\nwith elapsed times.\n\nNew ManageStaffPanel: full-screen modal with add/edit/remove staff,\nPIN validation (4-digit, uniqueness check), role selection, hourly\nrate. Accessible from StaffHome for owner/manager roles.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "branch": "fix/staff-features-audit",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "3b05784",
+      "message": "fix(staff): bridge dual staff systems, wire real data, add Manage Staff panel\n\nStaffHome: resolveStaffId() now falls back to PwaUserContext user\nwhen staff-store has no matching PIN, fixing clock in/out failures\non fresh installs. Replaced hardcoded getTodayShifts()/getQuickStats()\nwith real data from timeclock-store and staff-store. Added break\nstart/end buttons. Owner/manager now see live \"Clocked In Now\" list\nwith elapsed times.\n\nNew ManageStaffPanel: full-screen modal with add/edit/remove staff,\nPIN validation (4-digit, uniqueness check), role selection, hourly\nrate. Accessible from StaffHome for owner/manager roles.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "fix/staff-features-audit",
+      "date": "2026-03-15"
+    },
     {
       "hash": "aa59796",
       "message": "fix(tablet-pos): eliminate scrolling on iPad order entry (1024x768)\n\nCategory picker: replace 3-col grid of 64px tiles with compact\nflex-wrap pill layout (emoji + short name) so all categories fit\nwithout vertical scroll. Menu items: reduce row height from 56px\nto 44px, tighten gaps and font sizes. Header, seat pills, fire\nbutton, and category pills all made more compact. Everything fits\nwithin 100vh on a 1024x768 iPad viewport with no page-level scroll.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -780,12 +790,6 @@
     {
       "hash": "596311b",
       "message": "fix: Manager page drill-down layout — all content fits one screen\n\nManager page restructured from scrollable sections to compact card list\nwith full-screen portals (same pattern as Settings). 11 cards with live\nsubtitles (alerts, kitchen load, orders, sales, etc.) fit on one iPad\nscreen. Tap any card → full-screen view with back button.\n\nAlso added overflow-y-auto safety to Settings main menu.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "feature/beta-onboarding",
-      "date": "2026-03-13"
-    },
-    {
-      "hash": "47a4fb1",
-      "message": "fix: eliminate nested scroll containers across all iPad PWA pages\n\nRoot cause: iOS Safari can't handle nested overflow-y-auto containers.\nPwaShell + SwipeContainer + individual pages = 3 scroll levels.\n\nChanges:\n- PwaShell: content wrapper → overflow-hidden (children own scroll)\n- ManagerOps: all expandable cards → fullScreen drill-down (no page scroll)\n- OpsCard fullScreen portal: h-dvh inner wrapper (matches PosModal pattern)\n- MoreMenu FullScreenPanel: same h-dvh inner wrapper fix\n- ServiceIntel, IpadPaymentsTab: removed redundant overflow-y-auto\n  (SwipeContainer page wrapper handles scroll)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "feature/beta-onboarding",
       "date": "2026-03-13"
     }
