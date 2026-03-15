@@ -711,8 +711,10 @@
             {
               "id": "pwa8",
               "title": "Live server test at Red Bar",
-              "status": "todo",
-              "priority": "high"
+              "status": "done",
+              "priority": "high",
+              "completedAt": "2026-03-15",
+              "completedBy": "5e69060"
             },
             {
               "id": "pwa9",
@@ -727,12 +729,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "f7b503c",
-    "message": "chore: add build tag to QuickSwitchBar for cache busting",
-    "branch": "main",
+    "hash": "5e69060",
+    "message": "fix: iPad order entry layout — wider menu panel, wrapping categories, server name\n\n1. Column split changed from 55/45 to 65/35 — menu panel gets more\n   space, order summary panel is tighter (was mostly empty space)\n2. Category pills now flex-wrap instead of horizontal scroll — all\n   categories visible without scrolling at 1024x768\n3. Header shows server name from order (resolved from PIN→staff name)\n   instead of only the elapsed timer\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "branch": "fix/tablet-order-entry-layout",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "5e69060",
+      "message": "fix: iPad order entry layout — wider menu panel, wrapping categories, server name\n\n1. Column split changed from 55/45 to 65/35 — menu panel gets more\n   space, order summary panel is tighter (was mostly empty space)\n2. Category pills now flex-wrap instead of horizontal scroll — all\n   categories visible without scrolling at 1024x768\n3. Header shows server name from order (resolved from PIN→staff name)\n   instead of only the elapsed timer\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "fix/tablet-order-entry-layout",
+      "date": "2026-03-15"
+    },
     {
       "hash": "f7b503c",
       "message": "chore: add build tag to QuickSwitchBar for cache busting",
@@ -785,12 +793,6 @@
       "hash": "a509b4b",
       "message": "fix(device-settings): remove printer routing, fix tip % width, add font size + auto-cut + feed lines\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
-      "date": "2026-03-14"
-    },
-    {
-      "hash": "441f5c8",
-      "message": "fix(device-settings): remove printer routing section, fix tip % input width\n\nRemove duplicate Printer Routing section (already exists in dedicated\nsettings page) and PrinterRoutingSettings interface. Widen tip percentage\ninputs from w-16 to w-20 with max=100 and flex-wrap so all 3 slots\ndisplay without clipping on iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "fix/device-settings-cleanup",
       "date": "2026-03-14"
     }
   ]
