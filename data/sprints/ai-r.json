@@ -731,12 +731,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "cdb33c9",
-    "message": "fix: add iOS Safari scroll fixes to all PWA scroll containers\n\n- Add overscroll-y-contain to prevent scroll chaining on iOS\n- Add WebkitOverflowScrolling: \"touch\" for momentum scrolling\n- Applied to all 50+ overflow-y-auto containers across 34 PWA files\n- No layout or desktop behavior changes\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-    "branch": "feature/ios-scroll-fix",
+    "hash": "1f9f0ca",
+    "message": "fix: align MenuResponse type and menu-cache with actual API output\n\nThe API route returns categories with { name, id (string), sortOrder }\nbut MenuResponse type expected { title, id (number), uuid } and\nmenu-cache.ts read c.title — which was undefined at runtime.\n\nThis caused the desktop PosModal (via MenuGrid → loadMenu) to show\ncategories with empty names while Phone/Tablet worked fine (they\nfetch directly and use c.name).\n\n- Fix MenuResponse type to match actual /api/pwa/menu response shape\n- Fix menu-cache transformMenuData to use c.name instead of c.title\n- Add dbId/dbCategoryId to menu-cache item transform for parity\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "1f9f0ca",
+      "message": "fix: align MenuResponse type and menu-cache with actual API output\n\nThe API route returns categories with { name, id (string), sortOrder }\nbut MenuResponse type expected { title, id (number), uuid } and\nmenu-cache.ts read c.title — which was undefined at runtime.\n\nThis caused the desktop PosModal (via MenuGrid → loadMenu) to show\ncategories with empty names while Phone/Tablet worked fine (they\nfetch directly and use c.name).\n\n- Fix MenuResponse type to match actual /api/pwa/menu response shape\n- Fix menu-cache transformMenuData to use c.name instead of c.title\n- Add dbId/dbCategoryId to menu-cache item transform for parity\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "cdb33c9",
       "message": "fix: add iOS Safari scroll fixes to all PWA scroll containers\n\n- Add overscroll-y-contain to prevent scroll chaining on iOS\n- Add WebkitOverflowScrolling: \"touch\" for momentum scrolling\n- Applied to all 50+ overflow-y-auto containers across 34 PWA files\n- No layout or desktop behavior changes\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -789,12 +795,6 @@
       "hash": "5eedf8f",
       "message": "fix(api): add scheduledStart/End, staffId, scheduledRole to shifts PATCH\n\nThe PATCH endpoint previously only handled status, actual times,\nhours, labor cost, notes, and station. Drag-drop shift reassignment\nin WeekGrid sends scheduledStart, scheduledEnd, staffId, and\nscheduledRole — these were silently ignored. Now all four fields\nare handled, so schedule edits persist to the database.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "fix/shifts-patch-endpoint",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "3b05784",
-      "message": "fix(staff): bridge dual staff systems, wire real data, add Manage Staff panel\n\nStaffHome: resolveStaffId() now falls back to PwaUserContext user\nwhen staff-store has no matching PIN, fixing clock in/out failures\non fresh installs. Replaced hardcoded getTodayShifts()/getQuickStats()\nwith real data from timeclock-store and staff-store. Added break\nstart/end buttons. Owner/manager now see live \"Clocked In Now\" list\nwith elapsed times.\n\nNew ManageStaffPanel: full-screen modal with add/edit/remove staff,\nPIN validation (4-digit, uniqueness check), role selection, hourly\nrate. Accessible from StaffHome for owner/manager roles.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "fix/staff-features-audit",
       "date": "2026-03-15"
     }
   ]
