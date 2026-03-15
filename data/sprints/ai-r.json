@@ -729,12 +729,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5e69060",
-    "message": "fix: iPad order entry layout — wider menu panel, wrapping categories, server name\n\n1. Column split changed from 55/45 to 65/35 — menu panel gets more\n   space, order summary panel is tighter (was mostly empty space)\n2. Category pills now flex-wrap instead of horizontal scroll — all\n   categories visible without scrolling at 1024x768\n3. Header shows server name from order (resolved from PIN→staff name)\n   instead of only the elapsed timer\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-    "branch": "fix/tablet-order-entry-layout",
+    "hash": "3b61d6e",
+    "message": "fix: PWA lock screen verifies PINs against DB instead of hardcoded array\n\nPwaLockScreen was checking PINs against DEMO_STAFF in staff-pins.ts,\nso real staff PINs from the database were rejected. Now calls\nPOST /api/pwa/staff/verify-pin first, falls back to local demo staff\nonly when the API is unreachable (offline mode).\n\n- switchUser() is now async, calls pwaApi.verifyPin(pin)\n- API response (display_name, role) mapped to PwaStaffMember shape\n- Verified user cached in localStorage for fast restore on reload\n- Loading state shown while API call is in flight\n- PIN pad disabled during verification to prevent double-submit\n- Role normalization: gm→manager, host→server, etc.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "branch": "fix/pwa-auth-api-verify-pin",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "3b61d6e",
+      "message": "fix: PWA lock screen verifies PINs against DB instead of hardcoded array\n\nPwaLockScreen was checking PINs against DEMO_STAFF in staff-pins.ts,\nso real staff PINs from the database were rejected. Now calls\nPOST /api/pwa/staff/verify-pin first, falls back to local demo staff\nonly when the API is unreachable (offline mode).\n\n- switchUser() is now async, calls pwaApi.verifyPin(pin)\n- API response (display_name, role) mapped to PwaStaffMember shape\n- Verified user cached in localStorage for fast restore on reload\n- Loading state shown while API call is in flight\n- PIN pad disabled during verification to prevent double-submit\n- Role normalization: gm→manager, host→server, etc.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "fix/pwa-auth-api-verify-pin",
+      "date": "2026-03-15"
+    },
     {
       "hash": "5e69060",
       "message": "fix: iPad order entry layout — wider menu panel, wrapping categories, server name\n\n1. Column split changed from 55/45 to 65/35 — menu panel gets more\n   space, order summary panel is tighter (was mostly empty space)\n2. Category pills now flex-wrap instead of horizontal scroll — all\n   categories visible without scrolling at 1024x768\n3. Header shows server name from order (resolved from PIN→staff name)\n   instead of only the elapsed timer\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -786,12 +792,6 @@
     {
       "hash": "b59a3a5",
       "message": "fix(pwa): add dragDirectionLock to fix vertical scroll on iOS",
-      "branch": "neil",
-      "date": "2026-03-14"
-    },
-    {
-      "hash": "a509b4b",
-      "message": "fix(device-settings): remove printer routing, fix tip % width, add font size + auto-cut + feed lines\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-14"
     }
