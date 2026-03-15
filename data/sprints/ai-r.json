@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "3cb3dc1",
-    "message": "chore: build tag v0315-j",
+    "hash": "796d422",
+    "message": "chore: larger build tag text",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "796d422",
+      "message": "chore: larger build tag text",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "3cb3dc1",
       "message": "chore: build tag v0315-j",
@@ -790,12 +796,6 @@
     {
       "hash": "653232d",
       "message": "fix: add missing await to authenticatePwaRequest in non-PWA routes\n\nRoutes in cfo/, dashboard/, liam/, molly/ were missed by the bulk\nawait update (which only targeted app/api/pwa/). Without await,\nthe return type was Promise<NextResponse | PwaStaffMember> instead\nof the resolved NextResponse — failing Vercel's route type check.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "36bd50b",
-      "message": "fix: menu API — remove is_available filter, fix null categoryId, add logging\n\nThree issues causing missing items in PWA menu:\n\n1. is_available filter excluded items where is_available was false/null.\n   Only is_active matters — 86'd items are handled client-side.\n   Removed the AND is_available = true filter.\n\n2. String(null) produced \"null\" for items with no category_id, causing\n   categoryId \"cat-null\" which matched no category. Now returns null.\n\n3. Added console.log to API route (server) and menu-cache (client)\n   showing category/item counts for debugging.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
