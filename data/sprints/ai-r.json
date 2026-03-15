@@ -723,12 +723,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "a509b4b",
-    "message": "fix(device-settings): remove printer routing, fix tip % width, add font size + auto-cut + feed lines\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "b59a3a5",
+    "message": "fix(pwa): add dragDirectionLock to fix vertical scroll on iOS",
     "branch": "neil",
     "date": "2026-03-14"
   },
   "recentCommits": [
+    {
+      "hash": "b59a3a5",
+      "message": "fix(pwa): add dragDirectionLock to fix vertical scroll on iOS",
+      "branch": "neil",
+      "date": "2026-03-14"
+    },
     {
       "hash": "a509b4b",
       "message": "fix(device-settings): remove printer routing, fix tip % width, add font size + auto-cut + feed lines\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -780,12 +786,6 @@
     {
       "hash": "52b8572",
       "message": "fix: Settings panel drill-down UI — eliminates iPad scroll issue\n\nRestructured Settings from a single long scrollable page to a drill-down\npattern: main screen shows a compact list of 12 section cards (fits one\nscreen, no scrolling needed), tapping a card opens that section full-screen\nwith a back button. Completely sidesteps the iOS Safari fixed-container\nscroll bug. Inner section detail views use h-dvh flex layout matching\nPosModal's working pattern.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "feature/beta-onboarding",
-      "date": "2026-03-13"
-    },
-    {
-      "hash": "5a5d43d",
-      "message": "fix: course mapping breaks item rendering + Settings scroll on iPad\n\n- API was storing parseInt(\"main\",10) → NaN → 1 for ALL courses.\n  Added COURSE_TO_NUM lookup so drink=1, appetizer=2, soup=3, main=4, dessert=5.\n- dbItemToPosItem was converting course_number back as String(1)=\"1\" which\n  didn't match OrderPanel's COURSE_ORDER. Added COURSE_NUM_TO_NAME reverse map.\n- Settings panel: added h-dvh overflow-hidden to fixed motion.div for iOS Safari\n  flex height computation (matches PosModal's working pattern).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "feature/beta-onboarding",
       "date": "2026-03-13"
     }
