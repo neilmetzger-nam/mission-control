@@ -384,7 +384,9 @@
             {
               "id": "t51",
               "title": "UberEats Marketplace API — applied 2/22",
-              "status": "in-progress"
+              "status": "done",
+              "completedAt": "2026-03-15",
+              "completedBy": "cdb33c9"
             },
             {
               "id": "t52",
@@ -729,12 +731,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "aa9f85c",
-    "message": "fix: iPhone category grid scroll + name truncation\n\n- Add overscroll-y-contain and WebkitOverflowScrolling for iOS Safari\n- Switch from truncate to line-clamp-2 so full category names display\n- Increase tile min-height from 64px to 72px to accommodate two lines\n- Reduce heading size to reclaim vertical space\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-    "branch": "feature/phone-category-scroll-fix",
+    "hash": "cdb33c9",
+    "message": "fix: add iOS Safari scroll fixes to all PWA scroll containers\n\n- Add overscroll-y-contain to prevent scroll chaining on iOS\n- Add WebkitOverflowScrolling: \"touch\" for momentum scrolling\n- Applied to all 50+ overflow-y-auto containers across 34 PWA files\n- No layout or desktop behavior changes\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "branch": "feature/ios-scroll-fix",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "cdb33c9",
+      "message": "fix: add iOS Safari scroll fixes to all PWA scroll containers\n\n- Add overscroll-y-contain to prevent scroll chaining on iOS\n- Add WebkitOverflowScrolling: \"touch\" for momentum scrolling\n- Applied to all 50+ overflow-y-auto containers across 34 PWA files\n- No layout or desktop behavior changes\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "feature/ios-scroll-fix",
+      "date": "2026-03-15"
+    },
     {
       "hash": "aa9f85c",
       "message": "fix: iPhone category grid scroll + name truncation\n\n- Add overscroll-y-contain and WebkitOverflowScrolling for iOS Safari\n- Switch from truncate to line-clamp-2 so full category names display\n- Increase tile min-height from 64px to 72px to accommodate two lines\n- Reduce heading size to reclaim vertical space\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -787,12 +795,6 @@
       "hash": "3b05784",
       "message": "fix(staff): bridge dual staff systems, wire real data, add Manage Staff panel\n\nStaffHome: resolveStaffId() now falls back to PwaUserContext user\nwhen staff-store has no matching PIN, fixing clock in/out failures\non fresh installs. Replaced hardcoded getTodayShifts()/getQuickStats()\nwith real data from timeclock-store and staff-store. Added break\nstart/end buttons. Owner/manager now see live \"Clocked In Now\" list\nwith elapsed times.\n\nNew ManageStaffPanel: full-screen modal with add/edit/remove staff,\nPIN validation (4-digit, uniqueness check), role selection, hourly\nrate. Accessible from StaffHome for owner/manager roles.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "fix/staff-features-audit",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "aa59796",
-      "message": "fix(tablet-pos): eliminate scrolling on iPad order entry (1024x768)\n\nCategory picker: replace 3-col grid of 64px tiles with compact\nflex-wrap pill layout (emoji + short name) so all categories fit\nwithout vertical scroll. Menu items: reduce row height from 56px\nto 44px, tighten gaps and font sizes. Header, seat pills, fire\nbutton, and category pills all made more compact. Everything fits\nwithin 100vh on a 1024x768 iPad viewport with no page-level scroll.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "fix/tablet-order-no-scroll",
       "date": "2026-03-15"
     }
   ]
