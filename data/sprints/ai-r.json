@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "a8a42e5",
-    "message": "chore: build tag v0315-i",
+    "hash": "3cb3dc1",
+    "message": "chore: build tag v0315-j",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "3cb3dc1",
+      "message": "chore: build tag v0315-j",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "a8a42e5",
       "message": "chore: build tag v0315-i",
@@ -790,12 +796,6 @@
     {
       "hash": "36bd50b",
       "message": "fix: menu API — remove is_available filter, fix null categoryId, add logging\n\nThree issues causing missing items in PWA menu:\n\n1. is_available filter excluded items where is_available was false/null.\n   Only is_active matters — 86'd items are handled client-side.\n   Removed the AND is_available = true filter.\n\n2. String(null) produced \"null\" for items with no category_id, causing\n   categoryId \"cat-null\" which matched no category. Now returns null.\n\n3. Added console.log to API route (server) and menu-cache (client)\n   showing category/item counts for debugging.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "1b9989c",
-      "message": "fix: authenticatePwaRequest checks DB instead of hardcoded demo staff\n\nRoot cause of persistent 401 \"Invalid PIN\" on order creation:\nauthenticatePwaRequest() only checked the 5-entry DEMO_STAFF array.\nAny real DB PIN (e.g. 5687) passed verify-pin login but failed\nevery subsequent API call.\n\nNow authenticatePwaRequest:\n1. Fast path: checks hardcoded demo staff first (no DB hit)\n2. Falls back to DB query against staff table\n3. Returns 503 if DB is unreachable\n4. Console.log on every auth showing resolved name + role\n\nAll 67 route files updated: authenticatePwaRequest(req) → await\n\nAlso: PwaSettingsPanel scroll fix — added touch-action: pan-y to\nboth detail and menu list containers.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
