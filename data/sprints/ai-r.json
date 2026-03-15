@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b0cb2b7",
-    "message": "fix: staff API snake_case→camelCase mapping + login name resolution\n\nAll staff API routes (GET /staff, POST /staff, PATCH /staff/:id,\nPOST /staff/verify-pin) were returning raw DB rows with snake_case\nfields (display_name, first_name, restaurant_id) but the client\nexpected camelCase (displayName, firstName, restaurantId).\n\nThis caused:\n- \"undefined undefined\" displayed as staff name after PIN login\n- 401 on order creation (wrong PIN sent from stale cached user)\n- ManageStaffPanel showing blank fields\n\nFixes:\n- Map all staff API responses to camelCase before returning\n- Use input PIN (not m.pin) in PwaUserContext to avoid stale values\n- Robust name fallback: displayName → firstName+lastName → \"Staff\"\n- Console.log on successful login for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "bc1ae70",
+    "message": "chore: update build tag to v0315-h",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "bc1ae70",
+      "message": "chore: update build tag to v0315-h",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "b0cb2b7",
       "message": "fix: staff API snake_case→camelCase mapping + login name resolution\n\nAll staff API routes (GET /staff, POST /staff, PATCH /staff/:id,\nPOST /staff/verify-pin) were returning raw DB rows with snake_case\nfields (display_name, first_name, restaurant_id) but the client\nexpected camelCase (displayName, firstName, restaurantId).\n\nThis caused:\n- \"undefined undefined\" displayed as staff name after PIN login\n- 401 on order creation (wrong PIN sent from stale cached user)\n- ManageStaffPanel showing blank fields\n\nFixes:\n- Map all staff API responses to camelCase before returning\n- Use input PIN (not m.pin) in PwaUserContext to avoid stale values\n- Robust name fallback: displayName → firstName+lastName → \"Staff\"\n- Console.log on successful login for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -791,12 +797,6 @@
       "hash": "001ee31",
       "message": "fix: restore TodayTab card layout + fix TableMap horizontal scroll\n\nTodayTab was overwritten with a dashboard layout that removed card\nnavigation, timeclock portal, schedule view, and timesheet drill-downs.\nRestored the previous working version and added a compact inline\n\"Clocked In Now\" card showing active staff on the main view.\n\nTableMap: added overflow-hidden to prevent absolutely-positioned table\nbuttons from causing a horizontal scrollbar at 1024x768.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "fix/todaytab-regression-tablemap-scroll",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "e65ecc6",
-      "message": "Go-live prep: iPad no-scroll layout, clock-in fix, ManageStaffPanel, schedule PATCH, broadcast print mode",
-      "branch": "neil",
       "date": "2026-03-15"
     }
   ]
