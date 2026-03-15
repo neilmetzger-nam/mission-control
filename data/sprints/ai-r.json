@@ -727,12 +727,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "cdde135",
-    "message": "feat: add broadcast print mode for go-live testing\n\nAdds a \"Print to all printers (test mode)\" toggle in Settings > Device\nthat sends every kitchen ticket to ALL connected printers, bypassing\ncategory-based routing. Needed for Red Bar go-live test.\n\n- broadcastPrint field in DeviceSettings (localStorage, default OFF)\n- Toggle UI with amber warning banner when active\n- fireToKitchenPrinters() passes broadcast flag to API\n- fireOrder() local ESC/POS path respects broadcastPrint setting\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-    "branch": "feature/broadcast-print-mode",
+    "hash": "e65ecc6",
+    "message": "Go-live prep: iPad no-scroll layout, clock-in fix, ManageStaffPanel, schedule PATCH, broadcast print mode",
+    "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "e65ecc6",
+      "message": "Go-live prep: iPad no-scroll layout, clock-in fix, ManageStaffPanel, schedule PATCH, broadcast print mode",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "cdde135",
       "message": "feat: add broadcast print mode for go-live testing\n\nAdds a \"Print to all printers (test mode)\" toggle in Settings > Device\nthat sends every kitchen ticket to ALL connected printers, bypassing\ncategory-based routing. Needed for Red Bar go-live test.\n\n- broadcastPrint field in DeviceSettings (localStorage, default OFF)\n- Toggle UI with amber warning banner when active\n- fireToKitchenPrinters() passes broadcast flag to API\n- fireOrder() local ESC/POS path respects broadcastPrint setting\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -784,12 +790,6 @@
     {
       "hash": "f84e67f",
       "message": "feat: add Today tab + consolidate iPad tabs (Today/Guests)\n\n- New TodayTab: MOTD, clocked-in roster, TimeclockPad portal,\n  7-day schedule, timesheet — drill-down card pattern\n- Remove duplicate Floor tab, rename Orders to Guests\n- SwipeContainer: add forwardRef with goToPage imperative handle\n- Auto-return to Today after 60s idle (iPad only)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "feature/beta-onboarding",
-      "date": "2026-03-14"
-    },
-    {
-      "hash": "2bbcb16",
-      "message": "feat: add Staff, Schedule, Tips, Clock In, POS links to HomeNav\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "feature/beta-onboarding",
       "date": "2026-03-14"
     }
