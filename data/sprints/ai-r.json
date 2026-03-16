@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6568af4",
-    "message": "fix: remove uuid column from session queries — column doesn't exist in DB\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "80aef6e",
+    "message": "fix: remove is_primary_owner column — doesn't exist in DB\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "80aef6e",
+      "message": "fix: remove is_primary_owner column — doesn't exist in DB\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "6568af4",
       "message": "fix: remove uuid column from session queries — column doesn't exist in DB\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "38ac28c",
       "message": "fix: stabilize Clerk token getter to prevent session flashing\n\ngetToken from useAuth() changes reference on every Clerk session tick,\ncausing infinite re-renders via useCallback dependency chain. Store it\nin a ref so the tokenGetter callback identity stays stable.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "ba2c428",
-      "message": "feat: iPhone UX polish — swipe delete, no auto-keyboard, remove nav bar\n\n- Swipe left on order items reveals Remove (unfired) or Void (fired)\n- Void requires manager PIN + reason selection via VoidPinPrompt\n- Remove autoFocus from notes input; add explicit +Note button\n- Remove bottom tab bar on iPhone — render PhonePOS directly\n- Keyboard layout shift resolved by nav bar removal + existing dvh/flex\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-16"
     }
