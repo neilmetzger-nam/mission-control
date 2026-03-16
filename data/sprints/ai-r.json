@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "f973471",
-    "message": "fix: add error handling to session route + show error UI instead of infinite spinner\n\n- Wrap /api/session/me in try/catch, log errors, return 500 with detail\n- Check DATABASE_URL is set before querying\n- Add force-dynamic export to prevent static rendering\n- Restore uuid and is_primary_owner fields in SQL queries\n- SessionProvider now shows error message + retry button instead of\n  spinning forever when session fetch fails\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "6568af4",
+    "message": "fix: remove uuid column from session queries — column doesn't exist in DB\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "6568af4",
+      "message": "fix: remove uuid column from session queries — column doesn't exist in DB\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "f973471",
       "message": "fix: add error handling to session route + show error UI instead of infinite spinner\n\n- Wrap /api/session/me in try/catch, log errors, return 500 with detail\n- Check DATABASE_URL is set before querying\n- Add force-dynamic export to prevent static rendering\n- Restore uuid and is_primary_owner fields in SQL queries\n- SessionProvider now shows error message + retry button instead of\n  spinning forever when session fetch fails\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "ba2c428",
       "message": "feat: iPhone UX polish — swipe delete, no auto-keyboard, remove nav bar\n\n- Swipe left on order items reveals Remove (unfired) or Void (fired)\n- Void requires manager PIN + reason selection via VoidPinPrompt\n- Remove autoFocus from notes input; add explicit +Note button\n- Remove bottom tab bar on iPhone — render PhonePOS directly\n- Keyboard layout shift resolved by nav bar removal + existing dvh/flex\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "8311df6",
-      "message": "fix: restore NavConfig.ts with Menu link",
       "branch": "neil",
       "date": "2026-03-16"
     }
