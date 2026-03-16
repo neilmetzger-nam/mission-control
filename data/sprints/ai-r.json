@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6c74a2e",
-    "message": "fix: single-screen item edit (skip EditItemModal), seat circle contrast — BUILD 13",
+    "hash": "1a334e0",
+    "message": "chore: build tag BUILD 14",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "1a334e0",
+      "message": "chore: build tag BUILD 14",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "6c74a2e",
       "message": "fix: single-screen item edit (skip EditItemModal), seat circle contrast — BUILD 13",
@@ -794,12 +800,6 @@
     {
       "hash": "46f90e6",
       "message": "feat: full item detail slide-over panel with 10 sections\n\n- Core Info: name, description, status (active/inactive/86'd), AI\n  description enhance/generate via GPT-4o-mini\n- Pricing & Channels: tabbed per channel (Dine In, Online, DoorDash,\n  UberEats, Grubhub, Pickup) with price inheritance, per-channel\n  active toggle, name override\n- Category & Section: category dropdown, hero item toggle\n- Display Badges: featured/spicy/vegetarian/vegan/alcoholic toggles,\n  multi-select allergens\n- Modifier Groups: placeholder (uses existing Modifiers tab)\n- Availability Schedule: shows inherited defaults, override coming soon\n- Recipe & Cost: menu price display, plate cost/margin placeholders\n- Photography: current image display, AI generate, upload\n- Pairings: add/remove wine/sake/cocktail/beer pairings\n- Sales Data: placeholder stat cards for week/month/all-time\n\nAPI changes:\n- Added GET /api/v1/menu/items/[id] for full item detail\n- Extended PATCH to support badges, channelPricing, pairings JSONB\n- Added ALTER TABLE IF NOT EXISTS for new JSONB columns (idempotent)\n- Added POST /api/v1/menu/ai/enhance-description for AI copywriting\n- Added apiRequests.menu.items.get() and MenuItemDetail type\n\nClicking any row in the Items tab opens the panel. Checkbox, name edit,\nand price edit cells stop propagation to preserve inline editing.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "50d0cea",
-      "message": "fix: remove ops status badge, rename right-edge panel tabs\n\n- Remove \"X open · Y covers\" badge from FloatingMaestroButton\n- Rename MollyPanel tab from CFO to Marketing (megaphone icon)\n- Rename LiamPanel tab from CFO to Ops (gear icon)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-16"
     }
