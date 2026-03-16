@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "505b98f",
-    "message": "chore: build tag v0315-l",
+    "hash": "b06a62a",
+    "message": "fix: +mods edit saves notes, seat, and course (not just modifiers)\n\nRenamed updateItemModifiers → updateItemDetails which accepts all\neditable fields. The edit-mode path in handleDetailAdd now passes\nnotes, seat, and courseOverride to the API PATCH, so special\ninstructions entered via the +mods sheet appear on the order item.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "b06a62a",
+      "message": "fix: +mods edit saves notes, seat, and course (not just modifiers)\n\nRenamed updateItemModifiers → updateItemDetails which accepts all\neditable fields. The edit-mode path in handleDetailAdd now passes\nnotes, seat, and courseOverride to the API PATCH, so special\ninstructions entered via the +mods sheet appear on the order item.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "505b98f",
       "message": "chore: build tag v0315-l",
@@ -790,12 +796,6 @@
     {
       "hash": "9f10d52",
       "message": "feat: quick-add items without required modifiers, add +mods link\n\n- handleItemTap now only shows ItemDetailSheet for items with\n  REQUIRED modifiers; all others quick-add directly to the order\n- Add modifierSelections to ItemDetailSheet handleAdd (was missing)\n- Add \"+mods\" link on order item rows (like \"+note\") to view/edit\n  modifiers on existing items via ItemDetailSheet in edit mode\n- Add updateItemModifiers to pos-store and API PATCH route\n- Network errors on modifier check now quick-add instead of blocking\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "dbf5cb7",
-      "message": "feat: iPad MenuGrid shows category picker grid before items\n\nWhen opening a table on iPad (PosModal → MenuGrid), show the same\n\"What are they having?\" category grid with emoji tiles that iPhone\nuses, instead of auto-selecting the first category. Adds search\nclear button and \"← All\" back navigation in category pills.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
