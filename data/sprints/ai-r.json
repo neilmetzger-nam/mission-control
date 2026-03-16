@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "133751b",
-    "message": "fix: show actual error message in error boundary for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "693c005",
+    "message": "fix: guard against undefined menu.categories in MenuManagement\n\nCorrupt localStorage data or missing API response could produce a truthy\nmenu object without a categories array, crashing the render.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "693c005",
+      "message": "fix: guard against undefined menu.categories in MenuManagement\n\nCorrupt localStorage data or missing API response could produce a truthy\nmenu object without a categories array, crashing the render.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "133751b",
       "message": "fix: show actual error message in error boundary for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "1686023",
       "message": "chore: build tag v0316-f",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "986b8bf",
-      "message": "chore: build tag v0316-e",
       "branch": "neil",
       "date": "2026-03-16"
     }
