@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "74103fb",
-    "message": "fix: make item name clickable to open detail panel + add chevron column\n\nName is now a button that opens the detail panel (turns emerald on\nhover). Added a chevron > column at the end of each row as a secondary\nopen affordance. Removed whole-row click which conflicted with inline\nediting.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "a120ff5",
+    "message": "chore: build tag v0316-i",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "a120ff5",
+      "message": "chore: build tag v0316-i",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "74103fb",
       "message": "fix: make item name clickable to open detail panel + add chevron column\n\nName is now a button that opens the detail panel (turns emerald on\nhover). Added a chevron > column at the end of each row as a secondary\nopen affordance. Removed whole-row click which conflicted with inline\nediting.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -794,12 +800,6 @@
     {
       "hash": "133751b",
       "message": "fix: show actual error message in error boundary for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "14edb5e",
-      "message": "feat: add Next.js API routes for menu categories and items\n\nReplace dead Express backend endpoints with local Next.js route handlers\nso the /home/menu management page can load. Routes use neon() direct SQL\nwith field mapping (DB name↔API title, isActive↔availability).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-16"
     }
