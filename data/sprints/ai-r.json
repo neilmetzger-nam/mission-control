@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ba2c428",
-    "message": "feat: iPhone UX polish — swipe delete, no auto-keyboard, remove nav bar\n\n- Swipe left on order items reveals Remove (unfired) or Void (fired)\n- Void requires manager PIN + reason selection via VoidPinPrompt\n- Remove autoFocus from notes input; add explicit +Note button\n- Remove bottom tab bar on iPhone — render PhonePOS directly\n- Keyboard layout shift resolved by nav bar removal + existing dvh/flex\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "38ac28c",
+    "message": "fix: stabilize Clerk token getter to prevent session flashing\n\ngetToken from useAuth() changes reference on every Clerk session tick,\ncausing infinite re-renders via useCallback dependency chain. Store it\nin a ref so the tokenGetter callback identity stays stable.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "38ac28c",
+      "message": "fix: stabilize Clerk token getter to prevent session flashing\n\ngetToken from useAuth() changes reference on every Clerk session tick,\ncausing infinite re-renders via useCallback dependency chain. Store it\nin a ref so the tokenGetter callback identity stays stable.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "ba2c428",
       "message": "feat: iPhone UX polish — swipe delete, no auto-keyboard, remove nav bar\n\n- Swipe left on order items reveals Remove (unfired) or Void (fired)\n- Void requires manager PIN + reason selection via VoidPinPrompt\n- Remove autoFocus from notes input; add explicit +Note button\n- Remove bottom tab bar on iPhone — render PhonePOS directly\n- Keyboard layout shift resolved by nav bar removal + existing dvh/flex\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -792,12 +798,6 @@
       "message": "fix: phone nav bar no longer covers content on all screens\n\nUse calc(56px + env(safe-area-inset-bottom, 34px)) for bottom\npadding across all phone PWA scroll containers to properly clear\nthe tab bar height plus iPhone safe area (home indicator).\n\nFixed globally in SwipeContainer page wrappers and individually\nin PhoneOrdersTab, StaffHome, PhoneMaestroTab, and\nPhoneTableListV2 (which have their own nested scroll containers).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-16"
-    },
-    {
-      "hash": "94e52cf",
-      "message": "fix: iPhone now loads DB menu instead of seed data\n\nRemoved PIN gate that prevented loadMenu() from running.\nAdded invalidateMenuCache() before fetch to bypass any stale\nin-memory cache from a prior failed attempt (e.g. before login).\niPhone now uses the same menu-cache.ts → /api/pwa/menu flow\nas iPad's MenuGrid.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
     }
   ]
 }
