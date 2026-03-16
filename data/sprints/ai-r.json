@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "80aef6e",
-    "message": "fix: remove is_primary_owner column — doesn't exist in DB\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "14edb5e",
+    "message": "feat: add Next.js API routes for menu categories and items\n\nReplace dead Express backend endpoints with local Next.js route handlers\nso the /home/menu management page can load. Routes use neon() direct SQL\nwith field mapping (DB name↔API title, isActive↔availability).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "14edb5e",
+      "message": "feat: add Next.js API routes for menu categories and items\n\nReplace dead Express backend endpoints with local Next.js route handlers\nso the /home/menu management page can load. Routes use neon() direct SQL\nwith field mapping (DB name↔API title, isActive↔availability).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "80aef6e",
       "message": "fix: remove is_primary_owner column — doesn't exist in DB\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "9a46282",
       "message": "chore: trigger redeploy for env var update",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "38ac28c",
-      "message": "fix: stabilize Clerk token getter to prevent session flashing\n\ngetToken from useAuth() changes reference on every Clerk session tick,\ncausing infinite re-renders via useCallback dependency chain. Store it\nin a ref so the tokenGetter callback identity stays stable.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-16"
     }
