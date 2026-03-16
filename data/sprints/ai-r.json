@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "16a8a9f",
-    "message": "fix: phone nav bar no longer covers content on all screens\n\nUse calc(56px + env(safe-area-inset-bottom, 34px)) for bottom\npadding across all phone PWA scroll containers to properly clear\nthe tab bar height plus iPhone safe area (home indicator).\n\nFixed globally in SwipeContainer page wrappers and individually\nin PhoneOrdersTab, StaffHome, PhoneMaestroTab, and\nPhoneTableListV2 (which have their own nested scroll containers).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "f996244",
+    "message": "chore: build tag v0316-a",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "f996244",
+      "message": "chore: build tag v0316-a",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "16a8a9f",
       "message": "fix: phone nav bar no longer covers content on all screens\n\nUse calc(56px + env(safe-area-inset-bottom, 34px)) for bottom\npadding across all phone PWA scroll containers to properly clear\nthe tab bar height plus iPhone safe area (home indicator).\n\nFixed globally in SwipeContainer page wrappers and individually\nin PhoneOrdersTab, StaffHome, PhoneMaestroTab, and\nPhoneTableListV2 (which have their own nested scroll containers).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "a8a42e5",
       "message": "chore: build tag v0315-i",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "b2cc9a6",
-      "message": "debug: show visible error toast when item add fails on iPad\n\nRed toast at top of PosModal shows the actual error message\n(API failure, missing order, empty response) instead of only\nlogging to console which is invisible on iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
