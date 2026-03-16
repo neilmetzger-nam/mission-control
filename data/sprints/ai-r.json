@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "22d5f0b",
-    "message": "feat: edit item modal + fix session auth to use local API route\n\n- Add EditItemModal with station selector, quantity +/-, notes, mods link\n- Wire edit button in PhoneOrderEntry and TabletOrderEntry to open modal\n- Remove SUSHI course badge — sushi items show as APP or ENTREE\n- Rewrite useAppAuth to call /api/session/me instead of external backend\n- No longer depends on NEXT_PUBLIC_API_URL for session initialization\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "53fb5c5",
+    "message": "fix: bust service worker cache and scope caching to PWA routes only\n\nThe SW was caching all GET responses including JS bundles, causing\nstale code to be served even after Vercel deploys. Now only caches\nPWA shell, manifest, and static assets.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "53fb5c5",
+      "message": "fix: bust service worker cache and scope caching to PWA routes only\n\nThe SW was caching all GET responses including JS bundles, causing\nstale code to be served even after Vercel deploys. Now only caches\nPWA shell, manifest, and static assets.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "22d5f0b",
       "message": "feat: edit item modal + fix session auth to use local API route\n\n- Add EditItemModal with station selector, quantity +/-, notes, mods link\n- Wire edit button in PhoneOrderEntry and TabletOrderEntry to open modal\n- Remove SUSHI course badge — sushi items show as APP or ENTREE\n- Rewrite useAppAuth to call /api/session/me instead of external backend\n- No longer depends on NEXT_PUBLIC_API_URL for session initialization\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "6b2e7cd",
       "message": "chore: build tag v0316-d",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "3019130",
-      "message": "feat: add Menu link to main nav",
       "branch": "neil",
       "date": "2026-03-16"
     }
