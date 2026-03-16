@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ab4d989",
-    "message": "chore: build tag BUILD 15 — force redeploy",
+    "hash": "020a3ee",
+    "message": "fix: bust service worker cache (v3) + BUILD 16",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "020a3ee",
+      "message": "fix: bust service worker cache (v3) + BUILD 16",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "ab4d989",
       "message": "chore: build tag BUILD 15 — force redeploy",
@@ -794,12 +800,6 @@
     {
       "hash": "74103fb",
       "message": "fix: make item name clickable to open detail panel + add chevron column\n\nName is now a button that opens the detail panel (turns emerald on\nhover). Added a chevron > column at the end of each row as a secondary\nopen affordance. Removed whole-row click which conflicted with inline\nediting.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "d155d5f",
-      "message": "chore: build tag v0316-h",
       "branch": "neil",
       "date": "2026-03-16"
     }
