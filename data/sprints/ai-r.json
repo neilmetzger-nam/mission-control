@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "8311df6",
-    "message": "fix: restore NavConfig.ts with Menu link",
+    "hash": "ba2c428",
+    "message": "feat: iPhone UX polish — swipe delete, no auto-keyboard, remove nav bar\n\n- Swipe left on order items reveals Remove (unfired) or Void (fired)\n- Void requires manager PIN + reason selection via VoidPinPrompt\n- Remove autoFocus from notes input; add explicit +Note button\n- Remove bottom tab bar on iPhone — render PhonePOS directly\n- Keyboard layout shift resolved by nav bar removal + existing dvh/flex\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "ba2c428",
+      "message": "feat: iPhone UX polish — swipe delete, no auto-keyboard, remove nav bar\n\n- Swipe left on order items reveals Remove (unfired) or Void (fired)\n- Void requires manager PIN + reason selection via VoidPinPrompt\n- Remove autoFocus from notes input; add explicit +Note button\n- Remove bottom tab bar on iPhone — render PhonePOS directly\n- Keyboard layout shift resolved by nav bar removal + existing dvh/flex\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "8311df6",
       "message": "fix: restore NavConfig.ts with Menu link",
@@ -790,12 +796,6 @@
     {
       "hash": "94e52cf",
       "message": "fix: iPhone now loads DB menu instead of seed data\n\nRemoved PIN gate that prevented loadMenu() from running.\nAdded invalidateMenuCache() before fetch to bypass any stale\nin-memory cache from a prior failed attempt (e.g. before login).\niPhone now uses the same menu-cache.ts → /api/pwa/menu flow\nas iPad's MenuGrid.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "b06a62a",
-      "message": "fix: +mods edit saves notes, seat, and course (not just modifiers)\n\nRenamed updateItemModifiers → updateItemDetails which accepts all\neditable fields. The edit-mode path in handleDetailAdd now passes\nnotes, seat, and courseOverride to the API PATCH, so special\ninstructions entered via the +mods sheet appear on the order item.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
