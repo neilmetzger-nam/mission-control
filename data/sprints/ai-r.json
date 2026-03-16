@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "53fb5c5",
-    "message": "fix: bust service worker cache and scope caching to PWA routes only\n\nThe SW was caching all GET responses including JS bundles, causing\nstale code to be served even after Vercel deploys. Now only caches\nPWA shell, manifest, and static assets.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "f973471",
+    "message": "fix: add error handling to session route + show error UI instead of infinite spinner\n\n- Wrap /api/session/me in try/catch, log errors, return 500 with detail\n- Check DATABASE_URL is set before querying\n- Add force-dynamic export to prevent static rendering\n- Restore uuid and is_primary_owner fields in SQL queries\n- SessionProvider now shows error message + retry button instead of\n  spinning forever when session fetch fails\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "f973471",
+      "message": "fix: add error handling to session route + show error UI instead of infinite spinner\n\n- Wrap /api/session/me in try/catch, log errors, return 500 with detail\n- Check DATABASE_URL is set before querying\n- Add force-dynamic export to prevent static rendering\n- Restore uuid and is_primary_owner fields in SQL queries\n- SessionProvider now shows error message + retry button instead of\n  spinning forever when session fetch fails\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "53fb5c5",
       "message": "fix: bust service worker cache and scope caching to PWA routes only\n\nThe SW was caching all GET responses including JS bundles, causing\nstale code to be served even after Vercel deploys. Now only caches\nPWA shell, manifest, and static assets.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "8311df6",
       "message": "fix: restore NavConfig.ts with Menu link",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "6b2e7cd",
-      "message": "chore: build tag v0316-d",
       "branch": "neil",
       "date": "2026-03-16"
     }
