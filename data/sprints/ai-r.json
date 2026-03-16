@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "e47f6a5",
-    "message": "fix: session/me route — remove uuid/is_primary_owner columns that dont exist",
+    "hash": "22d5f0b",
+    "message": "feat: edit item modal + fix session auth to use local API route\n\n- Add EditItemModal with station selector, quantity +/-, notes, mods link\n- Wire edit button in PhoneOrderEntry and TabletOrderEntry to open modal\n- Remove SUSHI course badge — sushi items show as APP or ENTREE\n- Rewrite useAppAuth to call /api/session/me instead of external backend\n- No longer depends on NEXT_PUBLIC_API_URL for session initialization\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "22d5f0b",
+      "message": "feat: edit item modal + fix session auth to use local API route\n\n- Add EditItemModal with station selector, quantity +/-, notes, mods link\n- Wire edit button in PhoneOrderEntry and TabletOrderEntry to open modal\n- Remove SUSHI course badge — sushi items show as APP or ENTREE\n- Rewrite useAppAuth to call /api/session/me instead of external backend\n- No longer depends on NEXT_PUBLIC_API_URL for session initialization\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "e47f6a5",
       "message": "fix: session/me route — remove uuid/is_primary_owner columns that dont exist",
@@ -790,12 +796,6 @@
     {
       "hash": "3019130",
       "message": "feat: add Menu link to main nav",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "f5319dc",
-      "message": "feat: complete Ambient Order Assist — mic button, compare modal, fire intercept\n\n- Add AmbientCompareModal portal to TabletOrderEntry and PhoneOrderReview\n- Wire mic button UI (record/stop/comparing states) on both phone and tablet\n- Intercept fire to stop recording and show AI comparison before sending\n- Fix type errors: neon SQL cast, seat fallback to 0\n- Lint/prettier auto-fix pass\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-16"
     }
