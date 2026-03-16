@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "7cb34b8",
-    "message": "chore: build tag v0316-b",
+    "hash": "0bdf11e",
+    "message": "chore: force menu route recompile v0316-c",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "0bdf11e",
+      "message": "chore: force menu route recompile v0316-c",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "7cb34b8",
       "message": "chore: build tag v0316-b",
@@ -790,12 +796,6 @@
     {
       "hash": "796d422",
       "message": "chore: larger build tag text",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "3cb3dc1",
-      "message": "chore: build tag v0315-j",
       "branch": "neil",
       "date": "2026-03-15"
     }
