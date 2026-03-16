@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "3965351",
-    "message": "chore: build tag BUILD 12 — larger readable format",
+    "hash": "6c74a2e",
+    "message": "fix: single-screen item edit (skip EditItemModal), seat circle contrast — BUILD 13",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "6c74a2e",
+      "message": "fix: single-screen item edit (skip EditItemModal), seat circle contrast — BUILD 13",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "3965351",
       "message": "chore: build tag BUILD 12 — larger readable format",
@@ -794,12 +800,6 @@
     {
       "hash": "50d0cea",
       "message": "fix: remove ops status badge, rename right-edge panel tabs\n\n- Remove \"X open · Y covers\" badge from FloatingMaestroButton\n- Rename MollyPanel tab from CFO to Marketing (megaphone icon)\n- Rename LiamPanel tab from CFO to Ops (gear icon)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "7c2f433",
-      "message": "chore: build tag v0316-g",
       "branch": "neil",
       "date": "2026-03-16"
     }
