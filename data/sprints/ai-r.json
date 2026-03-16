@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "94e52cf",
-    "message": "fix: iPhone now loads DB menu instead of seed data\n\nRemoved PIN gate that prevented loadMenu() from running.\nAdded invalidateMenuCache() before fetch to bypass any stale\nin-memory cache from a prior failed attempt (e.g. before login).\niPhone now uses the same menu-cache.ts → /api/pwa/menu flow\nas iPad's MenuGrid.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "16a8a9f",
+    "message": "fix: phone nav bar no longer covers content on all screens\n\nUse calc(56px + env(safe-area-inset-bottom, 34px)) for bottom\npadding across all phone PWA scroll containers to properly clear\nthe tab bar height plus iPhone safe area (home indicator).\n\nFixed globally in SwipeContainer page wrappers and individually\nin PhoneOrdersTab, StaffHome, PhoneMaestroTab, and\nPhoneTableListV2 (which have their own nested scroll containers).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
-    "date": "2026-03-15"
+    "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "16a8a9f",
+      "message": "fix: phone nav bar no longer covers content on all screens\n\nUse calc(56px + env(safe-area-inset-bottom, 34px)) for bottom\npadding across all phone PWA scroll containers to properly clear\nthe tab bar height plus iPhone safe area (home indicator).\n\nFixed globally in SwipeContainer page wrappers and individually\nin PhoneOrdersTab, StaffHome, PhoneMaestroTab, and\nPhoneTableListV2 (which have their own nested scroll containers).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "94e52cf",
       "message": "fix: iPhone now loads DB menu instead of seed data\n\nRemoved PIN gate that prevented loadMenu() from running.\nAdded invalidateMenuCache() before fetch to bypass any stale\nin-memory cache from a prior failed attempt (e.g. before login).\niPhone now uses the same menu-cache.ts → /api/pwa/menu flow\nas iPad's MenuGrid.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "b2cc9a6",
       "message": "debug: show visible error toast when item add fails on iPad\n\nRed toast at top of PosModal shows the actual error message\n(API failure, missing order, empty response) instead of only\nlogging to console which is invisible on iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "49dc7d4",
-      "message": "fix: Clear Local Data now fully resets session\n\n- Broadened localStorage clear to include all air-pwa-* keys\n  (active PIN, menu cache, modifier cache) and device-settings\n- Unregisters service workers and clears SW caches\n- Reloads the page after clearing to reset all in-memory state\n  (order cache, menu data, modifier data, React state)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
