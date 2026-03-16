@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "38ac28c",
-    "message": "fix: stabilize Clerk token getter to prevent session flashing\n\ngetToken from useAuth() changes reference on every Clerk session tick,\ncausing infinite re-renders via useCallback dependency chain. Store it\nin a ref so the tokenGetter callback identity stays stable.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "9a46282",
+    "message": "chore: trigger redeploy for env var update",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "9a46282",
+      "message": "chore: trigger redeploy for env var update",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "38ac28c",
       "message": "fix: stabilize Clerk token getter to prevent session flashing\n\ngetToken from useAuth() changes reference on every Clerk session tick,\ncausing infinite re-renders via useCallback dependency chain. Store it\nin a ref so the tokenGetter callback identity stays stable.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "f996244",
       "message": "chore: build tag v0316-a",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "16a8a9f",
-      "message": "fix: phone nav bar no longer covers content on all screens\n\nUse calc(56px + env(safe-area-inset-bottom, 34px)) for bottom\npadding across all phone PWA scroll containers to properly clear\nthe tab bar height plus iPhone safe area (home indicator).\n\nFixed globally in SwipeContainer page wrappers and individually\nin PhoneOrdersTab, StaffHome, PhoneMaestroTab, and\nPhoneTableListV2 (which have their own nested scroll containers).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-16"
     }
