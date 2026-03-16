@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "796d422",
-    "message": "chore: larger build tag text",
+    "hash": "60b5c57",
+    "message": "chore: force redeploy",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "60b5c57",
+      "message": "chore: force redeploy",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "796d422",
       "message": "chore: larger build tag text",
@@ -790,12 +796,6 @@
     {
       "hash": "26613ed",
       "message": "fix: remove touchmove listener that killed all iOS scroll\n\nThe pull-to-refresh prevention listener called e.preventDefault()\nwhenever window.scrollY === 0. Since the root container has\noverflow-hidden, window.scrollY is ALWAYS 0 — so every vertical\ntouch gesture was blocked before reaching any scroll container.\n\nThis was the root cause of all iOS scroll failures across the PWA.\nThe overscrollBehavior: \"none\" CSS property already prevents\npull-to-refresh correctly without blocking scroll events.\n\nAlso added touch-action: pan-y to SwipeContainer's Framer Motion\ndrag element so the browser handles vertical scroll natively\ninstead of letting Framer Motion consume the touch events.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "653232d",
-      "message": "fix: add missing await to authenticatePwaRequest in non-PWA routes\n\nRoutes in cfo/, dashboard/, liam/, molly/ were missed by the bulk\nawait update (which only targeted app/api/pwa/). Without await,\nthe return type was Promise<NextResponse | PwaStaffMember> instead\nof the resolved NextResponse — failing Vercel's route type check.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
