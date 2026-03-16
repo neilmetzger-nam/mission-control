@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "c04062b",
-    "message": "chore: build tag v0316-l",
+    "hash": "3965351",
+    "message": "chore: build tag BUILD 12 — larger readable format",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "3965351",
+      "message": "chore: build tag BUILD 12 — larger readable format",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "c04062b",
       "message": "chore: build tag v0316-l",
@@ -794,12 +800,6 @@
     {
       "hash": "7c2f433",
       "message": "chore: build tag v0316-g",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "303f95c",
-      "message": "fix: flatten PWA menu response — items are nested inside categories\n\nThe /api/pwa/menu endpoint returns items nested within each category\nobject, not as a top-level array. The old code did setPwaItems(data.items)\nwhich set state to undefined, crashing on .length access.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-16"
     }
