@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "14edb5e",
-    "message": "feat: add Next.js API routes for menu categories and items\n\nReplace dead Express backend endpoints with local Next.js route handlers\nso the /home/menu management page can load. Routes use neon() direct SQL\nwith field mapping (DB name↔API title, isActive↔availability).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "133751b",
+    "message": "fix: show actual error message in error boundary for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "133751b",
+      "message": "fix: show actual error message in error boundary for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "14edb5e",
       "message": "feat: add Next.js API routes for menu categories and items\n\nReplace dead Express backend endpoints with local Next.js route handlers\nso the /home/menu management page can load. Routes use neon() direct SQL\nwith field mapping (DB name↔API title, isActive↔availability).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "986b8bf",
       "message": "chore: build tag v0316-e",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "9a46282",
-      "message": "chore: trigger redeploy for env var update",
       "branch": "neil",
       "date": "2026-03-16"
     }
