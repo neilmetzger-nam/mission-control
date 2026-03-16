@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "a9a75f0",
-    "message": "chore: force menu route recompile v0315-k",
+    "hash": "505b98f",
+    "message": "chore: build tag v0315-l",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "505b98f",
+      "message": "chore: build tag v0315-l",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "a9a75f0",
       "message": "chore: force menu route recompile v0315-k",
@@ -790,12 +796,6 @@
     {
       "hash": "dbf5cb7",
       "message": "feat: iPad MenuGrid shows category picker grid before items\n\nWhen opening a table on iPad (PosModal → MenuGrid), show the same\n\"What are they having?\" category grid with emoji tiles that iPhone\nuses, instead of auto-selecting the first category. Adds search\nclear button and \"← All\" back navigation in category pills.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "57bc417",
-      "message": "feat: iPad category picker matches iPhone grid layout\n\nReplace the compact flex-wrap button list with a visual grid of\ncategory tiles showing emoji + name, matching the iPhone's\n\"What are they having?\" flow. Uses 4 columns (vs iPhone's 3)\nto take advantage of the wider iPad left panel.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
