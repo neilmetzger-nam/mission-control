@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6b2e7cd",
-    "message": "chore: build tag v0316-d",
+    "hash": "8311df6",
+    "message": "fix: restore NavConfig.ts with Menu link",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "8311df6",
+      "message": "fix: restore NavConfig.ts with Menu link",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "6b2e7cd",
       "message": "chore: build tag v0316-d",
@@ -790,12 +796,6 @@
     {
       "hash": "b06a62a",
       "message": "fix: +mods edit saves notes, seat, and course (not just modifiers)\n\nRenamed updateItemModifiers → updateItemDetails which accepts all\neditable fields. The edit-mode path in handleDetailAdd now passes\nnotes, seat, and courseOverride to the API PATCH, so special\ninstructions entered via the +mods sheet appear on the order item.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "505b98f",
-      "message": "chore: build tag v0315-l",
       "branch": "neil",
       "date": "2026-03-15"
     }
