@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b06a62a",
-    "message": "fix: +mods edit saves notes, seat, and course (not just modifiers)\n\nRenamed updateItemModifiers → updateItemDetails which accepts all\neditable fields. The edit-mode path in handleDetailAdd now passes\nnotes, seat, and courseOverride to the API PATCH, so special\ninstructions entered via the +mods sheet appear on the order item.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "94e52cf",
+    "message": "fix: iPhone now loads DB menu instead of seed data\n\nRemoved PIN gate that prevented loadMenu() from running.\nAdded invalidateMenuCache() before fetch to bypass any stale\nin-memory cache from a prior failed attempt (e.g. before login).\niPhone now uses the same menu-cache.ts → /api/pwa/menu flow\nas iPad's MenuGrid.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-15"
   },
   "recentCommits": [
+    {
+      "hash": "94e52cf",
+      "message": "fix: iPhone now loads DB menu instead of seed data\n\nRemoved PIN gate that prevented loadMenu() from running.\nAdded invalidateMenuCache() before fetch to bypass any stale\nin-memory cache from a prior failed attempt (e.g. before login).\niPhone now uses the same menu-cache.ts → /api/pwa/menu flow\nas iPad's MenuGrid.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-15"
+    },
     {
       "hash": "b06a62a",
       "message": "fix: +mods edit saves notes, seat, and course (not just modifiers)\n\nRenamed updateItemModifiers → updateItemDetails which accepts all\neditable fields. The edit-mode path in handleDetailAdd now passes\nnotes, seat, and courseOverride to the API PATCH, so special\ninstructions entered via the +mods sheet appear on the order item.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "49dc7d4",
       "message": "fix: Clear Local Data now fully resets session\n\n- Broadened localStorage clear to include all air-pwa-* keys\n  (active PIN, menu cache, modifier cache) and device-settings\n- Unregisters service workers and clears SW caches\n- Reloads the page after clearing to reset all in-memory state\n  (order cache, menu data, modifier data, React state)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "9f10d52",
-      "message": "feat: quick-add items without required modifiers, add +mods link\n\n- handleItemTap now only shows ItemDetailSheet for items with\n  REQUIRED modifiers; all others quick-add directly to the order\n- Add modifierSelections to ItemDetailSheet handleAdd (was missing)\n- Add \"+mods\" link on order item rows (like \"+note\") to view/edit\n  modifiers on existing items via ItemDetailSheet in edit mode\n- Add updateItemModifiers to pos-store and API PATCH route\n- Network errors on modifier check now quick-add instead of blocking\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-15"
     }
