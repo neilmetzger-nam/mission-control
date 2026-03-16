@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "f5319dc",
-    "message": "feat: complete Ambient Order Assist — mic button, compare modal, fire intercept\n\n- Add AmbientCompareModal portal to TabletOrderEntry and PhoneOrderReview\n- Wire mic button UI (record/stop/comparing states) on both phone and tablet\n- Intercept fire to stop recording and show AI comparison before sending\n- Fix type errors: neon SQL cast, seat fallback to 0\n- Lint/prettier auto-fix pass\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "3019130",
+    "message": "feat: add Menu link to main nav",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "3019130",
+      "message": "feat: add Menu link to main nav",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "f5319dc",
       "message": "feat: complete Ambient Order Assist — mic button, compare modal, fire intercept\n\n- Add AmbientCompareModal portal to TabletOrderEntry and PhoneOrderReview\n- Wire mic button UI (record/stop/comparing states) on both phone and tablet\n- Intercept fire to stop recording and show AI comparison before sending\n- Fix type errors: neon SQL cast, seat fallback to 0\n- Lint/prettier auto-fix pass\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "a9a75f0",
       "message": "chore: force menu route recompile v0315-k",
-      "branch": "neil",
-      "date": "2026-03-15"
-    },
-    {
-      "hash": "60b5c57",
-      "message": "chore: force redeploy",
       "branch": "neil",
       "date": "2026-03-15"
     }
