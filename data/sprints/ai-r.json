@@ -733,12 +733,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "8954ecc",
-    "message": "fix: include stack trace in error boundary for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "303f95c",
+    "message": "fix: flatten PWA menu response — items are nested inside categories\n\nThe /api/pwa/menu endpoint returns items nested within each category\nobject, not as a top-level array. The old code did setPwaItems(data.items)\nwhich set state to undefined, crashing on .length access.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-16"
   },
   "recentCommits": [
+    {
+      "hash": "303f95c",
+      "message": "fix: flatten PWA menu response — items are nested inside categories\n\nThe /api/pwa/menu endpoint returns items nested within each category\nobject, not as a top-level array. The old code did setPwaItems(data.items)\nwhich set state to undefined, crashing on .length access.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-16"
+    },
     {
       "hash": "8954ecc",
       "message": "fix: include stack trace in error boundary for debugging\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -790,12 +796,6 @@
     {
       "hash": "22d5f0b",
       "message": "feat: edit item modal + fix session auth to use local API route\n\n- Add EditItemModal with station selector, quantity +/-, notes, mods link\n- Wire edit button in PhoneOrderEntry and TabletOrderEntry to open modal\n- Remove SUSHI course badge — sushi items show as APP or ENTREE\n- Rewrite useAppAuth to call /api/session/me instead of external backend\n- No longer depends on NEXT_PUBLIC_API_URL for session initialization\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "e47f6a5",
-      "message": "fix: session/me route — remove uuid/is_primary_owner columns that dont exist",
       "branch": "neil",
       "date": "2026-03-16"
     }
