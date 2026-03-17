@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b5ec16d",
-    "message": "feat: Mirror page — 3-engine architecture (Revenue / Cost Reduction / Optimization), The Brain foundation, Maestro voice layer",
+    "hash": "a39cbd1",
+    "message": "feat: embed Maestro ElevenLabs widget on Mirror homepage — emerald theme, bottom-right",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "a39cbd1",
+      "message": "feat: embed Maestro ElevenLabs widget on Mirror homepage — emerald theme, bottom-right",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "b5ec16d",
       "message": "feat: Mirror page — 3-engine architecture (Revenue / Cost Reduction / Optimization), The Brain foundation, Maestro voice layer",
@@ -847,12 +853,6 @@
     {
       "hash": "c44d786",
       "message": "fix: new items default to seat 0 (Table/amber) instead of no seat",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "1f90d54",
-      "message": "fix: amber dot on Shared option in seat picker",
       "branch": "neil",
       "date": "2026-03-17"
     }
