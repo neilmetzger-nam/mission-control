@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6e019f6",
-    "message": "fix: iPad T badge amber contrast, rename +mods→Edit, remove +note button",
+    "hash": "b554fd4",
+    "message": "fix: remove elapsed timer from table view — tracked internally, visible in KDS/manager view only",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "b554fd4",
+      "message": "fix: remove elapsed timer from table view — tracked internally, visible in KDS/manager view only",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "6e019f6",
       "message": "fix: iPad T badge amber contrast, rename +mods→Edit, remove +note button",
@@ -794,12 +800,6 @@
     {
       "hash": "c2ba1da",
       "message": "fix: item detail panel — UUID ids, correct API URL, string itemId throughout",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "d0a6459",
-      "message": "feat: Mirror page — revenue-first rewrite, 9 engines, AI injection architecture section",
       "branch": "neil",
       "date": "2026-03-17"
     }
