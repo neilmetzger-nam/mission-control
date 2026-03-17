@@ -736,7 +736,7 @@
               "title": "iPad +mods opens PhoneItemWizard full-screen (was compact bottom sheet)",
               "status": "done",
               "completedAt": "2026-03-17",
-              "notes": "PosModal.handleEditModifiers now sets wizardEditItem → PhoneItemWizard portal. Uses allMenuItems.find() for full modifier data.",
+              "notes": "Root cause: handleDetailAdd guard bailed when selectedMenuItem null in edit mode. Fix: split guard, switched to updateOrderItemDetails for edit branch (handles modifierSelections + price recalc).",
               "claudePrompt": "Read PosModal.tsx handleEditModifiers and ItemDetailSheet usage. Explain the current +mods flow. The issue: tapping +mods on an existing order item opens ItemDetailSheet (compact) instead of PhoneItemWizard (full screen). Fix so +mods always opens PhoneItemWizard in edit mode, keeping ItemDetailSheet for new item adds only."
             },
             {
@@ -761,12 +761,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "516c760",
-    "message": "fix: Edit wizard Add to Order — split guard, use updateOrderItemDetails for edit mode",
+    "hash": "739ac0c",
+    "message": "fix: seat 0 (Table) shows T with amber styling in OrderPanel, not invisible grey",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "739ac0c",
+      "message": "fix: seat 0 (Table) shows T with amber styling in OrderPanel, not invisible grey",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "516c760",
       "message": "fix: Edit wizard Add to Order — split guard, use updateOrderItemDetails for edit mode",
@@ -818,12 +824,6 @@
     {
       "hash": "a8f622e",
       "message": "feat: Square config in integrations table — web-configurable, DB-backed, paired devices array",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "f01c450",
-      "message": "feat: wire printer settings JSONB into fire/print routes — per-printer feed, cut, font, dw/dh, beep",
       "branch": "neil",
       "date": "2026-03-17"
     }
