@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "fcae202",
-    "message": "fix: auto-unregister stale SW on every page load — no more manual cache clearing on iOS",
+    "hash": "55a22e6",
+    "message": "fix: SW passthrough — no caching, always fetch fresh, clears all old caches on activate",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "55a22e6",
+      "message": "fix: SW passthrough — no caching, always fetch fresh, clears all old caches on activate",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "fcae202",
       "message": "fix: auto-unregister stale SW on every page load — no more manual cache clearing on iOS",
@@ -847,12 +853,6 @@
     {
       "hash": "a39cbd1",
       "message": "feat: embed Maestro ElevenLabs widget on Mirror homepage — emerald theme, bottom-right",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "b5ec16d",
-      "message": "feat: Mirror page — 3-engine architecture (Revenue / Cost Reduction / Optimization), The Brain foundation, Maestro voice layer",
       "branch": "neil",
       "date": "2026-03-17"
     }
