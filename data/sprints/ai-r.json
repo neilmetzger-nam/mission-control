@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "25c4907",
-    "message": "fix: modifier groups use item UUID not dbId — spice/protein/toppings now load from DB",
+    "hash": "fcae202",
+    "message": "fix: auto-unregister stale SW on every page load — no more manual cache clearing on iOS",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "fcae202",
+      "message": "fix: auto-unregister stale SW on every page load — no more manual cache clearing on iOS",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "25c4907",
       "message": "fix: modifier groups use item UUID not dbId — spice/protein/toppings now load from DB",
@@ -847,12 +853,6 @@
     {
       "hash": "b5ec16d",
       "message": "feat: Mirror page — 3-engine architecture (Revenue / Cost Reduction / Optimization), The Brain foundation, Maestro voice layer",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "60d9c48",
-      "message": "refactor: Mirror page — 3 engine buckets (revenue/cost reduction/optimization)",
       "branch": "neil",
       "date": "2026-03-17"
     }
