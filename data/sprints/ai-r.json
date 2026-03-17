@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b554fd4",
-    "message": "fix: remove elapsed timer from table view — tracked internally, visible in KDS/manager view only",
+    "hash": "d2d932b",
+    "message": "docs: CLAUDE.md — structured session summary for automated sprint task updates",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "d2d932b",
+      "message": "docs: CLAUDE.md — structured session summary for automated sprint task updates",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "b554fd4",
       "message": "fix: remove elapsed timer from table view — tracked internally, visible in KDS/manager view only",
@@ -794,12 +800,6 @@
     {
       "hash": "f1f5559",
       "message": "fix: item detail API — snake_case tables, UUID ids, TS string|number itemId",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "c2ba1da",
-      "message": "fix: item detail panel — UUID ids, correct API URL, string itemId throughout",
       "branch": "neil",
       "date": "2026-03-17"
     }
