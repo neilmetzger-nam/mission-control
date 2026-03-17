@@ -780,8 +780,9 @@
             {
               "id": "pwa16",
               "title": "Split — seat assignment screen before payment",
-              "status": "agent-working",
-              "notes": "Tap Split → seat assign screen → tap seat pill → tap item to assign. Preview → payment."
+              "status": "done",
+              "notes": "Inline seat assignment on Split — seat pills per item in OrderPanel, batch save on Pay, no new screen.",
+              "completedAt": "2026-03-17"
             }
           ]
         }
