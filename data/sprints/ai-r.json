@@ -761,12 +761,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "1f90d54",
-    "message": "fix: amber dot on Shared option in seat picker",
+    "hash": "c44d786",
+    "message": "fix: new items default to seat 0 (Table/amber) instead of no seat",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "c44d786",
+      "message": "fix: new items default to seat 0 (Table/amber) instead of no seat",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "1f90d54",
       "message": "fix: amber dot on Shared option in seat picker",
@@ -818,12 +824,6 @@
     {
       "hash": "4b8023b",
       "message": "fix: iPad +mods opens PhoneItemWizard (full screen), T seat badge amber visible",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "0b073fa",
-      "message": "docs: CLAUDE.md — sprint mapping, DB patterns, AI injection architecture, PWA patterns",
       "branch": "neil",
       "date": "2026-03-17"
     }
