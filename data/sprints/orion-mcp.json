@@ -1,6 +1,6 @@
 {
   "projectId": "orion-mcp",
-  "updatedAt": "2026-03-13",
+  "updatedAt": "2026-03-17",
   "milestones": [
     {
       "id": "m1",
@@ -502,6 +502,20 @@
           ]
         }
       ]
+    }
+  ],
+  "lastCommit": {
+    "hash": "a00e605",
+    "message": "feat: orion-1 — CFO/Ops/Marketing snapshot tools + ElevenLabs agent wiring script",
+    "branch": "main",
+    "date": "2026-03-17"
+  },
+  "recentCommits": [
+    {
+      "hash": "a00e605",
+      "message": "feat: orion-1 — CFO/Ops/Marketing snapshot tools + ElevenLabs agent wiring script",
+      "branch": "main",
+      "date": "2026-03-17"
     }
   ]
 }
