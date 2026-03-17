@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "37b1493",
-    "message": "fix: course pills App/Entrée/Sushi/Drinks, remove active-block so tapping always fires",
+    "hash": "b4087c3",
+    "message": "fix: Kitchen Station label in EditItemModal, course pills = Beverage/Appetizer/Sushi/Entrée/Dessert",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "b4087c3",
+      "message": "fix: Kitchen Station label in EditItemModal, course pills = Beverage/Appetizer/Sushi/Entrée/Dessert",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "37b1493",
       "message": "fix: course pills App/Entrée/Sushi/Drinks, remove active-block so tapping always fires",
@@ -847,12 +853,6 @@
     {
       "hash": "5f87899",
       "message": "fix: iPhone item add — only open modifier wizard for required mods, else add directly to order",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "60bbd5b",
-      "message": "feat: EditItemModal — Station→Course, add Allergens section (Gluten/Shellfish/Nuts/Dairy/Eggs/Soy/Sesame)",
       "branch": "neil",
       "date": "2026-03-17"
     }
