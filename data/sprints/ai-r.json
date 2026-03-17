@@ -761,12 +761,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "7d3393e",
-    "message": "revert: restore selectedMenuItem guard — broken TS fix, proper fix in Claude Code",
+    "hash": "516c760",
+    "message": "fix: Edit wizard Add to Order — split guard, use updateOrderItemDetails for edit mode",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "516c760",
+      "message": "fix: Edit wizard Add to Order — split guard, use updateOrderItemDetails for edit mode",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "7d3393e",
       "message": "revert: restore selectedMenuItem guard — broken TS fix, proper fix in Claude Code",
@@ -818,12 +824,6 @@
     {
       "hash": "f01c450",
       "message": "feat: wire printer settings JSONB into fire/print routes — per-printer feed, cut, font, dw/dh, beep",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "8dd8583",
-      "message": "fix: unify printer config — all routes use printers table (snake_case), single source of truth",
       "branch": "neil",
       "date": "2026-03-17"
     }
