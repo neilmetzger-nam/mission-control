@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "563b011",
-    "message": "fix: course sections renamed Drinks/Food/Sushi, Modifiers button fallback to synthetic item with UUID",
+    "hash": "37b1493",
+    "message": "fix: course pills App/Entrée/Sushi/Drinks, remove active-block so tapping always fires",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "37b1493",
+      "message": "fix: course pills App/Entrée/Sushi/Drinks, remove active-block so tapping always fires",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "563b011",
       "message": "fix: course sections renamed Drinks/Food/Sushi, Modifiers button fallback to synthetic item with UUID",
@@ -847,12 +853,6 @@
     {
       "hash": "60bbd5b",
       "message": "feat: EditItemModal — Station→Course, add Allergens section (Gluten/Shellfish/Nuts/Dairy/Eggs/Soy/Sesame)",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "ecf3e40",
-      "message": "fix: iPhone order — remove course badge clutter, rename APP→App/ENTREE→Entrée, course pills readable",
       "branch": "neil",
       "date": "2026-03-17"
     }
