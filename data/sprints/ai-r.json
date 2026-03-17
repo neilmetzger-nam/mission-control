@@ -768,6 +768,14 @@
               "notes": "Full pre-shift intel system: manager page at /home/specials, API stored in restaurants.settings JSONB, POS lightbulb live, Info tab on iPad wired to real data — specials, 86d, push, pairings, house note.",
               "claudePrompt": "See full prompt in session",
               "completedAt": "2026-03-17"
+            },
+            {
+              "id": "pwa15",
+              "title": "Split check — even split mode (2-6 way), seat pill amounts, paid seat state",
+              "status": "done",
+              "completedAt": "2026-03-17",
+              "notes": "By Seat / Even Split toggle. 2-6 way grid showing per-person amount. Last person absorbs rounding. Seat pills show dollar amounts. Paid seats emerald/disabled. Progress indicator '2 of 4 paid'.",
+              "claudePrompt": "PaymentModal.tsx — add Even Split mode alongside existing By Seat mode. Split toggle, even-ways grid, payAmount memo update, seat pill amounts, reset on open."
             }
           ]
         }
@@ -775,12 +783,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "e2e5ab1",
-    "message": "feat: split check — even split mode (2-6 way), seat pill amounts, paid seat state, progress indicator",
+    "hash": "6f4f266",
+    "message": "fix: SW auto-busts cache on every deploy via git commit hash in CACHE_NAME",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "6f4f266",
+      "message": "fix: SW auto-busts cache on every deploy via git commit hash in CACHE_NAME",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "e2e5ab1",
       "message": "feat: split check — even split mode (2-6 way), seat pill amounts, paid seat state, progress indicator",
@@ -832,12 +846,6 @@
     {
       "hash": "7d3393e",
       "message": "revert: restore selectedMenuItem guard — broken TS fix, proper fix in Claude Code",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "a17ea90",
-      "message": "fix: Edit wizard Add to Order — allow edit mode without selectedMenuItem",
       "branch": "neil",
       "date": "2026-03-17"
     }
