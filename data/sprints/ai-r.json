@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "22cefd5",
-    "message": "fix: Mirror page renders for logged-out users, remove stale auth guard",
+    "hash": "72e703e",
+    "message": "fix: move marketing pages to (marketing) group, fix public routes for features/pricing",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "72e703e",
+      "message": "fix: move marketing pages to (marketing) group, fix public routes for features/pricing",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "22cefd5",
       "message": "fix: Mirror page renders for logged-out users, remove stale auth guard",
@@ -794,12 +800,6 @@
     {
       "hash": "8e3b63a",
       "message": "chore: build tag v0316-k",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "ccbf914",
-      "message": "chore: build tag v0316-j",
       "branch": "neil",
       "date": "2026-03-16"
     }
