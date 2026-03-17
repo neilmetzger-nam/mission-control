@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "c2ba1da",
-    "message": "fix: item detail panel — UUID ids, correct API URL, string itemId throughout",
+    "hash": "f1f5559",
+    "message": "fix: item detail API — snake_case tables, UUID ids, TS string|number itemId",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "f1f5559",
+      "message": "fix: item detail API — snake_case tables, UUID ids, TS string|number itemId",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "c2ba1da",
       "message": "fix: item detail panel — UUID ids, correct API URL, string itemId throughout",
@@ -794,12 +800,6 @@
     {
       "hash": "6c74a2e",
       "message": "fix: single-screen item edit (skip EditItemModal), seat circle contrast — BUILD 13",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "3965351",
-      "message": "chore: build tag BUILD 12 — larger readable format",
       "branch": "neil",
       "date": "2026-03-16"
     }
