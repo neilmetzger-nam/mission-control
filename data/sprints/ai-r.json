@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "1c958e6",
-    "message": "fix: Mirror homepage public for logged-out users, redirect logged-in to /home",
+    "hash": "22cefd5",
+    "message": "fix: Mirror page renders for logged-out users, remove stale auth guard",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "22cefd5",
+      "message": "fix: Mirror page renders for logged-out users, remove stale auth guard",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "1c958e6",
       "message": "fix: Mirror homepage public for logged-out users, redirect logged-in to /home",
@@ -794,12 +800,6 @@
     {
       "hash": "ccbf914",
       "message": "chore: build tag v0316-j",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "a120ff5",
-      "message": "chore: build tag v0316-i",
       "branch": "neil",
       "date": "2026-03-16"
     }
