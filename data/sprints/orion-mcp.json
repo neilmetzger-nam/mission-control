@@ -505,12 +505,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "a00e605",
-    "message": "feat: orion-1 — CFO/Ops/Marketing snapshot tools + ElevenLabs agent wiring script",
+    "hash": "ed3c517",
+    "message": "fix: wire-el-agents — correct api_schema structure for ElevenLabs webhook tools",
     "branch": "main",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "ed3c517",
+      "message": "fix: wire-el-agents — correct api_schema structure for ElevenLabs webhook tools",
+      "branch": "main",
+      "date": "2026-03-17"
+    },
     {
       "hash": "a00e605",
       "message": "feat: orion-1 — CFO/Ops/Marketing snapshot tools + ElevenLabs agent wiring script",
