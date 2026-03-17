@@ -505,12 +505,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ed3c517",
-    "message": "fix: wire-el-agents — correct api_schema structure for ElevenLabs webhook tools",
+    "hash": "5b67978",
+    "message": "fix: transaction_items column is price not unit_price",
     "branch": "main",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "5b67978",
+      "message": "fix: transaction_items column is price not unit_price",
+      "branch": "main",
+      "date": "2026-03-17"
+    },
     {
       "hash": "ed3c517",
       "message": "fix: wire-el-agents — correct api_schema structure for ElevenLabs webhook tools",
