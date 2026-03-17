@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "60bbd5b",
-    "message": "feat: EditItemModal — Station→Course, add Allergens section (Gluten/Shellfish/Nuts/Dairy/Eggs/Soy/Sesame)",
+    "hash": "5f87899",
+    "message": "fix: iPhone item add — only open modifier wizard for required mods, else add directly to order",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "5f87899",
+      "message": "fix: iPhone item add — only open modifier wizard for required mods, else add directly to order",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "60bbd5b",
       "message": "feat: EditItemModal — Station→Course, add Allergens section (Gluten/Shellfish/Nuts/Dairy/Eggs/Soy/Sesame)",
@@ -847,12 +853,6 @@
     {
       "hash": "2ec73a4",
       "message": "feat: pwa16 — inline seat assignment on Split, seat pills per item, batch save on Pay",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "6f4f266",
-      "message": "fix: SW auto-busts cache on every deploy via git commit hash in CACHE_NAME",
       "branch": "neil",
       "date": "2026-03-17"
     }
