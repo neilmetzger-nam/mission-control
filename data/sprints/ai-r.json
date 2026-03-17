@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "0b073fa",
-    "message": "docs: CLAUDE.md — sprint mapping, DB patterns, AI injection architecture, PWA patterns",
+    "hash": "4b8023b",
+    "message": "fix: iPad +mods opens PhoneItemWizard (full screen), T seat badge amber visible",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "4b8023b",
+      "message": "fix: iPad +mods opens PhoneItemWizard (full screen), T seat badge amber visible",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "0b073fa",
       "message": "docs: CLAUDE.md — sprint mapping, DB patterns, AI injection architecture, PWA patterns",
@@ -794,12 +800,6 @@
     {
       "hash": "72e703e",
       "message": "fix: move marketing pages to (marketing) group, fix public routes for features/pricing",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "22cefd5",
-      "message": "fix: Mirror page renders for logged-out users, remove stale auth guard",
       "branch": "neil",
       "date": "2026-03-17"
     }
