@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "520ce01",
-    "message": "fix: positioning — Dispute Guard leads delivery story, no direct order savings claims, 86 sync is table stakes",
+    "hash": "33ba8fb",
+    "message": "fix: iPhone order item — remove +Note button, Edit opens full modal with note field inside",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "33ba8fb",
+      "message": "fix: iPhone order item — remove +Note button, Edit opens full modal with note field inside",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "520ce01",
       "message": "fix: positioning — Dispute Guard leads delivery story, no direct order savings claims, 86 sync is table stakes",
@@ -847,12 +853,6 @@
     {
       "hash": "d49c1c6",
       "message": "feat: ServiceIntel Info tab wired to real pre-shift data — specials, 86d, push, pairings, house note",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "e4ca282",
-      "message": "feat: Pre-Shift Intel — specials, 86 list, push items, pairings, house note → POS lightbulb + manager page",
       "branch": "neil",
       "date": "2026-03-17"
     }
