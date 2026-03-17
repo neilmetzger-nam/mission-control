@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6875bc4",
-    "message": "fix: App/Entrée pills work correctly with key-based highlight, remove Kitchen Station from Edit modal",
+    "hash": "3c1d928",
+    "message": "fix: Modifiers button in PhoneOrderReview — synthetic item fallback same as PhoneOrderEntry",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "3c1d928",
+      "message": "fix: Modifiers button in PhoneOrderReview — synthetic item fallback same as PhoneOrderEntry",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "6875bc4",
       "message": "fix: App/Entrée pills work correctly with key-based highlight, remove Kitchen Station from Edit modal",
@@ -847,12 +853,6 @@
     {
       "hash": "fcae202",
       "message": "fix: auto-unregister stale SW on every page load — no more manual cache clearing on iOS",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "25c4907",
-      "message": "fix: modifier groups use item UUID not dbId — spice/protein/toppings now load from DB",
       "branch": "neil",
       "date": "2026-03-17"
     }
