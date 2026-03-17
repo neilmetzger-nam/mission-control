@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "2ec73a4",
-    "message": "feat: pwa16 — inline seat assignment on Split, seat pills per item, batch save on Pay",
+    "hash": "60d9c48",
+    "message": "refactor: Mirror page — 3 engine buckets (revenue/cost reduction/optimization)",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "60d9c48",
+      "message": "refactor: Mirror page — 3 engine buckets (revenue/cost reduction/optimization)",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "2ec73a4",
       "message": "feat: pwa16 — inline seat assignment on Split, seat pills per item, batch save on Pay",
@@ -847,12 +853,6 @@
     {
       "hash": "739ac0c",
       "message": "fix: seat 0 (Table) shows T with amber styling in OrderPanel, not invisible grey",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "516c760",
-      "message": "fix: Edit wizard Add to Order — split guard, use updateOrderItemDetails for edit mode",
       "branch": "neil",
       "date": "2026-03-17"
     }
