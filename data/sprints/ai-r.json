@@ -761,12 +761,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "a17ea90",
-    "message": "fix: Edit wizard Add to Order — allow edit mode without selectedMenuItem",
+    "hash": "7d3393e",
+    "message": "revert: restore selectedMenuItem guard — broken TS fix, proper fix in Claude Code",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "7d3393e",
+      "message": "revert: restore selectedMenuItem guard — broken TS fix, proper fix in Claude Code",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "a17ea90",
       "message": "fix: Edit wizard Add to Order — allow edit mode without selectedMenuItem",
@@ -818,12 +824,6 @@
     {
       "hash": "8dd8583",
       "message": "fix: unify printer config — all routes use printers table (snake_case), single source of truth",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "d06693a",
-      "message": "feat: item detail — sales open by default, channel markup/discount display, pricing clarity banner",
       "branch": "neil",
       "date": "2026-03-17"
     }
