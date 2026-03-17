@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "872c9e6",
-    "message": "fix: Modifiers button works (strip item- prefix from menuItemId), remove APP badge from EditItemModal header",
+    "hash": "4b0c3fb",
+    "message": "feat: Edit button on PhoneOrderReview — full EditItemModal + PhoneItemWizard on review screen",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "4b0c3fb",
+      "message": "feat: Edit button on PhoneOrderReview — full EditItemModal + PhoneItemWizard on review screen",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "872c9e6",
       "message": "fix: Modifiers button works (strip item- prefix from menuItemId), remove APP badge from EditItemModal header",
@@ -847,12 +853,6 @@
     {
       "hash": "520ce01",
       "message": "fix: positioning — Dispute Guard leads delivery story, no direct order savings claims, 86 sync is table stakes",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "17228bc",
-      "message": "fix: remove unused ts-expect-error now that elevenlabs type is declared",
       "branch": "neil",
       "date": "2026-03-17"
     }
