@@ -8,6 +8,9 @@ interface Task {
   status: string;
   assignee: string;
   migration_notes?: string;
+  claudePrompt?: string;
+  notes?: string;
+  completedAt?: string;
 }
 
 interface Sprint {
@@ -59,6 +62,11 @@ export default function SprintBoard({ params }: { params: Promise<{ id: string }
   const [stagingModal, setStagingModal] = useState<{ taskId: string; title: string } | null>(null);
   const [migrationNotes, setMigrationNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
+
+  // Claude prompt state
+  const [expandedPrompts, setExpandedPrompts] = useState<Set<string>>(new Set());
+  const [editingPrompt, setEditingPrompt] = useState<string | null>(null); // taskId being edited
+  const [promptDraft, setPromptDraft] = useState("");
 
   useEffect(() => {
     fetch(`/api/sprints/${id}`)
@@ -137,6 +145,36 @@ export default function SprintBoard({ params }: { params: Promise<{ id: string }
     setSubmitting(false);
   }
 
+  function togglePrompt(taskId: string) {
+    setExpandedPrompts((prev) => {
+      const next = new Set(prev);
+      if (next.has(taskId)) next.delete(taskId);
+      else next.add(taskId);
+      return next;
+    });
+  }
+
+  async function savePrompt(taskId: string, prompt: string) {
+    const res = await fetch(`/api/sprints/${id}/task/${taskId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ claudePrompt: prompt }),
+    });
+    if (res.ok) {
+      setData((prev) => {
+        if (!prev) return prev;
+        const updated = JSON.parse(JSON.stringify(prev));
+        for (const ms of updated.milestones)
+          for (const sprint of ms.sprints)
+            for (const task of sprint.tasks)
+              if (task.id === taskId) task.claudePrompt = prompt;
+        return updated;
+      });
+    }
+    setEditingPrompt(null);
+    setPromptDraft("");
+  }
+
   if (error) {
     return (
       <div className="text-center py-12">
@@ -202,25 +240,104 @@ export default function SprintBoard({ params }: { params: Promise<{ id: string }
               </div>
               <div className="divide-y divide-zinc-800/50">
                 {sprint.tasks.map((task) => (
-                  <div key={task.id} className="flex items-center gap-3 px-4 py-3">
-                    <button
-                      onClick={() => cycleStatus(task.id, task.status)}
-                      className={`text-[10px] px-2 py-1 rounded-full cursor-pointer select-none ${STATUS_STYLES[task.status] || STATUS_STYLES.queued}`}
-                    >
-                      {task.status}
-                    </button>
-                    <span className="flex-1 text-sm text-zinc-300">{task.title}</span>
-                    {task.status === "done" && (
+                  <div key={task.id} className="px-4 py-3">
+                    {/* Main task row */}
+                    <div className="flex items-center gap-3">
                       <button
-                        onClick={() => setStagingModal({ taskId: task.id, title: task.title })}
-                        className="text-[10px] px-2 py-1 rounded bg-amber-500/20 text-amber-400 hover:bg-amber-500/30 transition whitespace-nowrap"
+                        onClick={() => cycleStatus(task.id, task.status)}
+                        className={`text-[10px] px-2 py-1 rounded-full cursor-pointer select-none ${STATUS_STYLES[task.status] || STATUS_STYLES.queued}`}
                       >
-                        &rarr; Stage
+                        {task.status}
                       </button>
+                      <span className="flex-1 text-sm text-zinc-300">{task.title}</span>
+                      {/* completedAt badge */}
+                      {task.completedAt && (
+                        <span className="text-[10px] px-2 py-0.5 rounded bg-green-500/10 text-green-500 border border-green-500/20 whitespace-nowrap">
+                          ✓ {task.completedAt}
+                        </span>
+                      )}
+                      {/* Claude prompt toggle / add button */}
+                      {task.claudePrompt ? (
+                        <button
+                          onClick={() => togglePrompt(task.id)}
+                          className="text-[10px] px-2 py-1 rounded bg-violet-500/20 text-violet-400 hover:bg-violet-500/30 transition whitespace-nowrap"
+                        >
+                          {expandedPrompts.has(task.id) ? "▲ prompt" : "▼ prompt"}
+                        </button>
+                      ) : task.status === "done" ? (
+                        <button
+                          onClick={() => {
+                            setEditingPrompt(task.id);
+                            setPromptDraft("");
+                            setExpandedPrompts((prev) => new Set(prev).add(task.id));
+                          }}
+                          className="text-[10px] px-2 py-1 rounded bg-zinc-700/50 text-zinc-500 hover:bg-violet-500/20 hover:text-violet-400 transition whitespace-nowrap"
+                        >
+                          + add prompt
+                        </button>
+                      ) : null}
+                      {task.status === "done" && (
+                        <button
+                          onClick={() => setStagingModal({ taskId: task.id, title: task.title })}
+                          className="text-[10px] px-2 py-1 rounded bg-amber-500/20 text-amber-400 hover:bg-amber-500/30 transition whitespace-nowrap"
+                        >
+                          &rarr; Stage
+                        </button>
+                      )}
+                      <span className="text-xs text-zinc-500">
+                        {ASSIGNEE_LABELS[task.assignee] || ASSIGNEE_LABELS.tbd}
+                      </span>
+                    </div>
+                    {/* notes line */}
+                    {task.notes && (
+                      <p className="mt-1 ml-1 text-xs text-zinc-500 italic">{task.notes}</p>
                     )}
-                    <span className="text-xs text-zinc-500">
-                      {ASSIGNEE_LABELS[task.assignee] || ASSIGNEE_LABELS.tbd}
-                    </span>
+                    {/* collapsible claude prompt block */}
+                    {expandedPrompts.has(task.id) && (
+                      <div className="mt-2 ml-1">
+                        {editingPrompt === task.id ? (
+                          <div className="space-y-2">
+                            <textarea
+                              autoFocus
+                              className="w-full bg-zinc-800 border border-violet-500/40 rounded-lg px-3 py-2 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-violet-500 resize-none font-mono"
+                              placeholder="Paste Claude prompt here..."
+                              rows={4}
+                              value={promptDraft}
+                              onChange={(e) => setPromptDraft(e.target.value)}
+                            />
+                            <div className="flex gap-2">
+                              <button
+                                onClick={() => savePrompt(task.id, promptDraft)}
+                                className="text-[10px] px-3 py-1 rounded bg-violet-600 text-white hover:bg-violet-500 transition"
+                              >
+                                Save
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setEditingPrompt(null);
+                                  setPromptDraft("");
+                                  if (!task.claudePrompt) togglePrompt(task.id);
+                                }}
+                                className="text-[10px] px-3 py-1 rounded bg-zinc-700 text-zinc-400 hover:text-white transition"
+                              >
+                                Cancel
+                              </button>
+                            </div>
+                          </div>
+                        ) : (
+                          <div
+                            className="relative group bg-zinc-800/60 border border-violet-500/20 rounded-lg px-3 py-2 cursor-pointer hover:border-violet-500/40 transition"
+                            onClick={() => {
+                              setEditingPrompt(task.id);
+                              setPromptDraft(task.claudePrompt || "");
+                            }}
+                          >
+                            <p className="text-xs text-zinc-400 font-mono whitespace-pre-wrap">{task.claudePrompt}</p>
+                            <span className="absolute top-1 right-2 text-[9px] text-zinc-600 group-hover:text-violet-400 transition">edit</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

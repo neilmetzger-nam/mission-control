@@ -20,8 +20,8 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
   const filePath = join(process.cwd(), "data/sprints", `${id}.json`);
   const data = JSON.parse(readFileSync(filePath, "utf-8"));
 
-  // Allowed fields: status, migration_notes, assignee, title
-  const allowedFields = ["status", "migration_notes", "assignee", "title"];
+  // Allowed fields: status, migration_notes, assignee, title, claudePrompt, notes, completedAt
+  const allowedFields = ["status", "migration_notes", "assignee", "title", "claudePrompt", "notes", "completedAt"];
   const updates: Record<string, unknown> = {};
 
   for (const key of allowedFields) {

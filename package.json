@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "prestart": "lsof -ti :3001 | xargs kill -9 2>/dev/null || true",
     "start": "next start",
+    "pm2:start": "npm run build && pm2 delete mission-control 2>/dev/null; pm2 start ecosystem.config.js",
+    "pm2:restart": "npm run prestart && pm2 restart mission-control",
     "lint": "eslint"
   },
   "dependencies": {
