@@ -730,6 +730,30 @@
               "status": "done",
               "completedAt": "2026-03-15",
               "completedBy": "3b05784"
+            },
+            {
+              "id": "pwa10",
+              "title": "iPad +mods opens PhoneItemWizard full-screen (was compact bottom sheet)",
+              "status": "done",
+              "completedAt": "2026-03-17",
+              "notes": "PosModal.handleEditModifiers now sets wizardEditItem → PhoneItemWizard portal. Uses allMenuItems.find() for full modifier data.",
+              "claudePrompt": "Read PosModal.tsx handleEditModifiers and ItemDetailSheet usage. Explain the current +mods flow. The issue: tapping +mods on an existing order item opens ItemDetailSheet (compact) instead of PhoneItemWizard (full screen). Fix so +mods always opens PhoneItemWizard in edit mode, keeping ItemDetailSheet for new item adds only."
+            },
+            {
+              "id": "pwa11",
+              "title": "iPad T seat badge — amber contrast (was invisible zinc-on-zinc)",
+              "status": "done",
+              "completedAt": "2026-03-17",
+              "notes": "Fixed in TabletOrderEntry.tsx (not PhoneOrderEntry). Changed bg-zinc-600 text-white → amber styling.",
+              "claudePrompt": null
+            },
+            {
+              "id": "pwa12",
+              "title": "OrderPanel UX — rename +mods→Edit, remove +note button, hide elapsed timer from server view",
+              "status": "done",
+              "completedAt": "2026-03-17",
+              "notes": "OrderPanel: +mods→Edit, removed +note (native prompt). PhoneTableListV2: elapsed timer hidden from server view, data still tracked internally.",
+              "claudePrompt": null
             }
           ]
         }
@@ -737,12 +761,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d2d932b",
-    "message": "docs: CLAUDE.md — structured session summary for automated sprint task updates",
+    "hash": "a17ea90",
+    "message": "fix: Edit wizard Add to Order — allow edit mode without selectedMenuItem",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "a17ea90",
+      "message": "fix: Edit wizard Add to Order — allow edit mode without selectedMenuItem",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "d2d932b",
       "message": "docs: CLAUDE.md — structured session summary for automated sprint task updates",
@@ -794,12 +824,6 @@
     {
       "hash": "d06693a",
       "message": "feat: item detail — sales open by default, channel markup/discount display, pricing clarity banner",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "f1f5559",
-      "message": "fix: item detail API — snake_case tables, UUID ids, TS string|number itemId",
       "branch": "neil",
       "date": "2026-03-17"
     }
