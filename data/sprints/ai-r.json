@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d06693a",
-    "message": "feat: item detail — sales open by default, channel markup/discount display, pricing clarity banner",
+    "hash": "8dd8583",
+    "message": "fix: unify printer config — all routes use printers table (snake_case), single source of truth",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "8dd8583",
+      "message": "fix: unify printer config — all routes use printers table (snake_case), single source of truth",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "d06693a",
       "message": "feat: item detail — sales open by default, channel markup/discount display, pricing clarity banner",
@@ -794,12 +800,6 @@
     {
       "hash": "ab4d989",
       "message": "chore: build tag BUILD 15 — force redeploy",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "1a334e0",
-      "message": "chore: build tag BUILD 14",
       "branch": "neil",
       "date": "2026-03-16"
     }
