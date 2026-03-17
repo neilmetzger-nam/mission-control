@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "f01c450",
-    "message": "feat: wire printer settings JSONB into fire/print routes — per-printer feed, cut, font, dw/dh, beep",
+    "hash": "a8f622e",
+    "message": "feat: Square config in integrations table — web-configurable, DB-backed, paired devices array",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "a8f622e",
+      "message": "feat: Square config in integrations table — web-configurable, DB-backed, paired devices array",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "f01c450",
       "message": "feat: wire printer settings JSONB into fire/print routes — per-printer feed, cut, font, dw/dh, beep",
@@ -796,12 +802,6 @@
       "message": "fix: Mirror homepage public for logged-out users, redirect logged-in to /home",
       "branch": "neil",
       "date": "2026-03-17"
-    },
-    {
-      "hash": "020a3ee",
-      "message": "fix: bust service worker cache (v3) + BUILD 16",
-      "branch": "neil",
-      "date": "2026-03-16"
     }
   ]
 }
