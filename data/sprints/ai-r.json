@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "f1f5559",
-    "message": "fix: item detail API — snake_case tables, UUID ids, TS string|number itemId",
+    "hash": "d06693a",
+    "message": "feat: item detail — sales open by default, channel markup/discount display, pricing clarity banner",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "d06693a",
+      "message": "feat: item detail — sales open by default, channel markup/discount display, pricing clarity banner",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "f1f5559",
       "message": "fix: item detail API — snake_case tables, UUID ids, TS string|number itemId",
@@ -794,12 +800,6 @@
     {
       "hash": "1a334e0",
       "message": "chore: build tag BUILD 14",
-      "branch": "neil",
-      "date": "2026-03-16"
-    },
-    {
-      "hash": "6c74a2e",
-      "message": "fix: single-screen item edit (skip EditItemModal), seat circle contrast — BUILD 13",
       "branch": "neil",
       "date": "2026-03-16"
     }
