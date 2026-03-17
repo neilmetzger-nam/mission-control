@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ecf3e40",
-    "message": "fix: iPhone order — remove course badge clutter, rename APP→App/ENTREE→Entrée, course pills readable",
+    "hash": "60bbd5b",
+    "message": "feat: EditItemModal — Station→Course, add Allergens section (Gluten/Shellfish/Nuts/Dairy/Eggs/Soy/Sesame)",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "60bbd5b",
+      "message": "feat: EditItemModal — Station→Course, add Allergens section (Gluten/Shellfish/Nuts/Dairy/Eggs/Soy/Sesame)",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "ecf3e40",
       "message": "fix: iPhone order — remove course badge clutter, rename APP→App/ENTREE→Entrée, course pills readable",
@@ -847,12 +853,6 @@
     {
       "hash": "6f4f266",
       "message": "fix: SW auto-busts cache on every deploy via git commit hash in CACHE_NAME",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "e2e5ab1",
-      "message": "feat: split check — even split mode (2-6 way), seat pill amounts, paid seat state, progress indicator",
       "branch": "neil",
       "date": "2026-03-17"
     }
