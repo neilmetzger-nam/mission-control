@@ -754,6 +754,12 @@
               "completedAt": "2026-03-17",
               "notes": "OrderPanel: +mods→Edit, removed +note (native prompt). PhoneTableListV2: elapsed timer hidden from server view, data still tracked internally.",
               "claudePrompt": null
+            },
+            {
+              "id": "pwa13",
+              "title": "Server table timer — make optional via restaurant settings (currently always-on)",
+              "status": "queued",
+              "notes": "Timer visible to managers/KDS, optional for server view. Add toggle in /home/settings or restaurant config."
             }
           ]
         }
@@ -761,12 +767,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "c44d786",
-    "message": "fix: new items default to seat 0 (Table/amber) instead of no seat",
+    "hash": "06c9b00",
+    "message": "fix: grey out generic upsell bar — placeholder until real specials configured",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "06c9b00",
+      "message": "fix: grey out generic upsell bar — placeholder until real specials configured",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "c44d786",
       "message": "fix: new items default to seat 0 (Table/amber) instead of no seat",
@@ -818,12 +830,6 @@
     {
       "hash": "6e019f6",
       "message": "fix: iPad T badge amber contrast, rename +mods→Edit, remove +note button",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "4b8023b",
-      "message": "fix: iPad +mods opens PhoneItemWizard (full screen), T seat badge amber visible",
       "branch": "neil",
       "date": "2026-03-17"
     }
