@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "55a22e6",
-    "message": "fix: SW passthrough — no caching, always fetch fresh, clears all old caches on activate",
+    "hash": "872c9e6",
+    "message": "fix: Modifiers button works (strip item- prefix from menuItemId), remove APP badge from EditItemModal header",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "872c9e6",
+      "message": "fix: Modifiers button works (strip item- prefix from menuItemId), remove APP badge from EditItemModal header",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "55a22e6",
       "message": "fix: SW passthrough — no caching, always fetch fresh, clears all old caches on activate",
@@ -847,12 +853,6 @@
     {
       "hash": "17228bc",
       "message": "fix: remove unused ts-expect-error now that elevenlabs type is declared",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "a39cbd1",
-      "message": "feat: embed Maestro ElevenLabs widget on Mirror homepage — emerald theme, bottom-right",
       "branch": "neil",
       "date": "2026-03-17"
     }
