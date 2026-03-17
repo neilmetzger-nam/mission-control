@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b4087c3",
-    "message": "fix: Kitchen Station label in EditItemModal, course pills = Beverage/Appetizer/Sushi/Entrée/Dessert",
+    "hash": "6875bc4",
+    "message": "fix: App/Entrée pills work correctly with key-based highlight, remove Kitchen Station from Edit modal",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "6875bc4",
+      "message": "fix: App/Entrée pills work correctly with key-based highlight, remove Kitchen Station from Edit modal",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "b4087c3",
       "message": "fix: Kitchen Station label in EditItemModal, course pills = Beverage/Appetizer/Sushi/Entrée/Dessert",
@@ -847,12 +853,6 @@
     {
       "hash": "25c4907",
       "message": "fix: modifier groups use item UUID not dbId — spice/protein/toppings now load from DB",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "5f87899",
-      "message": "fix: iPhone item add — only open modifier wizard for required mods, else add directly to order",
       "branch": "neil",
       "date": "2026-03-17"
     }
