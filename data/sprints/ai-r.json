@@ -776,6 +776,12 @@
               "completedAt": "2026-03-17",
               "notes": "By Seat / Even Split toggle. 2-6 way grid showing per-person amount. Last person absorbs rounding. Seat pills show dollar amounts. Paid seats emerald/disabled. Progress indicator '2 of 4 paid'.",
               "claudePrompt": "PaymentModal.tsx — add Even Split mode alongside existing By Seat mode. Split toggle, even-ways grid, payAmount memo update, seat pill amounts, reset on open."
+            },
+            {
+              "id": "pwa16",
+              "title": "Split — seat assignment screen before payment",
+              "status": "agent-working",
+              "notes": "Tap Split → seat assign screen → tap seat pill → tap item to assign. Preview → payment."
             }
           ]
         }
@@ -783,12 +789,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6f4f266",
-    "message": "fix: SW auto-busts cache on every deploy via git commit hash in CACHE_NAME",
+    "hash": "2ec73a4",
+    "message": "feat: pwa16 — inline seat assignment on Split, seat pills per item, batch save on Pay",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "2ec73a4",
+      "message": "feat: pwa16 — inline seat assignment on Split, seat pills per item, batch save on Pay",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "6f4f266",
       "message": "fix: SW auto-busts cache on every deploy via git commit hash in CACHE_NAME",
@@ -840,12 +852,6 @@
     {
       "hash": "516c760",
       "message": "fix: Edit wizard Add to Order — split guard, use updateOrderItemDetails for edit mode",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "7d3393e",
-      "message": "revert: restore selectedMenuItem guard — broken TS fix, proper fix in Claude Code",
       "branch": "neil",
       "date": "2026-03-17"
     }
