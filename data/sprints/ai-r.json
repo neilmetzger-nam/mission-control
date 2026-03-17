@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b2f9924",
-    "message": "chore: BUILD 17 — force cache bust, verify fresh deploy",
+    "hash": "563b011",
+    "message": "fix: course sections renamed Drinks/Food/Sushi, Modifiers button fallback to synthetic item with UUID",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "563b011",
+      "message": "fix: course sections renamed Drinks/Food/Sushi, Modifiers button fallback to synthetic item with UUID",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "b2f9924",
       "message": "chore: BUILD 17 — force cache bust, verify fresh deploy",
@@ -847,12 +853,6 @@
     {
       "hash": "ecf3e40",
       "message": "fix: iPhone order — remove course badge clutter, rename APP→App/ENTREE→Entrée, course pills readable",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "33ba8fb",
-      "message": "fix: iPhone order item — remove +Note button, Edit opens full modal with note field inside",
       "branch": "neil",
       "date": "2026-03-17"
     }
