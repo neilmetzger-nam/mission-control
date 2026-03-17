@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "a39cbd1",
-    "message": "feat: embed Maestro ElevenLabs widget on Mirror homepage — emerald theme, bottom-right",
+    "hash": "17228bc",
+    "message": "fix: remove unused ts-expect-error now that elevenlabs type is declared",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "17228bc",
+      "message": "fix: remove unused ts-expect-error now that elevenlabs type is declared",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "a39cbd1",
       "message": "feat: embed Maestro ElevenLabs widget on Mirror homepage — emerald theme, bottom-right",
@@ -847,12 +853,6 @@
     {
       "hash": "06c9b00",
       "message": "fix: grey out generic upsell bar — placeholder until real specials configured",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "c44d786",
-      "message": "fix: new items default to seat 0 (Table/amber) instead of no seat",
       "branch": "neil",
       "date": "2026-03-17"
     }
