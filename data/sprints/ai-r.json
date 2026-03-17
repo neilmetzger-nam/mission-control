@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "33ba8fb",
-    "message": "fix: iPhone order item — remove +Note button, Edit opens full modal with note field inside",
+    "hash": "ecf3e40",
+    "message": "fix: iPhone order — remove course badge clutter, rename APP→App/ENTREE→Entrée, course pills readable",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "ecf3e40",
+      "message": "fix: iPhone order — remove course badge clutter, rename APP→App/ENTREE→Entrée, course pills readable",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "33ba8fb",
       "message": "fix: iPhone order item — remove +Note button, Edit opens full modal with note field inside",
@@ -847,12 +853,6 @@
     {
       "hash": "e2e5ab1",
       "message": "feat: split check — even split mode (2-6 way), seat pill amounts, paid seat state, progress indicator",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "d49c1c6",
-      "message": "feat: ServiceIntel Info tab wired to real pre-shift data — specials, 86d, push, pairings, house note",
       "branch": "neil",
       "date": "2026-03-17"
     }
