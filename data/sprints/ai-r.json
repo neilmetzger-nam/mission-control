@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5f87899",
-    "message": "fix: iPhone item add — only open modifier wizard for required mods, else add directly to order",
+    "hash": "25c4907",
+    "message": "fix: modifier groups use item UUID not dbId — spice/protein/toppings now load from DB",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "25c4907",
+      "message": "fix: modifier groups use item UUID not dbId — spice/protein/toppings now load from DB",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "5f87899",
       "message": "fix: iPhone item add — only open modifier wizard for required mods, else add directly to order",
@@ -847,12 +853,6 @@
     {
       "hash": "60d9c48",
       "message": "refactor: Mirror page — 3 engine buckets (revenue/cost reduction/optimization)",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "2ec73a4",
-      "message": "feat: pwa16 — inline seat assignment on Split, seat pills per item, batch save on Pay",
       "branch": "neil",
       "date": "2026-03-17"
     }
