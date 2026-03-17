@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "17228bc",
-    "message": "fix: remove unused ts-expect-error now that elevenlabs type is declared",
+    "hash": "520ce01",
+    "message": "fix: positioning — Dispute Guard leads delivery story, no direct order savings claims, 86 sync is table stakes",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "520ce01",
+      "message": "fix: positioning — Dispute Guard leads delivery story, no direct order savings claims, 86 sync is table stakes",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "17228bc",
       "message": "fix: remove unused ts-expect-error now that elevenlabs type is declared",
@@ -847,12 +853,6 @@
     {
       "hash": "e4ca282",
       "message": "feat: Pre-Shift Intel — specials, 86 list, push items, pairings, house note → POS lightbulb + manager page",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "06c9b00",
-      "message": "fix: grey out generic upsell bar — placeholder until real specials configured",
       "branch": "neil",
       "date": "2026-03-17"
     }
