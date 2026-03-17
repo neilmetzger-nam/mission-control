@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "60d9c48",
-    "message": "refactor: Mirror page — 3 engine buckets (revenue/cost reduction/optimization)",
+    "hash": "b5ec16d",
+    "message": "feat: Mirror page — 3-engine architecture (Revenue / Cost Reduction / Optimization), The Brain foundation, Maestro voice layer",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "b5ec16d",
+      "message": "feat: Mirror page — 3-engine architecture (Revenue / Cost Reduction / Optimization), The Brain foundation, Maestro voice layer",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "60d9c48",
       "message": "refactor: Mirror page — 3 engine buckets (revenue/cost reduction/optimization)",
@@ -847,12 +853,6 @@
     {
       "hash": "1f90d54",
       "message": "fix: amber dot on Shared option in seat picker",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "739ac0c",
-      "message": "fix: seat 0 (Table) shows T with amber styling in OrderPanel, not invisible grey",
       "branch": "neil",
       "date": "2026-03-17"
     }
