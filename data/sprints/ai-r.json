@@ -765,7 +765,7 @@
               "id": "pwa14",
               "title": "Pre-Shift Intel — daily specials, 86 list, push items, pairings, server upsell prompts",
               "status": "done",
-              "notes": "Pre-shift intel system: specials, 86d, push, pairings, house note. Stored in restaurants.settings JSONB. POS lightbulb live. Manager page at /home/specials.",
+              "notes": "Full pre-shift intel system: manager page at /home/specials, API stored in restaurants.settings JSONB, POS lightbulb live, Info tab on iPad wired to real data — specials, 86d, push, pairings, house note.",
               "claudePrompt": "See full prompt in session",
               "completedAt": "2026-03-17"
             }
@@ -775,12 +775,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d49c1c6",
-    "message": "feat: ServiceIntel Info tab wired to real pre-shift data — specials, 86d, push, pairings, house note",
+    "hash": "e2e5ab1",
+    "message": "feat: split check — even split mode (2-6 way), seat pill amounts, paid seat state, progress indicator",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "e2e5ab1",
+      "message": "feat: split check — even split mode (2-6 way), seat pill amounts, paid seat state, progress indicator",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "d49c1c6",
       "message": "feat: ServiceIntel Info tab wired to real pre-shift data — specials, 86d, push, pairings, house note",
@@ -832,12 +838,6 @@
     {
       "hash": "a17ea90",
       "message": "fix: Edit wizard Add to Order — allow edit mode without selectedMenuItem",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "d2d932b",
-      "message": "docs: CLAUDE.md — structured session summary for automated sprint task updates",
       "branch": "neil",
       "date": "2026-03-17"
     }
