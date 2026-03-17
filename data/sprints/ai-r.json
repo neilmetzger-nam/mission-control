@@ -760,6 +760,13 @@
               "title": "Server table timer — make optional via restaurant settings (currently always-on)",
               "status": "queued",
               "notes": "Timer visible to managers/KDS, optional for server view. Add toggle in /home/settings or restaurant config."
+            },
+            {
+              "id": "pwa14",
+              "title": "Pre-Shift Intel — daily specials, 86 list, push items, pairings, server upsell prompts",
+              "status": "agent-working",
+              "notes": "Manager sets before service. Flows to POS lightbulb, Phone AI, website specials, Maestro, KDS.",
+              "claudePrompt": "See full prompt in session"
             }
           ]
         }
@@ -767,12 +774,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "06c9b00",
-    "message": "fix: grey out generic upsell bar — placeholder until real specials configured",
+    "hash": "e4ca282",
+    "message": "feat: Pre-Shift Intel — specials, 86 list, push items, pairings, house note → POS lightbulb + manager page",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "e4ca282",
+      "message": "feat: Pre-Shift Intel — specials, 86 list, push items, pairings, house note → POS lightbulb + manager page",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "06c9b00",
       "message": "fix: grey out generic upsell bar — placeholder until real specials configured",
@@ -824,12 +837,6 @@
     {
       "hash": "b554fd4",
       "message": "fix: remove elapsed timer from table view — tracked internally, visible in KDS/manager view only",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "6e019f6",
-      "message": "fix: iPad T badge amber contrast, rename +mods→Edit, remove +note button",
       "branch": "neil",
       "date": "2026-03-17"
     }
