@@ -737,12 +737,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "a8f622e",
-    "message": "feat: Square config in integrations table — web-configurable, DB-backed, paired devices array",
+    "hash": "0b073fa",
+    "message": "docs: CLAUDE.md — sprint mapping, DB patterns, AI injection architecture, PWA patterns",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "0b073fa",
+      "message": "docs: CLAUDE.md — sprint mapping, DB patterns, AI injection architecture, PWA patterns",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "a8f622e",
       "message": "feat: Square config in integrations table — web-configurable, DB-backed, paired devices array",
@@ -794,12 +800,6 @@
     {
       "hash": "22cefd5",
       "message": "fix: Mirror page renders for logged-out users, remove stale auth guard",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "1c958e6",
-      "message": "fix: Mirror homepage public for logged-out users, redirect logged-in to /home",
       "branch": "neil",
       "date": "2026-03-17"
     }
