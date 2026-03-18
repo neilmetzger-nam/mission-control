@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d0b9324",
-    "message": "fix: find newly added item by ID diff instead of menuItemId match\n\nThe server mangles UUID menuItemIds (truncates to integer via parseInt),\nso after refreshSingleOrder the menuItemId doesn't match the original.\nNow captures existing item IDs before add and finds the new item by\nset difference. Removes debug messages.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "76397a3",
+    "message": "feat: DB-driven either/or toggles on iPad OrderPanel (Nigiri/Sashimi, Fried/Steamed)\n\nReplaces seed-based regex toggles with DB-authoritative modifier data.\nWhen inline picker finds groups with exactly 2 options and maxSelections=1,\nstores them as either/or toggles that persist on the order item row.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "76397a3",
+      "message": "feat: DB-driven either/or toggles on iPad OrderPanel (Nigiri/Sashimi, Fried/Steamed)\n\nReplaces seed-based regex toggles with DB-authoritative modifier data.\nWhen inline picker finds groups with exactly 2 options and maxSelections=1,\nstores them as either/or toggles that persist on the order item row.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "d0b9324",
       "message": "fix: find newly added item by ID diff instead of menuItemId match\n\nThe server mangles UUID menuItemIds (truncates to integer via parseInt),\nso after refreshSingleOrder the menuItemId doesn't match the original.\nNow captures existing item IDs before add and finds the new item by\nset difference. Removes debug messages.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "29b4e95",
       "message": "fix: add either/or modifier toggles to OrderPanel (iPad PosModal)\n\nThe iPad POS uses PosModal → OrderPanel to render order items,\nbut OrderPanel had no either/or toggle support (Nigiri/Sashimi,\nFried/Steamed). Added inline pill toggles matching the iPhone\nPhoneOrderEntry pattern. Also added handleToggleEitherOr to\nPosModal and wired through OrderPanel props.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "b946dcf",
-      "message": "feat: PhotoWizard UI, menu-cache prefix guard, generate-styled params, JP apps migration script",
       "branch": "neil",
       "date": "2026-03-18"
     }
