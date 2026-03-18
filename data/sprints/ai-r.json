@@ -819,12 +819,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "f38e17f",
-    "message": "feat: modifier UX — default options, inline binary pills, category dropdown fix, brand guide + design doc\n\n- default_option_id FK on modifier_groups (schema migration + API + admin star toggle + POS/ordering pre-selection)\n- Inline 2-option pill buttons on public ordering cards (skip modal for binary mods)\n- Category dropdown fix: stop coercing UUID IDs to 0 in MenuManagement.tsx\n- Brand guide + design doc added to docs/\n- Demo chat route + menu analysis improvements",
+    "hash": "818cdfe",
+    "message": "fix: Clerk bypass for CFO/Liam/Molly routes, revert direct OpenAI fallback",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "818cdfe",
+      "message": "fix: Clerk bypass for CFO/Liam/Molly routes, revert direct OpenAI fallback",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "f38e17f",
       "message": "feat: modifier UX — default options, inline binary pills, category dropdown fix, brand guide + design doc\n\n- default_option_id FK on modifier_groups (schema migration + API + admin star toggle + POS/ordering pre-selection)\n- Inline 2-option pill buttons on public ordering cards (skip modal for binary mods)\n- Category dropdown fix: stop coercing UUID IDs to 0 in MenuManagement.tsx\n- Brand guide + design doc added to docs/\n- Demo chat route + menu analysis improvements",
@@ -876,12 +882,6 @@
     {
       "hash": "57d3baa",
       "message": "feat: inline Nigiri/Sashimi + Fried/Steamed toggles on review rows, modifier UUID fix",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "3c1d928",
-      "message": "fix: Modifiers button in PhoneOrderReview — synthetic item fallback same as PhoneOrderEntry",
       "branch": "neil",
       "date": "2026-03-17"
     }
