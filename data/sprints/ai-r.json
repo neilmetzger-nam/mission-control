@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "0ff8dc6",
-    "message": "feat: multi-select support for inline modifier picker (Proteins, Ramen add-ons)\n\nGroups with maxSelections > 1 now show toggleable pills with a\nNext/Done button to confirm. Single-select groups (Spice Level)\nkeep the tap-to-advance behavior. Selections are saved to the\norder in real-time as pills are toggled.\n\n- Added maxSelections to InlineModGroup type\n- Added currentSelections tracking for multi-select groups\n- handleInlineModSelect: toggles for multi, advances for single\n- handleInlineModConfirm: confirms multi-select and advances\n- commitInlineMods: rebuilds modifications + price from all\n  group selections when stepping is complete\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "22ebfd6",
+    "message": "fix: iPad mods — show all DB groups (incl optional), remove seed-based either/or toggles\n\n- steppedGroups now includes ALL modifier groups from API (required first, then optional)\n- Removed getEitherOrMods regex-based toggles from OrderPanel — DB assignments are authoritative\n- Fixes: Proteins/Spice Level not showing; Crispy Salmon falsely getting Nigiri/Sashimi toggle\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "22ebfd6",
+      "message": "fix: iPad mods — show all DB groups (incl optional), remove seed-based either/or toggles\n\n- steppedGroups now includes ALL modifier groups from API (required first, then optional)\n- Removed getEitherOrMods regex-based toggles from OrderPanel — DB assignments are authoritative\n- Fixes: Proteins/Spice Level not showing; Crispy Salmon falsely getting Nigiri/Sashimi toggle\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "0ff8dc6",
       "message": "feat: multi-select support for inline modifier picker (Proteins, Ramen add-ons)\n\nGroups with maxSelections > 1 now show toggleable pills with a\nNext/Done button to confirm. Single-select groups (Spice Level)\nkeep the tap-to-advance behavior. Selections are saved to the\norder in real-time as pills are toggled.\n\n- Added maxSelections to InlineModGroup type\n- Added currentSelections tracking for multi-select groups\n- handleInlineModSelect: toggles for multi, advances for single\n- handleInlineModConfirm: confirms multi-select and advances\n- commitInlineMods: rebuilds modifications + price from all\n  group selections when stepping is complete\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "46d6462",
       "message": "fix: category filter on phone — normalize IDs (strip cat- prefix) so Japanese Appetizers shows all items",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "3769a8f",
-      "message": "chore: trigger Vercel deploy for iOS modifier updates",
       "branch": "neil",
       "date": "2026-03-18"
     }
