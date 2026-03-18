@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "dfd8554",
-    "message": "fix: disable Generate button on Items tab until restaurant photos configured — prevent bad first impressions",
+    "hash": "d80c284",
+    "message": "docs: comprehensive image gen flow spec + Orion prompt engineering knowledge",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "d80c284",
+      "message": "docs: comprehensive image gen flow spec + Orion prompt engineering knowledge",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "dfd8554",
       "message": "fix: disable Generate button on Items tab until restaurant photos configured — prevent bad first impressions",
@@ -948,12 +954,6 @@
     {
       "hash": "f6203f1",
       "message": "feat: move-item dropdown in categories, deactivate empty categories, CFO prompt fixes, category cleanup",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "45ed224",
-      "message": "docs: add INDEX.md — master reference for all captured insights and specs",
       "branch": "neil",
       "date": "2026-03-18"
     }
