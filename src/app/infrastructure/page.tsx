@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ExternalLink, Server, Database, Cpu, Monitor, RefreshCw } from "lucide-react";
+import { ExternalLink, Server, Database, Cpu, Monitor, RefreshCw, Table2, AlertTriangle } from "lucide-react";
 
 interface Service {
   id: string; name: string; project: string; description: string;

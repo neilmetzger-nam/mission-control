@@ -28,7 +28,8 @@ export default function AIRMarketingPage() {
       {/* Core message */}
       <div className="bg-orange-500/10 border border-orange-500/20 rounded-xl p-4">
         <p className="text-sm font-semibold text-orange-400 mb-1">The Hook</p>
-        <p className="text-zinc-300 text-sm">"Stop paying 30% to DoorDash. AI-R replaces your POS, website, and delivery apps with one AI platform — and you keep the money."</p>
+        <p className="text-zinc-300 text-sm">"AI-R replaces your POS, ordering site, and scheduling tools with one AI platform — $70/mo, works with your hardware, and you own every customer."</p>
+        <p className="text-zinc-500 text-xs mt-2">⚠️ Do NOT claim &quot;save 30% on commissions&quot; — see Brand Guide for correct DoorDash positioning.</p>
       </div>
 
       {sections.map((s, i) => (

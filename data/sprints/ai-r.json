@@ -780,7 +780,75 @@
               "title": "Fix category dropdown in Assign Modifiers to Category",
               "status": "done",
               "completedAt": "2026-03-18",
-              "notes": "Category dropdown showed wrong selection due to type mismatch (number vs string). Fixed by coercing cat.id to String() in both modifier and add-on section option values."
+              "notes": "Category dropdown showed wrong selection due to type mismatch (number vs string). Fixed by coercing cat.id to String() in both modifier and add-on section option values. Root cause was MenuManagement.tsx coercing UUID category IDs to 0."
+            },
+            {
+              "id": "cat1",
+              "title": "Category rollups — reporting bucket column + admin UI badges + summary API",
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "notes": "Added rollup VARCHAR(50) to menu_categories. Auto-classified 43 categories. PATCH endpoint for rollup updates. Summary API at /api/pwa/reports/rollup-summary. Admin UI: colored badges, editable dropdown, summary cards at top."
+            },
+            {
+              "id": "cat2",
+              "title": "Category cleanup — merge 10 duplicate/combo categories, deactivate 14 empties",
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "notes": "Merged all 'New Chefs Specials' combos and 'Japanese Kitchen, Japanese Kitchen.' duplicates into canonical categories. 43 items moved, 14 categories deactivated."
+            },
+            {
+              "id": "cat3",
+              "title": "Move-item dropdown on category items + deactivate empty category prompt",
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "notes": "Move → button on each item row with category dropdown. POST /api/pwa/menu/move-item endpoint. Auto-prompt to deactivate when category reaches 0 items."
+            },
+            {
+              "id": "cat4",
+              "title": "Categories tab — rollup-grouped accordion layout + add category + inline rename",
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "notes": "Categories organized under collapsible rollup headers. + Add Category inline form. Double-click to rename. Summary cards as anchor links."
+            },
+            {
+              "id": "cat5",
+              "title": "Item-level rollup override — items can override category rollup for reporting",
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "notes": "rollup_override column on menu_items. PATCH endpoint. UI badge per item row. Rollup summary uses COALESCE(override, category rollup). Solves Soups & Salads having items from multiple stations."
+            },
+            {
+              "id": "cat6",
+              "title": "Multi-select + bulk move items between categories",
+              "status": "in-progress",
+              "notes": "Checkboxes on item rows, floating action bar with bulk Move To + Set Rollup. Select All + Shift+click range select."
+            },
+            {
+              "id": "cfo1",
+              "title": "CFO agent — Clerk bypass, Orion MCP Redis fix, guardrails, audit log",
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "notes": "Clerk bypass for /api/cfo, /api/liam, /api/molly. Orion route-llm graceful Redis fallback. CFO execute guardrails: block deactivating categories with items, block category-name-as-item confusion, $0 price warnings. cfo_audit_log table for undo/accountability."
+            },
+            {
+              "id": "cfo2",
+              "title": "CFO knowledge base — category architecture, three surfaces, owner misconceptions",
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "notes": "Orion knowledge/menu-categories.md + knowledge/cfo-guardrails.md. CFO system prompt updated with reporting/POS/ordering framework, safety rules, and action extraction fixes."
+            },
+            {
+              "id": "doc1",
+              "title": "Documentation — brand guide, design doc, categories philosophy, recipe UX spec, docs index",
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "notes": "BRAND-GUIDE.md, DESIGN-DOC.md, CATEGORIES-PHILOSOPHY.md, CFO-CONFIRM-UX.md, RECIPE-UX.md, INDEX.md. Channel Views coming soon button on categories page."
+            },
+            {
+              "id": "recipe1",
+              "title": "Recipe builder — AI typical baseline, bulk ingredient table, Orion MCP integration",
+              "status": "in-progress",
+              "notes": "Spec at docs/RECIPE-UX.md. Claude Code session running. Editable table with autocomplete, Generate Typical Recipe via Orion, bulk save, food cost %."
             },
             {
               "id": "pwa14",

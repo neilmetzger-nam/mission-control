@@ -13,6 +13,7 @@ const SCAN_PATHS = [
   { dir: `${HOME}/.openclaw/workspace/agency/projects/ai-r/tasks`, project: "ai-r" },
   { dir: `${HOME}/.openclaw/workspace/agency/projects/ai-r/prompts`, project: "ai-r" },
   { dir: `${HOME}/Desktop/AIR-Web/prompts`, project: "ai-r" },
+  { dir: `${HOME}/Desktop/AIR-Web/docs`, project: "ai-r" },
   { dir: `${HOME}/.openclaw/workspace/agency/projects/studio`, project: "studio" },
 ];
 
