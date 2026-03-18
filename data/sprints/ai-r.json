@@ -783,6 +783,13 @@
               "status": "done",
               "notes": "Inline seat assignment on Split — seat pills per item in OrderPanel, batch save on Pay, no new screen.",
               "completedAt": "2026-03-17"
+            },
+            {
+              "id": "pwa17",
+              "title": "iPhone UX — unified order screen (merge PhoneOrderEntry + PhoneOrderReview, ItemDetailSheet edit mode)",
+              "status": "queued",
+              "notes": "Reduce from 5 steps/3 modals to 3 steps. Unified screen with Menu/Order tabs. ItemDetailSheet handles both add AND edit. Eliminates PhoneOrderReview duplication.",
+              "claudePrompt": "iPhone UX Refactor — Unified Order Screen\n\nFiles to modify:\n1. ItemDetailSheet.tsx — add editMode, initialQuantity, initialSelectedMods, initialNotes, initialSeat props. Pre-populate in reset useEffect. Footer: Update vs Add. Skip addon fetches in edit mode.\n2. PhoneOrderEntry.tsx — rewrite as unified screen. Layout: Header + Seat strip + Main content (Menu/Order tabs) + Bottom bar. Port handlers: handleFireOrder, fire-by-course, void PIN, ambient compare. Remove: handleEditItem/handleEditModalOpenMods/PhoneItemWizard chain, trayItem/trayNotes/trayModGroups state, viewMode browse/summary toggle.\n3. PhonePOS.tsx — simplify Step type to table-list|guest-count|order-entry. Remove PhoneOrderReview + PhoneSentConfirmation imports. Remove goToReview, goToSent, goBackToTable, goToOrderEntryBrowse, startInBrowse, sentData.\n4. PosModal.tsx — replace PhoneItemWizard portal with ItemDetailSheet in edit mode for iPad edits.\n\nFiles to DELETE after references updated:\n- EditItemModal.tsx\n- PhoneItemWizard.tsx\n- PhoneOrderReview.tsx\n- PhoneSentConfirmation.tsx\n\nIMPORTANT: Run in /plan mode first. This is a major refactor. Get approval before implementing."
             }
           ]
         }
@@ -790,12 +797,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "57d3baa",
-    "message": "feat: inline Nigiri/Sashimi + Fried/Steamed toggles on review rows, modifier UUID fix",
+    "hash": "cf3c581",
+    "message": "feat: pwa17 — unified iPhone order screen (Menu/Order tabs, 1-tap edit, inline fire, 3-step flow)",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "cf3c581",
+      "message": "feat: pwa17 — unified iPhone order screen (Menu/Order tabs, 1-tap edit, inline fire, 3-step flow)",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "57d3baa",
       "message": "feat: inline Nigiri/Sashimi + Fried/Steamed toggles on review rows, modifier UUID fix",
@@ -847,12 +860,6 @@
     {
       "hash": "872c9e6",
       "message": "fix: Modifiers button works (strip item- prefix from menuItemId), remove APP badge from EditItemModal header",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "55a22e6",
-      "message": "fix: SW passthrough — no caching, always fetch fresh, clears all old caches on activate",
       "branch": "neil",
       "date": "2026-03-17"
     }
