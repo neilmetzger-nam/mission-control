@@ -819,12 +819,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "818cdfe",
-    "message": "fix: Clerk bypass for CFO/Liam/Molly routes, revert direct OpenAI fallback",
+    "hash": "55f51cf",
+    "message": "feat: inject category architecture knowledge into CFO system prompt",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "55f51cf",
+      "message": "feat: inject category architecture knowledge into CFO system prompt",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "818cdfe",
       "message": "fix: Clerk bypass for CFO/Liam/Molly routes, revert direct OpenAI fallback",
@@ -876,12 +882,6 @@
     {
       "hash": "cf3c581",
       "message": "feat: pwa17 — unified iPhone order screen (Menu/Order tabs, 1-tap edit, inline fire, 3-step flow)",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "57d3baa",
-      "message": "feat: inline Nigiri/Sashimi + Fried/Steamed toggles on review rows, modifier UUID fix",
       "branch": "neil",
       "date": "2026-03-17"
     }
