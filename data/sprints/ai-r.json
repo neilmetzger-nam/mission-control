@@ -819,12 +819,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "9c7da58",
-    "message": "feat: category rollups — reporting bucket column, auto-classify, admin UI badges + dropdown, summary API",
+    "hash": "45ed224",
+    "message": "docs: add INDEX.md — master reference for all captured insights and specs",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "45ed224",
+      "message": "docs: add INDEX.md — master reference for all captured insights and specs",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "9c7da58",
       "message": "feat: category rollups — reporting bucket column, auto-classify, admin UI badges + dropdown, summary API",
@@ -878,12 +884,6 @@
       "message": "feat: pwa17 final — ItemDetailSheet + PhoneOrderEntry refinements",
       "branch": "neil",
       "date": "2026-03-18"
-    },
-    {
-      "hash": "51d0b7a",
-      "message": "feat: pwa17 phase 4 — ItemDetailSheet edit mode, PhoneOrderEntry unified flow, PosModal iPad edits",
-      "branch": "neil",
-      "date": "2026-03-17"
     }
   ]
 }
