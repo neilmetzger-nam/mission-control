@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "40ca479",
-    "message": "fix: use full UUID (not parseInt-truncated dbId) for modifier API calls\n\nRoot cause: menu-cache.ts sets dbId via parseInt(uuid, 10) which\ntruncates UUIDs like \"69dbaa49-...\" to 69. The modifier API then\nqueries id::text = '69' which matches nothing → empty groups → no\nmodifier prompt on iPad.\n\nFix: use cleanId (item.id with \"item-\" stripped) which preserves\nthe full UUID. Applied to both PosModal.handleItemTap and\nTabletOrderEntry.handleAddItem.\n\nAlso links ramen items (Miso, Tonkotsu, Seafood) to Proteins,\nSpice Level, and Ramen add-on modifier groups via script.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "9aafb2e",
+    "message": "feat: inline stepped modifier picker on iPad POS order panel\n\nInstead of opening a full-page ItemDetailSheet for modifier\nselection, items are now added immediately and modifier groups\nappear as inline pill rows one at a time directly under the\nitem in the order panel. User selects from group 1 (e.g.\nProteins), then group 2 (e.g. Spice Level) auto-advances.\nNo page navigation, no scrolling.\n\n- Added pendingInlineMods state tracking in PosModal\n- handleInlineModSelect updates modifierSelections, mods,\n  price, then advances to next group or finishes\n- OrderPanel renders InlineModGroup pills under items with\n  pending selections\n- Exported InlineModGroup/PendingInlineMod types from OrderPanel\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "9aafb2e",
+      "message": "feat: inline stepped modifier picker on iPad POS order panel\n\nInstead of opening a full-page ItemDetailSheet for modifier\nselection, items are now added immediately and modifier groups\nappear as inline pill rows one at a time directly under the\nitem in the order panel. User selects from group 1 (e.g.\nProteins), then group 2 (e.g. Spice Level) auto-advances.\nNo page navigation, no scrolling.\n\n- Added pendingInlineMods state tracking in PosModal\n- handleInlineModSelect updates modifierSelections, mods,\n  price, then advances to next group or finishes\n- OrderPanel renders InlineModGroup pills under items with\n  pending selections\n- Exported InlineModGroup/PendingInlineMod types from OrderPanel\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "40ca479",
       "message": "fix: use full UUID (not parseInt-truncated dbId) for modifier API calls\n\nRoot cause: menu-cache.ts sets dbId via parseInt(uuid, 10) which\ntruncates UUIDs like \"69dbaa49-...\" to 69. The modifier API then\nqueries id::text = '69' which matches nothing → empty groups → no\nmodifier prompt on iPad.\n\nFix: use cleanId (item.id with \"item-\" stripped) which preserves\nthe full UUID. Applied to both PosModal.handleItemTap and\nTabletOrderEntry.handleAddItem.\n\nAlso links ramen items (Miso, Tonkotsu, Seafood) to Proteins,\nSpice Level, and Ramen add-on modifier groups via script.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "d80c284",
       "message": "docs: comprehensive image gen flow spec + Orion prompt engineering knowledge",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "dfd8554",
-      "message": "fix: disable Generate button on Items tab until restaurant photos configured — prevent bad first impressions",
       "branch": "neil",
       "date": "2026-03-18"
     }
