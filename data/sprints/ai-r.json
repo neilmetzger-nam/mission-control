@@ -819,12 +819,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "45ed224",
-    "message": "docs: add INDEX.md — master reference for all captured insights and specs",
+    "hash": "f6203f1",
+    "message": "feat: move-item dropdown in categories, deactivate empty categories, CFO prompt fixes, category cleanup",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "f6203f1",
+      "message": "feat: move-item dropdown in categories, deactivate empty categories, CFO prompt fixes, category cleanup",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "45ed224",
       "message": "docs: add INDEX.md — master reference for all captured insights and specs",
@@ -876,12 +882,6 @@
     {
       "hash": "7ce10e0",
       "message": "fix: course badge APP/ENT two-color, food-only, sent items dimmed; spice level auth x-pwa-pin header fix",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "86d09a0",
-      "message": "feat: pwa17 final — ItemDetailSheet + PhoneOrderEntry refinements",
       "branch": "neil",
       "date": "2026-03-18"
     }
