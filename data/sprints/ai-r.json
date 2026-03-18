@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "0043d60",
-    "message": "debug: visible on-screen debug messages for iPad modifier flow (15s display)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "e85cdef",
+    "message": "fix: type error on debug message — cast data for error field access\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "e85cdef",
+      "message": "fix: type error on debug message — cast data for error field access\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "0043d60",
       "message": "debug: visible on-screen debug messages for iPad modifier flow (15s display)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "44b536b",
       "message": "feat: iPad 3-tier modifier UX (inline pill toggles, auto default selections)",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "7fa0b83",
-      "message": "chore: trigger deploy for iPad modifier UX",
       "branch": "neil",
       "date": "2026-03-18"
     }
