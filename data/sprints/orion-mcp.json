@@ -507,12 +507,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "539d565",
-    "message": "docs: add menu-categories.md knowledge base for CFO agents",
+    "hash": "f14a573",
+    "message": "docs: four-surfaces category framework — POS, ordering, reporting, routing",
     "branch": "main",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "f14a573",
+      "message": "docs: four-surfaces category framework — POS, ordering, reporting, routing",
+      "branch": "main",
+      "date": "2026-03-18"
+    },
     {
       "hash": "539d565",
       "message": "docs: add menu-categories.md knowledge base for CFO agents",
