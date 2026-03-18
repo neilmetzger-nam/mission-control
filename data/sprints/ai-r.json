@@ -819,12 +819,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "f6203f1",
-    "message": "feat: move-item dropdown in categories, deactivate empty categories, CFO prompt fixes, category cleanup",
+    "hash": "3336406",
+    "message": "feat: CFO guardrails — audit log, block deactivating categories with items, block category-as-item confusion, /bin/zsh price warnings",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "3336406",
+      "message": "feat: CFO guardrails — audit log, block deactivating categories with items, block category-as-item confusion, /bin/zsh price warnings",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "f6203f1",
       "message": "feat: move-item dropdown in categories, deactivate empty categories, CFO prompt fixes, category cleanup",
@@ -876,12 +882,6 @@
     {
       "hash": "d4f5a0a",
       "message": "feat: AI-first course classification — replace regex COURSE_MAP with DB-stored course_type\n\n- Add course_type + course_type_locked columns to menu_categories schema\n- New lib/ai/classify-course.ts — Anthropic Haiku classifies categories\n- New POST /api/menu/categories/classify endpoint\n- POS reads course_type from DB, no more client-side regex\n- Delete COURSE_MAP from menu-cache.ts\n- Add sushi/other course types to all POS components\n- Install @anthropic-ai/sdk",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "7ce10e0",
-      "message": "fix: course badge APP/ENT two-color, food-only, sent items dimmed; spice level auth x-pwa-pin header fix",
       "branch": "neil",
       "date": "2026-03-18"
     }
