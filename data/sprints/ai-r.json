@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "e85cdef",
-    "message": "fix: type error on debug message — cast data for error field access\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "d0b9324",
+    "message": "fix: find newly added item by ID diff instead of menuItemId match\n\nThe server mangles UUID menuItemIds (truncates to integer via parseInt),\nso after refreshSingleOrder the menuItemId doesn't match the original.\nNow captures existing item IDs before add and finds the new item by\nset difference. Removes debug messages.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "d0b9324",
+      "message": "fix: find newly added item by ID diff instead of menuItemId match\n\nThe server mangles UUID menuItemIds (truncates to integer via parseInt),\nso after refreshSingleOrder the menuItemId doesn't match the original.\nNow captures existing item IDs before add and finds the new item by\nset difference. Removes debug messages.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "e85cdef",
       "message": "fix: type error on debug message — cast data for error field access\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "b946dcf",
       "message": "feat: PhotoWizard UI, menu-cache prefix guard, generate-styled params, JP apps migration script",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "44b536b",
-      "message": "feat: iPad 3-tier modifier UX (inline pill toggles, auto default selections)",
       "branch": "neil",
       "date": "2026-03-18"
     }
