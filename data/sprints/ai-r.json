@@ -889,12 +889,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d0527bc",
-    "message": "feat: styled image generation — 5 photo styles (lifestyle, close-up, michelin, overhead, moody) via Orion MCP + Fal AI",
+    "hash": "3e8e428",
+    "message": "feat: recipe section mobile-first rewrite — card layout, voice input, tap-to-expand, touch targets",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "3e8e428",
+      "message": "feat: recipe section mobile-first rewrite — card layout, voice input, tap-to-expand, touch targets",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "d0527bc",
       "message": "feat: styled image generation — 5 photo styles (lifestyle, close-up, michelin, overhead, moody) via Orion MCP + Fal AI",
@@ -946,12 +952,6 @@
     {
       "hash": "9c7da58",
       "message": "feat: category rollups — reporting bucket column, auto-classify, admin UI badges + dropdown, summary API",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "55f51cf",
-      "message": "feat: inject category architecture knowledge into CFO system prompt",
       "branch": "neil",
       "date": "2026-03-18"
     }
