@@ -798,12 +798,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "2a3cb07",
-    "message": "fix: update pnpm lockfile for @anthropic-ai/sdk",
+    "hash": "2343d3b",
+    "message": "fix: correct course_number mapping in PATCH/POST — starters=2, mains=4, sushi=6, other=7",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "2343d3b",
+      "message": "fix: correct course_number mapping in PATCH/POST — starters=2, mains=4, sushi=6, other=7",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "2a3cb07",
       "message": "fix: update pnpm lockfile for @anthropic-ai/sdk",
@@ -855,12 +861,6 @@
     {
       "hash": "6875bc4",
       "message": "fix: App/Entrée pills work correctly with key-based highlight, remove Kitchen Station from Edit modal",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "b4087c3",
-      "message": "fix: Kitchen Station label in EditItemModal, course pills = Beverage/Appetizer/Sushi/Entrée/Dessert",
       "branch": "neil",
       "date": "2026-03-17"
     }
