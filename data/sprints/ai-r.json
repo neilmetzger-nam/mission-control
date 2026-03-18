@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "7fa0b83",
-    "message": "chore: trigger deploy for iPad modifier UX",
+    "hash": "44b536b",
+    "message": "feat: iPad 3-tier modifier UX (inline pill toggles, auto default selections)",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "44b536b",
+      "message": "feat: iPad 3-tier modifier UX (inline pill toggles, auto default selections)",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "7fa0b83",
       "message": "chore: trigger deploy for iPad modifier UX",
@@ -948,12 +954,6 @@
     {
       "hash": "d12f07e",
       "message": "feat: image upload via Vercel Blob + recipe scan/dictate (snap & say for recipes)",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "2043df7",
-      "message": "feat: recipe builder — AI typical generation via Orion MCP, bulk ingredient table, inventory autocomplete, food cost analysis",
       "branch": "neil",
       "date": "2026-03-18"
     }
