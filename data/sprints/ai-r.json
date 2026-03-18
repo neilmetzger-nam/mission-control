@@ -819,12 +819,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "55f51cf",
-    "message": "feat: inject category architecture knowledge into CFO system prompt",
+    "hash": "9c7da58",
+    "message": "feat: category rollups — reporting bucket column, auto-classify, admin UI badges + dropdown, summary API",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "9c7da58",
+      "message": "feat: category rollups — reporting bucket column, auto-classify, admin UI badges + dropdown, summary API",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "55f51cf",
       "message": "feat: inject category architecture knowledge into CFO system prompt",
@@ -876,12 +882,6 @@
     {
       "hash": "51d0b7a",
       "message": "feat: pwa17 phase 4 — ItemDetailSheet edit mode, PhoneOrderEntry unified flow, PosModal iPad edits",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "cf3c581",
-      "message": "feat: pwa17 — unified iPhone order screen (Menu/Order tabs, 1-tap edit, inline fire, 3-step flow)",
       "branch": "neil",
       "date": "2026-03-17"
     }
