@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6bc5c76",
-    "message": "debug: add console.log to handleItemTap modifier flow for diagnosing missing inline mods\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "0043d60",
+    "message": "debug: visible on-screen debug messages for iPad modifier flow (15s display)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "0043d60",
+      "message": "debug: visible on-screen debug messages for iPad modifier flow (15s display)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "6bc5c76",
       "message": "debug: add console.log to handleItemTap modifier flow for diagnosing missing inline mods\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "7fa0b83",
       "message": "chore: trigger deploy for iPad modifier UX",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "2d934f4",
-      "message": "fix: category id variants (cat- prefix both ways) so JP appetizers full list renders",
       "branch": "neil",
       "date": "2026-03-18"
     }
