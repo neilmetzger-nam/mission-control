@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d80c284",
-    "message": "docs: comprehensive image gen flow spec + Orion prompt engineering knowledge",
+    "hash": "3769a8f",
+    "message": "chore: trigger Vercel deploy for iOS modifier updates",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "3769a8f",
+      "message": "chore: trigger Vercel deploy for iOS modifier updates",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "d80c284",
       "message": "docs: comprehensive image gen flow spec + Orion prompt engineering knowledge",
@@ -948,12 +954,6 @@
     {
       "hash": "3336406",
       "message": "feat: CFO guardrails — audit log, block deactivating categories with items, block category-as-item confusion, /bin/zsh price warnings",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "f6203f1",
-      "message": "feat: move-item dropdown in categories, deactivate empty categories, CFO prompt fixes, category cleanup",
       "branch": "neil",
       "date": "2026-03-18"
     }
