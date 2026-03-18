@@ -798,12 +798,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d4f5a0a",
-    "message": "feat: AI-first course classification — replace regex COURSE_MAP with DB-stored course_type\n\n- Add course_type + course_type_locked columns to menu_categories schema\n- New lib/ai/classify-course.ts — Anthropic Haiku classifies categories\n- New POST /api/menu/categories/classify endpoint\n- POS reads course_type from DB, no more client-side regex\n- Delete COURSE_MAP from menu-cache.ts\n- Add sushi/other course types to all POS components\n- Install @anthropic-ai/sdk",
+    "hash": "2a3cb07",
+    "message": "fix: update pnpm lockfile for @anthropic-ai/sdk",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "2a3cb07",
+      "message": "fix: update pnpm lockfile for @anthropic-ai/sdk",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "d4f5a0a",
       "message": "feat: AI-first course classification — replace regex COURSE_MAP with DB-stored course_type\n\n- Add course_type + course_type_locked columns to menu_categories schema\n- New lib/ai/classify-course.ts — Anthropic Haiku classifies categories\n- New POST /api/menu/categories/classify endpoint\n- POS reads course_type from DB, no more client-side regex\n- Delete COURSE_MAP from menu-cache.ts\n- Add sushi/other course types to all POS components\n- Install @anthropic-ai/sdk",
@@ -855,12 +861,6 @@
     {
       "hash": "b4087c3",
       "message": "fix: Kitchen Station label in EditItemModal, course pills = Beverage/Appetizer/Sushi/Entrée/Dessert",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "37b1493",
-      "message": "fix: course pills App/Entrée/Sushi/Drinks, remove active-block so tapping always fires",
       "branch": "neil",
       "date": "2026-03-17"
     }
