@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "22ebfd6",
-    "message": "fix: iPad mods — show all DB groups (incl optional), remove seed-based either/or toggles\n\n- steppedGroups now includes ALL modifier groups from API (required first, then optional)\n- Removed getEitherOrMods regex-based toggles from OrderPanel — DB assignments are authoritative\n- Fixes: Proteins/Spice Level not showing; Crispy Salmon falsely getting Nigiri/Sashimi toggle\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "6bc5c76",
+    "message": "debug: add console.log to handleItemTap modifier flow for diagnosing missing inline mods\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "6bc5c76",
+      "message": "debug: add console.log to handleItemTap modifier flow for diagnosing missing inline mods\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "22ebfd6",
       "message": "fix: iPad mods — show all DB groups (incl optional), remove seed-based either/or toggles\n\n- steppedGroups now includes ALL modifier groups from API (required first, then optional)\n- Removed getEitherOrMods regex-based toggles from OrderPanel — DB assignments are authoritative\n- Fixes: Proteins/Spice Level not showing; Crispy Salmon falsely getting Nigiri/Sashimi toggle\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "2d934f4",
       "message": "fix: category id variants (cat- prefix both ways) so JP appetizers full list renders",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "46d6462",
-      "message": "fix: category filter on phone — normalize IDs (strip cat- prefix) so Japanese Appetizers shows all items",
       "branch": "neil",
       "date": "2026-03-18"
     }
