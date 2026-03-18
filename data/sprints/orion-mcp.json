@@ -507,12 +507,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b2f81e8",
-    "message": "docs: simplify to three surfaces — reporting, POS UX, online ordering",
+    "hash": "c5bd91b",
+    "message": "docs: owner misconception guidance — categories aren't for scheduling/visibility",
     "branch": "main",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "c5bd91b",
+      "message": "docs: owner misconception guidance — categories aren't for scheduling/visibility",
+      "branch": "main",
+      "date": "2026-03-18"
+    },
     {
       "hash": "b2f81e8",
       "message": "docs: simplify to three surfaces — reporting, POS UX, online ordering",
