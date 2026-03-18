@@ -507,12 +507,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "f14a573",
-    "message": "docs: four-surfaces category framework — POS, ordering, reporting, routing",
+    "hash": "b2f81e8",
+    "message": "docs: simplify to three surfaces — reporting, POS UX, online ordering",
     "branch": "main",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "b2f81e8",
+      "message": "docs: simplify to three surfaces — reporting, POS UX, online ordering",
+      "branch": "main",
+      "date": "2026-03-18"
+    },
     {
       "hash": "f14a573",
       "message": "docs: four-surfaces category framework — POS, ordering, reporting, routing",
