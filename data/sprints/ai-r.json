@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "8226642",
-    "message": "feat: auto-select either/or defaults, fix stale state in commitInlineMods\n\n- Either/or groups (2 options, max 1) auto-select default and show as\n  toggles on item card immediately, skip inline picker\n- commitInlineMods now accepts latestSelections param to avoid reading\n  stale React state — fixes mods not appearing after picker completes\n- Picker only shows groups with 3+ options or multi-select\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "027a1fb",
+    "message": "fix: edit modifiers — match menu item by name when menuItemId is mangled\n\nServer round-trip mangles UUID menuItemIds to item-0, so ItemDetailSheet\ncan't find modifier groups. Now falls back to name matching against\nallMenuItems to find the correct menu item with full UUID for API lookup.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "027a1fb",
+      "message": "fix: edit modifiers — match menu item by name when menuItemId is mangled\n\nServer round-trip mangles UUID menuItemIds to item-0, so ItemDetailSheet\ncan't find modifier groups. Now falls back to name matching against\nallMenuItems to find the correct menu item with full UUID for API lookup.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "8226642",
       "message": "feat: auto-select either/or defaults, fix stale state in commitInlineMods\n\n- Either/or groups (2 options, max 1) auto-select default and show as\n  toggles on item card immediately, skip inline picker\n- commitInlineMods now accepts latestSelections param to avoid reading\n  stale React state — fixes mods not appearing after picker completes\n- Picker only shows groups with 3+ options or multi-select\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "0ff8dc6",
       "message": "feat: multi-select support for inline modifier picker (Proteins, Ramen add-ons)\n\nGroups with maxSelections > 1 now show toggleable pills with a\nNext/Done button to confirm. Single-select groups (Spice Level)\nkeep the tap-to-advance behavior. Selections are saved to the\norder in real-time as pills are toggled.\n\n- Added maxSelections to InlineModGroup type\n- Added currentSelections tracking for multi-select groups\n- handleInlineModSelect: toggles for multi, advances for single\n- handleInlineModConfirm: confirms multi-select and advances\n- commitInlineMods: rebuilds modifications + price from all\n  group selections when stepping is complete\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "9aafb2e",
-      "message": "feat: inline stepped modifier picker on iPad POS order panel\n\nInstead of opening a full-page ItemDetailSheet for modifier\nselection, items are now added immediately and modifier groups\nappear as inline pill rows one at a time directly under the\nitem in the order panel. User selects from group 1 (e.g.\nProteins), then group 2 (e.g. Spice Level) auto-advances.\nNo page navigation, no scrolling.\n\n- Added pendingInlineMods state tracking in PosModal\n- handleInlineModSelect updates modifierSelections, mods,\n  price, then advances to next group or finishes\n- OrderPanel renders InlineModGroup pills under items with\n  pending selections\n- Exported InlineModGroup/PendingInlineMod types from OrderPanel\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
