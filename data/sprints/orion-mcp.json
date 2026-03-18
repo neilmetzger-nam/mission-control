@@ -511,12 +511,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "20391b7",
-    "message": "feat: smart image routing — Imagen 4.0 (text2img), Gemini 3.1 (reference-based), Fal (enhance/restyle)\n\nAI-R sends 'I need a photo' + optional references. Orion decides:\n- No reference → Imagen 4.0 (best food quality, free)\n- Restaurant reference photo → Gemini 3.1 Flash Image (style-matched, free)\n- Owner's food photo → Fal flux/dev img2img (enhance or restyle)\n- Fallback → Fal text2img\n\nCuisine-aware prompt builder with per-cuisine plating details.\nPrompt safety rules enforced (no logos, no faces, blurred backgrounds).",
+    "hash": "5fbf24f",
+    "message": "docs: image prompt engineering — simple/advanced modes, per-cuisine defaults, reference image rules, video pipeline",
     "branch": "main",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "5fbf24f",
+      "message": "docs: image prompt engineering — simple/advanced modes, per-cuisine defaults, reference image rules, video pipeline",
+      "branch": "main",
+      "date": "2026-03-18"
+    },
     {
       "hash": "20391b7",
       "message": "feat: smart image routing — Imagen 4.0 (text2img), Gemini 3.1 (reference-based), Fal (enhance/restyle)\n\nAI-R sends 'I need a photo' + optional references. Orion decides:\n- No reference → Imagen 4.0 (best food quality, free)\n- Restaurant reference photo → Gemini 3.1 Flash Image (style-matched, free)\n- Owner's food photo → Fal flux/dev img2img (enhance or restyle)\n- Fallback → Fal text2img\n\nCuisine-aware prompt builder with per-cuisine plating details.\nPrompt safety rules enforced (no logos, no faces, blurred backgrounds).",
@@ -568,12 +574,6 @@
     {
       "hash": "5b67978",
       "message": "fix: transaction_items column is price not unit_price",
-      "branch": "main",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "ed3c517",
-      "message": "fix: wire-el-agents — correct api_schema structure for ElevenLabs webhook tools",
       "branch": "main",
       "date": "2026-03-17"
     }
