@@ -141,5 +141,31 @@
     "project": "ai-r",
     "notes": null,
     "recurring": null
+  },
+  {
+    "id": "evt-1773828652953",
+    "title": "Test",
+    "owner": "neil",
+    "date": "2026-03-18",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "allDay": false,
+    "type": "block",
+    "project": "ai-r",
+    "notes": null,
+    "recurring": null
+  },
+  {
+    "id": "evt-1773829206331",
+    "title": "Social Media Setup — Instagram @plateai + Meta Business",
+    "owner": "neil",
+    "date": "2026-03-18",
+    "startTime": "21:00",
+    "endTime": "23:00",
+    "allDay": false,
+    "type": "block",
+    "project": "plateai",
+    "notes": "USE MAC MINI WITH CAMERA. Facebook WILL trigger video verification — camera must be ready. Find Red Bar FB login first. Dave co-pilots in real time.",
+    "recurring": null
   }
 ]
