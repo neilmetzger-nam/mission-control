@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "44b536b",
-    "message": "feat: iPad 3-tier modifier UX (inline pill toggles, auto default selections)",
+    "hash": "b946dcf",
+    "message": "feat: PhotoWizard UI, menu-cache prefix guard, generate-styled params, JP apps migration script",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "b946dcf",
+      "message": "feat: PhotoWizard UI, menu-cache prefix guard, generate-styled params, JP apps migration script",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "44b536b",
       "message": "feat: iPad 3-tier modifier UX (inline pill toggles, auto default selections)",
@@ -948,12 +954,6 @@
     {
       "hash": "d0527bc",
       "message": "feat: styled image generation — 5 photo styles (lifestyle, close-up, michelin, overhead, moody) via Orion MCP + Fal AI",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "d12f07e",
-      "message": "feat: image upload via Vercel Blob + recipe scan/dictate (snap & say for recipes)",
       "branch": "neil",
       "date": "2026-03-18"
     }
