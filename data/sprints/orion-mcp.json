@@ -382,7 +382,9 @@
             {
               "id": "os-w2-2",
               "title": "Build Carol's MC workspace manually",
-              "status": "todo"
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "completedBy": "20391b7"
             },
             {
               "id": "os-w2-3",
@@ -479,8 +481,10 @@
             {
               "id": "int2",
               "title": "Notion → Orion data mapper — pages to sprint/memory format",
-              "status": "todo",
-              "priority": "high"
+              "status": "done",
+              "priority": "high",
+              "completedAt": "2026-03-18",
+              "completedBy": "20391b7"
             },
             {
               "id": "int3",
@@ -507,12 +511,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "01d5009",
-    "message": "docs: image generation prompt engineering rules and per-cuisine defaults",
+    "hash": "20391b7",
+    "message": "feat: smart image routing — Imagen 4.0 (text2img), Gemini 3.1 (reference-based), Fal (enhance/restyle)\n\nAI-R sends 'I need a photo' + optional references. Orion decides:\n- No reference → Imagen 4.0 (best food quality, free)\n- Restaurant reference photo → Gemini 3.1 Flash Image (style-matched, free)\n- Owner's food photo → Fal flux/dev img2img (enhance or restyle)\n- Fallback → Fal text2img\n\nCuisine-aware prompt builder with per-cuisine plating details.\nPrompt safety rules enforced (no logos, no faces, blurred backgrounds).",
     "branch": "main",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "20391b7",
+      "message": "feat: smart image routing — Imagen 4.0 (text2img), Gemini 3.1 (reference-based), Fal (enhance/restyle)\n\nAI-R sends 'I need a photo' + optional references. Orion decides:\n- No reference → Imagen 4.0 (best food quality, free)\n- Restaurant reference photo → Gemini 3.1 Flash Image (style-matched, free)\n- Owner's food photo → Fal flux/dev img2img (enhance or restyle)\n- Fallback → Fal text2img\n\nCuisine-aware prompt builder with per-cuisine plating details.\nPrompt safety rules enforced (no logos, no faces, blurred backgrounds).",
+      "branch": "main",
+      "date": "2026-03-18"
+    },
     {
       "hash": "01d5009",
       "message": "docs: image generation prompt engineering rules and per-cuisine defaults",
@@ -564,12 +574,6 @@
     {
       "hash": "ed3c517",
       "message": "fix: wire-el-agents — correct api_schema structure for ElevenLabs webhook tools",
-      "branch": "main",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "a00e605",
-      "message": "feat: orion-1 — CFO/Ops/Marketing snapshot tools + ElevenLabs agent wiring script",
       "branch": "main",
       "date": "2026-03-17"
     }
