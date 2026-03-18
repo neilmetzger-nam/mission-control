@@ -507,12 +507,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "7d18d04",
-    "message": "fix: graceful Redis fallback in route-llm — catch KV errors, use hardcoded routes",
+    "hash": "539d565",
+    "message": "docs: add menu-categories.md knowledge base for CFO agents",
     "branch": "main",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "539d565",
+      "message": "docs: add menu-categories.md knowledge base for CFO agents",
+      "branch": "main",
+      "date": "2026-03-18"
+    },
     {
       "hash": "7d18d04",
       "message": "fix: graceful Redis fallback in route-llm — catch KV errors, use hardcoded routes",
