@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "46d6462",
-    "message": "fix: category filter on phone — normalize IDs (strip cat- prefix) so Japanese Appetizers shows all items",
+    "hash": "2d934f4",
+    "message": "fix: category id variants (cat- prefix both ways) so JP appetizers full list renders",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "2d934f4",
+      "message": "fix: category id variants (cat- prefix both ways) so JP appetizers full list renders",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "46d6462",
       "message": "fix: category filter on phone — normalize IDs (strip cat- prefix) so Japanese Appetizers shows all items",
@@ -948,12 +954,6 @@
     {
       "hash": "79024b4",
       "message": "docs: recipe builder UX spec — AI typical baseline, bulk ingredient table, invoice parser connection",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "e5711fa",
-      "message": "ui: Channel Views coming soon button on categories page",
       "branch": "neil",
       "date": "2026-03-18"
     }
