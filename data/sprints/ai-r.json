@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "76397a3",
-    "message": "feat: DB-driven either/or toggles on iPad OrderPanel (Nigiri/Sashimi, Fried/Steamed)\n\nReplaces seed-based regex toggles with DB-authoritative modifier data.\nWhen inline picker finds groups with exactly 2 options and maxSelections=1,\nstores them as either/or toggles that persist on the order item row.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "6628556",
+    "message": "fix: hide either/or toggles while inline picker is active; link gyoza to Dumplings+Spice in DB\n\nPrevents duplicate display of modifier options. Either/or toggles only\nshow after the inline picker is done. Also linked 9 gyoza/dumpling items\nto the Dumplings (Fried/Steamed) and Spice Level modifier groups in DB.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "6628556",
+      "message": "fix: hide either/or toggles while inline picker is active; link gyoza to Dumplings+Spice in DB\n\nPrevents duplicate display of modifier options. Either/or toggles only\nshow after the inline picker is done. Also linked 9 gyoza/dumpling items\nto the Dumplings (Fried/Steamed) and Spice Level modifier groups in DB.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "76397a3",
       "message": "feat: DB-driven either/or toggles on iPad OrderPanel (Nigiri/Sashimi, Fried/Steamed)\n\nReplaces seed-based regex toggles with DB-authoritative modifier data.\nWhen inline picker finds groups with exactly 2 options and maxSelections=1,\nstores them as either/or toggles that persist on the order item row.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "40ca479",
       "message": "fix: use full UUID (not parseInt-truncated dbId) for modifier API calls\n\nRoot cause: menu-cache.ts sets dbId via parseInt(uuid, 10) which\ntruncates UUIDs like \"69dbaa49-...\" to 69. The modifier API then\nqueries id::text = '69' which matches nothing → empty groups → no\nmodifier prompt on iPad.\n\nFix: use cleanId (item.id with \"item-\" stripped) which preserves\nthe full UUID. Applied to both PosModal.handleItemTap and\nTabletOrderEntry.handleAddItem.\n\nAlso links ramen items (Miso, Tonkotsu, Seafood) to Proteins,\nSpice Level, and Ramen add-on modifier groups via script.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "29b4e95",
-      "message": "fix: add either/or modifier toggles to OrderPanel (iPad PosModal)\n\nThe iPad POS uses PosModal → OrderPanel to render order items,\nbut OrderPanel had no either/or toggle support (Nigiri/Sashimi,\nFried/Steamed). Added inline pill toggles matching the iPhone\nPhoneOrderEntry pattern. Also added handleToggleEitherOr to\nPosModal and wired through OrderPanel props.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
