@@ -169,5 +169,185 @@
       "localIp": "192.168.1.74",
       "services": ["print-server:3333"]
     }
+  ],
+  "schema": {
+    "title": "AI-R Database Schema (Neon Postgres)",
+    "source": "lib/db/schema.ts + api/src/db/schema/",
+    "groups": [
+      {
+        "name": "Menu & Ordering",
+        "tables": [
+          { "table": "MenuCategory", "description": "Menu categories per restaurant" },
+          { "table": "MenuItem", "description": "Items: name, price, description, image, active" },
+          { "table": "ModifierGroup", "description": "Modifier groups (required, max selections)" },
+          { "table": "ModifierOption", "description": "Options within modifier groups (price delta)" },
+          { "table": "MenuItemModifierGroup", "description": "M2M: items ↔ modifier groups" },
+          { "table": "MenuItemTranslation", "description": "AI-generated translations (es, zh, ko, th)" },
+          { "table": "ModifierOptionTranslation", "description": "Modifier option translations" },
+          { "table": "GlobalFoodItem", "description": "Cross-restaurant food intelligence" },
+          { "table": "GlobalFoodAlias", "description": "AI alias resolution" },
+          { "table": "MenuItemAlias", "description": "Per-restaurant item alias mapping" },
+          { "table": "ResolveLog", "description": "Alias resolution audit log" }
+        ]
+      },
+      {
+        "name": "POS & Dine-In",
+        "tables": [
+          { "table": "DineInOrder", "description": "Full POS orders (status, server, table, channel)" },
+          { "table": "DineInOrderItem", "description": "Line items with modifiers, course, fire status" },
+          { "table": "DineInPayment", "description": "Payments, tips, split checks" },
+          { "table": "FloorPlan", "description": "Floor plan layouts" },
+          { "table": "FloorPlanElement", "description": "Table positions, capacity, rotation" },
+          { "table": "Cart", "description": "Phone-ordering cart system" },
+          { "table": "CartItem", "description": "Cart line items" }
+        ]
+      },
+      {
+        "name": "Staff & Labor",
+        "tables": [
+          { "table": "Staff", "description": "Employees: name, role, department, pin, pay rate, language" },
+          { "table": "Shift", "description": "Planned vs actual shifts, hours, labor cost" },
+          { "table": "ScheduleTemplate", "description": "Reusable weekly schedule templates" },
+          { "table": "TemplateShift", "description": "Shifts within templates" },
+          { "table": "ClockEntry", "description": "Time clock: in/out, breaks, overtime, tips" },
+          { "table": "TimeclockSettings", "description": "OT thresholds, photo-on-clock, week start" }
+        ]
+      },
+      {
+        "name": "Inventory & Costing",
+        "tables": [
+          { "table": "inventory_items", "description": "Ingredients: name, category, unit, cost, qty, par level" },
+          { "table": "unit_conversions", "description": "Unit math (case→lb, gallon→oz)" },
+          { "table": "purchase_logs", "description": "Individual ingredient purchase entries" },
+          { "table": "recipes", "description": "Menu item recipes" },
+          { "table": "recipe_ingredients", "description": "Recipe → ingredient links with quantities" },
+          { "table": "waste_logs", "description": "Waste tracking (reason, qty, cost)" },
+          { "table": "plate_cost_snapshots", "description": "Daily plate cost snapshots (cost, waste buffer, margin %)" },
+          { "table": "vendors", "description": "Supplier directory (name, contact, account#)" },
+          { "table": "purchase_records", "description": "Invoice/receipt OCR capture" },
+          { "table": "purchase_line_items", "description": "Line items from scanned invoices" }
+        ]
+      },
+      {
+        "name": "Hardware & Printing",
+        "tables": [
+          { "table": "PrinterStation", "description": "Thermal printers: IP, port, type, station role, language" }
+        ]
+      },
+      {
+        "name": "Settings & Marketing",
+        "tables": [
+          { "table": "RestaurantSetting", "description": "Key-value settings per restaurant" },
+          { "table": "beta_signups", "description": "Marketing: beta signup captures" }
+        ]
+      },
+      {
+        "name": "Express API (separate schema)",
+        "tables": [
+          { "table": "events", "description": "Event sourcing system" },
+          { "table": "guests", "description": "Guest/customer records" },
+          { "table": "transactions", "description": "Transaction ledger" },
+          { "table": "pending_tips", "description": "Tips awaiting capture" }
+        ]
+      }
+    ]
+  },
+  "techDebt": [
+    {
+      "id": "td-1",
+      "title": "localStorage as optimistic cache",
+      "impact": "high",
+      "category": "data",
+      "description": "Data drift between local storage and DB. Manager state, POS settings stored client-side.",
+      "fix": "Migrate to server state with React Query or SWR. Remove localStorage reads as source of truth."
+    },
+    {
+      "id": "td-2",
+      "title": "BroadcastChannel for KDS sync",
+      "impact": "high",
+      "category": "architecture",
+      "description": "KDS only syncs across same-browser tabs. Won't work across devices (iPad ↔ kitchen display).",
+      "fix": "Replace with WebSocket or Server-Sent Events for real-time cross-device sync."
+    },
+    {
+      "id": "td-3",
+      "title": "Manager store resets on refresh",
+      "impact": "medium",
+      "category": "data",
+      "description": "Pending manager approvals (voids, comps, discounts) lost on page refresh.",
+      "fix": "Persist pending approvals to DB or sessionStorage with recovery on mount."
+    },
+    {
+      "id": "td-4",
+      "title": "Channel pricing not in DB",
+      "impact": "high",
+      "category": "feature-gap",
+      "description": "Same price on DoorDash, UberEats, and direct ordering. Should support per-channel markup (25% DD standard).",
+      "fix": "Add channel_menu_overrides table + API. UI in integrations settings."
+    },
+    {
+      "id": "td-5",
+      "title": "Daypart scheduling not in DB",
+      "impact": "medium",
+      "category": "feature-gap",
+      "description": "Full menu shown all day. No lunch/dinner/brunch daypart filtering.",
+      "fix": "Add availableFrom/To, availableDays to MenuItem. Filter in POS, online ordering, phone AI."
+    },
+    {
+      "id": "td-6",
+      "title": "Square Terminal device ID in localStorage",
+      "impact": "medium",
+      "category": "data",
+      "description": "Terminal pairing stored client-side. Lost on browser clear.",
+      "fix": "Store device_id in RestaurantSetting or dedicated table."
+    },
+    {
+      "id": "td-7",
+      "title": "Printer configs in memory only",
+      "impact": "medium",
+      "category": "data",
+      "description": "Printer station assignments cached in-memory. Server restart = reconfigure.",
+      "fix": "Already have PrinterStation table — ensure all config reads from DB, not runtime cache."
+    },
+    {
+      "id": "td-8",
+      "title": "No OAuth flows for delivery platforms",
+      "impact": "high",
+      "category": "integration",
+      "description": "DoorDash/UberEats/Grubhub integration pages exist but no actual OAuth connection routes.",
+      "fix": "Implement OAuth2 flows for each platform once API access is granted."
+    },
+    {
+      "id": "td-9",
+      "title": "No inbound order sync from delivery platforms",
+      "impact": "high",
+      "category": "integration",
+      "description": "Orders from DD/UE/GH don't flow into AI-R. Manual entry only.",
+      "fix": "Webhook listeners + order normalization layer → DineInOrder with channel='doordash' etc."
+    },
+    {
+      "id": "td-10",
+      "title": "No guest profiles / customer database",
+      "impact": "high",
+      "category": "feature-gap",
+      "description": "No way to track who ordered, visit history, favorites, dietary preferences. Critical for DD→direct conversion strategy.",
+      "fix": "guest_profiles table + link to orders. Build from receipt signups + phone orders."
+    },
+    {
+      "id": "td-11",
+      "title": "No inventory auto-deduction on order close",
+      "impact": "medium",
+      "category": "feature-gap",
+      "description": "Inventory doesn't decrease when orders are completed. Requires manual stock counts.",
+      "fix": "Order close hook → recipe lookup → deduct ingredient quantities. Add inventory_movements audit trail."
+    },
+    {
+      "id": "td-12",
+      "title": "Clerk middleware missing on /home/* routes",
+      "impact": "high",
+      "category": "security",
+      "description": "Owner dashboard routes may be accessible without auth in some configurations.",
+      "fix": "Add Clerk middleware.ts matcher for all /home/*, /settings/*, /api/pwa/* routes."
+    }
   ]
 }

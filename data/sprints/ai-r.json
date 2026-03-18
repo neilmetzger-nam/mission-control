@@ -762,6 +762,27 @@
               "notes": "Timer visible to managers/KDS, optional for server view. Add toggle in /home/settings or restaurant config."
             },
             {
+              "id": "mod1",
+              "title": "Default option per modifier group — schema + API + admin UI + ordering pre-selection",
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "notes": "Added default_option_id UUID FK to modifier_groups. API GET/POST/PATCH/DELETE updated. Admin UI star toggle in create/edit forms + badge in list. POS pre-selection (PhoneItemWizard + ItemDetailSheet). Public ordering derives isDefault from group-level default."
+            },
+            {
+              "id": "mod2",
+              "title": "Inline 2-option modifier picker — pill buttons on item card, skip modal",
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "notes": "Items with only binary modifier groups (2 options, max=1, $0 deltas) render inline emerald/zinc pills on public ordering cards. Direct add-to-cart without modal. POS keeps detail sheet flow with pre-selected defaults."
+            },
+            {
+              "id": "mod3",
+              "title": "Fix category dropdown in Assign Modifiers to Category",
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "notes": "Category dropdown showed wrong selection due to type mismatch (number vs string). Fixed by coercing cat.id to String() in both modifier and add-on section option values."
+            },
+            {
               "id": "pwa14",
               "title": "Pre-Shift Intel — daily specials, 86 list, push items, pairings, server upsell prompts",
               "status": "done",
@@ -798,12 +819,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "2343d3b",
-    "message": "fix: correct course_number mapping in PATCH/POST — starters=2, mains=4, sushi=6, other=7",
+    "hash": "f38e17f",
+    "message": "feat: modifier UX — default options, inline binary pills, category dropdown fix, brand guide + design doc\n\n- default_option_id FK on modifier_groups (schema migration + API + admin star toggle + POS/ordering pre-selection)\n- Inline 2-option pill buttons on public ordering cards (skip modal for binary mods)\n- Category dropdown fix: stop coercing UUID IDs to 0 in MenuManagement.tsx\n- Brand guide + design doc added to docs/\n- Demo chat route + menu analysis improvements",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "f38e17f",
+      "message": "feat: modifier UX — default options, inline binary pills, category dropdown fix, brand guide + design doc\n\n- default_option_id FK on modifier_groups (schema migration + API + admin star toggle + POS/ordering pre-selection)\n- Inline 2-option pill buttons on public ordering cards (skip modal for binary mods)\n- Category dropdown fix: stop coercing UUID IDs to 0 in MenuManagement.tsx\n- Brand guide + design doc added to docs/\n- Demo chat route + menu analysis improvements",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "2343d3b",
       "message": "fix: correct course_number mapping in PATCH/POST — starters=2, mains=4, sushi=6, other=7",
@@ -855,12 +882,6 @@
     {
       "hash": "3c1d928",
       "message": "fix: Modifiers button in PhoneOrderReview — synthetic item fallback same as PhoneOrderEntry",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "6875bc4",
-      "message": "fix: App/Entrée pills work correctly with key-based highlight, remove Kitchen Station from Edit modal",
       "branch": "neil",
       "date": "2026-03-17"
     }
