@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "3769a8f",
-    "message": "chore: trigger Vercel deploy for iOS modifier updates",
+    "hash": "46d6462",
+    "message": "fix: category filter on phone — normalize IDs (strip cat- prefix) so Japanese Appetizers shows all items",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "46d6462",
+      "message": "fix: category filter on phone — normalize IDs (strip cat- prefix) so Japanese Appetizers shows all items",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "3769a8f",
       "message": "chore: trigger Vercel deploy for iOS modifier updates",
@@ -948,12 +954,6 @@
     {
       "hash": "e5711fa",
       "message": "ui: Channel Views coming soon button on categories page",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "3336406",
-      "message": "feat: CFO guardrails — audit log, block deactivating categories with items, block category-as-item confusion, /bin/zsh price warnings",
       "branch": "neil",
       "date": "2026-03-18"
     }
