@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "027a1fb",
-    "message": "fix: edit modifiers — match menu item by name when menuItemId is mangled\n\nServer round-trip mangles UUID menuItemIds to item-0, so ItemDetailSheet\ncan't find modifier groups. Now falls back to name matching against\nallMenuItems to find the correct menu item with full UUID for API lookup.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "07c32c5",
+    "message": "fix: preserve modifier badges across item adds; quick mods from settings\n\n- Fix refreshSingleOrder to snapshot/restore locally-cached modifierSelections\n  and modifications through API refreshes (root cause of badges disappearing)\n- Move Quick Mods from hardcoded array to RestaurantSettings (configurable per restaurant)\n- Remove spice options from quick mods defaults, keep 6 allergens\n- Wire QuickModsSettings into Restaurant Settings page\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "07c32c5",
+      "message": "fix: preserve modifier badges across item adds; quick mods from settings\n\n- Fix refreshSingleOrder to snapshot/restore locally-cached modifierSelections\n  and modifications through API refreshes (root cause of badges disappearing)\n- Move Quick Mods from hardcoded array to RestaurantSettings (configurable per restaurant)\n- Remove spice options from quick mods defaults, keep 6 allergens\n- Wire QuickModsSettings into Restaurant Settings page\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "027a1fb",
       "message": "fix: edit modifiers — match menu item by name when menuItemId is mangled\n\nServer round-trip mangles UUID menuItemIds to item-0, so ItemDetailSheet\ncan't find modifier groups. Now falls back to name matching against\nallMenuItems to find the correct menu item with full UUID for API lookup.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "22ebfd6",
       "message": "fix: iPad mods — show all DB groups (incl optional), remove seed-based either/or toggles\n\n- steppedGroups now includes ALL modifier groups from API (required first, then optional)\n- Removed getEitherOrMods regex-based toggles from OrderPanel — DB assignments are authoritative\n- Fixes: Proteins/Spice Level not showing; Crispy Salmon falsely getting Nigiri/Sashimi toggle\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "0ff8dc6",
-      "message": "feat: multi-select support for inline modifier picker (Proteins, Ramen add-ons)\n\nGroups with maxSelections > 1 now show toggleable pills with a\nNext/Done button to confirm. Single-select groups (Spice Level)\nkeep the tap-to-advance behavior. Selections are saved to the\norder in real-time as pills are toggled.\n\n- Added maxSelections to InlineModGroup type\n- Added currentSelections tracking for multi-select groups\n- handleInlineModSelect: toggles for multi, advances for single\n- handleInlineModConfirm: confirms multi-select and advances\n- commitInlineMods: rebuilds modifications + price from all\n  group selections when stepping is complete\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
