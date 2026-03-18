@@ -798,12 +798,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "51d0b7a",
-    "message": "feat: pwa17 phase 4 — ItemDetailSheet edit mode, PhoneOrderEntry unified flow, PosModal iPad edits",
+    "hash": "86d09a0",
+    "message": "feat: pwa17 final — ItemDetailSheet + PhoneOrderEntry refinements",
     "branch": "neil",
-    "date": "2026-03-17"
+    "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "86d09a0",
+      "message": "feat: pwa17 final — ItemDetailSheet + PhoneOrderEntry refinements",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "51d0b7a",
       "message": "feat: pwa17 phase 4 — ItemDetailSheet edit mode, PhoneOrderEntry unified flow, PosModal iPad edits",
@@ -855,12 +861,6 @@
     {
       "hash": "b2f9924",
       "message": "chore: BUILD 17 — force cache bust, verify fresh deploy",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "4b0c3fb",
-      "message": "feat: Edit button on PhoneOrderReview — full EditItemModal + PhoneItemWizard on review screen",
       "branch": "neil",
       "date": "2026-03-17"
     }
