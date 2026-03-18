@@ -889,12 +889,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "2043df7",
-    "message": "feat: recipe builder — AI typical generation via Orion MCP, bulk ingredient table, inventory autocomplete, food cost analysis",
+    "hash": "d12f07e",
+    "message": "feat: image upload via Vercel Blob + recipe scan/dictate (snap & say for recipes)",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "d12f07e",
+      "message": "feat: image upload via Vercel Blob + recipe scan/dictate (snap & say for recipes)",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "2043df7",
       "message": "feat: recipe builder — AI typical generation via Orion MCP, bulk ingredient table, inventory autocomplete, food cost analysis",
@@ -946,12 +952,6 @@
     {
       "hash": "818cdfe",
       "message": "fix: Clerk bypass for CFO/Liam/Molly routes, revert direct OpenAI fallback",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "f38e17f",
-      "message": "feat: modifier UX — default options, inline binary pills, category dropdown fix, brand guide + design doc\n\n- default_option_id FK on modifier_groups (schema migration + API + admin star toggle + POS/ordering pre-selection)\n- Inline 2-option pill buttons on public ordering cards (skip modal for binary mods)\n- Category dropdown fix: stop coercing UUID IDs to 0 in MenuManagement.tsx\n- Brand guide + design doc added to docs/\n- Demo chat route + menu analysis improvements",
       "branch": "neil",
       "date": "2026-03-18"
     }
