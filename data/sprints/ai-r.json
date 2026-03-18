@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b946dcf",
-    "message": "feat: PhotoWizard UI, menu-cache prefix guard, generate-styled params, JP apps migration script",
+    "hash": "29b4e95",
+    "message": "fix: add either/or modifier toggles to OrderPanel (iPad PosModal)\n\nThe iPad POS uses PosModal → OrderPanel to render order items,\nbut OrderPanel had no either/or toggle support (Nigiri/Sashimi,\nFried/Steamed). Added inline pill toggles matching the iPhone\nPhoneOrderEntry pattern. Also added handleToggleEitherOr to\nPosModal and wired through OrderPanel props.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "29b4e95",
+      "message": "fix: add either/or modifier toggles to OrderPanel (iPad PosModal)\n\nThe iPad POS uses PosModal → OrderPanel to render order items,\nbut OrderPanel had no either/or toggle support (Nigiri/Sashimi,\nFried/Steamed). Added inline pill toggles matching the iPhone\nPhoneOrderEntry pattern. Also added handleToggleEitherOr to\nPosModal and wired through OrderPanel props.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "b946dcf",
       "message": "feat: PhotoWizard UI, menu-cache prefix guard, generate-styled params, JP apps migration script",
@@ -948,12 +954,6 @@
     {
       "hash": "3e8e428",
       "message": "feat: recipe section mobile-first rewrite — card layout, voice input, tap-to-expand, touch targets",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "d0527bc",
-      "message": "feat: styled image generation — 5 photo styles (lifestyle, close-up, michelin, overhead, moody) via Orion MCP + Fal AI",
       "branch": "neil",
       "date": "2026-03-18"
     }
