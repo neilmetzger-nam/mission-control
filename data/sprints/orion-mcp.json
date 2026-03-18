@@ -507,12 +507,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "020bed5",
-    "message": "docs: CFO guardrails — lessons learned, undo spec, safety rules",
+    "hash": "01d5009",
+    "message": "docs: image generation prompt engineering rules and per-cuisine defaults",
     "branch": "main",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "01d5009",
+      "message": "docs: image generation prompt engineering rules and per-cuisine defaults",
+      "branch": "main",
+      "date": "2026-03-18"
+    },
     {
       "hash": "020bed5",
       "message": "docs: CFO guardrails — lessons learned, undo spec, safety rules",
