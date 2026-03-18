@@ -847,8 +847,10 @@
             {
               "id": "recipe1",
               "title": "Recipe builder — AI typical baseline, bulk ingredient table, Orion MCP integration",
-              "status": "in-progress",
-              "notes": "Spec at docs/RECIPE-UX.md. Claude Code session running. Editable table with autocomplete, Generate Typical Recipe via Orion, bulk save, food cost %."
+              "status": "done",
+              "notes": "Spec at docs/RECIPE-UX.md. Claude Code session running. Editable table with autocomplete, Generate Typical Recipe via Orion, bulk save, food cost %.",
+              "completedAt": "2026-03-18",
+              "completedBy": "2043df7"
             },
             {
               "id": "pwa14",
@@ -887,12 +889,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "79024b4",
-    "message": "docs: recipe builder UX spec — AI typical baseline, bulk ingredient table, invoice parser connection",
+    "hash": "2043df7",
+    "message": "feat: recipe builder — AI typical generation via Orion MCP, bulk ingredient table, inventory autocomplete, food cost analysis",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "2043df7",
+      "message": "feat: recipe builder — AI typical generation via Orion MCP, bulk ingredient table, inventory autocomplete, food cost analysis",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "79024b4",
       "message": "docs: recipe builder UX spec — AI typical baseline, bulk ingredient table, invoice parser connection",
@@ -944,12 +952,6 @@
     {
       "hash": "f38e17f",
       "message": "feat: modifier UX — default options, inline binary pills, category dropdown fix, brand guide + design doc\n\n- default_option_id FK on modifier_groups (schema migration + API + admin star toggle + POS/ordering pre-selection)\n- Inline 2-option pill buttons on public ordering cards (skip modal for binary mods)\n- Category dropdown fix: stop coercing UUID IDs to 0 in MenuManagement.tsx\n- Brand guide + design doc added to docs/\n- Demo chat route + menu analysis improvements",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "2343d3b",
-      "message": "fix: correct course_number mapping in PATCH/POST — starters=2, mains=4, sushi=6, other=7",
       "branch": "neil",
       "date": "2026-03-18"
     }
