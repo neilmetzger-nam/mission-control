@@ -790,12 +790,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "3c1d928",
-    "message": "fix: Modifiers button in PhoneOrderReview — synthetic item fallback same as PhoneOrderEntry",
+    "hash": "57d3baa",
+    "message": "feat: inline Nigiri/Sashimi + Fried/Steamed toggles on review rows, modifier UUID fix",
     "branch": "neil",
     "date": "2026-03-17"
   },
   "recentCommits": [
+    {
+      "hash": "57d3baa",
+      "message": "feat: inline Nigiri/Sashimi + Fried/Steamed toggles on review rows, modifier UUID fix",
+      "branch": "neil",
+      "date": "2026-03-17"
+    },
     {
       "hash": "3c1d928",
       "message": "fix: Modifiers button in PhoneOrderReview — synthetic item fallback same as PhoneOrderEntry",
@@ -847,12 +853,6 @@
     {
       "hash": "55a22e6",
       "message": "fix: SW passthrough — no caching, always fetch fresh, clears all old caches on activate",
-      "branch": "neil",
-      "date": "2026-03-17"
-    },
-    {
-      "hash": "fcae202",
-      "message": "fix: auto-unregister stale SW on every page load — no more manual cache clearing on iOS",
       "branch": "neil",
       "date": "2026-03-17"
     }
