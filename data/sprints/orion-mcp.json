@@ -1,6 +1,6 @@
 {
   "projectId": "orion-mcp",
-  "updatedAt": "2026-03-17",
+  "updatedAt": "2026-03-18",
   "milestones": [
     {
       "id": "m1",
@@ -295,7 +295,9 @@
             {
               "id": "t1",
               "title": "generate_media — abstract hardcoded Fal",
-              "status": "todo"
+              "status": "done",
+              "completedAt": "2026-03-18",
+              "completedBy": "7d18d04"
             },
             {
               "id": "t2",
@@ -505,12 +507,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5b67978",
-    "message": "fix: transaction_items column is price not unit_price",
+    "hash": "7d18d04",
+    "message": "fix: graceful Redis fallback in route-llm — catch KV errors, use hardcoded routes",
     "branch": "main",
-    "date": "2026-03-17"
+    "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "7d18d04",
+      "message": "fix: graceful Redis fallback in route-llm — catch KV errors, use hardcoded routes",
+      "branch": "main",
+      "date": "2026-03-18"
+    },
     {
       "hash": "5b67978",
       "message": "fix: transaction_items column is price not unit_price",
