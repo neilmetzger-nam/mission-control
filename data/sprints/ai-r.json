@@ -820,8 +820,10 @@
             {
               "id": "cat6",
               "title": "Multi-select + bulk move items between categories",
-              "status": "in-progress",
-              "notes": "Checkboxes on item rows, floating action bar with bulk Move To + Set Rollup. Select All + Shift+click range select."
+              "status": "done",
+              "notes": "Checkboxes on item rows, floating action bar with bulk Move To + Set Rollup. Select All + Shift+click range select.",
+              "completedAt": "2026-03-18",
+              "completedBy": "dfd8554"
             },
             {
               "id": "cfo1",
@@ -889,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "3e8e428",
-    "message": "feat: recipe section mobile-first rewrite — card layout, voice input, tap-to-expand, touch targets",
+    "hash": "dfd8554",
+    "message": "fix: disable Generate button on Items tab until restaurant photos configured — prevent bad first impressions",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "dfd8554",
+      "message": "fix: disable Generate button on Items tab until restaurant photos configured — prevent bad first impressions",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "3e8e428",
       "message": "feat: recipe section mobile-first rewrite — card layout, voice input, tap-to-expand, touch targets",
@@ -946,12 +954,6 @@
     {
       "hash": "45ed224",
       "message": "docs: add INDEX.md — master reference for all captured insights and specs",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "9c7da58",
-      "message": "feat: category rollups — reporting bucket column, auto-classify, admin UI badges + dropdown, summary API",
       "branch": "neil",
       "date": "2026-03-18"
     }
