@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "41aa948",
-    "message": "fix: correct column names in v1 menu routes — title not name, no uuid col, sort_order",
+    "hash": "04a24a3",
+    "message": "feat: split Maestro photo chat — quick enhance flow (30s) vs full guided flow",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "04a24a3",
+      "message": "feat: split Maestro photo chat — quick enhance flow (30s) vs full guided flow",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "41aa948",
       "message": "fix: correct column names in v1 menu routes — title not name, no uuid col, sort_order",
@@ -948,12 +954,6 @@
     {
       "hash": "75fd989",
       "message": "fix: dev bypass for /api/session/me — returns synthetic Red Bar session in development",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "050b6fc",
-      "message": "feat: 4 background styles in photo chat — restaurant/dark/white/custom with per-tenant styleRefUrl",
       "branch": "neil",
       "date": "2026-03-19"
     }
