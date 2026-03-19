@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "64bf48c",
-    "message": "feat: Settings sub-nav on printers page — persistent nav between settings pages",
+    "hash": "35794a2",
+    "message": "fix: remove TanStack Query DevTools — was showing as floating palm tree icon",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "35794a2",
+      "message": "fix: remove TanStack Query DevTools — was showing as floating palm tree icon",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "64bf48c",
       "message": "feat: Settings sub-nav on printers page — persistent nav between settings pages",
@@ -948,12 +954,6 @@
     {
       "hash": "b537003",
       "message": "fix: star button always visible at 50% opacity — not hidden until hover",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "889c004",
-      "message": "fix: clarify star=website hero — tooltip + website builder message explains the star button",
       "branch": "neil",
       "date": "2026-03-19"
     }
