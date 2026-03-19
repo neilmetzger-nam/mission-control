@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "8b6442d",
-    "message": "feat: DB-driven either/or toggles on phone (match iPad behavior)\n\nReplace regex-based getEitherOrMods with DB-driven either/or on phone:\n- All single-select modifier groups auto-add with defaults on item tap\n- Either/or toggles (Nigiri/Sashimi, Fried/Steamed, Spice, etc) show\n  as inline pill toggles on the order card\n- Tapping toggles changes the selection without opening a sheet\n- Items like Amber Jack/Ankimo now get Nigiri default auto-applied\n\nAlso promote nigiri/sashimi/dumpling/dressing to primary keywords in\nItemDetailSheet so they show prominently when editing.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "19430be",
+    "message": "fix: preserve modifierSelections through syncFromDb polling\n\nsyncFromDb runs every 3 seconds and was wiping locally-cached\nmodifierSelections/modifications when rebuilding from API data.\nNow snapshots and restores local modifier data through the sync,\nmatching the pattern already used in refreshSingleOrder.\n\nThis fixes:\n- Phone either/or toggles reverting after 3 seconds\n- Phone edit changes not persisting\n- iPad edit losing modifier selections\n\nAlso improved debug info in ItemDetailSheet edit mode.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "19430be",
+      "message": "fix: preserve modifierSelections through syncFromDb polling\n\nsyncFromDb runs every 3 seconds and was wiping locally-cached\nmodifierSelections/modifications when rebuilding from API data.\nNow snapshots and restores local modifier data through the sync,\nmatching the pattern already used in refreshSingleOrder.\n\nThis fixes:\n- Phone either/or toggles reverting after 3 seconds\n- Phone edit changes not persisting\n- iPad edit losing modifier selections\n\nAlso improved debug info in ItemDetailSheet edit mode.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "8b6442d",
       "message": "feat: DB-driven either/or toggles on phone (match iPad behavior)\n\nReplace regex-based getEitherOrMods with DB-driven either/or on phone:\n- All single-select modifier groups auto-add with defaults on item tap\n- Either/or toggles (Nigiri/Sashimi, Fried/Steamed, Spice, etc) show\n  as inline pill toggles on the order card\n- Tapping toggles changes the selection without opening a sheet\n- Items like Amber Jack/Ankimo now get Nigiri default auto-applied\n\nAlso promote nigiri/sashimi/dumpling/dressing to primary keywords in\nItemDetailSheet so they show prominently when editing.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "76397a3",
       "message": "feat: DB-driven either/or toggles on iPad OrderPanel (Nigiri/Sashimi, Fried/Steamed)\n\nReplaces seed-based regex toggles with DB-authoritative modifier data.\nWhen inline picker finds groups with exactly 2 options and maxSelections=1,\nstores them as either/or toggles that persist on the order item row.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "d0b9324",
-      "message": "fix: find newly added item by ID diff instead of menuItemId match\n\nThe server mangles UUID menuItemIds (truncates to integer via parseInt),\nso after refreshSingleOrder the menuItemId doesn't match the original.\nNow captures existing item IDs before add and finds the new item by\nset difference. Removes debug messages.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
