@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "bda5b00",
-    "message": "fix: render markdown bold + links in website builder chat bubbles",
+    "hash": "69ecf18",
+    "message": "fix: show hero image in chat bubble — was using msg.image not msg.imageUrl",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "69ecf18",
+      "message": "fix: show hero image in chat bubble — was using msg.image not msg.imageUrl",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "bda5b00",
       "message": "fix: render markdown bold + links in website builder chat bubbles",
@@ -948,12 +954,6 @@
     {
       "hash": "423d975",
       "message": "feat: Staff View preview — iPad + iPhone frames with live PWA iframes, skipLock auto-unlock",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "da0b78f",
-      "message": "feat: PWA printer settings JSONB sync + many-to-many routing + broadcast mode + Staff View embedded preview",
       "branch": "neil",
       "date": "2026-03-19"
     }
