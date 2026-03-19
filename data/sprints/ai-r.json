@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "264a357",
-    "message": "fix: return url (not imageUrl) from upload route — component checks data.url",
+    "hash": "ba1c5ec",
+    "message": "feat: restaurant photo picker in bg step — user selects which photo to use as background reference",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "ba1c5ec",
+      "message": "feat: restaurant photo picker in bg step — user selects which photo to use as background reference",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "264a357",
       "message": "fix: return url (not imageUrl) from upload route — component checks data.url",
@@ -948,12 +954,6 @@
     {
       "hash": "80d1827",
       "message": "fix: bypass Clerk middleware entirely in dev using module.exports short-circuit",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "0ed21f4",
-      "message": "fix: dev auth bypass for all /api/v1/ routes via devAuth() helper",
       "branch": "neil",
       "date": "2026-03-19"
     }
