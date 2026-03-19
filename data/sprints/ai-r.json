@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "da0b78f",
-    "message": "feat: PWA printer settings JSONB sync + many-to-many routing + broadcast mode + Staff View embedded preview",
+    "hash": "423d975",
+    "message": "feat: Staff View preview — iPad + iPhone frames with live PWA iframes, skipLock auto-unlock",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "423d975",
+      "message": "feat: Staff View preview — iPad + iPhone frames with live PWA iframes, skipLock auto-unlock",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "da0b78f",
       "message": "feat: PWA printer settings JSONB sync + many-to-many routing + broadcast mode + Staff View embedded preview",
@@ -948,12 +954,6 @@
     {
       "hash": "2ab71fc",
       "message": "feat: photos gallery polish — promote/delete/download, Reference Library, Google badge, soft delete",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "52aa60e",
-      "message": "feat: printer hub — 4 tabs (Printers/Job Routing/Ticket Design/Auth Slips), settings JSONB, DB routing",
       "branch": "neil",
       "date": "2026-03-19"
     }
