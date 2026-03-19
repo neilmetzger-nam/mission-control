@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5276028",
-    "message": "fix: optimistic cache insert before API call to prevent race condition\n\nWhen adding items rapidly, refreshSingleOrder snapshots could miss the\nprevious item's _eitherOrGroups/modifierSelections. Now the item is added\nto cache optimistically before the API call, so concurrent snapshots\nalways capture it.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "1c804b3",
+    "message": "fix: toggle compares option IDs not titles, so default highlights green\n\nmodifierSelections stores option IDs (UUIDs) but the toggle was comparing\nagainst option titles (e.g. \"Nigiri\"). Added optionAId/optionBId to the\neither/or groups and updated all comparison logic to use IDs.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "1c804b3",
+      "message": "fix: toggle compares option IDs not titles, so default highlights green\n\nmodifierSelections stores option IDs (UUIDs) but the toggle was comparing\nagainst option titles (e.g. \"Nigiri\"). Added optionAId/optionBId to the\neither/or groups and updated all comparison logic to use IDs.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "5276028",
       "message": "fix: optimistic cache insert before API call to prevent race condition\n\nWhen adding items rapidly, refreshSingleOrder snapshots could miss the\nprevious item's _eitherOrGroups/modifierSelections. Now the item is added\nto cache optimistically before the API call, so concurrent snapshots\nalways capture it.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "07c32c5",
       "message": "fix: preserve modifier badges across item adds; quick mods from settings\n\n- Fix refreshSingleOrder to snapshot/restore locally-cached modifierSelections\n  and modifications through API refreshes (root cause of badges disappearing)\n- Move Quick Mods from hardcoded array to RestaurantSettings (configurable per restaurant)\n- Remove spice options from quick mods defaults, keep 6 allergens\n- Wire QuickModsSettings into Restaurant Settings page\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "027a1fb",
-      "message": "fix: edit modifiers — match menu item by name when menuItemId is mangled\n\nServer round-trip mangles UUID menuItemIds to item-0, so ItemDetailSheet\ncan't find modifier groups. Now falls back to name matching against\nallMenuItems to find the correct menu item with full UUID for API lookup.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
