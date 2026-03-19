@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "36d0ee4",
-    "message": "fix: website builder — auto-show DB photos, fix iframe sandbox, skip photo choice when photos exist",
+    "hash": "1c6a143",
+    "message": "feat: auto-save generated images to restaurant_photos library — gold assets available everywhere",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "1c6a143",
+      "message": "feat: auto-save generated images to restaurant_photos library — gold assets available everywhere",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "36d0ee4",
       "message": "fix: website builder — auto-show DB photos, fix iframe sandbox, skip photo choice when photos exist",
@@ -948,12 +954,6 @@
     {
       "hash": "71bfdff",
       "message": "fix: use item.title fallback in MaestroPhotoChat — was showing 'this item' before state populated",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "b38668b",
-      "message": "feat: 5 free photos on menu import (fire-and-forget) + table timer optional in iPhone settings",
       "branch": "neil",
       "date": "2026-03-19"
     }
