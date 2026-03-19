@@ -977,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "fd7711f",
-    "message": "feat: Joe webhook — ElevenLabs order → POS order + Pi kitchen print",
+    "hash": "6ebb7c7",
+    "message": "feat: live Square sales on dashboard — RevenueWaterfall pulls real data, Live from Square badge",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "6ebb7c7",
+      "message": "feat: live Square sales on dashboard — RevenueWaterfall pulls real data, Live from Square badge",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "fd7711f",
       "message": "feat: Joe webhook — ElevenLabs order → POS order + Pi kitchen print",
@@ -1034,12 +1040,6 @@
     {
       "hash": "08a8f3e",
       "message": "feat: Phone AI transfer number — Joe dials restaurant direct line when transferring calls",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "abff8ae",
-      "message": "fix: ElevenLabs voices API — dev auth bypass + ELEVENLABS_API_KEY added",
       "branch": "neil",
       "date": "2026-03-19"
     }
