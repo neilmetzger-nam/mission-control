@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "52dc258",
-    "message": "feat: Maestro Photo Chat — interactive chat-driven image generation replacing static wizard\n\n- State machine: lib/pwa/maestro-photo-flow.ts\n- Chat UI: components/pwa/maestro/MaestroPhotoChat.tsx\n- Inline uploads, style pills, image previews, revision prompt\n- Replaces ImageWizardModal in ItemDetailPanel",
+    "hash": "9e645fe",
+    "message": "docs: 10 pairings + 10 upsells from menu analysis, ambient alias training spec\n\n- Curated pairings based on cuisine, flavor profiles, dining patterns\n- Upsell scripts with trigger items and revenue lift estimates\n- Alias training spec: ambient corrections → menu_item_aliases table\n- 20 seed aliases for Red Bar common mishears\n- 15 ElevenLabs voice test scenarios\n- Confidence scoring system (0.5 → 1.0)",
     "branch": "neil",
-    "date": "2026-03-18"
+    "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "9e645fe",
+      "message": "docs: 10 pairings + 10 upsells from menu analysis, ambient alias training spec\n\n- Curated pairings based on cuisine, flavor profiles, dining patterns\n- Upsell scripts with trigger items and revenue lift estimates\n- Alias training spec: ambient corrections → menu_item_aliases table\n- 20 seed aliases for Red Bar common mishears\n- 15 ElevenLabs voice test scenarios\n- Confidence scoring system (0.5 → 1.0)",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "52dc258",
       "message": "feat: Maestro Photo Chat — interactive chat-driven image generation replacing static wizard\n\n- State machine: lib/pwa/maestro-photo-flow.ts\n- Chat UI: components/pwa/maestro/MaestroPhotoChat.tsx\n- Inline uploads, style pills, image previews, revision prompt\n- Replaces ImageWizardModal in ItemDetailPanel",
@@ -948,12 +954,6 @@
     {
       "hash": "3e420f8",
       "message": "fix: serialize rapid item adds with busy guard + spinner overlay\n\nPrevents race conditions from rapid taps on iPhone by blocking concurrent\nhandleAddItem calls. Shows a brief \"Adding...\" spinner overlay (350ms min)\nso users can see the system is processing.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "1c804b3",
-      "message": "fix: toggle compares option IDs not titles, so default highlights green\n\nmodifierSelections stores option IDs (UUIDs) but the toggle was comparing\nagainst option titles (e.g. \"Nigiri\"). Added optionAId/optionBId to the\neither/or groups and updated all comparison logic to use IDs.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
