@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "1c6a143",
-    "message": "feat: auto-save generated images to restaurant_photos library — gold assets available everywhere",
+    "hash": "16def82",
+    "message": "fix: dev auth bypass for website-builder API routes",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "16def82",
+      "message": "fix: dev auth bypass for website-builder API routes",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "1c6a143",
       "message": "feat: auto-save generated images to restaurant_photos library — gold assets available everywhere",
@@ -948,12 +954,6 @@
     {
       "hash": "20c07a7",
       "message": "fix: remove inline 📷✏️ health badges from item names — redundant with Upload/Generate",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "71bfdff",
-      "message": "fix: use item.title fallback in MaestroPhotoChat — was showing 'this item' before state populated",
       "branch": "neil",
       "date": "2026-03-19"
     }
