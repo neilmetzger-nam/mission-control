@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "47dc138",
-    "message": "fix: add Custom as 4th background option in both bg pickers",
+    "hash": "6ad724e",
+    "message": "docs: IMAGE-GEN-REFERENCE.md — complete guide to image generation architecture, prompts, bugs, files",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "6ad724e",
+      "message": "docs: IMAGE-GEN-REFERENCE.md — complete guide to image generation architecture, prompts, bugs, files",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "47dc138",
       "message": "fix: add Custom as 4th background option in both bg pickers",
@@ -948,12 +954,6 @@
     {
       "hash": "e6a2376",
       "message": "fix: snake_case table names in /api/v1/menu — MenuCategory→menu_categories, MenuItem→menu_items",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "d67070a",
-      "message": "fix: use plain pass-through middleware in dev — skip clerkMiddleware entirely",
       "branch": "neil",
       "date": "2026-03-19"
     }
