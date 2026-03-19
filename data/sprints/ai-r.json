@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "35794a2",
-    "message": "fix: remove TanStack Query DevTools — was showing as floating palm tree icon",
+    "hash": "5fc601b",
+    "message": "fix: remove dangling devtools wrapper — syntax error in providers.tsx",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "5fc601b",
+      "message": "fix: remove dangling devtools wrapper — syntax error in providers.tsx",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "35794a2",
       "message": "fix: remove TanStack Query DevTools — was showing as floating palm tree icon",
@@ -948,12 +954,6 @@
     {
       "hash": "7ab2e58",
       "message": "fix: rename Reference Library → My Hero & Style Photos, clearer description",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "b537003",
-      "message": "fix: star button always visible at 50% opacity — not hidden until hover",
       "branch": "neil",
       "date": "2026-03-19"
     }
