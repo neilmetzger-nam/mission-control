@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "75fd989",
-    "message": "fix: dev bypass for /api/session/me — returns synthetic Red Bar session in development",
+    "hash": "d244521",
+    "message": "fix: always fetch session in dev — Clerk userId is null without session",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "d244521",
+      "message": "fix: always fetch session in dev — Clerk userId is null without session",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "75fd989",
       "message": "fix: dev bypass for /api/session/me — returns synthetic Red Bar session in development",
@@ -948,12 +954,6 @@
     {
       "hash": "8c73e91",
       "message": "docs: OpenClaw embedded architecture — 3-tier Maestro model for restaurants\n\n- Tier 1 Maestro Lite (included): stateless, Orion MCP per-request\n- Tier 2 Maestro Pro (/mo): shared gateway, per-restaurant workspace + memory\n- Tier 3 Enterprise: dedicated OpenClaw instance\n- Provisioning flows, SOUL.md template, channel bindings\n- Scaling estimates and revenue projections",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "4706903",
-      "message": "feat: image QA harness — side-by-side engine comparison (Imagen 4.0 vs Gemini 3.1 vs Fal)\n\n- Tests 3 dishes: Pad Thai, Tonkotsu Ramen, Crispy Duck\n- Generates through each engine with identical prompts\n- Outputs to /tmp/image-qa/ with HTML gallery\n- Gemini 3.1 uses Red Bar interior as style reference",
       "branch": "neil",
       "date": "2026-03-19"
     }
