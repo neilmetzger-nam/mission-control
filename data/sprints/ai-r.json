@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b38668b",
-    "message": "feat: 5 free photos on menu import (fire-and-forget) + table timer optional in iPhone settings",
+    "hash": "71bfdff",
+    "message": "fix: use item.title fallback in MaestroPhotoChat — was showing 'this item' before state populated",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "71bfdff",
+      "message": "fix: use item.title fallback in MaestroPhotoChat — was showing 'this item' before state populated",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "b38668b",
       "message": "feat: 5 free photos on menu import (fire-and-forget) + table timer optional in iPhone settings",
@@ -948,12 +954,6 @@
     {
       "hash": "ba1c5ec",
       "message": "feat: restaurant photo picker in bg step — user selects which photo to use as background reference",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "264a357",
-      "message": "fix: return url (not imageUrl) from upload route — component checks data.url",
       "branch": "neil",
       "date": "2026-03-19"
     }
