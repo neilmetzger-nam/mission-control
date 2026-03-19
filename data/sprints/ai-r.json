@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "04a24a3",
-    "message": "feat: split Maestro photo chat — quick enhance flow (30s) vs full guided flow",
+    "hash": "109ccc1",
+    "message": "fix: snake_case columns in menu-images/upload route",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "109ccc1",
+      "message": "fix: snake_case columns in menu-images/upload route",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "04a24a3",
       "message": "feat: split Maestro photo chat — quick enhance flow (30s) vs full guided flow",
@@ -948,12 +954,6 @@
     {
       "hash": "d244521",
       "message": "fix: always fetch session in dev — Clerk userId is null without session",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "75fd989",
-      "message": "fix: dev bypass for /api/session/me — returns synthetic Red Bar session in development",
       "branch": "neil",
       "date": "2026-03-19"
     }
