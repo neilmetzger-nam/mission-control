@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "89a900b",
-    "message": "fix: website builder links open in new tab — don't navigate away from wizard",
+    "hash": "5cd4d12",
+    "message": "fix: /home/menu?tab=photos opens Photos tab directly via useSearchParams",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "5cd4d12",
+      "message": "fix: /home/menu?tab=photos opens Photos tab directly via useSearchParams",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "89a900b",
       "message": "fix: website builder links open in new tab — don't navigate away from wizard",
@@ -948,12 +954,6 @@
     {
       "hash": "16def82",
       "message": "fix: dev auth bypass for website-builder API routes",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "1c6a143",
-      "message": "feat: auto-save generated images to restaurant_photos library — gold assets available everywhere",
       "branch": "neil",
       "date": "2026-03-19"
     }
