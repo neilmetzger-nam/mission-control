@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5fc601b",
-    "message": "fix: remove dangling devtools wrapper — syntax error in providers.tsx",
+    "hash": "6c967f9",
+    "message": "chore: trigger Vercel redeploy on latest commit (5fc601b)",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "6c967f9",
+      "message": "chore: trigger Vercel redeploy on latest commit (5fc601b)",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "5fc601b",
       "message": "fix: remove dangling devtools wrapper — syntax error in providers.tsx",
@@ -948,12 +954,6 @@
     {
       "hash": "889fe79",
       "message": "feat: website builder shows picker when multiple reference photos, links to hero photos tab",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "7ab2e58",
-      "message": "fix: rename Reference Library → My Hero & Style Photos, clearer description",
       "branch": "neil",
       "date": "2026-03-19"
     }
