@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6e9e8ad",
-    "message": "fix: website builder shows reference images first, separate from Google photos",
+    "hash": "dc22a98",
+    "message": "fix: website builder uses reference images auto, sends to /home/photos if none marked",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "dc22a98",
+      "message": "fix: website builder uses reference images auto, sends to /home/photos if none marked",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "6e9e8ad",
       "message": "fix: website builder shows reference images first, separate from Google photos",
@@ -948,12 +954,6 @@
     {
       "hash": "a324f17",
       "message": "fix: menu health score formula (-19 → correct 0-100), fix 404 links /menu-management → /menu",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "313b324",
-      "message": "feat: Staff View replaces POS in nav, POS content → beta page, tablet gear → /home/printers",
       "branch": "neil",
       "date": "2026-03-19"
     }
