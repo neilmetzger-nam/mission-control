@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "89c0bcd",
-    "message": "fix: iPad delete/void — stop drag from swallowing X button clicks, make Del tappable\n\nThe X button's onClick was intercepted by framer-motion's drag handler.\nAdded onPointerDown stopPropagation to the X button. Also changed the\nswipe-revealed Del/Void label from a div to a button so it's tappable.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "603eeb8",
+    "message": "feat: add PhoneUpsellStrip — compact specials + dynamic suggestions on iPhone order tab\n\nShows horizontally-scrollable pill chips at the top of the order tab:\n- Daily specials (star icon, emerald)\n- Push items (rocket icon, green)\n- Dynamic \"Add drinks?\" when order has no beverages (purple)\n- Wine/drink pairings matched against current order items (purple)\n- House note (pin icon, amber)\n\nFetches from /api/pwa/specials on mount, same data source as iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "603eeb8",
+      "message": "feat: add PhoneUpsellStrip — compact specials + dynamic suggestions on iPhone order tab\n\nShows horizontally-scrollable pill chips at the top of the order tab:\n- Daily specials (star icon, emerald)\n- Push items (rocket icon, green)\n- Dynamic \"Add drinks?\" when order has no beverages (purple)\n- Wine/drink pairings matched against current order items (purple)\n- House note (pin icon, amber)\n\nFetches from /api/pwa/specials on mount, same data source as iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "89c0bcd",
       "message": "fix: iPad delete/void — stop drag from swallowing X button clicks, make Del tappable\n\nThe X button's onClick was intercepted by framer-motion's drag handler.\nAdded onPointerDown stopPropagation to the X button. Also changed the\nswipe-revealed Del/Void label from a div to a button so it's tappable.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "8b6442d",
       "message": "feat: DB-driven either/or toggles on phone (match iPad behavior)\n\nReplace regex-based getEitherOrMods with DB-driven either/or on phone:\n- All single-select modifier groups auto-add with defaults on item tap\n- Either/or toggles (Nigiri/Sashimi, Fried/Steamed, Spice, etc) show\n  as inline pill toggles on the order card\n- Tapping toggles changes the selection without opening a sheet\n- Items like Amber Jack/Ankimo now get Nigiri default auto-applied\n\nAlso promote nigiri/sashimi/dumpling/dressing to primary keywords in\nItemDetailSheet so they show prominently when editing.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "ff70fca",
-      "message": "fix: phone modifier persistence + open sheet for optional groups\n\nThree fixes:\n1. Attach modifierSelections to newly added items after DB refresh\n   (was lost because DB doesn't store this field)\n2. Open ItemDetailSheet for items with optional modifier groups\n   (Nigiri/Sashimi, Dumplings) — previously quick-added silently\n3. Add nigiri/sashimi/dumpling/dressing to primary keywords so\n   they show prominently in the modifier sheet\n4. Fix edit basePrice lookup with name fallback + use priceCents\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
