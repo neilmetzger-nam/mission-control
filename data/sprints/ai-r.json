@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "735120a",
-    "message": "feat: clean owner dashboard nav — Menu, Numbers, Staff, POS, Inbox only",
+    "hash": "25da671",
+    "message": "fix: let Orion prompt engine build the prompt — stop pre-building style prompt in AI-R",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "25da671",
+      "message": "fix: let Orion prompt engine build the prompt — stop pre-building style prompt in AI-R",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "735120a",
       "message": "feat: clean owner dashboard nav — Menu, Numbers, Staff, POS, Inbox only",
@@ -948,12 +954,6 @@
     {
       "hash": "52dc258",
       "message": "feat: Maestro Photo Chat — interactive chat-driven image generation replacing static wizard\n\n- State machine: lib/pwa/maestro-photo-flow.ts\n- Chat UI: components/pwa/maestro/MaestroPhotoChat.tsx\n- Inline uploads, style pills, image previews, revision prompt\n- Replaces ImageWizardModal in ItemDetailPanel",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "c48d730",
-      "message": "feat: Image Wizard — step-based generation modal, Orion MCP integration, social sharing, job history\n\n- 6 wizard components (Intent, Data, Generating, Result, MiniGallery, SocialPromo)\n- 3 API routes (image-jobs/create, status, photos/send-link)\n- DB migration for image_jobs + photo_links tables\n- Types, lib helper, docs\n- Replaces old PhotoWizard chat-bubble approach",
       "branch": "neil",
       "date": "2026-03-18"
     }
