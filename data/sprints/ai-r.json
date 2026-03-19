@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "19430be",
-    "message": "fix: preserve modifierSelections through syncFromDb polling\n\nsyncFromDb runs every 3 seconds and was wiping locally-cached\nmodifierSelections/modifications when rebuilding from API data.\nNow snapshots and restores local modifier data through the sync,\nmatching the pattern already used in refreshSingleOrder.\n\nThis fixes:\n- Phone either/or toggles reverting after 3 seconds\n- Phone edit changes not persisting\n- iPad edit losing modifier selections\n\nAlso improved debug info in ItemDetailSheet edit mode.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "b20eef7",
+    "message": "fix: iPad edit modifiers + phone either/or item lookup\n\niPad edit fix:\n- Prevent UUID→float overflow in menuItemId (Number.isSafeInteger guard)\n- Add name-based fallback in modifier API (?menuItemName=Ka+Praw)\n- ItemDetailSheet tries name lookup when ID is mangled/invalid\n- This fixes edit showing no modifiers on incognito iPad sessions\n\nPhone either/or fix:\n- Find newly added item by ID set-difference instead of last-in-array\n- Ensures committedEitherOr is stored under correct item ID\n- Fixes Nigiri/Sashimi default not appearing selected\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "b20eef7",
+      "message": "fix: iPad edit modifiers + phone either/or item lookup\n\niPad edit fix:\n- Prevent UUID→float overflow in menuItemId (Number.isSafeInteger guard)\n- Add name-based fallback in modifier API (?menuItemName=Ka+Praw)\n- ItemDetailSheet tries name lookup when ID is mangled/invalid\n- This fixes edit showing no modifiers on incognito iPad sessions\n\nPhone either/or fix:\n- Find newly added item by ID set-difference instead of last-in-array\n- Ensures committedEitherOr is stored under correct item ID\n- Fixes Nigiri/Sashimi default not appearing selected\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "19430be",
       "message": "fix: preserve modifierSelections through syncFromDb polling\n\nsyncFromDb runs every 3 seconds and was wiping locally-cached\nmodifierSelections/modifications when rebuilding from API data.\nNow snapshots and restores local modifier data through the sync,\nmatching the pattern already used in refreshSingleOrder.\n\nThis fixes:\n- Phone either/or toggles reverting after 3 seconds\n- Phone edit changes not persisting\n- iPad edit losing modifier selections\n\nAlso improved debug info in ItemDetailSheet edit mode.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "6628556",
       "message": "fix: hide either/or toggles while inline picker is active; link gyoza to Dumplings+Spice in DB\n\nPrevents duplicate display of modifier options. Either/or toggles only\nshow after the inline picker is done. Also linked 9 gyoza/dumpling items\nto the Dumplings (Fried/Steamed) and Spice Level modifier groups in DB.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "76397a3",
-      "message": "feat: DB-driven either/or toggles on iPad OrderPanel (Nigiri/Sashimi, Fried/Steamed)\n\nReplaces seed-based regex toggles with DB-authoritative modifier data.\nWhen inline picker finds groups with exactly 2 options and maxSelections=1,\nstores them as either/or toggles that persist on the order item row.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
