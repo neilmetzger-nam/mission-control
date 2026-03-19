@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5926ece",
-    "message": "fix: dev auth bypass — skip Clerk + PIN in NODE_ENV=development, prod unchanged",
+    "hash": "6978927",
+    "message": "fix: menu_item_id UUID not INTEGER in image_jobs/photo_links tables + routes",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "6978927",
+      "message": "fix: menu_item_id UUID not INTEGER in image_jobs/photo_links tables + routes",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "5926ece",
       "message": "fix: dev auth bypass — skip Clerk + PIN in NODE_ENV=development, prod unchanged",
@@ -948,12 +954,6 @@
     {
       "hash": "3c09ee3",
       "message": "feat: move specials to iPhone guest count screen, remove iPad specials bar\n\nSpecials now show on the PhoneGuestCount screen (right after opening a\ntable) where the server naturally discusses them with guests:\n- New table: drink suggestions + pairings prominently shown\n- Returning table: tonight's specials + push items\n- House note always visible as amber banner\n\nRemoved SpecialsBar from iPad OrderPanel to save space for orders.\nRemoved PhoneUpsellStrip from order tab (moved to pre-order screen).\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "d754013",
-      "message": "fix: separate course badge from table transfer — add dedicated ↗ move button\n\nThe course badge (APP/ENT) now only handles course promotion/demotion.\n\"Move to Table\" is pulled out into its own small ↗ button next to the\ncourse badge, making both actions discoverable and intuitive.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
