@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6ad724e",
-    "message": "docs: IMAGE-GEN-REFERENCE.md — complete guide to image generation architecture, prompts, bugs, files",
+    "hash": "c209bc3",
+    "message": "feat: ambient alias training — Whisper transcription + order comparison + alias table + correction UI",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "c209bc3",
+      "message": "feat: ambient alias training — Whisper transcription + order comparison + alias table + correction UI",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "6ad724e",
       "message": "docs: IMAGE-GEN-REFERENCE.md — complete guide to image generation architecture, prompts, bugs, files",
@@ -948,12 +954,6 @@
     {
       "hash": "41aa948",
       "message": "fix: correct column names in v1 menu routes — title not name, no uuid col, sort_order",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "e6a2376",
-      "message": "fix: snake_case table names in /api/v1/menu — MenuCategory→menu_categories, MenuItem→menu_items",
       "branch": "neil",
       "date": "2026-03-19"
     }
