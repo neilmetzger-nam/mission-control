@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ba1c5ec",
-    "message": "feat: restaurant photo picker in bg step — user selects which photo to use as background reference",
+    "hash": "47dc138",
+    "message": "fix: add Custom as 4th background option in both bg pickers",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "47dc138",
+      "message": "fix: add Custom as 4th background option in both bg pickers",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "ba1c5ec",
       "message": "feat: restaurant photo picker in bg step — user selects which photo to use as background reference",
@@ -948,12 +954,6 @@
     {
       "hash": "d67070a",
       "message": "fix: use plain pass-through middleware in dev — skip clerkMiddleware entirely",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "80d1827",
-      "message": "fix: bypass Clerk middleware entirely in dev using module.exports short-circuit",
       "branch": "neil",
       "date": "2026-03-19"
     }
