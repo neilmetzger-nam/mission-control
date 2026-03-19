@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "2ab71fc",
-    "message": "feat: photos gallery polish — promote/delete/download, Reference Library, Google badge, soft delete",
+    "hash": "762130a",
+    "message": "feat: receipt review gate — token on print, public review page, star rating, Google redirect, manager SMS, reputation dashboard",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "762130a",
+      "message": "feat: receipt review gate — token on print, public review page, star rating, Google redirect, manager SMS, reputation dashboard",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "2ab71fc",
       "message": "feat: photos gallery polish — promote/delete/download, Reference Library, Google badge, soft delete",
@@ -948,12 +954,6 @@
     {
       "hash": "d9a291c",
       "message": "fix: add drag-and-drop to upload zone — prevent browser default of opening image in new tab",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "39834c7",
-      "message": "fix: UUID cast in menu-images/upload — Number(uuid) was NaN",
       "branch": "neil",
       "date": "2026-03-19"
     }
