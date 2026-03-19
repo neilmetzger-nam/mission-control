@@ -977,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "f6092ab",
-    "message": "chore: force Vercel redeploy — fetchMenuItems fix",
+    "hash": "f6bc417",
+    "message": "fix: cart-store uses raw Neon SQL with phone_carts/phone_cart_items — no more Drizzle schema mismatch",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "f6bc417",
+      "message": "fix: cart-store uses raw Neon SQL with phone_carts/phone_cart_items — no more Drizzle schema mismatch",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "f6092ab",
       "message": "chore: force Vercel redeploy — fetchMenuItems fix",
@@ -1034,12 +1040,6 @@
     {
       "hash": "509546d",
       "message": "feat: Phone AI — available numbers button pulls real Twilio pricing for local area code",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "2084a3f",
-      "message": "fix: Port is cleanest (zero spam), private number only Joe can call, ambient training note",
       "branch": "neil",
       "date": "2026-03-19"
     }
