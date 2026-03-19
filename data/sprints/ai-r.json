@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "889fe79",
-    "message": "feat: website builder shows picker when multiple reference photos, links to hero photos tab",
+    "hash": "d89691b",
+    "message": "feat: promoting a generated photo syncs it to restaurant_photos with is_style_reference=true",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "d89691b",
+      "message": "feat: promoting a generated photo syncs it to restaurant_photos with is_style_reference=true",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "889fe79",
       "message": "feat: website builder shows picker when multiple reference photos, links to hero photos tab",
@@ -948,12 +954,6 @@
     {
       "hash": "69ecf18",
       "message": "fix: show hero image in chat bubble — was using msg.image not msg.imageUrl",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "bda5b00",
-      "message": "fix: render markdown bold + links in website builder chat bubbles",
       "branch": "neil",
       "date": "2026-03-19"
     }
