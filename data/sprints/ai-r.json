@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "525928f",
-    "message": "fix: POS config — 2-column compact grid, remove min-h-screen",
+    "hash": "64bf48c",
+    "message": "feat: Settings sub-nav on printers page — persistent nav between settings pages",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "64bf48c",
+      "message": "feat: Settings sub-nav on printers page — persistent nav between settings pages",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "525928f",
       "message": "fix: POS config — 2-column compact grid, remove min-h-screen",
@@ -948,12 +954,6 @@
     {
       "hash": "889c004",
       "message": "fix: clarify star=website hero — tooltip + website builder message explains the star button",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "5cd4d12",
-      "message": "fix: /home/menu?tab=photos opens Photos tab directly via useSearchParams",
       "branch": "neil",
       "date": "2026-03-19"
     }
