@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ab7792e",
-    "message": "fix: only show inline either/or toggles for groups with exactly 2 options\n\nSpice level (5+ options) was incorrectly getting an inline toggle showing\njust \"Chef's Choice | Mild\". Now only groups with exactly 2 options\n(Nigiri/Sashimi, Fried/Steamed) get inline toggles. Groups with 3+\noptions still auto-default but show as a regular modification badge,\neditable via the edit sheet.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "d754013",
+    "message": "fix: separate course badge from table transfer — add dedicated ↗ move button\n\nThe course badge (APP/ENT) now only handles course promotion/demotion.\n\"Move to Table\" is pulled out into its own small ↗ button next to the\ncourse badge, making both actions discoverable and intuitive.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "d754013",
+      "message": "fix: separate course badge from table transfer — add dedicated ↗ move button\n\nThe course badge (APP/ENT) now only handles course promotion/demotion.\n\"Move to Table\" is pulled out into its own small ↗ button next to the\ncourse badge, making both actions discoverable and intuitive.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "ab7792e",
       "message": "fix: only show inline either/or toggles for groups with exactly 2 options\n\nSpice level (5+ options) was incorrectly getting an inline toggle showing\njust \"Chef's Choice | Mild\". Now only groups with exactly 2 options\n(Nigiri/Sashimi, Fried/Steamed) get inline toggles. Groups with 3+\noptions still auto-default but show as a regular modification badge,\neditable via the edit sheet.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "b20eef7",
       "message": "fix: iPad edit modifiers + phone either/or item lookup\n\niPad edit fix:\n- Prevent UUID→float overflow in menuItemId (Number.isSafeInteger guard)\n- Add name-based fallback in modifier API (?menuItemName=Ka+Praw)\n- ItemDetailSheet tries name lookup when ID is mangled/invalid\n- This fixes edit showing no modifiers on incognito iPad sessions\n\nPhone either/or fix:\n- Find newly added item by ID set-difference instead of last-in-array\n- Ensures committedEitherOr is stored under correct item ID\n- Fixes Nigiri/Sashimi default not appearing selected\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "19430be",
-      "message": "fix: preserve modifierSelections through syncFromDb polling\n\nsyncFromDb runs every 3 seconds and was wiping locally-cached\nmodifierSelections/modifications when rebuilding from API data.\nNow snapshots and restores local modifier data through the sync,\nmatching the pattern already used in refreshSingleOrder.\n\nThis fixes:\n- Phone either/or toggles reverting after 3 seconds\n- Phone edit changes not persisting\n- iPad edit losing modifier selections\n\nAlso improved debug info in ItemDetailSheet edit mode.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
