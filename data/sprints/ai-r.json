@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "37524e9",
-    "message": "feat: Gloria reads ?hero= URL param for website builder preview + settings hub nav",
+    "hash": "01f1d4a",
+    "message": "fix: dev auth bypass for /api/settings/restaurant",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "01f1d4a",
+      "message": "fix: dev auth bypass for /api/settings/restaurant",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "37524e9",
       "message": "feat: Gloria reads ?hero= URL param for website builder preview + settings hub nav",
@@ -948,12 +954,6 @@
     {
       "hash": "7d4cc83",
       "message": "fix: website builder link target=_self, clarify Menu → Photos tab label",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "53805e6",
-      "message": "fix: photos link → /home/menu (photos is a tab there, not a standalone page)",
       "branch": "neil",
       "date": "2026-03-19"
     }
