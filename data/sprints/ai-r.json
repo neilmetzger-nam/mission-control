@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b537003",
-    "message": "fix: star button always visible at 50% opacity — not hidden until hover",
+    "hash": "7ab2e58",
+    "message": "fix: rename Reference Library → My Hero & Style Photos, clearer description",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "7ab2e58",
+      "message": "fix: rename Reference Library → My Hero & Style Photos, clearer description",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "b537003",
       "message": "fix: star button always visible at 50% opacity — not hidden until hover",
@@ -948,12 +954,6 @@
     {
       "hash": "dc22a98",
       "message": "fix: website builder uses reference images auto, sends to /home/photos if none marked",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "6e9e8ad",
-      "message": "fix: website builder shows reference images first, separate from Google photos",
       "branch": "neil",
       "date": "2026-03-19"
     }
