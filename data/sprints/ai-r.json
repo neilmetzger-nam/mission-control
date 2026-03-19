@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "1c804b3",
-    "message": "fix: toggle compares option IDs not titles, so default highlights green\n\nmodifierSelections stores option IDs (UUIDs) but the toggle was comparing\nagainst option titles (e.g. \"Nigiri\"). Added optionAId/optionBId to the\neither/or groups and updated all comparison logic to use IDs.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "3e420f8",
+    "message": "fix: serialize rapid item adds with busy guard + spinner overlay\n\nPrevents race conditions from rapid taps on iPhone by blocking concurrent\nhandleAddItem calls. Shows a brief \"Adding...\" spinner overlay (350ms min)\nso users can see the system is processing.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "3e420f8",
+      "message": "fix: serialize rapid item adds with busy guard + spinner overlay\n\nPrevents race conditions from rapid taps on iPhone by blocking concurrent\nhandleAddItem calls. Shows a brief \"Adding...\" spinner overlay (350ms min)\nso users can see the system is processing.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "1c804b3",
       "message": "fix: toggle compares option IDs not titles, so default highlights green\n\nmodifierSelections stores option IDs (UUIDs) but the toggle was comparing\nagainst option titles (e.g. \"Nigiri\"). Added optionAId/optionBId to the\neither/or groups and updated all comparison logic to use IDs.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "6d6dea6",
       "message": "fix: improve edit modifier lookup + debug message for empty groups\n\n- Add dbId fallback matching in handleEditModifiers\n- Show debug text when modifier groups return empty in edit sheet\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "07c32c5",
-      "message": "fix: preserve modifier badges across item adds; quick mods from settings\n\n- Fix refreshSingleOrder to snapshot/restore locally-cached modifierSelections\n  and modifications through API refreshes (root cause of badges disappearing)\n- Move Quick Mods from hardcoded array to RestaurantSettings (configurable per restaurant)\n- Remove spice options from quick mods defaults, keep 6 allergens\n- Wire QuickModsSettings into Restaurant Settings page\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
