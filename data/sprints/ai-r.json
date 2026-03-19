@@ -977,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "48a7fbf",
-    "message": "feat: KDS Manager/Expediter Mode — mode toggle, alerts (reviews/printers/slow tickets/voids), floor status, 86 panel, manager PIN gate, KDS added to all settings sub-navs",
+    "hash": "220443b",
+    "message": "fix: t66 Pi confirm 401 — MCP_URL now points to localhost:3002 (was orion-mcp.vercel.app which 500'd)",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "220443b",
+      "message": "fix: t66 Pi confirm 401 — MCP_URL now points to localhost:3002 (was orion-mcp.vercel.app which 500'd)",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "48a7fbf",
       "message": "feat: KDS Manager/Expediter Mode — mode toggle, alerts (reviews/printers/slow tickets/voids), floor status, 86 panel, manager PIN gate, KDS added to all settings sub-navs",
@@ -1034,12 +1040,6 @@
     {
       "hash": "5b813db",
       "message": "feat: integrations hub — Sales/Ops/Finance sections, feature unlock cards, status badges, settings sub-nav",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "6c967f9",
-      "message": "chore: trigger Vercel redeploy on latest commit (5fc601b)",
       "branch": "neil",
       "date": "2026-03-19"
     }
