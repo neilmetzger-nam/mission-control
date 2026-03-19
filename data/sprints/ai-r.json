@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "f4acb7d",
-    "message": "fix: settings tabs redirect directly — no intermediate link card",
+    "hash": "525928f",
+    "message": "fix: POS config — 2-column compact grid, remove min-h-screen",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "525928f",
+      "message": "fix: POS config — 2-column compact grid, remove min-h-screen",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "f4acb7d",
       "message": "fix: settings tabs redirect directly — no intermediate link card",
@@ -948,12 +954,6 @@
     {
       "hash": "5cd4d12",
       "message": "fix: /home/menu?tab=photos opens Photos tab directly via useSearchParams",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "89a900b",
-      "message": "fix: website builder links open in new tab — don't navigate away from wizard",
       "branch": "neil",
       "date": "2026-03-19"
     }
