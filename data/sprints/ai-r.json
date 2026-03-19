@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "52aa60e",
-    "message": "feat: printer hub — 4 tabs (Printers/Job Routing/Ticket Design/Auth Slips), settings JSONB, DB routing",
+    "hash": "2ab71fc",
+    "message": "feat: photos gallery polish — promote/delete/download, Reference Library, Google badge, soft delete",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "2ab71fc",
+      "message": "feat: photos gallery polish — promote/delete/download, Reference Library, Google badge, soft delete",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "52aa60e",
       "message": "feat: printer hub — 4 tabs (Printers/Job Routing/Ticket Design/Auth Slips), settings JSONB, DB routing",
@@ -948,12 +954,6 @@
     {
       "hash": "39834c7",
       "message": "fix: UUID cast in menu-images/upload — Number(uuid) was NaN",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "109ccc1",
-      "message": "fix: snake_case columns in menu-images/upload route",
       "branch": "neil",
       "date": "2026-03-19"
     }
