@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "109ccc1",
-    "message": "fix: snake_case columns in menu-images/upload route",
+    "hash": "39834c7",
+    "message": "fix: UUID cast in menu-images/upload — Number(uuid) was NaN",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "39834c7",
+      "message": "fix: UUID cast in menu-images/upload — Number(uuid) was NaN",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "109ccc1",
       "message": "fix: snake_case columns in menu-images/upload route",
@@ -948,12 +954,6 @@
     {
       "hash": "cf541cd",
       "message": "fix: use stable query key in dev so session fetches without Clerk userId",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "d244521",
-      "message": "fix: always fetch session in dev — Clerk userId is null without session",
       "branch": "neil",
       "date": "2026-03-19"
     }
