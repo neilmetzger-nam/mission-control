@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "cf541cd",
-    "message": "fix: use stable query key in dev so session fetches without Clerk userId",
+    "hash": "0250c0a",
+    "message": "fix: dev bypass in HomeLayout — skip early access allowlist check in development",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "0250c0a",
+      "message": "fix: dev bypass in HomeLayout — skip early access allowlist check in development",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "cf541cd",
       "message": "fix: use stable query key in dev so session fetches without Clerk userId",
@@ -948,12 +954,6 @@
     {
       "hash": "5926ece",
       "message": "fix: dev auth bypass — skip Clerk + PIN in NODE_ENV=development, prod unchanged",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "195217c",
-      "message": "fix: getPwaPin() falls back to localStorage — fixes missing x-pwa-pin header in MaestroPhotoChat",
       "branch": "neil",
       "date": "2026-03-19"
     }
