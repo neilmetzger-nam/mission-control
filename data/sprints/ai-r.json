@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "313b324",
-    "message": "feat: Staff View replaces POS in nav, POS content → beta page, tablet gear → /home/printers",
+    "hash": "a324f17",
+    "message": "fix: menu health score formula (-19 → correct 0-100), fix 404 links /menu-management → /menu",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "a324f17",
+      "message": "fix: menu health score formula (-19 → correct 0-100), fix 404 links /menu-management → /menu",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "313b324",
       "message": "feat: Staff View replaces POS in nav, POS content → beta page, tablet gear → /home/printers",
@@ -948,12 +954,6 @@
     {
       "hash": "05e489a",
       "message": "fix: Array.from(aliasMap.entries()) — MapIterator needs es2015 target fix for Vercel build",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "c209bc3",
-      "message": "feat: ambient alias training — Whisper transcription + order comparison + alias table + correction UI",
       "branch": "neil",
       "date": "2026-03-19"
     }
