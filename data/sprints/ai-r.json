@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "4706903",
-    "message": "feat: image QA harness — side-by-side engine comparison (Imagen 4.0 vs Gemini 3.1 vs Fal)\n\n- Tests 3 dishes: Pad Thai, Tonkotsu Ramen, Crispy Duck\n- Generates through each engine with identical prompts\n- Outputs to /tmp/image-qa/ with HTML gallery\n- Gemini 3.1 uses Red Bar interior as style reference",
+    "hash": "8c73e91",
+    "message": "docs: OpenClaw embedded architecture — 3-tier Maestro model for restaurants\n\n- Tier 1 Maestro Lite (included): stateless, Orion MCP per-request\n- Tier 2 Maestro Pro (/mo): shared gateway, per-restaurant workspace + memory\n- Tier 3 Enterprise: dedicated OpenClaw instance\n- Provisioning flows, SOUL.md template, channel bindings\n- Scaling estimates and revenue projections",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "8c73e91",
+      "message": "docs: OpenClaw embedded architecture — 3-tier Maestro model for restaurants\n\n- Tier 1 Maestro Lite (included): stateless, Orion MCP per-request\n- Tier 2 Maestro Pro (/mo): shared gateway, per-restaurant workspace + memory\n- Tier 3 Enterprise: dedicated OpenClaw instance\n- Provisioning flows, SOUL.md template, channel bindings\n- Scaling estimates and revenue projections",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "4706903",
       "message": "feat: image QA harness — side-by-side engine comparison (Imagen 4.0 vs Gemini 3.1 vs Fal)\n\n- Tests 3 dishes: Pad Thai, Tonkotsu Ramen, Crispy Duck\n- Generates through each engine with identical prompts\n- Outputs to /tmp/image-qa/ with HTML gallery\n- Gemini 3.1 uses Red Bar interior as style reference",
@@ -948,12 +954,6 @@
     {
       "hash": "603eeb8",
       "message": "feat: add PhoneUpsellStrip — compact specials + dynamic suggestions on iPhone order tab\n\nShows horizontally-scrollable pill chips at the top of the order tab:\n- Daily specials (star icon, emerald)\n- Push items (rocket icon, green)\n- Dynamic \"Add drinks?\" when order has no beverages (purple)\n- Wine/drink pairings matched against current order items (purple)\n- House note (pin icon, amber)\n\nFetches from /api/pwa/specials on mount, same data source as iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "89c0bcd",
-      "message": "fix: iPad delete/void — stop drag from swallowing X button clicks, make Del tappable\n\nThe X button's onClick was intercepted by framer-motion's drag handler.\nAdded onPointerDown stopPropagation to the X button. Also changed the\nswipe-revealed Del/Void label from a div to a button so it's tappable.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
