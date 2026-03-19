@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b76ae2a",
-    "message": "feat: Ambient Phase 1 — auto-start recording on table open, auto-stop on fire\n\n- New setting: ambientAutoRecord (default false)\n- PhoneOrderEntry auto-starts mic when table opens (if both ambient settings enabled)\n- Fire button already auto-stops + shows comparison modal\n- Ref guard prevents double-start on re-renders",
+    "hash": "4706903",
+    "message": "feat: image QA harness — side-by-side engine comparison (Imagen 4.0 vs Gemini 3.1 vs Fal)\n\n- Tests 3 dishes: Pad Thai, Tonkotsu Ramen, Crispy Duck\n- Generates through each engine with identical prompts\n- Outputs to /tmp/image-qa/ with HTML gallery\n- Gemini 3.1 uses Red Bar interior as style reference",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "4706903",
+      "message": "feat: image QA harness — side-by-side engine comparison (Imagen 4.0 vs Gemini 3.1 vs Fal)\n\n- Tests 3 dishes: Pad Thai, Tonkotsu Ramen, Crispy Duck\n- Generates through each engine with identical prompts\n- Outputs to /tmp/image-qa/ with HTML gallery\n- Gemini 3.1 uses Red Bar interior as style reference",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "b76ae2a",
       "message": "feat: Ambient Phase 1 — auto-start recording on table open, auto-stop on fire\n\n- New setting: ambientAutoRecord (default false)\n- PhoneOrderEntry auto-starts mic when table opens (if both ambient settings enabled)\n- Fire button already auto-stops + shows comparison modal\n- Ref guard prevents double-start on re-renders",
@@ -948,12 +954,6 @@
     {
       "hash": "89c0bcd",
       "message": "fix: iPad delete/void — stop drag from swallowing X button clicks, make Del tappable\n\nThe X button's onClick was intercepted by framer-motion's drag handler.\nAdded onPointerDown stopPropagation to the X button. Also changed the\nswipe-revealed Del/Void label from a div to a button so it's tappable.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "b8a6468",
-      "message": "fix: restore course badge (APP/ENT) on iPad order items\n\nThe course override button was computed but never rendered in the JSX.\nAdded it back between the item name and fire button — tappable for\nADDED items to promote apps to entrees or demote entrees to apps.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
