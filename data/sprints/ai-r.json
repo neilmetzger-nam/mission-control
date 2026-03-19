@@ -543,6 +543,90 @@
               "status": "queued"
             }
           ]
+        },
+        {
+          "id": "s_tonight",
+          "title": "Tonight & Tomorrow — Final Sprint",
+          "tasks": [
+            {
+              "id": "t87",
+              "title": "t66 — Pi confirm 401 fix",
+              "status": "queued",
+              "priority": "critical"
+            },
+            {
+              "id": "t88",
+              "title": "Square → real sales data on dashboard (replace mock)",
+              "status": "queued",
+              "priority": "high"
+            },
+            {
+              "id": "t89",
+              "title": "Joe Twilio webhook — actually answer calls",
+              "status": "queued",
+              "priority": "high"
+            },
+            {
+              "id": "t90",
+              "title": "Gloria color themes — ?theme= param applies to ordering page",
+              "status": "queued",
+              "priority": "high"
+            },
+            {
+              "id": "t91",
+              "title": "KDS Manager Mode — commit Claude Code session",
+              "status": "queued",
+              "priority": "high"
+            },
+            {
+              "id": "t92",
+              "title": "iPad Guests tab — Dine In / To Go / Delivery / History",
+              "status": "queued",
+              "priority": "high"
+            },
+            {
+              "id": "t93",
+              "title": "Email scraping for DoorDash/UberEats/Grubhub orders (no API needed)",
+              "status": "queued",
+              "priority": "high"
+            },
+            {
+              "id": "t94",
+              "title": "Shipday integration — dispatch delivery for hosted website orders",
+              "status": "queued",
+              "priority": "medium"
+            },
+            {
+              "id": "t95",
+              "title": "Social media auto-post — generated menu photo → Instagram/Facebook",
+              "status": "queued",
+              "priority": "medium"
+            },
+            {
+              "id": "t96",
+              "title": "Meta ads campaign manager — create/schedule from AI-R",
+              "status": "queued",
+              "priority": "medium"
+            },
+            {
+              "id": "t97",
+              "title": "Vercel build clean — confirm neil branch deploys without errors",
+              "status": "queued",
+              "priority": "critical"
+            },
+            {
+              "id": "t98",
+              "title": "One-click domain publish (t86) — CNAME setup guide + DNS config",
+              "status": "queued",
+              "priority": "medium"
+            },
+            {
+              "id": "t99",
+              "title": "Stripe key rotation confirmed (t5) — Neil verifies",
+              "status": "queued",
+              "priority": "medium"
+            }
+          ]
         }
       ]
     },
@@ -893,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "65821d8",
-    "message": "feat: website builder — value prop banner (free, SEO, POS sync) + Shopify alternative link",
+    "hash": "48a7fbf",
+    "message": "feat: KDS Manager/Expediter Mode — mode toggle, alerts (reviews/printers/slow tickets/voids), floor status, 86 panel, manager PIN gate, KDS added to all settings sub-navs",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "48a7fbf",
+      "message": "feat: KDS Manager/Expediter Mode — mode toggle, alerts (reviews/printers/slow tickets/voids), floor status, 86 panel, manager PIN gate, KDS added to all settings sub-navs",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "65821d8",
       "message": "feat: website builder — value prop banner (free, SEO, POS sync) + Shopify alternative link",
@@ -950,12 +1040,6 @@
     {
       "hash": "6c967f9",
       "message": "chore: trigger Vercel redeploy on latest commit (5fc601b)",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "5fc601b",
-      "message": "fix: remove dangling devtools wrapper — syntax error in providers.tsx",
       "branch": "neil",
       "date": "2026-03-19"
     }
