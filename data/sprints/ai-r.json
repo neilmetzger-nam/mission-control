@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "53805e6",
-    "message": "fix: photos link → /home/menu (photos is a tab there, not a standalone page)",
+    "hash": "7d4cc83",
+    "message": "fix: website builder link target=_self, clarify Menu → Photos tab label",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "7d4cc83",
+      "message": "fix: website builder link target=_self, clarify Menu → Photos tab label",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "53805e6",
       "message": "fix: photos link → /home/menu (photos is a tab there, not a standalone page)",
@@ -948,12 +954,6 @@
     {
       "hash": "36d0ee4",
       "message": "fix: website builder — auto-show DB photos, fix iframe sandbox, skip photo choice when photos exist",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "dd4ce68",
-      "message": "feat: conversational website builder wizard — chat flow, photo selection, color themes, preview iframe, confetti publish",
       "branch": "neil",
       "date": "2026-03-19"
     }
