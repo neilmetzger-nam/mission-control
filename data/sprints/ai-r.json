@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "e6a2376",
-    "message": "fix: snake_case table names in /api/v1/menu — MenuCategory→menu_categories, MenuItem→menu_items",
+    "hash": "41aa948",
+    "message": "fix: correct column names in v1 menu routes — title not name, no uuid col, sort_order",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "41aa948",
+      "message": "fix: correct column names in v1 menu routes — title not name, no uuid col, sort_order",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "e6a2376",
       "message": "fix: snake_case table names in /api/v1/menu — MenuCategory→menu_categories, MenuItem→menu_items",
@@ -948,12 +954,6 @@
     {
       "hash": "050b6fc",
       "message": "feat: 4 background styles in photo chat — restaurant/dark/white/custom with per-tenant styleRefUrl",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "376cd70",
-      "message": "fix: revision prompt actually re-generates — step was 'result' not 'revision-prompt'",
       "branch": "neil",
       "date": "2026-03-19"
     }
