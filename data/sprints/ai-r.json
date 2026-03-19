@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "889c004",
-    "message": "fix: clarify star=website hero — tooltip + website builder message explains the star button",
+    "hash": "b537003",
+    "message": "fix: star button always visible at 50% opacity — not hidden until hover",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "b537003",
+      "message": "fix: star button always visible at 50% opacity — not hidden until hover",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "889c004",
       "message": "fix: clarify star=website hero — tooltip + website builder message explains the star button",
@@ -948,12 +954,6 @@
     {
       "hash": "6e9e8ad",
       "message": "fix: website builder shows reference images first, separate from Google photos",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "c5063e2",
-      "message": "fix: website builder shows reference images first — is_style_reference sorted to top, ⭐ badge",
       "branch": "neil",
       "date": "2026-03-19"
     }
