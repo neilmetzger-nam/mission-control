@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b20eef7",
-    "message": "fix: iPad edit modifiers + phone either/or item lookup\n\niPad edit fix:\n- Prevent UUID→float overflow in menuItemId (Number.isSafeInteger guard)\n- Add name-based fallback in modifier API (?menuItemName=Ka+Praw)\n- ItemDetailSheet tries name lookup when ID is mangled/invalid\n- This fixes edit showing no modifiers on incognito iPad sessions\n\nPhone either/or fix:\n- Find newly added item by ID set-difference instead of last-in-array\n- Ensures committedEitherOr is stored under correct item ID\n- Fixes Nigiri/Sashimi default not appearing selected\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "e2ab9e5",
+    "message": "fix: store either/or toggle groups on PosOrderItem cache instead of React state\n\nMoves _eitherOrGroups from ephemeral committedEitherOr React state to the\nPosOrderItem itself, so toggles persist through syncFromDb/refreshSingleOrder\npolling cycles. Fixes inconsistent Nigiri/Sashimi behavior across sushi items.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "e2ab9e5",
+      "message": "fix: store either/or toggle groups on PosOrderItem cache instead of React state\n\nMoves _eitherOrGroups from ephemeral committedEitherOr React state to the\nPosOrderItem itself, so toggles persist through syncFromDb/refreshSingleOrder\npolling cycles. Fixes inconsistent Nigiri/Sashimi behavior across sushi items.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "b20eef7",
       "message": "fix: iPad edit modifiers + phone either/or item lookup\n\niPad edit fix:\n- Prevent UUID→float overflow in menuItemId (Number.isSafeInteger guard)\n- Add name-based fallback in modifier API (?menuItemName=Ka+Praw)\n- ItemDetailSheet tries name lookup when ID is mangled/invalid\n- This fixes edit showing no modifiers on incognito iPad sessions\n\nPhone either/or fix:\n- Find newly added item by ID set-difference instead of last-in-array\n- Ensures committedEitherOr is stored under correct item ID\n- Fixes Nigiri/Sashimi default not appearing selected\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "8226642",
       "message": "feat: auto-select either/or defaults, fix stale state in commitInlineMods\n\n- Either/or groups (2 options, max 1) auto-select default and show as\n  toggles on item card immediately, skip inline picker\n- commitInlineMods now accepts latestSelections param to avoid reading\n  stale React state — fixes mods not appearing after picker completes\n- Picker only shows groups with 3+ options or multi-select\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "6628556",
-      "message": "fix: hide either/or toggles while inline picker is active; link gyoza to Dumplings+Spice in DB\n\nPrevents duplicate display of modifier options. Either/or toggles only\nshow after the inline picker is done. Also linked 9 gyoza/dumpling items\nto the Dumplings (Fried/Steamed) and Spice Level modifier groups in DB.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
