@@ -977,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6ebb7c7",
-    "message": "feat: live Square sales on dashboard — RevenueWaterfall pulls real data, Live from Square badge",
+    "hash": "dcbdfc0",
+    "message": "feat: Gloria color themes — ?theme= param applies accent color + bg (emerald/red/blue/purple/amber/midnight)",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "dcbdfc0",
+      "message": "feat: Gloria color themes — ?theme= param applies accent color + bg (emerald/red/blue/purple/amber/midnight)",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "6ebb7c7",
       "message": "feat: live Square sales on dashboard — RevenueWaterfall pulls real data, Live from Square badge",
@@ -1034,12 +1040,6 @@
     {
       "hash": "bf6f452",
       "message": "fix: Phone AI labels — Joe's Inbound Number, Internal Transfer Number, correct call flow explainer",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "08a8f3e",
-      "message": "feat: Phone AI transfer number — Joe dials restaurant direct line when transferring calls",
       "branch": "neil",
       "date": "2026-03-19"
     }
