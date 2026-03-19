@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "195217c",
-    "message": "fix: getPwaPin() falls back to localStorage — fixes missing x-pwa-pin header in MaestroPhotoChat",
+    "hash": "5926ece",
+    "message": "fix: dev auth bypass — skip Clerk + PIN in NODE_ENV=development, prod unchanged",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "5926ece",
+      "message": "fix: dev auth bypass — skip Clerk + PIN in NODE_ENV=development, prod unchanged",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "195217c",
       "message": "fix: getPwaPin() falls back to localStorage — fixes missing x-pwa-pin header in MaestroPhotoChat",
@@ -948,12 +954,6 @@
     {
       "hash": "d754013",
       "message": "fix: separate course badge from table transfer — add dedicated ↗ move button\n\nThe course badge (APP/ENT) now only handles course promotion/demotion.\n\"Move to Table\" is pulled out into its own small ↗ button next to the\ncourse badge, making both actions discoverable and intuitive.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "ab7792e",
-      "message": "fix: only show inline either/or toggles for groups with exactly 2 options\n\nSpice level (5+ options) was incorrectly getting an inline toggle showing\njust \"Chef's Choice | Mild\". Now only groups with exactly 2 options\n(Nigiri/Sashimi, Fried/Steamed) get inline toggles. Groups with 3+\noptions still auto-default but show as a regular modification badge,\neditable via the edit sheet.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
