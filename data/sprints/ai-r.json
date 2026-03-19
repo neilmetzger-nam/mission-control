@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d244521",
-    "message": "fix: always fetch session in dev — Clerk userId is null without session",
+    "hash": "cf541cd",
+    "message": "fix: use stable query key in dev so session fetches without Clerk userId",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "cf541cd",
+      "message": "fix: use stable query key in dev so session fetches without Clerk userId",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "d244521",
       "message": "fix: always fetch session in dev — Clerk userId is null without session",
@@ -948,12 +954,6 @@
     {
       "hash": "195217c",
       "message": "fix: getPwaPin() falls back to localStorage — fixes missing x-pwa-pin header in MaestroPhotoChat",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "8c73e91",
-      "message": "docs: OpenClaw embedded architecture — 3-tier Maestro model for restaurants\n\n- Tier 1 Maestro Lite (included): stateless, Orion MCP per-request\n- Tier 2 Maestro Pro (/mo): shared gateway, per-restaurant workspace + memory\n- Tier 3 Enterprise: dedicated OpenClaw instance\n- Provisioning flows, SOUL.md template, channel bindings\n- Scaling estimates and revenue projections",
       "branch": "neil",
       "date": "2026-03-19"
     }
