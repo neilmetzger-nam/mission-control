@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "20c07a7",
-    "message": "fix: remove inline 📷✏️ health badges from item names — redundant with Upload/Generate",
+    "hash": "49cb526",
+    "message": "feat: Maestro widget — contextual hub with CFO/Marketing/Ops launchers, page-aware help, removes side tabs",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "49cb526",
+      "message": "feat: Maestro widget — contextual hub with CFO/Marketing/Ops launchers, page-aware help, removes side tabs",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "20c07a7",
       "message": "fix: remove inline 📷✏️ health badges from item names — redundant with Upload/Generate",
@@ -948,12 +954,6 @@
     {
       "hash": "6ad724e",
       "message": "docs: IMAGE-GEN-REFERENCE.md — complete guide to image generation architecture, prompts, bugs, files",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "47dc138",
-      "message": "fix: add Custom as 4th background option in both bg pickers",
       "branch": "neil",
       "date": "2026-03-19"
     }
