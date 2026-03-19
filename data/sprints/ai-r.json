@@ -893,12 +893,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "509546d",
-    "message": "feat: Phone AI — available numbers button pulls real Twilio pricing for local area code",
+    "hash": "65821d8",
+    "message": "feat: website builder — value prop banner (free, SEO, POS sync) + Shopify alternative link",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "65821d8",
+      "message": "feat: website builder — value prop banner (free, SEO, POS sync) + Shopify alternative link",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "509546d",
       "message": "feat: Phone AI — available numbers button pulls real Twilio pricing for local area code",
@@ -950,12 +956,6 @@
     {
       "hash": "5fc601b",
       "message": "fix: remove dangling devtools wrapper — syntax error in providers.tsx",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "35794a2",
-      "message": "fix: remove TanStack Query DevTools — was showing as floating palm tree icon",
       "branch": "neil",
       "date": "2026-03-19"
     }
