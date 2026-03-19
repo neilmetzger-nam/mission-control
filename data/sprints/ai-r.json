@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d3dbdbf",
-    "message": "fix: parse modifiers JSON object from DB (was expecting array)\n\nThe items POST endpoint stores modifiers as { menuItemId, modifiers: [] }\nbut dbItemToPosItem expected a plain string[]. This caused modifications\nto be invisible after page refresh and modifierSelections to be lost\nwhen editing items on iPhone.\n\nAlso extracts menuItemId from the modifiers JSON to fix item-0 mangling.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "ff70fca",
+    "message": "fix: phone modifier persistence + open sheet for optional groups\n\nThree fixes:\n1. Attach modifierSelections to newly added items after DB refresh\n   (was lost because DB doesn't store this field)\n2. Open ItemDetailSheet for items with optional modifier groups\n   (Nigiri/Sashimi, Dumplings) — previously quick-added silently\n3. Add nigiri/sashimi/dumpling/dressing to primary keywords so\n   they show prominently in the modifier sheet\n4. Fix edit basePrice lookup with name fallback + use priceCents\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "ff70fca",
+      "message": "fix: phone modifier persistence + open sheet for optional groups\n\nThree fixes:\n1. Attach modifierSelections to newly added items after DB refresh\n   (was lost because DB doesn't store this field)\n2. Open ItemDetailSheet for items with optional modifier groups\n   (Nigiri/Sashimi, Dumplings) — previously quick-added silently\n3. Add nigiri/sashimi/dumpling/dressing to primary keywords so\n   they show prominently in the modifier sheet\n4. Fix edit basePrice lookup with name fallback + use priceCents\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "d3dbdbf",
       "message": "fix: parse modifiers JSON object from DB (was expecting array)\n\nThe items POST endpoint stores modifiers as { menuItemId, modifiers: [] }\nbut dbItemToPosItem expected a plain string[]. This caused modifications\nto be invisible after page refresh and modifierSelections to be lost\nwhen editing items on iPhone.\n\nAlso extracts menuItemId from the modifiers JSON to fix item-0 mangling.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "e85cdef",
       "message": "fix: type error on debug message — cast data for error field access\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "0043d60",
-      "message": "debug: visible on-screen debug messages for iPad modifier flow (15s display)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
