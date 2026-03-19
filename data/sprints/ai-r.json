@@ -335,7 +335,9 @@
             {
               "id": "t50",
               "title": "Red Bar Middleburg tenant setup",
-              "status": "in-progress"
+              "status": "done",
+              "completedAt": "2026-03-19",
+              "completedBy": "8bfcc2e"
             }
           ]
         },
@@ -891,12 +893,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "bf6f452",
-    "message": "fix: Phone AI labels — Joe's Inbound Number, Internal Transfer Number, correct call flow explainer",
+    "hash": "8bfcc2e",
+    "message": "fix: Phone AI setup — clear 3-number explainer, Option A (forward) vs Option B (port), loop warning",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "8bfcc2e",
+      "message": "fix: Phone AI setup — clear 3-number explainer, Option A (forward) vs Option B (port), loop warning",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "bf6f452",
       "message": "fix: Phone AI labels — Joe's Inbound Number, Internal Transfer Number, correct call flow explainer",
@@ -948,12 +956,6 @@
     {
       "hash": "525928f",
       "message": "fix: POS config — 2-column compact grid, remove min-h-screen",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "f4acb7d",
-      "message": "fix: settings tabs redirect directly — no intermediate link card",
       "branch": "neil",
       "date": "2026-03-19"
     }
