@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "80d1827",
-    "message": "fix: bypass Clerk middleware entirely in dev using module.exports short-circuit",
+    "hash": "d67070a",
+    "message": "fix: use plain pass-through middleware in dev — skip clerkMiddleware entirely",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "d67070a",
+      "message": "fix: use plain pass-through middleware in dev — skip clerkMiddleware entirely",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "80d1827",
       "message": "fix: bypass Clerk middleware entirely in dev using module.exports short-circuit",
@@ -948,12 +954,6 @@
     {
       "hash": "25da671",
       "message": "fix: let Orion prompt engine build the prompt — stop pre-building style prompt in AI-R",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "735120a",
-      "message": "feat: clean owner dashboard nav — Menu, Numbers, Staff, POS, Inbox only",
       "branch": "neil",
       "date": "2026-03-19"
     }
