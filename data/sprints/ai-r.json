@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "71bfdff",
-    "message": "fix: use item.title fallback in MaestroPhotoChat — was showing 'this item' before state populated",
+    "hash": "20c07a7",
+    "message": "fix: remove inline 📷✏️ health badges from item names — redundant with Upload/Generate",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "20c07a7",
+      "message": "fix: remove inline 📷✏️ health badges from item names — redundant with Upload/Generate",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "71bfdff",
       "message": "fix: use item.title fallback in MaestroPhotoChat — was showing 'this item' before state populated",
@@ -948,12 +954,6 @@
     {
       "hash": "47dc138",
       "message": "fix: add Custom as 4th background option in both bg pickers",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "ba1c5ec",
-      "message": "feat: restaurant photo picker in bg step — user selects which photo to use as background reference",
       "branch": "neil",
       "date": "2026-03-19"
     }
