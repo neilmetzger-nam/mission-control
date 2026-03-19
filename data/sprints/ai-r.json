@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6d6dea6",
-    "message": "fix: improve edit modifier lookup + debug message for empty groups\n\n- Add dbId fallback matching in handleEditModifiers\n- Show debug text when modifier groups return empty in edit sheet\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "d3dbdbf",
+    "message": "fix: parse modifiers JSON object from DB (was expecting array)\n\nThe items POST endpoint stores modifiers as { menuItemId, modifiers: [] }\nbut dbItemToPosItem expected a plain string[]. This caused modifications\nto be invisible after page refresh and modifierSelections to be lost\nwhen editing items on iPhone.\n\nAlso extracts menuItemId from the modifiers JSON to fix item-0 mangling.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "d3dbdbf",
+      "message": "fix: parse modifiers JSON object from DB (was expecting array)\n\nThe items POST endpoint stores modifiers as { menuItemId, modifiers: [] }\nbut dbItemToPosItem expected a plain string[]. This caused modifications\nto be invisible after page refresh and modifierSelections to be lost\nwhen editing items on iPhone.\n\nAlso extracts menuItemId from the modifiers JSON to fix item-0 mangling.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "6d6dea6",
       "message": "fix: improve edit modifier lookup + debug message for empty groups\n\n- Add dbId fallback matching in handleEditModifiers\n- Show debug text when modifier groups return empty in edit sheet\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "0043d60",
       "message": "debug: visible on-screen debug messages for iPad modifier flow (15s display)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "6bc5c76",
-      "message": "debug: add console.log to handleItemTap modifier flow for diagnosing missing inline mods\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
