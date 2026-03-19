@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "e2ab9e5",
-    "message": "fix: store either/or toggle groups on PosOrderItem cache instead of React state\n\nMoves _eitherOrGroups from ephemeral committedEitherOr React state to the\nPosOrderItem itself, so toggles persist through syncFromDb/refreshSingleOrder\npolling cycles. Fixes inconsistent Nigiri/Sashimi behavior across sushi items.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "5276028",
+    "message": "fix: optimistic cache insert before API call to prevent race condition\n\nWhen adding items rapidly, refreshSingleOrder snapshots could miss the\nprevious item's _eitherOrGroups/modifierSelections. Now the item is added\nto cache optimistically before the API call, so concurrent snapshots\nalways capture it.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "5276028",
+      "message": "fix: optimistic cache insert before API call to prevent race condition\n\nWhen adding items rapidly, refreshSingleOrder snapshots could miss the\nprevious item's _eitherOrGroups/modifierSelections. Now the item is added\nto cache optimistically before the API call, so concurrent snapshots\nalways capture it.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "e2ab9e5",
       "message": "fix: store either/or toggle groups on PosOrderItem cache instead of React state\n\nMoves _eitherOrGroups from ephemeral committedEitherOr React state to the\nPosOrderItem itself, so toggles persist through syncFromDb/refreshSingleOrder\npolling cycles. Fixes inconsistent Nigiri/Sashimi behavior across sushi items.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "027a1fb",
       "message": "fix: edit modifiers — match menu item by name when menuItemId is mangled\n\nServer round-trip mangles UUID menuItemIds to item-0, so ItemDetailSheet\ncan't find modifier groups. Now falls back to name matching against\nallMenuItems to find the correct menu item with full UUID for API lookup.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "8226642",
-      "message": "feat: auto-select either/or defaults, fix stale state in commitInlineMods\n\n- Either/or groups (2 options, max 1) auto-select default and show as\n  toggles on item card immediately, skip inline picker\n- commitInlineMods now accepts latestSelections param to avoid reading\n  stale React state — fixes mods not appearing after picker completes\n- Picker only shows groups with 3+ options or multi-select\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
