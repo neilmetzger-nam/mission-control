@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "16def82",
-    "message": "fix: dev auth bypass for website-builder API routes",
+    "hash": "c5063e2",
+    "message": "fix: website builder shows reference images first — is_style_reference sorted to top, ⭐ badge",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "c5063e2",
+      "message": "fix: website builder shows reference images first — is_style_reference sorted to top, ⭐ badge",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "16def82",
       "message": "fix: dev auth bypass for website-builder API routes",
@@ -948,12 +954,6 @@
     {
       "hash": "49cb526",
       "message": "feat: Maestro widget — contextual hub with CFO/Marketing/Ops launchers, page-aware help, removes side tabs",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "20c07a7",
-      "message": "fix: remove inline 📷✏️ health badges from item names — redundant with Upload/Generate",
       "branch": "neil",
       "date": "2026-03-19"
     }
