@@ -977,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "42e6e5c",
-    "message": "fix: fetchMenuItems uses raw Neon SQL — fixes MenuItem table error for Joe phone ordering",
+    "hash": "f6092ab",
+    "message": "chore: force Vercel redeploy — fetchMenuItems fix",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "f6092ab",
+      "message": "chore: force Vercel redeploy — fetchMenuItems fix",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "42e6e5c",
       "message": "fix: fetchMenuItems uses raw Neon SQL — fixes MenuItem table error for Joe phone ordering",
@@ -1034,12 +1040,6 @@
     {
       "hash": "2084a3f",
       "message": "fix: Port is cleanest (zero spam), private number only Joe can call, ambient training note",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "8bfcc2e",
-      "message": "fix: Phone AI setup — clear 3-number explainer, Option A (forward) vs Option B (port), loop warning",
       "branch": "neil",
       "date": "2026-03-19"
     }
