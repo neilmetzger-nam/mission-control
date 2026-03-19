@@ -977,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "dcbdfc0",
-    "message": "feat: Gloria color themes — ?theme= param applies accent color + bg (emerald/red/blue/purple/amber/midnight)",
+    "hash": "42e6e5c",
+    "message": "fix: fetchMenuItems uses raw Neon SQL — fixes MenuItem table error for Joe phone ordering",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "42e6e5c",
+      "message": "fix: fetchMenuItems uses raw Neon SQL — fixes MenuItem table error for Joe phone ordering",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "dcbdfc0",
       "message": "feat: Gloria color themes — ?theme= param applies accent color + bg (emerald/red/blue/purple/amber/midnight)",
@@ -1034,12 +1040,6 @@
     {
       "hash": "8bfcc2e",
       "message": "fix: Phone AI setup — clear 3-number explainer, Option A (forward) vs Option B (port), loop warning",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "bf6f452",
-      "message": "fix: Phone AI labels — Joe's Inbound Number, Internal Transfer Number, correct call flow explainer",
       "branch": "neil",
       "date": "2026-03-19"
     }
