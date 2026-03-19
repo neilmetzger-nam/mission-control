@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "c209bc3",
-    "message": "feat: ambient alias training — Whisper transcription + order comparison + alias table + correction UI",
+    "hash": "05e489a",
+    "message": "fix: Array.from(aliasMap.entries()) — MapIterator needs es2015 target fix for Vercel build",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "05e489a",
+      "message": "fix: Array.from(aliasMap.entries()) — MapIterator needs es2015 target fix for Vercel build",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "c209bc3",
       "message": "feat: ambient alias training — Whisper transcription + order comparison + alias table + correction UI",
@@ -948,12 +954,6 @@
     {
       "hash": "04a24a3",
       "message": "feat: split Maestro photo chat — quick enhance flow (30s) vs full guided flow",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "41aa948",
-      "message": "fix: correct column names in v1 menu routes — title not name, no uuid col, sort_order",
       "branch": "neil",
       "date": "2026-03-19"
     }
