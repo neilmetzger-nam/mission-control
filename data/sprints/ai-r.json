@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d89691b",
-    "message": "feat: promoting a generated photo syncs it to restaurant_photos with is_style_reference=true",
+    "hash": "37524e9",
+    "message": "feat: Gloria reads ?hero= URL param for website builder preview + settings hub nav",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "37524e9",
+      "message": "feat: Gloria reads ?hero= URL param for website builder preview + settings hub nav",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "d89691b",
       "message": "feat: promoting a generated photo syncs it to restaurant_photos with is_style_reference=true",
@@ -948,12 +954,6 @@
     {
       "hash": "53805e6",
       "message": "fix: photos link → /home/menu (photos is a tab there, not a standalone page)",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "69ecf18",
-      "message": "fix: show hero image in chat bubble — was using msg.image not msg.imageUrl",
       "branch": "neil",
       "date": "2026-03-19"
     }
