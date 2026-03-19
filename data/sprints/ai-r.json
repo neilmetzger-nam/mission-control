@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "762130a",
-    "message": "feat: receipt review gate — token on print, public review page, star rating, Google redirect, manager SMS, reputation dashboard",
+    "hash": "b38668b",
+    "message": "feat: 5 free photos on menu import (fire-and-forget) + table timer optional in iPhone settings",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "b38668b",
+      "message": "feat: 5 free photos on menu import (fire-and-forget) + table timer optional in iPhone settings",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "762130a",
       "message": "feat: receipt review gate — token on print, public review page, star rating, Google redirect, manager SMS, reputation dashboard",
@@ -948,12 +954,6 @@
     {
       "hash": "264a357",
       "message": "fix: return url (not imageUrl) from upload route — component checks data.url",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "d9a291c",
-      "message": "fix: add drag-and-drop to upload zone — prevent browser default of opening image in new tab",
       "branch": "neil",
       "date": "2026-03-19"
     }
