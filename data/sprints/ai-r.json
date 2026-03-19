@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ff70fca",
-    "message": "fix: phone modifier persistence + open sheet for optional groups\n\nThree fixes:\n1. Attach modifierSelections to newly added items after DB refresh\n   (was lost because DB doesn't store this field)\n2. Open ItemDetailSheet for items with optional modifier groups\n   (Nigiri/Sashimi, Dumplings) — previously quick-added silently\n3. Add nigiri/sashimi/dumpling/dressing to primary keywords so\n   they show prominently in the modifier sheet\n4. Fix edit basePrice lookup with name fallback + use priceCents\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "8b6442d",
+    "message": "feat: DB-driven either/or toggles on phone (match iPad behavior)\n\nReplace regex-based getEitherOrMods with DB-driven either/or on phone:\n- All single-select modifier groups auto-add with defaults on item tap\n- Either/or toggles (Nigiri/Sashimi, Fried/Steamed, Spice, etc) show\n  as inline pill toggles on the order card\n- Tapping toggles changes the selection without opening a sheet\n- Items like Amber Jack/Ankimo now get Nigiri default auto-applied\n\nAlso promote nigiri/sashimi/dumpling/dressing to primary keywords in\nItemDetailSheet so they show prominently when editing.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "8b6442d",
+      "message": "feat: DB-driven either/or toggles on phone (match iPad behavior)\n\nReplace regex-based getEitherOrMods with DB-driven either/or on phone:\n- All single-select modifier groups auto-add with defaults on item tap\n- Either/or toggles (Nigiri/Sashimi, Fried/Steamed, Spice, etc) show\n  as inline pill toggles on the order card\n- Tapping toggles changes the selection without opening a sheet\n- Items like Amber Jack/Ankimo now get Nigiri default auto-applied\n\nAlso promote nigiri/sashimi/dumpling/dressing to primary keywords in\nItemDetailSheet so they show prominently when editing.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "ff70fca",
       "message": "fix: phone modifier persistence + open sheet for optional groups\n\nThree fixes:\n1. Attach modifierSelections to newly added items after DB refresh\n   (was lost because DB doesn't store this field)\n2. Open ItemDetailSheet for items with optional modifier groups\n   (Nigiri/Sashimi, Dumplings) — previously quick-added silently\n3. Add nigiri/sashimi/dumpling/dressing to primary keywords so\n   they show prominently in the modifier sheet\n4. Fix edit basePrice lookup with name fallback + use priceCents\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "d0b9324",
       "message": "fix: find newly added item by ID diff instead of menuItemId match\n\nThe server mangles UUID menuItemIds (truncates to integer via parseInt),\nso after refreshSingleOrder the menuItemId doesn't match the original.\nNow captures existing item IDs before add and finds the new item by\nset difference. Removes debug messages.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "e85cdef",
-      "message": "fix: type error on debug message — cast data for error field access\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
