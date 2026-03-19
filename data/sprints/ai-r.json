@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "abff8ae",
-    "message": "fix: ElevenLabs voices API — dev auth bypass + ELEVENLABS_API_KEY added",
+    "hash": "08a8f3e",
+    "message": "feat: Phone AI transfer number — Joe dials restaurant direct line when transferring calls",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "08a8f3e",
+      "message": "feat: Phone AI transfer number — Joe dials restaurant direct line when transferring calls",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "abff8ae",
       "message": "fix: ElevenLabs voices API — dev auth bypass + ELEVENLABS_API_KEY added",
@@ -948,12 +954,6 @@
     {
       "hash": "01f1d4a",
       "message": "fix: dev auth bypass for /api/settings/restaurant",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "37524e9",
-      "message": "feat: Gloria reads ?hero= URL param for website builder preview + settings hub nav",
       "branch": "neil",
       "date": "2026-03-19"
     }
