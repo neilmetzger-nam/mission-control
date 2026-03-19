@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "05e489a",
-    "message": "fix: Array.from(aliasMap.entries()) — MapIterator needs es2015 target fix for Vercel build",
+    "hash": "52aa60e",
+    "message": "feat: printer hub — 4 tabs (Printers/Job Routing/Ticket Design/Auth Slips), settings JSONB, DB routing",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "52aa60e",
+      "message": "feat: printer hub — 4 tabs (Printers/Job Routing/Ticket Design/Auth Slips), settings JSONB, DB routing",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "05e489a",
       "message": "fix: Array.from(aliasMap.entries()) — MapIterator needs es2015 target fix for Vercel build",
@@ -948,12 +954,6 @@
     {
       "hash": "109ccc1",
       "message": "fix: snake_case columns in menu-images/upload route",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "04a24a3",
-      "message": "feat: split Maestro photo chat — quick enhance flow (30s) vs full guided flow",
       "branch": "neil",
       "date": "2026-03-19"
     }
