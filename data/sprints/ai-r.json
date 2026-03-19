@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5b813db",
-    "message": "feat: integrations hub — Sales/Ops/Finance sections, feature unlock cards, status badges, settings sub-nav",
+    "hash": "abff8ae",
+    "message": "fix: ElevenLabs voices API — dev auth bypass + ELEVENLABS_API_KEY added",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "abff8ae",
+      "message": "fix: ElevenLabs voices API — dev auth bypass + ELEVENLABS_API_KEY added",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "5b813db",
       "message": "feat: integrations hub — Sales/Ops/Finance sections, feature unlock cards, status badges, settings sub-nav",
@@ -948,12 +954,6 @@
     {
       "hash": "37524e9",
       "message": "feat: Gloria reads ?hero= URL param for website builder preview + settings hub nav",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "d89691b",
-      "message": "feat: promoting a generated photo syncs it to restaurant_photos with is_style_reference=true",
       "branch": "neil",
       "date": "2026-03-19"
     }
