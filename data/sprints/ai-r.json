@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "7ab2e58",
-    "message": "fix: rename Reference Library → My Hero & Style Photos, clearer description",
+    "hash": "889fe79",
+    "message": "feat: website builder shows picker when multiple reference photos, links to hero photos tab",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "889fe79",
+      "message": "feat: website builder shows picker when multiple reference photos, links to hero photos tab",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "7ab2e58",
       "message": "fix: rename Reference Library → My Hero & Style Photos, clearer description",
@@ -948,12 +954,6 @@
     {
       "hash": "bda5b00",
       "message": "fix: render markdown bold + links in website builder chat bubbles",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "dc22a98",
-      "message": "fix: website builder uses reference images auto, sends to /home/photos if none marked",
       "branch": "neil",
       "date": "2026-03-19"
     }
