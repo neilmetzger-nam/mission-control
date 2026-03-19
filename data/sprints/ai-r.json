@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "0ed21f4",
-    "message": "fix: dev auth bypass for all /api/v1/ routes via devAuth() helper",
+    "hash": "80d1827",
+    "message": "fix: bypass Clerk middleware entirely in dev using module.exports short-circuit",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "80d1827",
+      "message": "fix: bypass Clerk middleware entirely in dev using module.exports short-circuit",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "0ed21f4",
       "message": "fix: dev auth bypass for all /api/v1/ routes via devAuth() helper",
@@ -948,12 +954,6 @@
     {
       "hash": "735120a",
       "message": "feat: clean owner dashboard nav — Menu, Numbers, Staff, POS, Inbox only",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "6978927",
-      "message": "fix: menu_item_id UUID not INTEGER in image_jobs/photo_links tables + routes",
       "branch": "neil",
       "date": "2026-03-19"
     }
