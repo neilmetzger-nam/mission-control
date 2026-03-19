@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "8c73e91",
-    "message": "docs: OpenClaw embedded architecture — 3-tier Maestro model for restaurants\n\n- Tier 1 Maestro Lite (included): stateless, Orion MCP per-request\n- Tier 2 Maestro Pro (/mo): shared gateway, per-restaurant workspace + memory\n- Tier 3 Enterprise: dedicated OpenClaw instance\n- Provisioning flows, SOUL.md template, channel bindings\n- Scaling estimates and revenue projections",
+    "hash": "195217c",
+    "message": "fix: getPwaPin() falls back to localStorage — fixes missing x-pwa-pin header in MaestroPhotoChat",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "195217c",
+      "message": "fix: getPwaPin() falls back to localStorage — fixes missing x-pwa-pin header in MaestroPhotoChat",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "8c73e91",
       "message": "docs: OpenClaw embedded architecture — 3-tier Maestro model for restaurants\n\n- Tier 1 Maestro Lite (included): stateless, Orion MCP per-request\n- Tier 2 Maestro Pro (/mo): shared gateway, per-restaurant workspace + memory\n- Tier 3 Enterprise: dedicated OpenClaw instance\n- Provisioning flows, SOUL.md template, channel bindings\n- Scaling estimates and revenue projections",
@@ -948,12 +954,6 @@
     {
       "hash": "ab7792e",
       "message": "fix: only show inline either/or toggles for groups with exactly 2 options\n\nSpice level (5+ options) was incorrectly getting an inline toggle showing\njust \"Chef's Choice | Mild\". Now only groups with exactly 2 options\n(Nigiri/Sashimi, Fried/Steamed) get inline toggles. Groups with 3+\noptions still auto-default but show as a regular modification badge,\neditable via the edit sheet.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "603eeb8",
-      "message": "feat: add PhoneUpsellStrip — compact specials + dynamic suggestions on iPhone order tab\n\nShows horizontally-scrollable pill chips at the top of the order tab:\n- Daily specials (star icon, emerald)\n- Push items (rocket icon, green)\n- Dynamic \"Add drinks?\" when order has no beverages (purple)\n- Wine/drink pairings matched against current order items (purple)\n- House note (pin icon, amber)\n\nFetches from /api/pwa/specials on mount, same data source as iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
