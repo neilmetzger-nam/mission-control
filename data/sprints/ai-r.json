@@ -977,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "220443b",
-    "message": "fix: t66 Pi confirm 401 — MCP_URL now points to localhost:3002 (was orion-mcp.vercel.app which 500'd)",
+    "hash": "fd7711f",
+    "message": "feat: Joe webhook — ElevenLabs order → POS order + Pi kitchen print",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "fd7711f",
+      "message": "feat: Joe webhook — ElevenLabs order → POS order + Pi kitchen print",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "220443b",
       "message": "fix: t66 Pi confirm 401 — MCP_URL now points to localhost:3002 (was orion-mcp.vercel.app which 500'd)",
@@ -1034,12 +1040,6 @@
     {
       "hash": "abff8ae",
       "message": "fix: ElevenLabs voices API — dev auth bypass + ELEVENLABS_API_KEY added",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "5b813db",
-      "message": "feat: integrations hub — Sales/Ops/Finance sections, feature unlock cards, status badges, settings sub-nav",
       "branch": "neil",
       "date": "2026-03-19"
     }
