@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d67070a",
-    "message": "fix: use plain pass-through middleware in dev — skip clerkMiddleware entirely",
+    "hash": "e6a2376",
+    "message": "fix: snake_case table names in /api/v1/menu — MenuCategory→menu_categories, MenuItem→menu_items",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "e6a2376",
+      "message": "fix: snake_case table names in /api/v1/menu — MenuCategory→menu_categories, MenuItem→menu_items",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "d67070a",
       "message": "fix: use plain pass-through middleware in dev — skip clerkMiddleware entirely",
@@ -948,12 +954,6 @@
     {
       "hash": "376cd70",
       "message": "fix: revision prompt actually re-generates — step was 'result' not 'revision-prompt'",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "25da671",
-      "message": "fix: let Orion prompt engine build the prompt — stop pre-building style prompt in AI-R",
       "branch": "neil",
       "date": "2026-03-19"
     }
