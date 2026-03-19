@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "423d975",
-    "message": "feat: Staff View preview — iPad + iPhone frames with live PWA iframes, skipLock auto-unlock",
+    "hash": "dd4ce68",
+    "message": "feat: conversational website builder wizard — chat flow, photo selection, color themes, preview iframe, confetti publish",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "dd4ce68",
+      "message": "feat: conversational website builder wizard — chat flow, photo selection, color themes, preview iframe, confetti publish",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "423d975",
       "message": "feat: Staff View preview — iPad + iPhone frames with live PWA iframes, skipLock auto-unlock",
@@ -948,12 +954,6 @@
     {
       "hash": "762130a",
       "message": "feat: receipt review gate — token on print, public review page, star rating, Google redirect, manager SMS, reputation dashboard",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "2ab71fc",
-      "message": "feat: photos gallery polish — promote/delete/download, Reference Library, Google badge, soft delete",
       "branch": "neil",
       "date": "2026-03-19"
     }
