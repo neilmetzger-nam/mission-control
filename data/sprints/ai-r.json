@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "dc22a98",
-    "message": "fix: website builder uses reference images auto, sends to /home/photos if none marked",
+    "hash": "bda5b00",
+    "message": "fix: render markdown bold + links in website builder chat bubbles",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "bda5b00",
+      "message": "fix: render markdown bold + links in website builder chat bubbles",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "dc22a98",
       "message": "fix: website builder uses reference images auto, sends to /home/photos if none marked",
@@ -948,12 +954,6 @@
     {
       "hash": "da0b78f",
       "message": "feat: PWA printer settings JSONB sync + many-to-many routing + broadcast mode + Staff View embedded preview",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "a324f17",
-      "message": "fix: menu health score formula (-19 → correct 0-100), fix 404 links /menu-management → /menu",
       "branch": "neil",
       "date": "2026-03-19"
     }
