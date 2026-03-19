@@ -511,12 +511,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "409e714",
-    "message": "fix: correct Nano Banana Pro model ID — nano-banana-pro-preview not nano-banana-pro",
+    "hash": "dc11a16",
+    "message": "fix: pass both food photo + restaurant interior to Nano Banana Pro for enhance+restaurant bg",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "dc11a16",
+      "message": "fix: pass both food photo + restaurant interior to Nano Banana Pro for enhance+restaurant bg",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "409e714",
       "message": "fix: correct Nano Banana Pro model ID — nano-banana-pro-preview not nano-banana-pro",
@@ -568,12 +574,6 @@
     {
       "hash": "020bed5",
       "message": "docs: CFO guardrails — lessons learned, undo spec, safety rules",
-      "branch": "main",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "c5bd91b",
-      "message": "docs: owner misconception guidance — categories aren't for scheduling/visibility",
       "branch": "main",
       "date": "2026-03-18"
     }
