@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "7d4cc83",
-    "message": "fix: website builder link target=_self, clarify Menu → Photos tab label",
+    "hash": "89a900b",
+    "message": "fix: website builder links open in new tab — don't navigate away from wizard",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "89a900b",
+      "message": "fix: website builder links open in new tab — don't navigate away from wizard",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "7d4cc83",
       "message": "fix: website builder link target=_self, clarify Menu → Photos tab label",
@@ -948,12 +954,6 @@
     {
       "hash": "1c6a143",
       "message": "feat: auto-save generated images to restaurant_photos library — gold assets available everywhere",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "36d0ee4",
-      "message": "fix: website builder — auto-show DB photos, fix iframe sandbox, skip photo choice when photos exist",
       "branch": "neil",
       "date": "2026-03-19"
     }
