@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "01f1d4a",
-    "message": "fix: dev auth bypass for /api/settings/restaurant",
+    "hash": "f4acb7d",
+    "message": "fix: settings tabs redirect directly — no intermediate link card",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "f4acb7d",
+      "message": "fix: settings tabs redirect directly — no intermediate link card",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "01f1d4a",
       "message": "fix: dev auth bypass for /api/settings/restaurant",
@@ -948,12 +954,6 @@
     {
       "hash": "89a900b",
       "message": "fix: website builder links open in new tab — don't navigate away from wizard",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "7d4cc83",
-      "message": "fix: website builder link target=_self, clarify Menu → Photos tab label",
       "branch": "neil",
       "date": "2026-03-19"
     }
