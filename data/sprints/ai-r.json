@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "a324f17",
-    "message": "fix: menu health score formula (-19 → correct 0-100), fix 404 links /menu-management → /menu",
+    "hash": "da0b78f",
+    "message": "feat: PWA printer settings JSONB sync + many-to-many routing + broadcast mode + Staff View embedded preview",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "da0b78f",
+      "message": "feat: PWA printer settings JSONB sync + many-to-many routing + broadcast mode + Staff View embedded preview",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "a324f17",
       "message": "fix: menu health score formula (-19 → correct 0-100), fix 404 links /menu-management → /menu",
@@ -948,12 +954,6 @@
     {
       "hash": "52aa60e",
       "message": "feat: printer hub — 4 tabs (Printers/Job Routing/Ticket Design/Auth Slips), settings JSONB, DB routing",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "05e489a",
-      "message": "fix: Array.from(aliasMap.entries()) — MapIterator needs es2015 target fix for Vercel build",
       "branch": "neil",
       "date": "2026-03-19"
     }
