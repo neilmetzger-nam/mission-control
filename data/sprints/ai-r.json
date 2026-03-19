@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "25da671",
-    "message": "fix: let Orion prompt engine build the prompt — stop pre-building style prompt in AI-R",
+    "hash": "376cd70",
+    "message": "fix: revision prompt actually re-generates — step was 'result' not 'revision-prompt'",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "376cd70",
+      "message": "fix: revision prompt actually re-generates — step was 'result' not 'revision-prompt'",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "25da671",
       "message": "fix: let Orion prompt engine build the prompt — stop pre-building style prompt in AI-R",
@@ -950,12 +956,6 @@
       "message": "docs: 10 pairings + 10 upsells from menu analysis, ambient alias training spec\n\n- Curated pairings based on cuisine, flavor profiles, dining patterns\n- Upsell scripts with trigger items and revenue lift estimates\n- Alias training spec: ambient corrections → menu_item_aliases table\n- 20 seed aliases for Red Bar common mishears\n- 15 ElevenLabs voice test scenarios\n- Confidence scoring system (0.5 → 1.0)",
       "branch": "neil",
       "date": "2026-03-19"
-    },
-    {
-      "hash": "52dc258",
-      "message": "feat: Maestro Photo Chat — interactive chat-driven image generation replacing static wizard\n\n- State machine: lib/pwa/maestro-photo-flow.ts\n- Chat UI: components/pwa/maestro/MaestroPhotoChat.tsx\n- Inline uploads, style pills, image previews, revision prompt\n- Replaces ImageWizardModal in ItemDetailPanel",
-      "branch": "neil",
-      "date": "2026-03-18"
     }
   ]
 }
