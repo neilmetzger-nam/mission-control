@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6c967f9",
-    "message": "chore: trigger Vercel redeploy on latest commit (5fc601b)",
+    "hash": "5b813db",
+    "message": "feat: integrations hub — Sales/Ops/Finance sections, feature unlock cards, status badges, settings sub-nav",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "5b813db",
+      "message": "feat: integrations hub — Sales/Ops/Finance sections, feature unlock cards, status badges, settings sub-nav",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "6c967f9",
       "message": "chore: trigger Vercel redeploy on latest commit (5fc601b)",
@@ -948,12 +954,6 @@
     {
       "hash": "d89691b",
       "message": "feat: promoting a generated photo syncs it to restaurant_photos with is_style_reference=true",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "889fe79",
-      "message": "feat: website builder shows picker when multiple reference photos, links to hero photos tab",
       "branch": "neil",
       "date": "2026-03-19"
     }
