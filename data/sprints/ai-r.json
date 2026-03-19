@@ -891,12 +891,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "603eeb8",
-    "message": "feat: add PhoneUpsellStrip — compact specials + dynamic suggestions on iPhone order tab\n\nShows horizontally-scrollable pill chips at the top of the order tab:\n- Daily specials (star icon, emerald)\n- Push items (rocket icon, green)\n- Dynamic \"Add drinks?\" when order has no beverages (purple)\n- Wine/drink pairings matched against current order items (purple)\n- House note (pin icon, amber)\n\nFetches from /api/pwa/specials on mount, same data source as iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+    "hash": "ab7792e",
+    "message": "fix: only show inline either/or toggles for groups with exactly 2 options\n\nSpice level (5+ options) was incorrectly getting an inline toggle showing\njust \"Chef's Choice | Mild\". Now only groups with exactly 2 options\n(Nigiri/Sashimi, Fried/Steamed) get inline toggles. Groups with 3+\noptions still auto-default but show as a regular modification badge,\neditable via the edit sheet.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
     "branch": "neil",
     "date": "2026-03-18"
   },
   "recentCommits": [
+    {
+      "hash": "ab7792e",
+      "message": "fix: only show inline either/or toggles for groups with exactly 2 options\n\nSpice level (5+ options) was incorrectly getting an inline toggle showing\njust \"Chef's Choice | Mild\". Now only groups with exactly 2 options\n(Nigiri/Sashimi, Fried/Steamed) get inline toggles. Groups with 3+\noptions still auto-default but show as a regular modification badge,\neditable via the edit sheet.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
+      "branch": "neil",
+      "date": "2026-03-18"
+    },
     {
       "hash": "603eeb8",
       "message": "feat: add PhoneUpsellStrip — compact specials + dynamic suggestions on iPhone order tab\n\nShows horizontally-scrollable pill chips at the top of the order tab:\n- Daily specials (star icon, emerald)\n- Push items (rocket icon, green)\n- Dynamic \"Add drinks?\" when order has no beverages (purple)\n- Wine/drink pairings matched against current order items (purple)\n- House note (pin icon, amber)\n\nFetches from /api/pwa/specials on mount, same data source as iPad.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
@@ -948,12 +954,6 @@
     {
       "hash": "19430be",
       "message": "fix: preserve modifierSelections through syncFromDb polling\n\nsyncFromDb runs every 3 seconds and was wiping locally-cached\nmodifierSelections/modifications when rebuilding from API data.\nNow snapshots and restores local modifier data through the sync,\nmatching the pattern already used in refreshSingleOrder.\n\nThis fixes:\n- Phone either/or toggles reverting after 3 seconds\n- Phone edit changes not persisting\n- iPad edit losing modifier selections\n\nAlso improved debug info in ItemDetailSheet edit mode.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
-      "branch": "neil",
-      "date": "2026-03-18"
-    },
-    {
-      "hash": "8b6442d",
-      "message": "feat: DB-driven either/or toggles on phone (match iPad behavior)\n\nReplace regex-based getEitherOrMods with DB-driven either/or on phone:\n- All single-select modifier groups auto-add with defaults on item tap\n- Either/or toggles (Nigiri/Sashimi, Fried/Steamed, Spice, etc) show\n  as inline pill toggles on the order card\n- Tapping toggles changes the selection without opening a sheet\n- Items like Amber Jack/Ankimo now get Nigiri default auto-applied\n\nAlso promote nigiri/sashimi/dumpling/dressing to primary keywords in\nItemDetailSheet so they show prominently when editing.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>",
       "branch": "neil",
       "date": "2026-03-18"
     }
