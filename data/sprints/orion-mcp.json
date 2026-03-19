@@ -1,6 +1,6 @@
 {
   "projectId": "orion-mcp",
-  "updatedAt": "2026-03-18",
+  "updatedAt": "2026-03-19",
   "milestones": [
     {
       "id": "m1",
@@ -511,12 +511,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5fbf24f",
-    "message": "docs: image prompt engineering — simple/advanced modes, per-cuisine defaults, reference image rules, video pipeline",
-    "branch": "main",
-    "date": "2026-03-18"
+    "hash": "bbe19e2",
+    "message": "feat: prompt engine — subject detection, cuisine modifiers, style overrides, safety suffix (9/9 tests pass)",
+    "branch": "neil",
+    "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "bbe19e2",
+      "message": "feat: prompt engine — subject detection, cuisine modifiers, style overrides, safety suffix (9/9 tests pass)",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "5fbf24f",
       "message": "docs: image prompt engineering — simple/advanced modes, per-cuisine defaults, reference image rules, video pipeline",
@@ -570,12 +576,6 @@
       "message": "fix: graceful Redis fallback in route-llm — catch KV errors, use hardcoded routes",
       "branch": "main",
       "date": "2026-03-18"
-    },
-    {
-      "hash": "5b67978",
-      "message": "fix: transaction_items column is price not unit_price",
-      "branch": "main",
-      "date": "2026-03-17"
     }
   ]
 }
