@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "96ddc88",
-    "message": "force: redeploy for cart_token body param fix",
+    "hash": "00f18f0",
+    "message": "fix: accept cart_token from body in cart/total, simplify Joe prompt",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "00f18f0",
+      "message": "fix: accept cart_token from body in cart/total, simplify Joe prompt",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "96ddc88",
       "message": "force: redeploy for cart_token body param fix",
@@ -1036,12 +1042,6 @@
     {
       "hash": "c61e1c9",
       "message": "fix: save caller phone to cart, checkout-sms uses caller ID auto, Square checkout",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "cee1227",
-      "message": "feat: Square checkout for phone orders — real payment links via Square API",
       "branch": "neil",
       "date": "2026-03-19"
     }
