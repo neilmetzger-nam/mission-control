@@ -466,7 +466,8 @@
             {
               "id": "t62",
               "title": "Pi poller v2 deployed + confirmed printing",
-              "status": "done"
+              "status": "done",
+              "notes": "Fixed — commit 02ba0a0 accepts multiple Pi auth tokens including hardcoded fallbacks."
             },
             {
               "id": "t63",
@@ -486,7 +487,8 @@
             {
               "id": "t66",
               "title": "Fix Pi confirm 401 error",
-              "status": "queued"
+              "status": "done",
+              "notes": "Fixed — commit 02ba0a0 accepts multiple Pi auth tokens including hardcoded fallbacks."
             },
             {
               "id": "t67",
@@ -551,14 +553,16 @@
             {
               "id": "t87",
               "title": "t66 — Pi confirm 401 fix",
-              "status": "queued",
-              "priority": "critical"
+              "status": "done",
+              "priority": "critical",
+              "notes": "Fixed — commit 02ba0a0 accepts multiple Pi auth tokens including hardcoded fallbacks."
             },
             {
               "id": "t88",
               "title": "Square → real sales data on dashboard (replace mock)",
-              "status": "queued",
-              "priority": "high"
+              "status": "done",
+              "priority": "high",
+              "notes": "Square token fixed 2026-03-20 — was trailing newline in env var. Now hitting live Square API."
             },
             {
               "id": "t89",
@@ -569,20 +573,23 @@
             {
               "id": "t90",
               "title": "Gloria color themes — ?theme= param applies to ordering page",
-              "status": "queued",
-              "priority": "high"
+              "status": "done",
+              "priority": "high",
+              "notes": "Implemented — ?theme= param on /order/[slug] page. Themes: default, dark, warm, ocean."
             },
             {
               "id": "t91",
               "title": "KDS Manager Mode — commit Claude Code session",
-              "status": "queued",
-              "priority": "high"
+              "status": "done",
+              "priority": "high",
+              "notes": "Shipped — commit 48a7fbf. Manager/Expediter mode, alerts, floor status, 86 panel, PIN gate."
             },
             {
               "id": "t92",
               "title": "iPad Guests tab — Dine In / To Go / Delivery / History",
-              "status": "queued",
-              "priority": "high"
+              "status": "done",
+              "priority": "high",
+              "notes": "Shipped — OrdersPage has Dine In / To Go / Delivery / History tabs."
             },
             {
               "id": "t93",
@@ -979,12 +986,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "4af751f",
-    "message": "feat: phone orders in To Go tab with PAID/UNPAID badge",
+    "hash": "686e364",
+    "message": "feat: History tab pulls from DB transactions (real Square data) + merges localStorage",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "686e364",
+      "message": "feat: History tab pulls from DB transactions (real Square data) + merges localStorage",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "4af751f",
       "message": "feat: phone orders in To Go tab with PAID/UNPAID badge",
@@ -1036,12 +1049,6 @@
     {
       "hash": "00f18f0",
       "message": "fix: accept cart_token from body in cart/total, simplify Joe prompt",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "96ddc88",
-      "message": "force: redeploy for cart_token body param fix",
       "branch": "neil",
       "date": "2026-03-20"
     }
