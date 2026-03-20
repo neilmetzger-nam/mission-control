@@ -1189,12 +1189,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ebaa935",
-    "message": "fix: chargeback analyze — correct Claude model name",
+    "hash": "66d1247",
+    "message": "fix: chargeback analyze — force JSON-only response, strip markdown fences",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "66d1247",
+      "message": "fix: chargeback analyze — force JSON-only response, strip markdown fences",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "ebaa935",
       "message": "fix: chargeback analyze — correct Claude model name",
@@ -1246,12 +1252,6 @@
     {
       "hash": "b4137b3",
       "message": "fix: update pnpm lockfile for pdf-parse dependency",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "a480fe6",
-      "message": "fix: add nodejs runtime to chargeback routes (pdf-parse incompatible with edge runtime)",
       "branch": "neil",
       "date": "2026-03-20"
     }
