@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "0d8d8b4",
-    "message": "fix: skip Stripe for phone orders — use mock checkout, pay at pickup for now",
+    "hash": "d8179b6",
+    "message": "fix: TypeScript fixes for Vercel build — Stripe!, cart null checks",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "d8179b6",
+      "message": "fix: TypeScript fixes for Vercel build — Stripe!, cart null checks",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "0d8d8b4",
       "message": "fix: skip Stripe for phone orders — use mock checkout, pay at pickup for now",
@@ -1036,12 +1042,6 @@
     {
       "hash": "f6092ab",
       "message": "chore: force Vercel redeploy — fetchMenuItems fix",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "42e6e5c",
-      "message": "fix: fetchMenuItems uses raw Neon SQL — fixes MenuItem table error for Joe phone ordering",
       "branch": "neil",
       "date": "2026-03-19"
     }
