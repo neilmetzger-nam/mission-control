@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "1d97213",
-    "message": "fix: accept cart_token from request body in resolve-and-add",
+    "hash": "96ddc88",
+    "message": "force: redeploy for cart_token body param fix",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "96ddc88",
+      "message": "force: redeploy for cart_token body param fix",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "1d97213",
       "message": "fix: accept cart_token from request body in resolve-and-add",
@@ -1036,12 +1042,6 @@
     {
       "hash": "cee1227",
       "message": "feat: Square checkout for phone orders — real payment links via Square API",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "52a037b",
-      "message": "fix: re-enable Stripe checkout for phone orders — payment over phone via SMS link",
       "branch": "neil",
       "date": "2026-03-19"
     }
