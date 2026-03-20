@@ -1117,12 +1117,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "9a184fa",
-    "message": "feat: source filter pills on To Go tab — Staff, Joe, OpenAI, Alexa, Google, Website",
+    "hash": "97a08a3",
+    "message": "fix: add openapi.json to public routes so ChatGPT can fetch it",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "97a08a3",
+      "message": "fix: add openapi.json to public routes so ChatGPT can fetch it",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "9a184fa",
       "message": "feat: source filter pills on To Go tab — Staff, Joe, OpenAI, Alexa, Google, Website",
@@ -1174,12 +1180,6 @@
     {
       "hash": "cebbcd2",
       "message": "feat: auto-fire remote orders (phone/online) from iPad polling loop",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "05eaa96",
-      "message": "ci: redeploy with updated Square token + webhook key",
       "branch": "neil",
       "date": "2026-03-20"
     }
