@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ab67c80",
-    "message": "fix: fire kitchen via pwa/orders/fire-kitchen (proper print routing, no Pi direct)",
+    "hash": "05eaa96",
+    "message": "ci: redeploy with updated Square token + webhook key",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "05eaa96",
+      "message": "ci: redeploy with updated Square token + webhook key",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "ab67c80",
       "message": "fix: fire kitchen via pwa/orders/fire-kitchen (proper print routing, no Pi direct)",
@@ -1036,12 +1042,6 @@
     {
       "hash": "6db8325",
       "message": "fix: accept cart_token from request body in checkout-link and checkout-sms",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "d6de8d3",
-      "message": "fix: look up active cart by caller phone when no cart token provided",
       "branch": "neil",
       "date": "2026-03-20"
     }
