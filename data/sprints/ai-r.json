@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ae72e91",
-    "message": "fix: route print jobs through Orion MCP instead of Pi directly",
+    "hash": "ab67c80",
+    "message": "fix: fire kitchen via pwa/orders/fire-kitchen (proper print routing, no Pi direct)",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "ab67c80",
+      "message": "fix: fire kitchen via pwa/orders/fire-kitchen (proper print routing, no Pi direct)",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "ae72e91",
       "message": "fix: route print jobs through Orion MCP instead of Pi directly",
@@ -1038,12 +1044,6 @@
       "message": "fix: look up active cart by caller phone when no cart token provided",
       "branch": "neil",
       "date": "2026-03-20"
-    },
-    {
-      "hash": "81f8c9f",
-      "message": "fix: pull modifier prices from DB instead of hardcoded table",
-      "branch": "neil",
-      "date": "2026-03-19"
     }
   ]
 }
