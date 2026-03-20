@@ -1182,12 +1182,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "83346f8",
-    "message": "fix: chargeback page stats — -500 avg recovery, 0.5-1.5% overcharge rate",
+    "hash": "ed0d82e",
+    "message": "fix: remove extra closing brace in chargeback page",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "ed0d82e",
+      "message": "fix: remove extra closing brace in chargeback page",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "83346f8",
       "message": "fix: chargeback page stats — -500 avg recovery, 0.5-1.5% overcharge rate",
@@ -1239,12 +1245,6 @@
     {
       "hash": "3cd5095",
       "message": "feat: Check payroll Phase 1 — API key auth, labor summary (shifts+staff+transactions), FOH/BOH split widget on dashboard, settings UI",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "34b9793",
-      "message": "feat: QuickBooks Online OAuth 2.0 integration — daily sales export as SalesReceipt, food/bev split, account mapping UI, auto-refresh tokens",
       "branch": "neil",
       "date": "2026-03-20"
     }
