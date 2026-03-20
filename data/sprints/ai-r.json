@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "4d02ca0",
-    "message": "fix: protein modifier prices — all proteins .95 (chicken was /bin/zsh)",
+    "hash": "81f8c9f",
+    "message": "fix: pull modifier prices from DB instead of hardcoded table",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "81f8c9f",
+      "message": "fix: pull modifier prices from DB instead of hardcoded table",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "4d02ca0",
       "message": "fix: protein modifier prices — all proteins .95 (chicken was /bin/zsh)",
@@ -1036,12 +1042,6 @@
     {
       "hash": "b9bf4e8",
       "message": "fix: remove middleware.ts — proxy.ts is the Next.js 16 convention, can't have both",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "9ccd34e",
-      "message": "fix: add proxy.ts — Next.js 16 renamed middleware.ts to proxy.ts (Vercel build fix)",
       "branch": "neil",
       "date": "2026-03-19"
     }
