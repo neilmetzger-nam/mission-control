@@ -1133,6 +1133,13 @@
               "status": "done",
               "completedAt": "2026-03-20",
               "notes": "API key auth, labor summary from shifts+staff+transactions, FOH/BOH split, LaborCostWidget on dashboard, full settings UI. Phase 2 (push to Check API for payroll runs) = separate session when Check credentials arrive."
+            },
+            {
+              "id": "chargeback-001",
+              "title": "Chargeback Fighter — public lead gen page",
+              "status": "done",
+              "completedAt": "2026-03-20",
+              "notes": "Public page at /chargeback — upload DoorDash/UberEats/GrubHub PDF, Claude analyzes for recoverable chargebacks, email capture, dispute letter generation. Dark theme, no auth, no DB writes (leads logged). pdf-parse@2.4.5 added."
             }
           ]
         }
@@ -1140,12 +1147,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "3cd5095",
-    "message": "feat: Check payroll Phase 1 — API key auth, labor summary (shifts+staff+transactions), FOH/BOH split widget on dashboard, settings UI",
+    "hash": "4c869c8",
+    "message": "feat: Chargeback Fighter — public lead gen page, PDF analysis via Claude, dispute letter generation, email capture",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "4c869c8",
+      "message": "feat: Chargeback Fighter — public lead gen page, PDF analysis via Claude, dispute letter generation, email capture",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "3cd5095",
       "message": "feat: Check payroll Phase 1 — API key auth, labor summary (shifts+staff+transactions), FOH/BOH split widget on dashboard, settings UI",
@@ -1197,12 +1210,6 @@
     {
       "hash": "9327ef8",
       "message": "fix: restaurants API — id not uuid, use DB slug column",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "97a08a3",
-      "message": "fix: add openapi.json to public routes so ChatGPT can fetch it",
       "branch": "neil",
       "date": "2026-03-20"
     }
