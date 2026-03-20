@@ -1,6 +1,6 @@
 {
   "projectId": "api-approvals",
-  "updatedAt": "2026-03-20T15:14:57.968622Z",
+  "updatedAt": "2026-03-20T17:24:14.051593Z",
   "milestones": [
     {
       "id": "m1",
@@ -148,6 +148,14 @@
               "expectedBy": "2026-04-01",
               "url": "https://developer.sevenrooms.com",
               "notes": "\u26a0\ufe0f TIME SENSITIVE \u2014 DoorDash acquiring SevenRooms. Outreach sent 2026-03-20 before acquisition closes. Pitching AI-R as independent restaurant alternative to DoorDash-controlled guest data. Reservations + guest profiles on AI-R floor plan."
+            },
+            {
+              "id": "api-016",
+              "title": "Reserve with Google",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "url": "https://reservewithgoogle.com",
+              "notes": "Outreach sent 2026-03-20. Want to surface Google bookings in AI-R floor plan. Fast win \u2014 no third-party needed."
             }
           ]
         }

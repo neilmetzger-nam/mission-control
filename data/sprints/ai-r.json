@@ -1147,6 +1147,19 @@
               "status": "done",
               "completedAt": "2026-03-20",
               "notes": "Weekly Gmail IMAP poll (Monday 9AM ET via Vercel cron). Unzips DoorDash financial report ZIP, parses 3 CSVs, upserts to transactions table. Deduplicates on external_id. GMAIL_ACCOUNT + GMAIL_APP_PASSWORD env vars required. Forward: neil@prgroupva.com → neilmetzger@gmail.com → scraper."
+            },
+            {
+              "id": "waitlist-001",
+              "title": "Online Waitlist — build our own (no 3rd party)",
+              "status": "done",
+              "notes": "Already built by Obie! 11 components: FloorMapView, ReservationList, ReservationCalendar, WaitlistQueue, WaitlistEntry, AddToWaitlistModal, NewReservationModal, ReservationSettings, ReservationAnalytics, TableCard, ReservationTabs. localStorage-based with mock data. Integration-ready for OpenTable/Resy/Google.",
+              "completedAt": "pre-existing"
+            },
+            {
+              "id": "sections-001",
+              "title": "Server section assignment + floor map photo upload",
+              "status": "todo",
+              "notes": "Full server section system:\nSETTINGS: Restaurant-level toggle: sections_mode = 'none' | 'assigned' | 'mixed'\n- none: no sections, all servers see all tables\n- assigned: every server must be assigned a section\n- mixed: some assigned sections, unassigned servers go to pool\n\nROLES per section:\n- Server (tables only)\n- Bartender (bar only OR bar + tables)\n- Food runner (support role, all sections)\n- Unassigned pool (picks up any table)\n\nSECTION SETUP:\n- Manager assigns sections per shift (not permanent)\n- Section has: name, color, table list, assigned staff\n- Bar section can be bar-only or include patio/overflow tables\n\nTIP OUT:\n- Section assignment drives tip out calculation (server gets % of their section sales)\n- Food runner gets pool % from all sections\n- Bartender gets bar tip separate from food server pool\n\nPOOL:\n- Unassigned servers enter pool\n- Pool gets distributed evenly across unassigned tables\n\nBuild on Obie's FloorMapView + table-store. Add to restaurant settings page.\nQueue after bar-tabs-001."
             }
           ]
         }
@@ -1154,12 +1167,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "77467bc",
-    "message": "docs: AI-R architecture overview — surfaces, auth model, API structure, integrations, Mermaid diagram",
+    "hash": "7622a10",
+    "message": "feat: bar tab system — Square pre-auth, open/add/void/close/transfer/split, color-coded UI (/home/bar-tabs)",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "7622a10",
+      "message": "feat: bar tab system — Square pre-auth, open/add/void/close/transfer/split, color-coded UI (/home/bar-tabs)",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "77467bc",
       "message": "docs: AI-R architecture overview — surfaces, auth model, API structure, integrations, Mermaid diagram",
@@ -1211,12 +1230,6 @@
     {
       "hash": "1dbb447",
       "message": "fix: fallback to location-only search when name+location returns no results",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "44b3801",
-      "message": "fix: trim openapi description to under 300 chars",
       "branch": "neil",
       "date": "2026-03-20"
     }
