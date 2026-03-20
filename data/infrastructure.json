@@ -13,7 +13,14 @@
       "region": "us-east4",
       "status": "live",
       "lastDeployed": "2026-03-05",
-      "stack": ["Next.js 16", "Clerk", "Neon", "Drizzle", "Square", "Stripe"]
+      "stack": [
+        "Next.js 16",
+        "Clerk",
+        "Neon",
+        "Drizzle",
+        "Square",
+        "Stripe"
+      ]
     },
     {
       "id": "prompt-studio-v2",
@@ -27,7 +34,12 @@
       "branch": "main",
       "status": "live",
       "lastDeployed": "2026-03-07",
-      "stack": ["Next.js 15", "Clerk", "Neon", "Drizzle"]
+      "stack": [
+        "Next.js 15",
+        "Clerk",
+        "Neon",
+        "Drizzle"
+      ]
     },
     {
       "id": "plate-ai",
@@ -41,7 +53,12 @@
       "branch": "main",
       "status": "live",
       "lastDeployed": "2026-03-07",
-      "stack": ["Next.js", "Clerk", "Neon", "Square"]
+      "stack": [
+        "Next.js",
+        "Clerk",
+        "Neon",
+        "Square"
+      ]
     },
     {
       "id": "time-trek",
@@ -55,7 +72,10 @@
       "branch": "main",
       "status": "live",
       "lastDeployed": "2026-03-07",
-      "stack": ["Next.js", "Vercel"]
+      "stack": [
+        "Next.js",
+        "Vercel"
+      ]
     },
     {
       "id": "ember-azure",
@@ -69,7 +89,10 @@
       "branch": "main",
       "status": "live",
       "lastDeployed": "2026-03-07",
-      "stack": ["Next.js", "Vercel"]
+      "stack": [
+        "Next.js",
+        "Vercel"
+      ]
     },
     {
       "id": "orion-mcp",
@@ -83,7 +106,10 @@
       "branch": "main",
       "status": "live",
       "lastDeployed": "2026-03-07",
-      "stack": ["Next.js", "Upstash KV"]
+      "stack": [
+        "Next.js",
+        "Upstash KV"
+      ]
     },
     {
       "id": "orion-portfolio",
@@ -97,13 +123,17 @@
       "branch": "main",
       "status": "live",
       "lastDeployed": "2026-03-07",
-      "stack": ["Next.js", "Clerk", "Upstash KV"]
+      "stack": [
+        "Next.js",
+        "Clerk",
+        "Upstash KV"
+      ]
     },
     {
       "id": "mission-control",
       "name": "Mission Control",
       "project": "orion",
-      "description": "Internal portfolio OS — this app",
+      "description": "Internal portfolio OS \u2014 this app",
       "type": "internal",
       "platform": "local",
       "url": "http://neils-mac-mini.tail45495a.ts.net:3001",
@@ -111,7 +141,10 @@
       "branch": "main",
       "status": "live",
       "lastDeployed": "2026-03-08",
-      "stack": ["Next.js 16", "Tailwind v4"]
+      "stack": [
+        "Next.js 16",
+        "Tailwind v4"
+      ]
     }
   ],
   "databases": [
@@ -141,7 +174,10 @@
       "provider": "upstash",
       "host": "special-griffon-4768.upstash.io",
       "status": "active",
-      "usedBy": ["orion-mcp", "orion-portfolio"]
+      "usedBy": [
+        "orion-mcp",
+        "orion-portfolio"
+      ]
     }
   ],
   "gcp": {
@@ -164,10 +200,13 @@
     {
       "id": "pi",
       "name": "Raspberry Pi",
-      "role": "Print server",
+      "role": "Print server (BACKUP only \u2014 primary path is iPad \u2192 LAN printers)",
       "tailscaleIp": "100.68.30.87",
       "localIp": "192.168.1.74",
-      "services": ["print-server:3333"]
+      "services": [
+        "print-server:3333"
+      ],
+      "notes": "Pi is NOT in the primary print path. Used only when internet is down or iPad unavailable."
     }
   ],
   "schema": {
@@ -177,77 +216,200 @@
       {
         "name": "Menu & Ordering",
         "tables": [
-          { "table": "MenuCategory", "description": "Menu categories per restaurant" },
-          { "table": "MenuItem", "description": "Items: name, price, description, image, active" },
-          { "table": "ModifierGroup", "description": "Modifier groups (required, max selections)" },
-          { "table": "ModifierOption", "description": "Options within modifier groups (price delta)" },
-          { "table": "MenuItemModifierGroup", "description": "M2M: items ↔ modifier groups" },
-          { "table": "MenuItemTranslation", "description": "AI-generated translations (es, zh, ko, th)" },
-          { "table": "ModifierOptionTranslation", "description": "Modifier option translations" },
-          { "table": "GlobalFoodItem", "description": "Cross-restaurant food intelligence" },
-          { "table": "GlobalFoodAlias", "description": "AI alias resolution" },
-          { "table": "MenuItemAlias", "description": "Per-restaurant item alias mapping" },
-          { "table": "ResolveLog", "description": "Alias resolution audit log" }
+          {
+            "table": "MenuCategory",
+            "description": "Menu categories per restaurant"
+          },
+          {
+            "table": "MenuItem",
+            "description": "Items: name, price, description, image, active"
+          },
+          {
+            "table": "ModifierGroup",
+            "description": "Modifier groups (required, max selections)"
+          },
+          {
+            "table": "ModifierOption",
+            "description": "Options within modifier groups (price delta)"
+          },
+          {
+            "table": "MenuItemModifierGroup",
+            "description": "M2M: items \u2194 modifier groups"
+          },
+          {
+            "table": "MenuItemTranslation",
+            "description": "AI-generated translations (es, zh, ko, th)"
+          },
+          {
+            "table": "ModifierOptionTranslation",
+            "description": "Modifier option translations"
+          },
+          {
+            "table": "GlobalFoodItem",
+            "description": "Cross-restaurant food intelligence"
+          },
+          {
+            "table": "GlobalFoodAlias",
+            "description": "AI alias resolution"
+          },
+          {
+            "table": "MenuItemAlias",
+            "description": "Per-restaurant item alias mapping"
+          },
+          {
+            "table": "ResolveLog",
+            "description": "Alias resolution audit log"
+          }
         ]
       },
       {
         "name": "POS & Dine-In",
         "tables": [
-          { "table": "DineInOrder", "description": "Full POS orders (status, server, table, channel)" },
-          { "table": "DineInOrderItem", "description": "Line items with modifiers, course, fire status" },
-          { "table": "DineInPayment", "description": "Payments, tips, split checks" },
-          { "table": "FloorPlan", "description": "Floor plan layouts" },
-          { "table": "FloorPlanElement", "description": "Table positions, capacity, rotation" },
-          { "table": "Cart", "description": "Phone-ordering cart system" },
-          { "table": "CartItem", "description": "Cart line items" }
+          {
+            "table": "DineInOrder",
+            "description": "Full POS orders (status, server, table, channel)"
+          },
+          {
+            "table": "DineInOrderItem",
+            "description": "Line items with modifiers, course, fire status"
+          },
+          {
+            "table": "DineInPayment",
+            "description": "Payments, tips, split checks"
+          },
+          {
+            "table": "FloorPlan",
+            "description": "Floor plan layouts"
+          },
+          {
+            "table": "FloorPlanElement",
+            "description": "Table positions, capacity, rotation"
+          },
+          {
+            "table": "Cart",
+            "description": "Phone-ordering cart system"
+          },
+          {
+            "table": "CartItem",
+            "description": "Cart line items"
+          }
         ]
       },
       {
         "name": "Staff & Labor",
         "tables": [
-          { "table": "Staff", "description": "Employees: name, role, department, pin, pay rate, language" },
-          { "table": "Shift", "description": "Planned vs actual shifts, hours, labor cost" },
-          { "table": "ScheduleTemplate", "description": "Reusable weekly schedule templates" },
-          { "table": "TemplateShift", "description": "Shifts within templates" },
-          { "table": "ClockEntry", "description": "Time clock: in/out, breaks, overtime, tips" },
-          { "table": "TimeclockSettings", "description": "OT thresholds, photo-on-clock, week start" }
+          {
+            "table": "Staff",
+            "description": "Employees: name, role, department, pin, pay rate, language"
+          },
+          {
+            "table": "Shift",
+            "description": "Planned vs actual shifts, hours, labor cost"
+          },
+          {
+            "table": "ScheduleTemplate",
+            "description": "Reusable weekly schedule templates"
+          },
+          {
+            "table": "TemplateShift",
+            "description": "Shifts within templates"
+          },
+          {
+            "table": "ClockEntry",
+            "description": "Time clock: in/out, breaks, overtime, tips"
+          },
+          {
+            "table": "TimeclockSettings",
+            "description": "OT thresholds, photo-on-clock, week start"
+          }
         ]
       },
       {
         "name": "Inventory & Costing",
         "tables": [
-          { "table": "inventory_items", "description": "Ingredients: name, category, unit, cost, qty, par level" },
-          { "table": "unit_conversions", "description": "Unit math (case→lb, gallon→oz)" },
-          { "table": "purchase_logs", "description": "Individual ingredient purchase entries" },
-          { "table": "recipes", "description": "Menu item recipes" },
-          { "table": "recipe_ingredients", "description": "Recipe → ingredient links with quantities" },
-          { "table": "waste_logs", "description": "Waste tracking (reason, qty, cost)" },
-          { "table": "plate_cost_snapshots", "description": "Daily plate cost snapshots (cost, waste buffer, margin %)" },
-          { "table": "vendors", "description": "Supplier directory (name, contact, account#)" },
-          { "table": "purchase_records", "description": "Invoice/receipt OCR capture" },
-          { "table": "purchase_line_items", "description": "Line items from scanned invoices" }
+          {
+            "table": "inventory_items",
+            "description": "Ingredients: name, category, unit, cost, qty, par level"
+          },
+          {
+            "table": "unit_conversions",
+            "description": "Unit math (case\u2192lb, gallon\u2192oz)"
+          },
+          {
+            "table": "purchase_logs",
+            "description": "Individual ingredient purchase entries"
+          },
+          {
+            "table": "recipes",
+            "description": "Menu item recipes"
+          },
+          {
+            "table": "recipe_ingredients",
+            "description": "Recipe \u2192 ingredient links with quantities"
+          },
+          {
+            "table": "waste_logs",
+            "description": "Waste tracking (reason, qty, cost)"
+          },
+          {
+            "table": "plate_cost_snapshots",
+            "description": "Daily plate cost snapshots (cost, waste buffer, margin %)"
+          },
+          {
+            "table": "vendors",
+            "description": "Supplier directory (name, contact, account#)"
+          },
+          {
+            "table": "purchase_records",
+            "description": "Invoice/receipt OCR capture"
+          },
+          {
+            "table": "purchase_line_items",
+            "description": "Line items from scanned invoices"
+          }
         ]
       },
       {
         "name": "Hardware & Printing",
         "tables": [
-          { "table": "PrinterStation", "description": "Thermal printers: IP, port, type, station role, language" }
+          {
+            "table": "PrinterStation",
+            "description": "Thermal printers: IP, port, type, station role, language"
+          }
         ]
       },
       {
         "name": "Settings & Marketing",
         "tables": [
-          { "table": "RestaurantSetting", "description": "Key-value settings per restaurant" },
-          { "table": "beta_signups", "description": "Marketing: beta signup captures" }
+          {
+            "table": "RestaurantSetting",
+            "description": "Key-value settings per restaurant"
+          },
+          {
+            "table": "beta_signups",
+            "description": "Marketing: beta signup captures"
+          }
         ]
       },
       {
         "name": "Express API (separate schema)",
         "tables": [
-          { "table": "events", "description": "Event sourcing system" },
-          { "table": "guests", "description": "Guest/customer records" },
-          { "table": "transactions", "description": "Transaction ledger" },
-          { "table": "pending_tips", "description": "Tips awaiting capture" }
+          {
+            "table": "events",
+            "description": "Event sourcing system"
+          },
+          {
+            "table": "guests",
+            "description": "Guest/customer records"
+          },
+          {
+            "table": "transactions",
+            "description": "Transaction ledger"
+          },
+          {
+            "table": "pending_tips",
+            "description": "Tips awaiting capture"
+          }
         ]
       }
     ]
@@ -266,7 +428,7 @@
       "title": "BroadcastChannel for KDS sync",
       "impact": "high",
       "category": "architecture",
-      "description": "KDS only syncs across same-browser tabs. Won't work across devices (iPad ↔ kitchen display).",
+      "description": "KDS only syncs across same-browser tabs. Won't work across devices (iPad \u2194 kitchen display).",
       "fix": "Replace with WebSocket or Server-Sent Events for real-time cross-device sync."
     },
     {
@@ -307,7 +469,7 @@
       "impact": "medium",
       "category": "data",
       "description": "Printer station assignments cached in-memory. Server restart = reconfigure.",
-      "fix": "Already have PrinterStation table — ensure all config reads from DB, not runtime cache."
+      "fix": "Already have PrinterStation table \u2014 ensure all config reads from DB, not runtime cache."
     },
     {
       "id": "td-8",
@@ -323,14 +485,14 @@
       "impact": "high",
       "category": "integration",
       "description": "Orders from DD/UE/GH don't flow into AI-R. Manual entry only.",
-      "fix": "Webhook listeners + order normalization layer → DineInOrder with channel='doordash' etc."
+      "fix": "Webhook listeners + order normalization layer \u2192 DineInOrder with channel='doordash' etc."
     },
     {
       "id": "td-10",
       "title": "No guest profiles / customer database",
       "impact": "high",
       "category": "feature-gap",
-      "description": "No way to track who ordered, visit history, favorites, dietary preferences. Critical for DD→direct conversion strategy.",
+      "description": "No way to track who ordered, visit history, favorites, dietary preferences. Critical for DD\u2192direct conversion strategy.",
       "fix": "guest_profiles table + link to orders. Build from receipt signups + phone orders."
     },
     {
@@ -339,7 +501,7 @@
       "impact": "medium",
       "category": "feature-gap",
       "description": "Inventory doesn't decrease when orders are completed. Requires manual stock counts.",
-      "fix": "Order close hook → recipe lookup → deduct ingredient quantities. Add inventory_movements audit trail."
+      "fix": "Order close hook \u2192 recipe lookup \u2192 deduct ingredient quantities. Add inventory_movements audit trail."
     },
     {
       "id": "td-12",
@@ -349,5 +511,69 @@
       "description": "Owner dashboard routes may be accessible without auth in some configurations.",
       "fix": "Add Clerk middleware.ts matcher for all /home/*, /settings/*, /api/pwa/* routes."
     }
-  ]
+  ],
+  "phoneOrdering": {
+    "description": "AI phone ordering via ElevenLabs Joe agent",
+    "lastUpdated": "2026-03-20",
+    "primaryPrintPath": {
+      "description": "iPad (PWA) polls active orders every 10s. Remote orders (phone_joe, online, etc.) auto-fire to kitchen via fire-kitchen API from iPad on LAN.",
+      "flow": [
+        "Customer calls 703-646-7799",
+        "Joe (ElevenLabs agent_5901km4ph423ekes6pq4jk8qhefk) takes order",
+        "resolve_and_add API builds cart in DB (phone_carts table)",
+        "checkout_link creates Square payment link",
+        "checkout_sms texts link to caller via Twilio",
+        "Customer pays via Square link",
+        "Square webhook POST /api/webhooks/square",
+        "Webhook creates transaction (source=phone_joe, status=fired)",
+        "iPad PWA detects new remote order on next 10s poll",
+        "iPad auto-fires to kitchen via /api/pwa/orders/fire-kitchen",
+        "fire-kitchen routes to LAN printers via Pi box URL"
+      ],
+      "autoFireSources": [
+        "phone_joe",
+        "online",
+        "text",
+        "social",
+        "google"
+      ]
+    },
+    "backupPrintPath": {
+      "description": "If iPad is offline, Pi box polls Orion MCP Redis queue and fires directly to printers.",
+      "useWhen": "Internet down, iPad dead battery, or fire-kitchen unreachable"
+    },
+    "agents": {
+      "joe_v2": {
+        "id": "agent_5901km4ph423ekes6pq4jk8qhefk",
+        "phone": "+17036467799",
+        "llm": "gemini-2.5-flash-lite",
+        "tools": [
+          "resolve_and_add",
+          "checkout_link",
+          "checkout_sms",
+          "cart_total",
+          "orchestrator_cart_remove"
+        ]
+      },
+      "joe_v1_legacy": {
+        "id": "agent_6501k5hpeevteqmbvfyh3r47g3hs",
+        "phone": "+18333247207",
+        "note": "Legacy agent on 833 number \u2014 do not use for Red Bar ordering"
+      }
+    },
+    "squareWebhook": {
+      "id": "wbhk_6ba71d8214c1460f972dc4d1be90f7cb",
+      "url": "https://neil.ai-restaurant.net/api/webhooks/square",
+      "events": [
+        "payment.completed"
+      ]
+    },
+    "keyDecisions": [
+      "cart_token passed via request body (not headers) \u2014 EL crashes if dynamic variable headers are empty at call start",
+      "No workflow node on Joe \u2014 plain agent with tools attached directly",
+      "caller_phone not available from EL system vars \u2014 not used; cart lookup by token only",
+      "Pi is BACKUP only \u2014 primary print path is iPad on LAN calling fire-kitchen",
+      "All remote-source orders auto-fire from iPad polling loop, no server tap needed"
+    ]
+  }
 }
