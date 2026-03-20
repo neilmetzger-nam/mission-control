@@ -1117,12 +1117,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "97a08a3",
-    "message": "fix: add openapi.json to public routes so ChatGPT can fetch it",
+    "hash": "9327ef8",
+    "message": "fix: restaurants API — id not uuid, use DB slug column",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "9327ef8",
+      "message": "fix: restaurants API — id not uuid, use DB slug column",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "97a08a3",
       "message": "fix: add openapi.json to public routes so ChatGPT can fetch it",
@@ -1174,12 +1180,6 @@
     {
       "hash": "0d293f6",
       "message": "feat: table colors available/seated, unpaid red dot badge on occupied tables",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "cebbcd2",
-      "message": "feat: auto-fire remote orders (phone/online) from iPad polling loop",
       "branch": "neil",
       "date": "2026-03-20"
     }
