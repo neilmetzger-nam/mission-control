@@ -393,7 +393,8 @@
             {
               "id": "t52",
               "title": "DoorDash Marketplace API — not applied",
-              "status": "queued"
+              "status": "blocked",
+              "notes": "Blocked — API access unlikely. KitchenHub dependency. May need to tell restaurants they manage 3rd party orders separately."
             },
             {
               "id": "t53",
@@ -411,6 +412,24 @@
               "id": "t55",
               "title": "Plaid — approved, sandbox mode",
               "status": "done"
+            },
+            {
+              "id": "kh-001",
+              "title": "KitchenHub integration — store API key in integrations table",
+              "status": "queued",
+              "notes": "Restaurant provides KitchenHub API key in AIR settings. Stored in integrations table (provider=kitchenhub)."
+            },
+            {
+              "id": "kh-002",
+              "title": "KitchenHub sync — pull delivery order history into transactions",
+              "status": "queued",
+              "notes": "Sync button in settings + nightly cron. Writes delivery orders to transactions table with source=kitchenhub. Shows in History + reporting."
+            },
+            {
+              "id": "otter-001",
+              "title": "Otter integration — same pattern as KitchenHub",
+              "status": "queued",
+              "notes": "Same sync pattern. Restaurant provides Otter credentials. Pull order history nightly."
             }
           ]
         },
@@ -567,8 +586,9 @@
             {
               "id": "t89",
               "title": "Joe Twilio webhook — actually answer calls",
-              "status": "queued",
-              "priority": "high"
+              "status": "done",
+              "priority": "high",
+              "notes": "Done 2026-03-20 — Joe agent live on 703-646-7799, full cart/payment/kitchen flow working."
             },
             {
               "id": "t90",
@@ -594,8 +614,9 @@
             {
               "id": "t93",
               "title": "Email scraping for DoorDash/UberEats/Grubhub orders (no API needed)",
-              "status": "queued",
-              "priority": "high"
+              "status": "blocked",
+              "priority": "high",
+              "notes": "Deprioritized — KitchenHub may be the only viable path for 3rd party order ingestion."
             },
             {
               "id": "t94",
@@ -618,8 +639,9 @@
             {
               "id": "t97",
               "title": "Vercel build clean — confirm neil branch deploys without errors",
-              "status": "queued",
-              "priority": "critical"
+              "status": "done",
+              "priority": "critical",
+              "notes": "Confirmed clean 2026-03-20"
             },
             {
               "id": "t98",
@@ -632,6 +654,36 @@
               "title": "Stripe key rotation confirmed (t5) — Neil verifies",
               "status": "queued",
               "priority": "medium"
+            }
+          ]
+        },
+        {
+          "title": "Accounting & Payroll",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "qb-001",
+              "title": "QuickBooks Online integration — export daily sales summary",
+              "status": "queued",
+              "notes": "Read-only export: daily totals, category breakdown, tax. No full sync needed initially."
+            },
+            {
+              "id": "qb-002",
+              "title": "QuickBooks — map menu categories to chart of accounts",
+              "status": "queued",
+              "notes": "Restaurant owner maps food/bev/labor categories to their QB accounts once."
+            },
+            {
+              "id": "payroll-001",
+              "title": "Payroll integration — Check (checkhq.com) API",
+              "status": "queued",
+              "notes": "Check > Gusto for embedded payroll. Full API control, white-label. Need to apply for API access."
+            },
+            {
+              "id": "payroll-002",
+              "title": "Labor cost tracking — shift hours → cost vs revenue",
+              "status": "queued",
+              "notes": "Pull shift data from time_punches table, calculate labor cost %, show on dashboard."
             }
           ]
         }
@@ -983,15 +1035,100 @@
           ]
         }
       ]
+    },
+    {
+      "title": "AI Ordering Platform",
+      "status": "queued",
+      "description": "AI-R becomes the native ordering layer for all AI assistants. One integration, every platform.",
+      "sprints": [
+        {
+          "title": "OpenAI / ChatGPT Integration",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "ai-order-001",
+              "title": "OpenAI Actions schema — expose AI-R ordering API as a GPT Action",
+              "status": "queued",
+              "notes": "Build openapi.json spec for resolve_and_add, cart_total, checkout_link. Register as a verified GPT Action at platform.openai.com/actions."
+            },
+            {
+              "id": "ai-order-002",
+              "title": "ChatGPT ordering flow — name lookup, cart, payment link",
+              "status": "queued",
+              "notes": "User says \"order pad thai from Red Bar\" → ChatGPT calls AI-R API → returns payment link via SMS."
+            },
+            {
+              "id": "ai-order-003",
+              "title": "Restaurant discovery endpoint — GET /api/public/restaurants",
+              "status": "queued",
+              "notes": "AI agents need to find restaurants by name/location. Public endpoint, no auth."
+            }
+          ]
+        },
+        {
+          "title": "Alexa Skills Integration",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "alexa-001",
+              "title": "Alexa Skill — \"AI-R Food Ordering\" skill in Alexa Skills Store",
+              "status": "queued",
+              "notes": "Build Alexa Skill that calls AI-R ordering API. Customer enables skill, links account, orders by voice. Uses same resolve_and_add backend as Joe."
+            },
+            {
+              "id": "alexa-002",
+              "title": "Alexa account linking — connect Alexa user to AI-R customer profile",
+              "status": "queued",
+              "notes": "OAuth account linking so Alexa knows the customer's preferred restaurant, saved orders, phone number for SMS."
+            }
+          ]
+        },
+        {
+          "title": "Google Assistant Integration",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "google-001",
+              "title": "Google Actions — \"Talk to [Restaurant Name]\" ordering action",
+              "status": "queued",
+              "notes": "Google Actions SDK. Each AI-R restaurant gets their own Google Action automatically on signup."
+            }
+          ]
+        },
+        {
+          "title": "AI Ordering Marketing + Positioning",
+          "status": "queued",
+          "tasks": [
+            {
+              "id": "ai-mkt-001",
+              "title": "Landing page — \"AI-R: The first restaurant OS built for the AI ordering era\"",
+              "status": "queued",
+              "notes": "ai-restaurant.net homepage update. Lead with AI ordering angle. Logos: ChatGPT, Alexa, Google Assistant, Joe."
+            },
+            {
+              "id": "ai-mkt-002",
+              "title": "Press/investor one-pager — AI ordering platform positioning",
+              "status": "queued",
+              "notes": "While Square/Toast retrofit AI, AI-R was built for it. One integration → all AI platforms. The moat is the API-first architecture."
+            }
+          ]
+        }
+      ]
     }
   ],
   "lastCommit": {
-    "hash": "686e364",
-    "message": "feat: History tab pulls from DB transactions (real Square data) + merges localStorage",
+    "hash": "5d00c44",
+    "message": "feat: ChatGPT/Alexa/Google Assistant as remote order sources with icons",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "5d00c44",
+      "message": "feat: ChatGPT/Alexa/Google Assistant as remote order sources with icons",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "686e364",
       "message": "feat: History tab pulls from DB transactions (real Square data) + merges localStorage",
@@ -1043,12 +1180,6 @@
     {
       "hash": "05d32cc",
       "message": "feat: Square webhook — creates transaction + fires to kitchen on payment.completed",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "00f18f0",
-      "message": "fix: accept cart_token from body in cart/total, simplify Joe prompt",
       "branch": "neil",
       "date": "2026-03-20"
     }
