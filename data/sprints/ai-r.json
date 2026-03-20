@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d1609a6",
-    "message": "feat: unpaid badge on phone orders only, table colors improved",
+    "hash": "4af751f",
+    "message": "feat: phone orders in To Go tab with PAID/UNPAID badge",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "4af751f",
+      "message": "feat: phone orders in To Go tab with PAID/UNPAID badge",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "d1609a6",
       "message": "feat: unpaid badge on phone orders only, table colors improved",
@@ -1036,12 +1042,6 @@
     {
       "hash": "96ddc88",
       "message": "force: redeploy for cart_token body param fix",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "1d97213",
-      "message": "fix: accept cart_token from request body in resolve-and-add",
       "branch": "neil",
       "date": "2026-03-20"
     }
