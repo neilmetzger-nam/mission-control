@@ -977,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5e6a868",
-    "message": "fix: explicit String(id) cast for resolveViaAlias — Vercel strict TS check",
+    "hash": "fe90e67",
+    "message": "fix: Joe webhook uses transactions table (orders table doesn't exist)",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "fe90e67",
+      "message": "fix: Joe webhook uses transactions table (orders table doesn't exist)",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "5e6a868",
       "message": "fix: explicit String(id) cast for resolveViaAlias — Vercel strict TS check",
@@ -1034,12 +1040,6 @@
     {
       "hash": "dcbdfc0",
       "message": "feat: Gloria color themes — ?theme= param applies accent color + bg (emerald/red/blue/purple/amber/midnight)",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "6ebb7c7",
-      "message": "feat: live Square sales on dashboard — RevenueWaterfall pulls real data, Live from Square badge",
       "branch": "neil",
       "date": "2026-03-19"
     }
