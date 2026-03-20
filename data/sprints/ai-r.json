@@ -736,7 +736,9 @@
             {
               "id": "t5",
               "title": "Stripe key rotation confirmed",
-              "status": "todo"
+              "status": "done",
+              "completedAt": "2026-03-19",
+              "completedBy": "0d8d8b4"
             },
             {
               "id": "t6",
@@ -977,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "fe90e67",
-    "message": "fix: Joe webhook uses transactions table (orders table doesn't exist)",
+    "hash": "0d8d8b4",
+    "message": "fix: skip Stripe for phone orders — use mock checkout, pay at pickup for now",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "0d8d8b4",
+      "message": "fix: skip Stripe for phone orders — use mock checkout, pay at pickup for now",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "fe90e67",
       "message": "fix: Joe webhook uses transactions table (orders table doesn't exist)",
@@ -1034,12 +1042,6 @@
     {
       "hash": "42e6e5c",
       "message": "fix: fetchMenuItems uses raw Neon SQL — fixes MenuItem table error for Joe phone ordering",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "dcbdfc0",
-      "message": "feat: Gloria color themes — ?theme= param applies accent color + bg (emerald/red/blue/purple/amber/midnight)",
       "branch": "neil",
       "date": "2026-03-19"
     }
