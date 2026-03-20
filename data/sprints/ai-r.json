@@ -1117,12 +1117,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d7a4e88",
-    "message": "fix: type cast for body from resolveTenantFromBody",
+    "hash": "44b3801",
+    "message": "fix: trim openapi description to under 300 chars",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "44b3801",
+      "message": "fix: trim openapi description to under 300 chars",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "d7a4e88",
       "message": "fix: type cast for body from resolveTenantFromBody",
@@ -1174,12 +1180,6 @@
     {
       "hash": "5d00c44",
       "message": "feat: ChatGPT/Alexa/Google Assistant as remote order sources with icons",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "686e364",
-      "message": "feat: History tab pulls from DB transactions (real Square data) + merges localStorage",
       "branch": "neil",
       "date": "2026-03-20"
     }
