@@ -1147,12 +1147,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "4c869c8",
-    "message": "feat: Chargeback Fighter — public lead gen page, PDF analysis via Claude, dispute letter generation, email capture",
+    "hash": "a480fe6",
+    "message": "fix: add nodejs runtime to chargeback routes (pdf-parse incompatible with edge runtime)",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "a480fe6",
+      "message": "fix: add nodejs runtime to chargeback routes (pdf-parse incompatible with edge runtime)",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "4c869c8",
       "message": "feat: Chargeback Fighter — public lead gen page, PDF analysis via Claude, dispute letter generation, email capture",
@@ -1204,12 +1210,6 @@
     {
       "hash": "d51f752",
       "message": "fix: add red-bar-sushi slug aliases to tenant resolver for ChatGPT",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "9327ef8",
-      "message": "fix: restaurants API — id not uuid, use DB slug column",
       "branch": "neil",
       "date": "2026-03-20"
     }
