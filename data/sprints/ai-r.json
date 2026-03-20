@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "00f18f0",
-    "message": "fix: accept cart_token from body in cart/total, simplify Joe prompt",
+    "hash": "05d32cc",
+    "message": "feat: Square webhook — creates transaction + fires to kitchen on payment.completed",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "05d32cc",
+      "message": "feat: Square webhook — creates transaction + fires to kitchen on payment.completed",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "00f18f0",
       "message": "fix: accept cart_token from body in cart/total, simplify Joe prompt",
@@ -1036,12 +1042,6 @@
     {
       "hash": "4d02ca0",
       "message": "fix: protein modifier prices — all proteins .95 (chicken was /bin/zsh)",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "c61e1c9",
-      "message": "fix: save caller phone to cart, checkout-sms uses caller ID auto, Square checkout",
       "branch": "neil",
       "date": "2026-03-19"
     }
