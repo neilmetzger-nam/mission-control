@@ -977,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "9ccd34e",
-    "message": "fix: add proxy.ts — Next.js 16 renamed middleware.ts to proxy.ts (Vercel build fix)",
+    "hash": "b9bf4e8",
+    "message": "fix: remove middleware.ts — proxy.ts is the Next.js 16 convention, can't have both",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "b9bf4e8",
+      "message": "fix: remove middleware.ts — proxy.ts is the Next.js 16 convention, can't have both",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "9ccd34e",
       "message": "fix: add proxy.ts — Next.js 16 renamed middleware.ts to proxy.ts (Vercel build fix)",
@@ -1034,12 +1040,6 @@
     {
       "hash": "fd7711f",
       "message": "feat: Joe webhook — ElevenLabs order → POS order + Pi kitchen print",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "220443b",
-      "message": "fix: t66 Pi confirm 401 — MCP_URL now points to localhost:3002 (was orion-mcp.vercel.app which 500'd)",
       "branch": "neil",
       "date": "2026-03-19"
     }
