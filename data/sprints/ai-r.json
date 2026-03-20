@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "52a037b",
-    "message": "fix: re-enable Stripe checkout for phone orders — payment over phone via SMS link",
+    "hash": "cee1227",
+    "message": "feat: Square checkout for phone orders — real payment links via Square API",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "cee1227",
+      "message": "feat: Square checkout for phone orders — real payment links via Square API",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "52a037b",
       "message": "fix: re-enable Stripe checkout for phone orders — payment over phone via SMS link",
@@ -1036,12 +1042,6 @@
     {
       "hash": "4a168dc",
       "message": "fix: SiteMenuItem.categoryId string not number — fixes Vercel TS build failure",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "f6bc417",
-      "message": "fix: cart-store uses raw Neon SQL with phone_carts/phone_cart_items — no more Drizzle schema mismatch",
       "branch": "neil",
       "date": "2026-03-19"
     }
