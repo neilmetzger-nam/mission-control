@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "cee1227",
-    "message": "feat: Square checkout for phone orders — real payment links via Square API",
+    "hash": "c61e1c9",
+    "message": "fix: save caller phone to cart, checkout-sms uses caller ID auto, Square checkout",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "c61e1c9",
+      "message": "fix: save caller phone to cart, checkout-sms uses caller ID auto, Square checkout",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "cee1227",
       "message": "feat: Square checkout for phone orders — real payment links via Square API",
@@ -1036,12 +1042,6 @@
     {
       "hash": "452935d",
       "message": "fix: TypeScript build errors — purchase-pipeline + site types for Vercel deploy",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "4a168dc",
-      "message": "fix: SiteMenuItem.categoryId string not number — fixes Vercel TS build failure",
       "branch": "neil",
       "date": "2026-03-19"
     }
