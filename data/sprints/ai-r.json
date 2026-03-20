@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "6db8325",
-    "message": "fix: accept cart_token from request body in checkout-link and checkout-sms",
+    "hash": "834e02a",
+    "message": "fix: look up cart by caller phone in checkout routes, no cart token needed",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "834e02a",
+      "message": "fix: look up cart by caller phone in checkout routes, no cart token needed",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "6db8325",
       "message": "fix: accept cart_token from request body in checkout-link and checkout-sms",
@@ -1036,12 +1042,6 @@
     {
       "hash": "0d8d8b4",
       "message": "fix: skip Stripe for phone orders — use mock checkout, pay at pickup for now",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "fe90e67",
-      "message": "fix: Joe webhook uses transactions table (orders table doesn't exist)",
       "branch": "neil",
       "date": "2026-03-19"
     }
