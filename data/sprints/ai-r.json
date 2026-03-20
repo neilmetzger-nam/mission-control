@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d6de8d3",
-    "message": "fix: look up active cart by caller phone when no cart token provided",
+    "hash": "6db8325",
+    "message": "fix: accept cart_token from request body in checkout-link and checkout-sms",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "6db8325",
+      "message": "fix: accept cart_token from request body in checkout-link and checkout-sms",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "d6de8d3",
       "message": "fix: look up active cart by caller phone when no cart token provided",
@@ -1036,12 +1042,6 @@
     {
       "hash": "fe90e67",
       "message": "fix: Joe webhook uses transactions table (orders table doesn't exist)",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "5e6a868",
-      "message": "fix: explicit String(id) cast for resolveViaAlias — Vercel strict TS check",
       "branch": "neil",
       "date": "2026-03-19"
     }
