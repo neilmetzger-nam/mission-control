@@ -1117,12 +1117,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "9327ef8",
-    "message": "fix: restaurants API — id not uuid, use DB slug column",
+    "hash": "d51f752",
+    "message": "fix: add red-bar-sushi slug aliases to tenant resolver for ChatGPT",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "d51f752",
+      "message": "fix: add red-bar-sushi slug aliases to tenant resolver for ChatGPT",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "9327ef8",
       "message": "fix: restaurants API — id not uuid, use DB slug column",
@@ -1174,12 +1180,6 @@
     {
       "hash": "d1609a6",
       "message": "feat: unpaid badge on phone orders only, table colors improved",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "0d293f6",
-      "message": "feat: table colors available/seated, unpaid red dot badge on occupied tables",
       "branch": "neil",
       "date": "2026-03-20"
     }
