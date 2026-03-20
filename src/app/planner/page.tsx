@@ -437,7 +437,7 @@ export default function PlannerPage() {
     setData(p);
     setProjects(r.projects ?? []);
     setProjectInfos(proj ?? []);
-    setCalEvents(cal ?? []);
+    setCalEvents(Array.isArray(cal) ? cal : []);
     try {
       const o = localStorage.getItem("mc-task-project-overrides");
       if (o) setTaskOverrides(JSON.parse(o));
