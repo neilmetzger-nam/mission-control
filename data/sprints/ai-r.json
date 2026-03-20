@@ -1117,12 +1117,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "266395a",
-    "message": "feat: ChatGPT Action — openapi.json, restaurant discovery API, AI ordering landing page",
+    "hash": "3f4af14",
+    "message": "fix: add paymentStatus and source to RenderTable interface",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "3f4af14",
+      "message": "fix: add paymentStatus and source to RenderTable interface",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "266395a",
       "message": "feat: ChatGPT Action — openapi.json, restaurant discovery API, AI ordering landing page",
@@ -1174,12 +1180,6 @@
     {
       "hash": "ab67c80",
       "message": "fix: fire kitchen via pwa/orders/fire-kitchen (proper print routing, no Pi direct)",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "ae72e91",
-      "message": "fix: route print jobs through Orion MCP instead of Pi directly",
       "branch": "neil",
       "date": "2026-03-20"
     }
