@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "c61e1c9",
-    "message": "fix: save caller phone to cart, checkout-sms uses caller ID auto, Square checkout",
+    "hash": "4d02ca0",
+    "message": "fix: protein modifier prices — all proteins .95 (chicken was /bin/zsh)",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "4d02ca0",
+      "message": "fix: protein modifier prices — all proteins .95 (chicken was /bin/zsh)",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "c61e1c9",
       "message": "fix: save caller phone to cart, checkout-sms uses caller ID auto, Square checkout",
@@ -1036,12 +1042,6 @@
     {
       "hash": "9ccd34e",
       "message": "fix: add proxy.ts — Next.js 16 renamed middleware.ts to proxy.ts (Vercel build fix)",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "452935d",
-      "message": "fix: TypeScript build errors — purchase-pipeline + site types for Vercel deploy",
       "branch": "neil",
       "date": "2026-03-19"
     }
