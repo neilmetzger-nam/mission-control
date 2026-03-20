@@ -1117,12 +1117,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "44b3801",
-    "message": "fix: trim openapi description to under 300 chars",
+    "hash": "1dbb447",
+    "message": "fix: fallback to location-only search when name+location returns no results",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "1dbb447",
+      "message": "fix: fallback to location-only search when name+location returns no results",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "44b3801",
       "message": "fix: trim openapi description to under 300 chars",
@@ -1174,12 +1180,6 @@
     {
       "hash": "266395a",
       "message": "feat: ChatGPT Action — openapi.json, restaurant discovery API, AI ordering landing page",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "5d00c44",
-      "message": "feat: ChatGPT/Alexa/Google Assistant as remote order sources with icons",
       "branch": "neil",
       "date": "2026-03-20"
     }
