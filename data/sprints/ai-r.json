@@ -977,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "452935d",
-    "message": "fix: TypeScript build errors — purchase-pipeline + site types for Vercel deploy",
+    "hash": "9ccd34e",
+    "message": "fix: add proxy.ts — Next.js 16 renamed middleware.ts to proxy.ts (Vercel build fix)",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "9ccd34e",
+      "message": "fix: add proxy.ts — Next.js 16 renamed middleware.ts to proxy.ts (Vercel build fix)",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "452935d",
       "message": "fix: TypeScript build errors — purchase-pipeline + site types for Vercel deploy",
@@ -1034,12 +1040,6 @@
     {
       "hash": "220443b",
       "message": "fix: t66 Pi confirm 401 — MCP_URL now points to localhost:3002 (was orion-mcp.vercel.app which 500'd)",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "48a7fbf",
-      "message": "feat: KDS Manager/Expediter Mode — mode toggle, alerts (reviews/printers/slow tickets/voids), floor status, 86 panel, manager PIN gate, KDS added to all settings sub-navs",
       "branch": "neil",
       "date": "2026-03-19"
     }
