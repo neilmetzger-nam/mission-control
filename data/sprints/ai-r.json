@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "05d32cc",
-    "message": "feat: Square webhook — creates transaction + fires to kitchen on payment.completed",
+    "hash": "ae72e91",
+    "message": "fix: route print jobs through Orion MCP instead of Pi directly",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "ae72e91",
+      "message": "fix: route print jobs through Orion MCP instead of Pi directly",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "05d32cc",
       "message": "feat: Square webhook — creates transaction + fires to kitchen on payment.completed",
@@ -1036,12 +1042,6 @@
     {
       "hash": "81f8c9f",
       "message": "fix: pull modifier prices from DB instead of hardcoded table",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "4d02ca0",
-      "message": "fix: protein modifier prices — all proteins .95 (chicken was /bin/zsh)",
       "branch": "neil",
       "date": "2026-03-19"
     }
