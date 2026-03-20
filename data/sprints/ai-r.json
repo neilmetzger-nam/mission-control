@@ -1119,6 +1119,13 @@
               "status": "done",
               "completedAt": "2026-03-20",
               "notes": "API key auth, webhook + cron sync, upserts to transactions with platform source (doordash/ubereats/grubhub), settings UI with sync status and webhook URL. Files: lib/kitchenhub/client.ts, api/pwa/integrations/kitchenhub/, api/webhooks/kitchenhub, api/cron/kitchenhub-sync, settings/integrations/kitchenhub page, vercel.json updated."
+            },
+            {
+              "id": "qb-001",
+              "title": "QuickBooks Online integration",
+              "status": "done",
+              "completedAt": "2026-03-20",
+              "notes": "OAuth 2.0, daily sales export as SalesReceipt, food/bev category split, chart of accounts mapping UI, auto-refresh tokens, minorversion=73. Files: lib/quickbooks/client.ts, api/auth/quickbooks/callback, api/pwa/integrations/quickbooks (route/accounts/export), settings/integrations/quickbooks page."
             }
           ]
         }
@@ -1126,12 +1133,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ebdd6d2",
-    "message": "feat: KitchenHub delivery order aggregator — API key auth, webhook + cron sync, platform badges, settings UI",
+    "hash": "34b9793",
+    "message": "feat: QuickBooks Online OAuth 2.0 integration — daily sales export as SalesReceipt, food/bev split, account mapping UI, auto-refresh tokens",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "34b9793",
+      "message": "feat: QuickBooks Online OAuth 2.0 integration — daily sales export as SalesReceipt, food/bev split, account mapping UI, auto-refresh tokens",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "ebdd6d2",
       "message": "feat: KitchenHub delivery order aggregator — API key auth, webhook + cron sync, platform badges, settings UI",
@@ -1183,12 +1196,6 @@
     {
       "hash": "9a184fa",
       "message": "feat: source filter pills on To Go tab — Staff, Joe, OpenAI, Alexa, Google, Website",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "3f4af14",
-      "message": "fix: add paymentStatus and source to RenderTable interface",
       "branch": "neil",
       "date": "2026-03-20"
     }
