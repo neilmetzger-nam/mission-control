@@ -1140,6 +1140,13 @@
               "status": "done",
               "completedAt": "2026-03-20",
               "notes": "Public page at /chargeback — upload DoorDash/UberEats/GrubHub PDF, Claude analyzes for recoverable chargebacks, email capture, dispute letter generation. Dark theme, no auth, no DB writes (leads logged). pdf-parse@2.4.5 added."
+            },
+            {
+              "id": "t93",
+              "title": "DoorDash report email scraper",
+              "status": "done",
+              "completedAt": "2026-03-20",
+              "notes": "Weekly Gmail IMAP poll (Monday 9AM ET via Vercel cron). Unzips DoorDash financial report ZIP, parses 3 CSVs, upserts to transactions table. Deduplicates on external_id. GMAIL_ACCOUNT + GMAIL_APP_PASSWORD env vars required. Forward: neil@prgroupva.com → neilmetzger@gmail.com → scraper."
             }
           ]
         }
@@ -1147,12 +1154,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "b4137b3",
-    "message": "fix: update pnpm lockfile for pdf-parse dependency",
+    "hash": "565ecff",
+    "message": "feat: DoorDash report email scraper — weekly Gmail IMAP poll, ZIP parser, upserts payouts/errors/transactions, Monday 9AM cron",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "565ecff",
+      "message": "feat: DoorDash report email scraper — weekly Gmail IMAP poll, ZIP parser, upserts payouts/errors/transactions, Monday 9AM cron",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "b4137b3",
       "message": "fix: update pnpm lockfile for pdf-parse dependency",
@@ -1204,12 +1217,6 @@
     {
       "hash": "d7a4e88",
       "message": "fix: type cast for body from resolveTenantFromBody",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "da99885",
-      "message": "fix: ChatGPT Actions — move tenant_id/cart_token to request body, body-aware tenant resolver",
       "branch": "neil",
       "date": "2026-03-20"
     }
