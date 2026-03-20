@@ -89,7 +89,17 @@ function StatusBadge({ status }: { status: string }) {
   );
 }
 
-/* ── Week Calendar ── */
+/* ── Week Calendar with hourly grid ── */
+const GRID_START = 8; // 8 AM
+const GRID_END = 20;  // 8 PM
+const GRID_HOURS = GRID_END - GRID_START; // 12 hours
+const ROW_H = 40; // px per hour
+
+function timeToMinutes(t: string): number {
+  const [h, m] = t.split(":").map(Number);
+  return h * 60 + m;
+}
+
 function WeekCalendar({ events, projectInfos, focusDate, onSelectDate }: {
   events: CalendarEvent[];
   projectInfos: ProjectInfo[];
@@ -115,69 +125,92 @@ function WeekCalendar({ events, projectInfos, focusDate, onSelectDate }: {
   }, [events]);
 
   const today = new Date();
+  const selectedDayEvents = useMemo(() => eventsForDay(focusDate), [eventsForDay, focusDate]);
 
   return (
-    <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 overflow-hidden">
-      {/* Week nav header */}
-      <div className="flex items-center justify-between px-4 py-2.5 border-b border-zinc-800">
-        <button onClick={() => setWeekStart(prev => { const d = new Date(prev); d.setDate(d.getDate() - 7); return d; })}
-          className="text-zinc-500 hover:text-zinc-300 w-7 h-7 flex items-center justify-center rounded-lg hover:bg-zinc-800 transition-colors">
+    <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 overflow-hidden flex flex-col">
+      {/* Week nav + day tabs */}
+      <div className="flex items-center justify-between px-3 py-2 border-b border-zinc-800">
+        <button onClick={() => { const d = new Date(weekStart); d.setDate(d.getDate() - 7); setWeekStart(d); onSelectDate(d); }}
+          className="text-zinc-500 hover:text-zinc-300 w-6 h-6 flex items-center justify-center rounded hover:bg-zinc-800 transition-colors flex-shrink-0">
           <span className="text-xs">◀</span>
         </button>
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
-            {days[0].toLocaleDateString("en-US", { month: "short", day: "numeric" })} – {days[6].toLocaleDateString("en-US", { month: "short", day: "numeric" })}
-          </span>
+        <div className="flex items-center gap-1 flex-1 justify-center">
+          {days.map(date => {
+            const isToday = isSameDay(date, today);
+            const isSelected = isSameDay(date, focusDate);
+            const dayLabel = date.toLocaleDateString("en-US", { weekday: "narrow" });
+            const dayNum = date.getDate();
+            return (
+              <button key={date.toISOString()} onClick={() => onSelectDate(date)}
+                className={`flex flex-col items-center px-2 py-1 rounded-lg transition-colors min-w-[36px]
+                  ${isSelected ? "bg-indigo-500/15" : "hover:bg-zinc-800/60"}
+                  ${isToday ? "ring-1 ring-amber-500/40" : ""}`}>
+                <span className={`text-[9px] uppercase tracking-wider ${isToday ? "text-amber-400" : "text-zinc-600"}`}>{dayLabel}</span>
+                <span className={`text-xs font-semibold ${isToday ? "text-amber-400" : isSelected ? "text-indigo-300" : "text-zinc-400"}`}>{dayNum}</span>
+              </button>
+            );
+          })}
+        </div>
+        <div className="flex items-center gap-1 flex-shrink-0">
           <button onClick={() => { const t = new Date(); setWeekStart(getMonday(t)); onSelectDate(t); }}
-            className="text-[10px] text-indigo-400 hover:text-indigo-300 px-1.5 py-0.5 rounded border border-indigo-500/20 hover:border-indigo-500/40 transition-colors">
+            className="text-[9px] text-indigo-400 hover:text-indigo-300 px-1.5 py-0.5 rounded border border-indigo-500/20 hover:border-indigo-500/40 transition-colors">
             Today
           </button>
+          <button onClick={() => { const d = new Date(weekStart); d.setDate(d.getDate() + 7); setWeekStart(d); onSelectDate(d); }}
+            className="text-zinc-500 hover:text-zinc-300 w-6 h-6 flex items-center justify-center rounded hover:bg-zinc-800 transition-colors">
+            <span className="text-xs">▶</span>
+          </button>
         </div>
-        <button onClick={() => setWeekStart(prev => { const d = new Date(prev); d.setDate(d.getDate() + 7); return d; })}
-          className="text-zinc-500 hover:text-zinc-300 w-7 h-7 flex items-center justify-center rounded-lg hover:bg-zinc-800 transition-colors">
-          <span className="text-xs">▶</span>
-        </button>
       </div>
 
-      {/* Day rows */}
-      <div className="divide-y divide-zinc-800/60">
-        {days.map(date => {
-          const isToday = isSameDay(date, today);
-          const isSelected = isSameDay(date, focusDate);
-          const dayEvents = eventsForDay(date);
-          const dayLabel = date.toLocaleDateString("en-US", { weekday: "short" });
-          const dayNum = date.getDate();
-          const isWeekend = date.getDay() === 0 || date.getDay() === 6;
-
+      {/* Hourly grid for selected day */}
+      <div className="relative overflow-y-auto" style={{ height: GRID_HOURS * ROW_H + 1 }}>
+        {/* Hour grid lines + labels */}
+        {Array.from({ length: GRID_HOURS + 1 }, (_, i) => {
+          const hour = GRID_START + i;
+          const label = hour === 0 ? "12a" : hour < 12 ? `${hour}a` : hour === 12 ? "12p" : `${hour - 12}p`;
           return (
-            <button key={date.toISOString()} onClick={() => onSelectDate(date)}
-              className={`w-full flex items-start gap-3 px-3 py-2 text-left transition-colors hover:bg-zinc-800/40
-                ${isSelected ? "bg-indigo-500/5 border-l-2 border-l-indigo-500" : "border-l-2 border-l-transparent"}
-                ${isWeekend ? "opacity-60" : ""}`}>
-              {/* Day label */}
-              <div className="flex-shrink-0 w-12 pt-0.5 text-center">
-                <div className={`text-[10px] uppercase tracking-wider ${isToday ? "text-amber-400" : "text-zinc-600"}`}>{dayLabel}</div>
-                <div className={`text-sm font-semibold ${isToday ? "text-amber-400" : isSelected ? "text-indigo-300" : "text-zinc-400"}`}>{dayNum}</div>
-              </div>
-              {/* Events */}
-              <div className="flex-1 min-w-0 flex flex-wrap gap-1 py-0.5">
-                {dayEvents.length === 0 ? (
-                  <span className="text-xs text-zinc-700 italic">No events</span>
-                ) : dayEvents.map(evt => {
-                  const projColor = evt.project ? colorMap.get(evt.project) : null;
-                  const bgColor = projColor ?? "#52525b";
-                  return (
-                    <span key={evt.id + date.toISOString()} className="inline-flex items-center gap-1.5 text-xs px-2 py-1 rounded-md max-w-full"
-                      style={{ backgroundColor: bgColor + "18", borderLeft: `2px solid ${bgColor}` }}>
-                      <span className="text-zinc-500 flex-shrink-0">{fmtTime(evt.startTime)}</span>
-                      <span className="text-zinc-300 truncate">{evt.title}</span>
-                    </span>
-                  );
-                })}
-              </div>
-            </button>
+            <div key={hour} className="absolute left-0 right-0 flex items-start" style={{ top: i * ROW_H }}>
+              <span className="text-[9px] text-zinc-600 w-8 text-right pr-1.5 -mt-[5px] flex-shrink-0 select-none">{i < GRID_HOURS ? label : ""}</span>
+              <div className="flex-1 border-t border-zinc-800/50" />
+            </div>
           );
         })}
+
+        {/* Events positioned absolutely */}
+        <div className="absolute left-8 right-1 top-0" style={{ height: GRID_HOURS * ROW_H }}>
+          {selectedDayEvents.map(evt => {
+            const startMin = timeToMinutes(evt.startTime);
+            const endMin = timeToMinutes(evt.endTime);
+            const gridStartMin = GRID_START * 60;
+            const gridEndMin = GRID_END * 60;
+
+            // Clamp to grid range
+            const clampedStart = Math.max(startMin, gridStartMin);
+            const clampedEnd = Math.min(endMin, gridEndMin);
+            if (clampedStart >= gridEndMin || clampedEnd <= gridStartMin) return null;
+
+            const topPx = ((clampedStart - gridStartMin) / 60) * ROW_H;
+            const heightPx = Math.max(((clampedEnd - clampedStart) / 60) * ROW_H, 4);
+            const projColor = evt.project ? colorMap.get(evt.project) : null;
+            const color = projColor ?? "#52525b";
+            const showText = heightPx >= 18;
+
+            return (
+              <div key={evt.id} className="absolute left-0 right-0 rounded-sm overflow-hidden cursor-default group"
+                style={{ top: topPx, height: heightPx, backgroundColor: color + "20", borderLeft: `3px solid ${color}` }}
+                title={`${fmtTime(evt.startTime)}–${fmtTime(evt.endTime)} ${evt.title}`}>
+                {showText && (
+                  <div className="px-1.5 py-0.5 flex items-center gap-1.5 h-full">
+                    <span className="text-[10px] text-zinc-400 flex-shrink-0">{fmtTime(evt.startTime)}</span>
+                    <span className="text-[10px] text-zinc-200 truncate">{evt.title}</span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
@@ -438,6 +471,7 @@ export default function PlannerPage() {
 
   const todayLeft = data.today.filter(t => !isDone(t)).length;
   const waitCount = data.delegated.filter(d => !d.status.includes("✅")).length;
+  const neilEvents = useMemo(() => calEvents.filter(e => !e.owner || e.owner === "neil"), [calEvents]);
   const isDateToday = isSameDay(focusDate, new Date());
   const focusLabel = isDateToday ? "Today" : formatDateLabel(focusDate);
 
@@ -456,7 +490,7 @@ export default function PlannerPage() {
       <div className="px-4 space-y-3">
 
         {/* ═══ Two-column header: Projects + Calendar ═══ */}
-        <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
 
           {/* LEFT — Top 5 Projects (compact) */}
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 px-3 py-3">
@@ -474,7 +508,7 @@ export default function PlannerPage() {
 
           {/* RIGHT — Week Calendar */}
           <WeekCalendar
-            events={calEvents}
+            events={neilEvents}
             projectInfos={projectInfos}
             focusDate={focusDate}
             onSelectDate={setFocusDate}
