@@ -977,12 +977,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "4a168dc",
-    "message": "fix: SiteMenuItem.categoryId string not number — fixes Vercel TS build failure",
+    "hash": "452935d",
+    "message": "fix: TypeScript build errors — purchase-pipeline + site types for Vercel deploy",
     "branch": "neil",
     "date": "2026-03-19"
   },
   "recentCommits": [
+    {
+      "hash": "452935d",
+      "message": "fix: TypeScript build errors — purchase-pipeline + site types for Vercel deploy",
+      "branch": "neil",
+      "date": "2026-03-19"
+    },
     {
       "hash": "4a168dc",
       "message": "fix: SiteMenuItem.categoryId string not number — fixes Vercel TS build failure",
@@ -1034,12 +1040,6 @@
     {
       "hash": "48a7fbf",
       "message": "feat: KDS Manager/Expediter Mode — mode toggle, alerts (reviews/printers/slow tickets/voids), floor status, 86 panel, manager PIN gate, KDS added to all settings sub-navs",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "65821d8",
-      "message": "feat: website builder — value prop banner (free, SEO, POS sync) + Shopify alternative link",
       "branch": "neil",
       "date": "2026-03-19"
     }
