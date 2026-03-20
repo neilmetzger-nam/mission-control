@@ -1151,15 +1151,16 @@
             {
               "id": "waitlist-001",
               "title": "Online Waitlist — build our own (no 3rd party)",
-              "status": "in-progress",
-              "notes": "UI STUB ONLY — Obie built full UI (WaitlistQueue, AddToWaitlistModal, etc.) with localStorage. MISSING: 1) SMS via Twilio when table ready 2) Public /waitlist/[slug] page for customers to join from their phone 3) DB persistence (currently localStorage only). Need to wire these 3 pieces to make it real.",
-              "completedAt": "pre-existing"
+              "status": "done",
+              "notes": "DB persistence (waitlist_entries table — migrated), Twilio SMS (table ready + join confirmation), public /waitlist/[slug] page with live position polling. WaitlistQueue + AddToWaitlistModal switched from localStorage to API.",
+              "completedAt": "2026-03-20"
             },
             {
               "id": "sections-001",
               "title": "Server section assignment + floor map photo upload",
-              "status": "todo",
-              "notes": "Full server section system:\nSETTINGS: Restaurant-level toggle: sections_mode = 'none' | 'assigned' | 'mixed'\n- none: no sections, all servers see all tables\n- assigned: every server must be assigned a section\n- mixed: some assigned sections, unassigned servers go to pool\n\nROLES per section:\n- Server (tables only)\n- Bartender (bar only OR bar + tables)\n- Food runner (support role, all sections)\n- Unassigned pool (picks up any table)\n\nSECTION SETUP:\n- Manager assigns sections per shift (not permanent)\n- Section has: name, color, table list, assigned staff\n- Bar section can be bar-only or include patio/overflow tables\n\nTIP OUT:\n- Section assignment drives tip out calculation (server gets % of their section sales)\n- Food runner gets pool % from all sections\n- Bartender gets bar tip separate from food server pool\n\nPOOL:\n- Unassigned servers enter pool\n- Pool gets distributed evenly across unassigned tables\n\nBuild on Obie's FloorMapView + table-store. Add to restaurant settings page.\nQueue after bar-tabs-001."
+              "status": "done",
+              "notes": "Sections table + server_sections assignment. Floor plan upload via GPT-4o vision. API routes: /api/pwa/sections, /api/pwa/sections/assign, /api/pwa/floor-plan/upload. DB migrated.",
+              "completedAt": "2026-03-20"
             },
             {
               "id": "bar-tabs-001",
@@ -1167,6 +1168,13 @@
               "status": "done",
               "completedAt": "2026-03-20",
               "notes": "Full bar tab system. 9 files. Square Terminal pre-auth with autocomplete=false. Color-coded UI (/home/bar-tabs): green <30min, yellow 30-60min, red >60min. Tables created in Neon via migration. Split tab into N equal payments. Transfer tab to different table."
+            },
+            {
+              "id": "waitlist-001-real",
+              "title": "Waitlist — DB, Twilio SMS, public join page",
+              "status": "done",
+              "completedAt": "2026-03-20",
+              "notes": "DB persistence (waitlist_entries), Twilio SMS on join + table ready, public /waitlist/[slug] with live position polling. Components switched from localStorage to API. Migration needs to run: database/migrations/waitlist_entries.sql"
             }
           ]
         }
@@ -1174,12 +1182,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "731442c",
-    "message": "feat: waitlist DB persistence + Twilio SMS + public join page (/waitlist/[slug])",
+    "hash": "83346f8",
+    "message": "fix: chargeback page stats — -500 avg recovery, 0.5-1.5% overcharge rate",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "83346f8",
+      "message": "fix: chargeback page stats — -500 avg recovery, 0.5-1.5% overcharge rate",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "731442c",
       "message": "feat: waitlist DB persistence + Twilio SMS + public join page (/waitlist/[slug])",
@@ -1231,12 +1245,6 @@
     {
       "hash": "34b9793",
       "message": "feat: QuickBooks Online OAuth 2.0 integration — daily sales export as SalesReceipt, food/bev split, account mapping UI, auto-refresh tokens",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "ebdd6d2",
-      "message": "feat: KitchenHub delivery order aggregator — API key auth, webhook + cron sync, platform badges, settings UI",
       "branch": "neil",
       "date": "2026-03-20"
     }
