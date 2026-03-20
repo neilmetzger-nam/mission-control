@@ -1117,12 +1117,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5d00c44",
-    "message": "feat: ChatGPT/Alexa/Google Assistant as remote order sources with icons",
+    "hash": "266395a",
+    "message": "feat: ChatGPT Action — openapi.json, restaurant discovery API, AI ordering landing page",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "266395a",
+      "message": "feat: ChatGPT Action — openapi.json, restaurant discovery API, AI ordering landing page",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "5d00c44",
       "message": "feat: ChatGPT/Alexa/Google Assistant as remote order sources with icons",
@@ -1174,12 +1180,6 @@
     {
       "hash": "ae72e91",
       "message": "fix: route print jobs through Orion MCP instead of Pi directly",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "05d32cc",
-      "message": "feat: Square webhook — creates transaction + fires to kitchen on payment.completed",
       "branch": "neil",
       "date": "2026-03-20"
     }
