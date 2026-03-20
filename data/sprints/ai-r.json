@@ -1,11 +1,11 @@
 {
   "projectId": "ai-r",
-  "updatedAt": "2026-03-20T17:47:00.251806Z",
+  "updatedAt": "2026-03-20",
   "milestones": [
     {
       "id": "m1",
       "title": "Demo",
-      "description": "Full demo flow: menu upload \u2192 Gloria \u2192 POS \u2192 kitchen printing",
+      "description": "Full demo flow: menu upload → Gloria → POS → kitchen printing",
       "targetDate": "2026-03-15",
       "status": "done",
       "sprints": [
@@ -21,7 +21,7 @@
             },
             {
               "id": "t2",
-              "title": "Liam menu agent \u2014 LLM-based category matching",
+              "title": "Liam menu agent — LLM-based category matching",
               "status": "done"
             },
             {
@@ -31,7 +31,7 @@
             },
             {
               "id": "t4",
-              "title": "Food photo sync \u2014 Google Drive \u2192 Shopify CDN",
+              "title": "Food photo sync — Google Drive → Shopify CDN",
               "status": "done"
             },
             {
@@ -58,7 +58,7 @@
             },
             {
               "id": "t8",
-              "title": "PaymentModal \u2014 mixed tender, seat-by-seat",
+              "title": "PaymentModal — mixed tender, seat-by-seat",
               "status": "done"
             },
             {
@@ -68,7 +68,7 @@
             },
             {
               "id": "t10",
-              "title": "Offline POS \u2014 all actions work with local-* orders",
+              "title": "Offline POS — all actions work with local-* orders",
               "status": "done"
             },
             {
@@ -85,7 +85,7 @@
           "tasks": [
             {
               "id": "t12",
-              "title": "Pi MCP queue \u2014 Pi polls outbound every 3s",
+              "title": "Pi MCP queue — Pi polls outbound every 3s",
               "status": "done"
             },
             {
@@ -95,7 +95,7 @@
             },
             {
               "id": "t14",
-              "title": "Kitchen ticket \u2192 all 5 kitchen printers confirmed",
+              "title": "Kitchen ticket → all 5 kitchen printers confirmed",
               "status": "done"
             },
             {
@@ -117,12 +117,12 @@
           "tasks": [
             {
               "id": "t17",
-              "title": "Phone-server mode (PhonePOS \u2014 voice-first, their tables only)",
+              "title": "Phone-server mode (PhonePOS — voice-first, their tables only)",
               "status": "done"
             },
             {
               "id": "t18",
-              "title": "iPad-station mode (PosModal \u2014 shared, PIN-gated)",
+              "title": "iPad-station mode (PosModal — shared, PIN-gated)",
               "status": "done"
             },
             {
@@ -144,7 +144,7 @@
           "tasks": [
             {
               "id": "t21",
-              "title": "Gloria public route /order/[slug] \u2014 no auth",
+              "title": "Gloria public route /order/[slug] — no auth",
               "status": "done"
             },
             {
@@ -159,7 +159,7 @@
             },
             {
               "id": "t24",
-              "title": "Beta signup flow \u2192 /demo redirect",
+              "title": "Beta signup flow → /demo redirect",
               "status": "done"
             }
           ]
@@ -232,7 +232,7 @@
             },
             {
               "id": "t34",
-              "title": "KDS \u2194 POS BroadcastChannel wiring",
+              "title": "KDS ↔ POS BroadcastChannel wiring",
               "status": "done"
             }
           ]
@@ -264,7 +264,7 @@
             },
             {
               "id": "t39",
-              "title": "Co-purchase SQL analysis \u2014 nightly refresh",
+              "title": "Co-purchase SQL analysis — nightly refresh",
               "status": "done"
             },
             {
@@ -385,49 +385,49 @@
           "tasks": [
             {
               "id": "t51",
-              "title": "UberEats Marketplace API \u2014 applied 2/22",
+              "title": "UberEats Marketplace API — applied 2/22",
               "status": "done",
               "completedAt": "2026-03-15",
               "completedBy": "cdb33c9"
             },
             {
               "id": "t52",
-              "title": "DoorDash Marketplace API \u2014 not applied",
+              "title": "DoorDash Marketplace API — not applied",
               "status": "blocked",
-              "notes": "Blocked \u2014 API access unlikely. KitchenHub dependency. May need to tell restaurants they manage 3rd party orders separately."
+              "notes": "Blocked — API access unlikely. KitchenHub dependency. May need to tell restaurants they manage 3rd party orders separately."
             },
             {
               "id": "t53",
-              "title": "Grubhub Marketplace API \u2014 applied, waiting",
+              "title": "Grubhub Marketplace API — applied, waiting",
               "status": "done",
               "completedAt": "2026-03-16",
               "completedBy": "46f90e6"
             },
             {
               "id": "t54",
-              "title": "OpenTable \u2014 applied, waiting",
+              "title": "OpenTable — applied, waiting",
               "status": "in-progress"
             },
             {
               "id": "t55",
-              "title": "Plaid \u2014 approved, sandbox mode",
+              "title": "Plaid — approved, sandbox mode",
               "status": "done"
             },
             {
               "id": "kh-001",
-              "title": "KitchenHub integration \u2014 store API key in integrations table",
+              "title": "KitchenHub integration — store API key in integrations table",
               "status": "queued",
               "notes": "Restaurant provides KitchenHub API key in AIR settings. Stored in integrations table (provider=kitchenhub)."
             },
             {
               "id": "kh-002",
-              "title": "KitchenHub sync \u2014 pull delivery order history into transactions",
+              "title": "KitchenHub sync — pull delivery order history into transactions",
               "status": "queued",
               "notes": "Sync button in settings + nightly cron. Writes delivery orders to transactions table with source=kitchenhub. Shows in History + reporting."
             },
             {
               "id": "otter-001",
-              "title": "Otter integration \u2014 same pattern as KitchenHub",
+              "title": "Otter integration — same pattern as KitchenHub",
               "status": "queued",
               "notes": "Same sync pattern. Restaurant provides Otter credentials. Pull order history nightly."
             }
@@ -435,12 +435,12 @@
         },
         {
           "id": "s12",
-          "title": "Chargeback Fighter \u2014 Public Lead Gen",
+          "title": "Chargeback Fighter — Public Lead Gen",
           "status": "queued",
           "tasks": [
             {
               "id": "t56",
-              "title": "Public /chargeback page \u2014 upload statement, see $ found",
+              "title": "Public /chargeback page — upload statement, see $ found",
               "status": "queued"
             },
             {
@@ -457,7 +457,7 @@
         },
         {
           "id": "s13",
-          "title": "PlateAI \u2014 Free Food Photos",
+          "title": "PlateAI — Free Food Photos",
           "status": "queued",
           "tasks": [
             {
@@ -472,21 +472,21 @@
             },
             {
               "id": "t61",
-              "title": "Unlimited photos \u2192 paid tier",
+              "title": "Unlimited photos → paid tier",
               "status": "queued"
             }
           ]
         },
         {
           "id": "s14",
-          "title": "Pi \u2014 Production Ready",
+          "title": "Pi — Production Ready",
           "status": "in-progress",
           "tasks": [
             {
               "id": "t62",
               "title": "Pi poller v2 deployed + confirmed printing",
               "status": "done",
-              "notes": "Fixed \u2014 commit 02ba0a0 accepts multiple Pi auth tokens including hardcoded fallbacks."
+              "notes": "Fixed — commit 02ba0a0 accepts multiple Pi auth tokens including hardcoded fallbacks."
             },
             {
               "id": "t63",
@@ -507,7 +507,7 @@
               "id": "t66",
               "title": "Fix Pi confirm 401 error",
               "status": "done",
-              "notes": "Fixed \u2014 commit 02ba0a0 accepts multiple Pi auth tokens including hardcoded fallbacks."
+              "notes": "Fixed — commit 02ba0a0 accepts multiple Pi auth tokens including hardcoded fallbacks."
             },
             {
               "id": "t67",
@@ -543,7 +543,7 @@
             },
             {
               "id": "t72",
-              "title": "QR scan \u2192 diner order history",
+              "title": "QR scan → diner order history",
               "status": "queued"
             }
           ]
@@ -569,91 +569,91 @@
         },
         {
           "id": "s_tonight",
-          "title": "Tonight & Tomorrow \u2014 Final Sprint",
+          "title": "Tonight & Tomorrow — Final Sprint",
           "tasks": [
             {
               "id": "t87",
-              "title": "t66 \u2014 Pi confirm 401 fix",
+              "title": "t66 — Pi confirm 401 fix",
               "status": "done",
               "priority": "critical",
-              "notes": "Fixed \u2014 commit 02ba0a0 accepts multiple Pi auth tokens including hardcoded fallbacks."
+              "notes": "Fixed — commit 02ba0a0 accepts multiple Pi auth tokens including hardcoded fallbacks."
             },
             {
               "id": "t88",
-              "title": "Square \u2192 real sales data on dashboard (replace mock)",
+              "title": "Square → real sales data on dashboard (replace mock)",
               "status": "done",
               "priority": "high",
-              "notes": "Square token fixed 2026-03-20 \u2014 was trailing newline in env var. Now hitting live Square API."
+              "notes": "Square token fixed 2026-03-20 — was trailing newline in env var. Now hitting live Square API."
             },
             {
               "id": "t89",
-              "title": "Joe Twilio webhook \u2014 actually answer calls",
+              "title": "Joe Twilio webhook — actually answer calls",
               "status": "done",
               "priority": "high",
-              "notes": "Done 2026-03-20 \u2014 Joe agent live on 703-646-7799, full cart/payment/kitchen flow working."
+              "notes": "Done 2026-03-20 — Joe agent live on 703-646-7799, full cart/payment/kitchen flow working."
             },
             {
               "id": "t90",
-              "title": "Gloria color themes \u2014 ?theme= param applies to ordering page",
+              "title": "Gloria color themes — ?theme= param applies to ordering page",
               "status": "done",
               "priority": "high",
-              "notes": "Implemented \u2014 ?theme= param on /order/[slug] page. Themes: default, dark, warm, ocean."
+              "notes": "Implemented — ?theme= param on /order/[slug] page. Themes: default, dark, warm, ocean."
             },
             {
               "id": "t91",
-              "title": "KDS Manager Mode \u2014 commit Claude Code session",
+              "title": "KDS Manager Mode — commit Claude Code session",
               "status": "done",
               "priority": "high",
-              "notes": "Shipped \u2014 commit 48a7fbf. Manager/Expediter mode, alerts, floor status, 86 panel, PIN gate."
+              "notes": "Shipped — commit 48a7fbf. Manager/Expediter mode, alerts, floor status, 86 panel, PIN gate."
             },
             {
               "id": "t92",
-              "title": "iPad Guests tab \u2014 Dine In / To Go / Delivery / History",
+              "title": "iPad Guests tab — Dine In / To Go / Delivery / History",
               "status": "done",
               "priority": "high",
-              "notes": "Shipped \u2014 OrdersPage has Dine In / To Go / Delivery / History tabs."
+              "notes": "Shipped — OrdersPage has Dine In / To Go / Delivery / History tabs."
             },
             {
               "id": "t93",
               "title": "Email scraping for DoorDash/UberEats/Grubhub orders (no API needed)",
               "status": "blocked",
               "priority": "high",
-              "notes": "Deprioritized \u2014 KitchenHub may be the only viable path for 3rd party order ingestion."
+              "notes": "Deprioritized — KitchenHub may be the only viable path for 3rd party order ingestion."
             },
             {
               "id": "t94",
-              "title": "Shipday integration \u2014 dispatch delivery for hosted website orders",
+              "title": "Shipday integration — dispatch delivery for hosted website orders",
               "status": "queued",
               "priority": "medium"
             },
             {
               "id": "t95",
-              "title": "Social media auto-post \u2014 generated menu photo \u2192 Instagram/Facebook",
+              "title": "Social media auto-post — generated menu photo → Instagram/Facebook",
               "status": "queued",
               "priority": "medium"
             },
             {
               "id": "t96",
-              "title": "Meta ads campaign manager \u2014 create/schedule from AI-R",
+              "title": "Meta ads campaign manager — create/schedule from AI-R",
               "status": "queued",
               "priority": "medium"
             },
             {
               "id": "t97",
-              "title": "Vercel build clean \u2014 confirm neil branch deploys without errors",
+              "title": "Vercel build clean — confirm neil branch deploys without errors",
               "status": "done",
               "priority": "critical",
               "notes": "Confirmed clean 2026-03-20"
             },
             {
               "id": "t98",
-              "title": "One-click domain publish (t86) \u2014 CNAME setup guide + DNS config",
+              "title": "One-click domain publish (t86) — CNAME setup guide + DNS config",
               "status": "queued",
               "priority": "medium"
             },
             {
               "id": "t99",
-              "title": "Stripe key rotation confirmed (t5) \u2014 Neil verifies",
+              "title": "Stripe key rotation confirmed (t5) — Neil verifies",
               "status": "queued",
               "priority": "medium"
             }
@@ -665,25 +665,25 @@
           "tasks": [
             {
               "id": "qb-001",
-              "title": "QuickBooks Online integration \u2014 export daily sales summary",
+              "title": "QuickBooks Online integration — export daily sales summary",
               "status": "queued",
               "notes": "Read-only export: daily totals, category breakdown, tax. No full sync needed initially."
             },
             {
               "id": "qb-002",
-              "title": "QuickBooks \u2014 map menu categories to chart of accounts",
+              "title": "QuickBooks — map menu categories to chart of accounts",
               "status": "queued",
               "notes": "Restaurant owner maps food/bev/labor categories to their QB accounts once."
             },
             {
               "id": "payroll-001",
-              "title": "Payroll integration \u2014 Check (checkhq.com) API",
+              "title": "Payroll integration — Check (checkhq.com) API",
               "status": "queued",
               "notes": "Check > Gusto for embedded payroll. Full API control, white-label. Need to apply for API access."
             },
             {
               "id": "payroll-002",
-              "title": "Labor cost tracking \u2014 shift hours \u2192 cost vs revenue",
+              "title": "Labor cost tracking — shift hours → cost vs revenue",
               "status": "queued",
               "notes": "Pull shift data from time_punches table, calculate labor cost %, show on dashboard."
             }
@@ -720,7 +720,7 @@
             },
             {
               "id": "t76",
-              "title": "MCP enforcement layer \u2014 tenant isolation",
+              "title": "MCP enforcement layer — tenant isolation",
               "status": "queued"
             }
           ]
@@ -732,7 +732,7 @@
           "tasks": [
             {
               "id": "t77",
-              "title": "Sentinel v1 \u2014 6 checks, score 10/100",
+              "title": "Sentinel v1 — 6 checks, score 10/100",
               "status": "done"
             },
             {
@@ -747,7 +747,7 @@
             },
             {
               "id": "t80",
-              "title": "Re-run Sentinel post-migration \u2014 target 60+",
+              "title": "Re-run Sentinel post-migration — target 60+",
               "status": "queued"
             }
           ]
@@ -825,31 +825,31 @@
           "tasks": [
             {
               "id": "pwa1",
-              "title": "Settings white crash \u2014 CategoryPrinterRouting title/name mismatch",
+              "title": "Settings white crash — CategoryPrinterRouting title/name mismatch",
               "status": "done",
               "completedAt": "2026-03-13"
             },
             {
               "id": "pwa2",
-              "title": "iPad scroll broken \u2014 overflow-hidden in PwaShell",
+              "title": "iPad scroll broken — overflow-hidden in PwaShell",
               "status": "done",
               "completedAt": "2026-03-13"
             },
             {
               "id": "pwa3",
-              "title": "Add to Order dead \u2014 3-layer silent failure cascade",
+              "title": "Add to Order dead — 3-layer silent failure cascade",
               "status": "done",
               "completedAt": "2026-03-13"
             },
             {
               "id": "pwa4",
-              "title": "Items invisible in OrderPanel \u2014 parseInt(\"main\") \u2192 NaN course mismatch",
+              "title": "Items invisible in OrderPanel — parseInt(\"main\") → NaN course mismatch",
               "status": "done",
               "completedAt": "2026-03-13"
             },
             {
               "id": "pwa5",
-              "title": "Orders not showing across devices \u2014 polling local store not DB",
+              "title": "Orders not showing across devices — polling local store not DB",
               "status": "done",
               "completedAt": "2026-03-13"
             },
@@ -861,7 +861,7 @@
             },
             {
               "id": "pwa7",
-              "title": "Settings UX \u2014 drill-down card pattern (no scroll fight)",
+              "title": "Settings UX — drill-down card pattern (no scroll fight)",
               "status": "done",
               "completedAt": "2026-03-13"
             },
@@ -885,41 +885,41 @@
               "title": "iPad +mods opens PhoneItemWizard full-screen (was compact bottom sheet)",
               "status": "done",
               "completedAt": "2026-03-17",
-              "notes": "Edit button added to PhoneOrderReview \u2014 EditItemModal + PhoneItemWizard with real DB modifiers. Two-screen flow now consistent.",
+              "notes": "Edit button added to PhoneOrderReview — EditItemModal + PhoneItemWizard with real DB modifiers. Two-screen flow now consistent.",
               "claudePrompt": "Read PosModal.tsx handleEditModifiers and ItemDetailSheet usage. Explain the current +mods flow. The issue: tapping +mods on an existing order item opens ItemDetailSheet (compact) instead of PhoneItemWizard (full screen). Fix so +mods always opens PhoneItemWizard in edit mode, keeping ItemDetailSheet for new item adds only."
             },
             {
               "id": "pwa11",
-              "title": "iPad T seat badge \u2014 amber contrast (was invisible zinc-on-zinc)",
+              "title": "iPad T seat badge — amber contrast (was invisible zinc-on-zinc)",
               "status": "done",
               "completedAt": "2026-03-17",
-              "notes": "Fixed in TabletOrderEntry.tsx (not PhoneOrderEntry). Changed bg-zinc-600 text-white \u2192 amber styling.",
+              "notes": "Fixed in TabletOrderEntry.tsx (not PhoneOrderEntry). Changed bg-zinc-600 text-white → amber styling.",
               "claudePrompt": null
             },
             {
               "id": "pwa12",
-              "title": "OrderPanel UX \u2014 rename +mods\u2192Edit, remove +note button, hide elapsed timer from server view",
+              "title": "OrderPanel UX — rename +mods→Edit, remove +note button, hide elapsed timer from server view",
               "status": "done",
               "completedAt": "2026-03-17",
-              "notes": "OrderPanel: +mods\u2192Edit, removed +note (native prompt). PhoneTableListV2: elapsed timer hidden from server view, data still tracked internally.",
+              "notes": "OrderPanel: +mods→Edit, removed +note (native prompt). PhoneTableListV2: elapsed timer hidden from server view, data still tracked internally.",
               "claudePrompt": null
             },
             {
               "id": "pwa13",
-              "title": "Server table timer \u2014 make optional via restaurant settings (currently always-on)",
+              "title": "Server table timer — make optional via restaurant settings (currently always-on)",
               "status": "queued",
               "notes": "Timer visible to managers/KDS, optional for server view. Add toggle in /home/settings or restaurant config."
             },
             {
               "id": "mod1",
-              "title": "Default option per modifier group \u2014 schema + API + admin UI + ordering pre-selection",
+              "title": "Default option per modifier group — schema + API + admin UI + ordering pre-selection",
               "status": "done",
               "completedAt": "2026-03-18",
               "notes": "Added default_option_id UUID FK to modifier_groups. API GET/POST/PATCH/DELETE updated. Admin UI star toggle in create/edit forms + badge in list. POS pre-selection (PhoneItemWizard + ItemDetailSheet). Public ordering derives isDefault from group-level default."
             },
             {
               "id": "mod2",
-              "title": "Inline 2-option modifier picker \u2014 pill buttons on item card, skip modal",
+              "title": "Inline 2-option modifier picker — pill buttons on item card, skip modal",
               "status": "done",
               "completedAt": "2026-03-18",
               "notes": "Items with only binary modifier groups (2 options, max=1, $0 deltas) render inline emerald/zinc pills on public ordering cards. Direct add-to-cart without modal. POS keeps detail sheet flow with pre-selected defaults."
@@ -933,14 +933,14 @@
             },
             {
               "id": "cat1",
-              "title": "Category rollups \u2014 reporting bucket column + admin UI badges + summary API",
+              "title": "Category rollups — reporting bucket column + admin UI badges + summary API",
               "status": "done",
               "completedAt": "2026-03-18",
               "notes": "Added rollup VARCHAR(50) to menu_categories. Auto-classified 43 categories. PATCH endpoint for rollup updates. Summary API at /api/pwa/reports/rollup-summary. Admin UI: colored badges, editable dropdown, summary cards at top."
             },
             {
               "id": "cat2",
-              "title": "Category cleanup \u2014 merge 10 duplicate/combo categories, deactivate 14 empties",
+              "title": "Category cleanup — merge 10 duplicate/combo categories, deactivate 14 empties",
               "status": "done",
               "completedAt": "2026-03-18",
               "notes": "Merged all 'New Chefs Specials' combos and 'Japanese Kitchen, Japanese Kitchen.' duplicates into canonical categories. 43 items moved, 14 categories deactivated."
@@ -950,18 +950,18 @@
               "title": "Move-item dropdown on category items + deactivate empty category prompt",
               "status": "done",
               "completedAt": "2026-03-18",
-              "notes": "Move \u2192 button on each item row with category dropdown. POST /api/pwa/menu/move-item endpoint. Auto-prompt to deactivate when category reaches 0 items."
+              "notes": "Move → button on each item row with category dropdown. POST /api/pwa/menu/move-item endpoint. Auto-prompt to deactivate when category reaches 0 items."
             },
             {
               "id": "cat4",
-              "title": "Categories tab \u2014 rollup-grouped accordion layout + add category + inline rename",
+              "title": "Categories tab — rollup-grouped accordion layout + add category + inline rename",
               "status": "done",
               "completedAt": "2026-03-18",
               "notes": "Categories organized under collapsible rollup headers. + Add Category inline form. Double-click to rename. Summary cards as anchor links."
             },
             {
               "id": "cat5",
-              "title": "Item-level rollup override \u2014 items can override category rollup for reporting",
+              "title": "Item-level rollup override — items can override category rollup for reporting",
               "status": "done",
               "completedAt": "2026-03-18",
               "notes": "rollup_override column on menu_items. PATCH endpoint. UI badge per item row. Rollup summary uses COALESCE(override, category rollup). Solves Soups & Salads having items from multiple stations."
@@ -976,28 +976,28 @@
             },
             {
               "id": "cfo1",
-              "title": "CFO agent \u2014 Clerk bypass, Orion MCP Redis fix, guardrails, audit log",
+              "title": "CFO agent — Clerk bypass, Orion MCP Redis fix, guardrails, audit log",
               "status": "done",
               "completedAt": "2026-03-18",
               "notes": "Clerk bypass for /api/cfo, /api/liam, /api/molly. Orion route-llm graceful Redis fallback. CFO execute guardrails: block deactivating categories with items, block category-name-as-item confusion, $0 price warnings. cfo_audit_log table for undo/accountability."
             },
             {
               "id": "cfo2",
-              "title": "CFO knowledge base \u2014 category architecture, three surfaces, owner misconceptions",
+              "title": "CFO knowledge base — category architecture, three surfaces, owner misconceptions",
               "status": "done",
               "completedAt": "2026-03-18",
               "notes": "Orion knowledge/menu-categories.md + knowledge/cfo-guardrails.md. CFO system prompt updated with reporting/POS/ordering framework, safety rules, and action extraction fixes."
             },
             {
               "id": "doc1",
-              "title": "Documentation \u2014 brand guide, design doc, categories philosophy, recipe UX spec, docs index",
+              "title": "Documentation — brand guide, design doc, categories philosophy, recipe UX spec, docs index",
               "status": "done",
               "completedAt": "2026-03-18",
               "notes": "BRAND-GUIDE.md, DESIGN-DOC.md, CATEGORIES-PHILOSOPHY.md, CFO-CONFIRM-UX.md, RECIPE-UX.md, INDEX.md. Channel Views coming soon button on categories page."
             },
             {
               "id": "recipe1",
-              "title": "Recipe builder \u2014 AI typical baseline, bulk ingredient table, Orion MCP integration",
+              "title": "Recipe builder — AI typical baseline, bulk ingredient table, Orion MCP integration",
               "status": "done",
               "notes": "Spec at docs/RECIPE-UX.md. Claude Code session running. Editable table with autocomplete, Generate Typical Recipe via Orion, bulk save, food cost %.",
               "completedAt": "2026-03-18",
@@ -1005,33 +1005,33 @@
             },
             {
               "id": "pwa14",
-              "title": "Pre-Shift Intel \u2014 daily specials, 86 list, push items, pairings, server upsell prompts",
+              "title": "Pre-Shift Intel — daily specials, 86 list, push items, pairings, server upsell prompts",
               "status": "done",
-              "notes": "Full pre-shift intel system: manager page at /home/specials, API stored in restaurants.settings JSONB, POS lightbulb live, Info tab on iPad wired to real data \u2014 specials, 86d, push, pairings, house note.",
+              "notes": "Full pre-shift intel system: manager page at /home/specials, API stored in restaurants.settings JSONB, POS lightbulb live, Info tab on iPad wired to real data — specials, 86d, push, pairings, house note.",
               "claudePrompt": "See full prompt in session",
               "completedAt": "2026-03-17"
             },
             {
               "id": "pwa15",
-              "title": "Split check \u2014 even split mode (2-6 way), seat pill amounts, paid seat state",
+              "title": "Split check — even split mode (2-6 way), seat pill amounts, paid seat state",
               "status": "done",
               "completedAt": "2026-03-17",
               "notes": "By Seat / Even Split toggle. 2-6 way grid showing per-person amount. Last person absorbs rounding. Seat pills show dollar amounts. Paid seats emerald/disabled. Progress indicator '2 of 4 paid'.",
-              "claudePrompt": "PaymentModal.tsx \u2014 add Even Split mode alongside existing By Seat mode. Split toggle, even-ways grid, payAmount memo update, seat pill amounts, reset on open."
+              "claudePrompt": "PaymentModal.tsx — add Even Split mode alongside existing By Seat mode. Split toggle, even-ways grid, payAmount memo update, seat pill amounts, reset on open."
             },
             {
               "id": "pwa16",
-              "title": "Split \u2014 seat assignment screen before payment",
+              "title": "Split — seat assignment screen before payment",
               "status": "done",
-              "notes": "Inline seat assignment on Split \u2014 seat pills per item in OrderPanel, batch save on Pay, no new screen.",
+              "notes": "Inline seat assignment on Split — seat pills per item in OrderPanel, batch save on Pay, no new screen.",
               "completedAt": "2026-03-17"
             },
             {
               "id": "pwa17",
-              "title": "iPhone UX \u2014 unified order screen (merge PhoneOrderEntry + PhoneOrderReview, ItemDetailSheet edit mode)",
+              "title": "iPhone UX — unified order screen (merge PhoneOrderEntry + PhoneOrderReview, ItemDetailSheet edit mode)",
               "status": "done",
               "notes": "Unified iPhone order screen complete. Menu/Order tabs, 1-tap edit via ItemDetailSheet, inline fire with toast, 3-step PhonePOS flow. Deleted PhoneOrderReview + PhoneSentConfirmation. ItemDetailSheet enhanced with editMode props. PosModal iPad edits now use ItemDetailSheet.",
-              "claudePrompt": "iPhone UX Refactor \u2014 Unified Order Screen\n\nFiles to modify:\n1. ItemDetailSheet.tsx \u2014 add editMode, initialQuantity, initialSelectedMods, initialNotes, initialSeat props. Pre-populate in reset useEffect. Footer: Update vs Add. Skip addon fetches in edit mode.\n2. PhoneOrderEntry.tsx \u2014 rewrite as unified screen. Layout: Header + Seat strip + Main content (Menu/Order tabs) + Bottom bar. Port handlers: handleFireOrder, fire-by-course, void PIN, ambient compare. Remove: handleEditItem/handleEditModalOpenMods/PhoneItemWizard chain, trayItem/trayNotes/trayModGroups state, viewMode browse/summary toggle.\n3. PhonePOS.tsx \u2014 simplify Step type to table-list|guest-count|order-entry. Remove PhoneOrderReview + PhoneSentConfirmation imports. Remove goToReview, goToSent, goBackToTable, goToOrderEntryBrowse, startInBrowse, sentData.\n4. PosModal.tsx \u2014 replace PhoneItemWizard portal with ItemDetailSheet in edit mode for iPad edits.\n\nFiles to DELETE after references updated:\n- EditItemModal.tsx\n- PhoneItemWizard.tsx\n- PhoneOrderReview.tsx\n- PhoneSentConfirmation.tsx\n\nIMPORTANT: Run in /plan mode first. This is a major refactor. Get approval before implementing.",
+              "claudePrompt": "iPhone UX Refactor — Unified Order Screen\n\nFiles to modify:\n1. ItemDetailSheet.tsx — add editMode, initialQuantity, initialSelectedMods, initialNotes, initialSeat props. Pre-populate in reset useEffect. Footer: Update vs Add. Skip addon fetches in edit mode.\n2. PhoneOrderEntry.tsx — rewrite as unified screen. Layout: Header + Seat strip + Main content (Menu/Order tabs) + Bottom bar. Port handlers: handleFireOrder, fire-by-course, void PIN, ambient compare. Remove: handleEditItem/handleEditModalOpenMods/PhoneItemWizard chain, trayItem/trayNotes/trayModGroups state, viewMode browse/summary toggle.\n3. PhonePOS.tsx — simplify Step type to table-list|guest-count|order-entry. Remove PhoneOrderReview + PhoneSentConfirmation imports. Remove goToReview, goToSent, goBackToTable, goToOrderEntryBrowse, startInBrowse, sentData.\n4. PosModal.tsx — replace PhoneItemWizard portal with ItemDetailSheet in edit mode for iPad edits.\n\nFiles to DELETE after references updated:\n- EditItemModal.tsx\n- PhoneItemWizard.tsx\n- PhoneOrderReview.tsx\n- PhoneSentConfirmation.tsx\n\nIMPORTANT: Run in /plan mode first. This is a major refactor. Get approval before implementing.",
               "completedAt": "2026-03-17"
             }
           ]
@@ -1049,19 +1049,19 @@
           "tasks": [
             {
               "id": "ai-order-001",
-              "title": "OpenAI Actions schema \u2014 expose AI-R ordering API as a GPT Action",
+              "title": "OpenAI Actions schema — expose AI-R ordering API as a GPT Action",
               "status": "queued",
               "notes": "Build openapi.json spec for resolve_and_add, cart_total, checkout_link. Register as a verified GPT Action at platform.openai.com/actions."
             },
             {
               "id": "ai-order-002",
-              "title": "ChatGPT ordering flow \u2014 name lookup, cart, payment link",
+              "title": "ChatGPT ordering flow — name lookup, cart, payment link",
               "status": "queued",
-              "notes": "User says \"order pad thai from Red Bar\" \u2192 ChatGPT calls AI-R API \u2192 returns payment link via SMS."
+              "notes": "User says \"order pad thai from Red Bar\" → ChatGPT calls AI-R API → returns payment link via SMS."
             },
             {
               "id": "ai-order-003",
-              "title": "Restaurant discovery endpoint \u2014 GET /api/public/restaurants",
+              "title": "Restaurant discovery endpoint — GET /api/public/restaurants",
               "status": "queued",
               "notes": "AI agents need to find restaurants by name/location. Public endpoint, no auth."
             }
@@ -1073,13 +1073,13 @@
           "tasks": [
             {
               "id": "alexa-001",
-              "title": "Alexa Skill \u2014 \"AI-R Food Ordering\" skill in Alexa Skills Store",
+              "title": "Alexa Skill — \"AI-R Food Ordering\" skill in Alexa Skills Store",
               "status": "queued",
               "notes": "Build Alexa Skill that calls AI-R ordering API. Customer enables skill, links account, orders by voice. Uses same resolve_and_add backend as Joe."
             },
             {
               "id": "alexa-002",
-              "title": "Alexa account linking \u2014 connect Alexa user to AI-R customer profile",
+              "title": "Alexa account linking — connect Alexa user to AI-R customer profile",
               "status": "queued",
               "notes": "OAuth account linking so Alexa knows the customer's preferred restaurant, saved orders, phone number for SMS."
             }
@@ -1091,7 +1091,7 @@
           "tasks": [
             {
               "id": "google-001",
-              "title": "Google Actions \u2014 \"Talk to [Restaurant Name]\" ordering action",
+              "title": "Google Actions — \"Talk to [Restaurant Name]\" ordering action",
               "status": "queued",
               "notes": "Google Actions SDK. Each AI-R restaurant gets their own Google Action automatically on signup."
             }
@@ -1103,15 +1103,15 @@
           "tasks": [
             {
               "id": "ai-mkt-001",
-              "title": "Landing page \u2014 \"AI-R: The first restaurant OS built for the AI ordering era\"",
+              "title": "Landing page — \"AI-R: The first restaurant OS built for the AI ordering era\"",
               "status": "queued",
               "notes": "ai-restaurant.net homepage update. Lead with AI ordering angle. Logos: ChatGPT, Alexa, Google Assistant, Joe."
             },
             {
               "id": "ai-mkt-002",
-              "title": "Press/investor one-pager \u2014 AI ordering platform positioning",
+              "title": "Press/investor one-pager — AI ordering platform positioning",
               "status": "queued",
-              "notes": "While Square/Toast retrofit AI, AI-R was built for it. One integration \u2192 all AI platforms. The moat is the API-first architecture."
+              "notes": "While Square/Toast retrofit AI, AI-R was built for it. One integration → all AI platforms. The moat is the API-first architecture."
             },
             {
               "id": "kh-002",
@@ -1129,30 +1129,30 @@
             },
             {
               "id": "payroll-001",
-              "title": "Check Payroll Phase 1 \u2014 labor summary + dashboard widget",
+              "title": "Check Payroll Phase 1 — labor summary + dashboard widget",
               "status": "done",
               "completedAt": "2026-03-20",
               "notes": "API key auth, labor summary from shifts+staff+transactions, FOH/BOH split, LaborCostWidget on dashboard, full settings UI. Phase 2 (push to Check API for payroll runs) = separate session when Check credentials arrive."
             },
             {
               "id": "chargeback-001",
-              "title": "Chargeback Fighter \u2014 public lead gen page",
+              "title": "Chargeback Fighter — public lead gen page",
               "status": "done",
               "completedAt": "2026-03-20",
-              "notes": "Public page at /chargeback \u2014 upload DoorDash/UberEats/GrubHub PDF, Claude analyzes for recoverable chargebacks, email capture, dispute letter generation. Dark theme, no auth, no DB writes (leads logged). pdf-parse@2.4.5 added."
+              "notes": "Public page at /chargeback — upload DoorDash/UberEats/GrubHub PDF, Claude analyzes for recoverable chargebacks, email capture, dispute letter generation. Dark theme, no auth, no DB writes (leads logged). pdf-parse@2.4.5 added."
             },
             {
               "id": "t93",
               "title": "DoorDash report email scraper",
               "status": "done",
               "completedAt": "2026-03-20",
-              "notes": "Weekly Gmail IMAP poll (Monday 9AM ET via Vercel cron). Unzips DoorDash financial report ZIP, parses 3 CSVs, upserts to transactions table. Deduplicates on external_id. GMAIL_ACCOUNT + GMAIL_APP_PASSWORD env vars required. Forward: neil@prgroupva.com \u2192 neilmetzger@gmail.com \u2192 scraper."
+              "notes": "Weekly Gmail IMAP poll (Monday 9AM ET via Vercel cron). Unzips DoorDash financial report ZIP, parses 3 CSVs, upserts to transactions table. Deduplicates on external_id. GMAIL_ACCOUNT + GMAIL_APP_PASSWORD env vars required. Forward: neil@prgroupva.com → neilmetzger@gmail.com → scraper."
             },
             {
               "id": "waitlist-001",
-              "title": "Online Waitlist \u2014 build our own (no 3rd party)",
-              "status": "done",
-              "notes": "Already built by Obie! 11 components: FloorMapView, ReservationList, ReservationCalendar, WaitlistQueue, WaitlistEntry, AddToWaitlistModal, NewReservationModal, ReservationSettings, ReservationAnalytics, TableCard, ReservationTabs. localStorage-based with mock data. Integration-ready for OpenTable/Resy/Google.",
+              "title": "Online Waitlist — build our own (no 3rd party)",
+              "status": "in-progress",
+              "notes": "UI STUB ONLY — Obie built full UI (WaitlistQueue, AddToWaitlistModal, etc.) with localStorage. MISSING: 1) SMS via Twilio when table ready 2) Public /waitlist/[slug] page for customers to join from their phone 3) DB persistence (currently localStorage only). Need to wire these 3 pieces to make it real.",
               "completedAt": "pre-existing"
             },
             {
@@ -1163,7 +1163,7 @@
             },
             {
               "id": "bar-tabs-001",
-              "title": "Bar tab system \u2014 Square pre-auth, open/add/void/close/transfer/split",
+              "title": "Bar tab system — Square pre-auth, open/add/void/close/transfer/split",
               "status": "done",
               "completedAt": "2026-03-20",
               "notes": "Full bar tab system. 9 files. Square Terminal pre-auth with autocomplete=false. Color-coded UI (/home/bar-tabs): green <30min, yellow 30-60min, red >60min. Tables created in Neon via migration. Split tab into N equal payments. Transfer tab to different table."
@@ -1174,27 +1174,33 @@
     }
   ],
   "lastCommit": {
-    "hash": "7622a10",
-    "message": "feat: bar tab system \u2014 Square pre-auth, open/add/void/close/transfer/split, color-coded UI (/home/bar-tabs)",
+    "hash": "731442c",
+    "message": "feat: waitlist DB persistence + Twilio SMS + public join page (/waitlist/[slug])",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
     {
+      "hash": "731442c",
+      "message": "feat: waitlist DB persistence + Twilio SMS + public join page (/waitlist/[slug])",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
+    {
       "hash": "7622a10",
-      "message": "feat: bar tab system \u2014 Square pre-auth, open/add/void/close/transfer/split, color-coded UI (/home/bar-tabs)",
+      "message": "feat: bar tab system — Square pre-auth, open/add/void/close/transfer/split, color-coded UI (/home/bar-tabs)",
       "branch": "neil",
       "date": "2026-03-20"
     },
     {
       "hash": "77467bc",
-      "message": "docs: AI-R architecture overview \u2014 surfaces, auth model, API structure, integrations, Mermaid diagram",
+      "message": "docs: AI-R architecture overview — surfaces, auth model, API structure, integrations, Mermaid diagram",
       "branch": "neil",
       "date": "2026-03-20"
     },
     {
       "hash": "565ecff",
-      "message": "feat: DoorDash report email scraper \u2014 weekly Gmail IMAP poll, ZIP parser, upserts payouts/errors/transactions, Monday 9AM cron",
+      "message": "feat: DoorDash report email scraper — weekly Gmail IMAP poll, ZIP parser, upserts payouts/errors/transactions, Monday 9AM cron",
       "branch": "neil",
       "date": "2026-03-20"
     },
@@ -1212,31 +1218,25 @@
     },
     {
       "hash": "4c869c8",
-      "message": "feat: Chargeback Fighter \u2014 public lead gen page, PDF analysis via Claude, dispute letter generation, email capture",
+      "message": "feat: Chargeback Fighter — public lead gen page, PDF analysis via Claude, dispute letter generation, email capture",
       "branch": "neil",
       "date": "2026-03-20"
     },
     {
       "hash": "3cd5095",
-      "message": "feat: Check payroll Phase 1 \u2014 API key auth, labor summary (shifts+staff+transactions), FOH/BOH split widget on dashboard, settings UI",
+      "message": "feat: Check payroll Phase 1 — API key auth, labor summary (shifts+staff+transactions), FOH/BOH split widget on dashboard, settings UI",
       "branch": "neil",
       "date": "2026-03-20"
     },
     {
       "hash": "34b9793",
-      "message": "feat: QuickBooks Online OAuth 2.0 integration \u2014 daily sales export as SalesReceipt, food/bev split, account mapping UI, auto-refresh tokens",
+      "message": "feat: QuickBooks Online OAuth 2.0 integration — daily sales export as SalesReceipt, food/bev split, account mapping UI, auto-refresh tokens",
       "branch": "neil",
       "date": "2026-03-20"
     },
     {
       "hash": "ebdd6d2",
-      "message": "feat: KitchenHub delivery order aggregator \u2014 API key auth, webhook + cron sync, platform badges, settings UI",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "1dbb447",
-      "message": "fix: fallback to location-only search when name+location returns no results",
+      "message": "feat: KitchenHub delivery order aggregator — API key auth, webhook + cron sync, platform badges, settings UI",
       "branch": "neil",
       "date": "2026-03-20"
     }
