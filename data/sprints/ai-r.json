@@ -1117,12 +1117,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "da99885",
-    "message": "fix: ChatGPT Actions — move tenant_id/cart_token to request body, body-aware tenant resolver",
+    "hash": "d7a4e88",
+    "message": "fix: type cast for body from resolveTenantFromBody",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "d7a4e88",
+      "message": "fix: type cast for body from resolveTenantFromBody",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "da99885",
       "message": "fix: ChatGPT Actions — move tenant_id/cart_token to request body, body-aware tenant resolver",
@@ -1174,12 +1180,6 @@
     {
       "hash": "686e364",
       "message": "feat: History tab pulls from DB transactions (real Square data) + merges localStorage",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "4af751f",
-      "message": "feat: phone orders in To Go tab with PAID/UNPAID badge",
       "branch": "neil",
       "date": "2026-03-20"
     }
