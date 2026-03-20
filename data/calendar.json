@@ -157,7 +157,7 @@
   },
   {
     "id": "evt-1773829206331",
-    "title": "Social Media Setup — Instagram @plateai + Meta Business",
+    "title": "Social Media Setup \u2014 Instagram @plateai + Meta Business",
     "owner": "neil",
     "date": "2026-03-18",
     "startTime": "21:00",
@@ -165,7 +165,20 @@
     "allDay": false,
     "type": "block",
     "project": "plateai",
-    "notes": "USE MAC MINI WITH CAMERA. Facebook WILL trigger video verification — camera must be ready. Find Red Bar FB login first. Dave co-pilots in real time.",
+    "notes": "USE MAC MINI WITH CAMERA. Facebook WILL trigger video verification \u2014 camera must be ready. Find Red Bar FB login first. Dave co-pilots in real time.",
+    "recurring": null
+  },
+  {
+    "id": "kitchenhub-call-0323",
+    "title": "KitchenHub \u2014 Discovery Call with Polly",
+    "owner": "neil",
+    "date": "2026-03-23",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "allDay": false,
+    "type": "meeting",
+    "project": "ai-r",
+    "notes": "Reseller/white-label partnership + Red Bar test. polly@trykitchenhub.com | (917) 722-4847. Keep Telegram open for Dave support.",
     "recurring": null
   }
 ]

@@ -3,13 +3,14 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 interface DelegatedItem { item: string; who: string; status: string; }
 interface Project { id: string; name: string; emoji: string; color: string; openTasks: number; milestoneDone: number; milestoneTotal: number; currentMilestone: { title: string } | null; }
+interface ProjectInfo { id: string; name: string; status: string; phase: string; color: string; }
+interface CalendarEvent { id: string; title: string; owner: string; date: string; startTime: string; endTime: string; allDay: boolean; type: string; project: string | null; notes: string | null; recurring: string | null; }
 interface PlannerData { today: string[]; thisWeek: string[]; thisMonth: string[]; thisQuarter: string[]; thisYear: string[]; top5: string[]; delegated: DelegatedItem[]; }
 type Section = "today" | "thisWeek" | "thisMonth" | "thisQuarter";
 
 const isDone = (t: string) => t.startsWith("~~") && t.endsWith("~~");
 const display = (t: string) => t.replace(/^~~|~~$/g, "").replace(/^\*\*|\*\*$/g, "");
 const TITLE: Record<string,string> = { indigo:"text-indigo-300", amber:"text-amber-300", violet:"text-violet-300", emerald:"text-emerald-300", orange:"text-orange-500" };
-const BAR: Record<string,string> = { indigo:"bg-indigo-500", amber:"bg-amber-500", violet:"bg-violet-500", emerald:"bg-emerald-500", orange:"bg-orange-500" };
 
 /* ── Feature 1: keyword → project grouping ── */
 const PROJECT_KEYWORDS: Record<string, string[]> = {
@@ -37,15 +38,152 @@ function matchProject(task: string): string | null {
   return null;
 }
 
-/* ── Feature 2: date helpers ── */
+/* ── date helpers ── */
 function formatDateLabel(date: Date): string {
   return date.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
 }
 function isSameDay(a: Date, b: Date): boolean {
   return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
 }
+function getMonday(d: Date): Date {
+  const date = new Date(d);
+  const day = date.getDay();
+  const diff = day === 0 ? -6 : 1 - day;
+  date.setDate(date.getDate() + diff);
+  date.setHours(0, 0, 0, 0);
+  return date;
+}
+function getWeekDays(monday: Date): Date[] {
+  return Array.from({ length: 7 }, (_, i) => {
+    const d = new Date(monday);
+    d.setDate(d.getDate() + i);
+    return d;
+  });
+}
+function fmtTime(t: string): string {
+  const [h, m] = t.split(":").map(Number);
+  const ampm = h >= 12 ? "p" : "a";
+  const hr = h === 0 ? 12 : h > 12 ? h - 12 : h;
+  return m === 0 ? `${hr}${ampm}` : `${hr}:${m.toString().padStart(2, "0")}${ampm}`;
+}
 
-/* ── SectionBlock (unchanged) ── */
+function eventAppliesToDate(evt: CalendarEvent, date: Date): boolean {
+  const dow = date.getDay();
+  if (evt.recurring === "daily") return true;
+  if (evt.recurring === "weekdays") return dow >= 1 && dow <= 5;
+  const evtDate = new Date(evt.date + "T00:00:00");
+  return isSameDay(evtDate, date);
+}
+
+/* ── StatusBadge for project status ── */
+function StatusBadge({ status }: { status: string }) {
+  const colors: Record<string, string> = {
+    active: "bg-emerald-500/15 text-emerald-400 border-emerald-500/20",
+    planned: "bg-amber-500/15 text-amber-400 border-amber-500/20",
+    paused: "bg-zinc-500/15 text-zinc-400 border-zinc-500/20",
+  };
+  return (
+    <span className={`text-[10px] px-1.5 py-0.5 rounded border ${colors[status] ?? colors.paused}`}>
+      {status}
+    </span>
+  );
+}
+
+/* ── Week Calendar ── */
+function WeekCalendar({ events, projectInfos, focusDate, onSelectDate }: {
+  events: CalendarEvent[];
+  projectInfos: ProjectInfo[];
+  focusDate: Date;
+  onSelectDate: (d: Date) => void;
+}) {
+  const [weekStart, setWeekStart] = useState(() => getMonday(focusDate));
+  const days = useMemo(() => getWeekDays(weekStart), [weekStart]);
+  const colorMap = useMemo(() => {
+    const m = new Map<string, string>();
+    for (const p of projectInfos) m.set(p.id, p.color);
+    return m;
+  }, [projectInfos]);
+
+  useEffect(() => {
+    setWeekStart(getMonday(focusDate));
+  }, [focusDate]);
+
+  const eventsForDay = useCallback((date: Date) => {
+    return events
+      .filter(e => eventAppliesToDate(e, date))
+      .sort((a, b) => a.startTime.localeCompare(b.startTime));
+  }, [events]);
+
+  const today = new Date();
+
+  return (
+    <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 overflow-hidden">
+      {/* Week nav header */}
+      <div className="flex items-center justify-between px-4 py-2.5 border-b border-zinc-800">
+        <button onClick={() => setWeekStart(prev => { const d = new Date(prev); d.setDate(d.getDate() - 7); return d; })}
+          className="text-zinc-500 hover:text-zinc-300 w-7 h-7 flex items-center justify-center rounded-lg hover:bg-zinc-800 transition-colors">
+          <span className="text-xs">◀</span>
+        </button>
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+            {days[0].toLocaleDateString("en-US", { month: "short", day: "numeric" })} – {days[6].toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+          </span>
+          <button onClick={() => { const t = new Date(); setWeekStart(getMonday(t)); onSelectDate(t); }}
+            className="text-[10px] text-indigo-400 hover:text-indigo-300 px-1.5 py-0.5 rounded border border-indigo-500/20 hover:border-indigo-500/40 transition-colors">
+            Today
+          </button>
+        </div>
+        <button onClick={() => setWeekStart(prev => { const d = new Date(prev); d.setDate(d.getDate() + 7); return d; })}
+          className="text-zinc-500 hover:text-zinc-300 w-7 h-7 flex items-center justify-center rounded-lg hover:bg-zinc-800 transition-colors">
+          <span className="text-xs">▶</span>
+        </button>
+      </div>
+
+      {/* Day rows */}
+      <div className="divide-y divide-zinc-800/60">
+        {days.map(date => {
+          const isToday = isSameDay(date, today);
+          const isSelected = isSameDay(date, focusDate);
+          const dayEvents = eventsForDay(date);
+          const dayLabel = date.toLocaleDateString("en-US", { weekday: "short" });
+          const dayNum = date.getDate();
+          const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+
+          return (
+            <button key={date.toISOString()} onClick={() => onSelectDate(date)}
+              className={`w-full flex items-start gap-3 px-3 py-2 text-left transition-colors hover:bg-zinc-800/40
+                ${isSelected ? "bg-indigo-500/5 border-l-2 border-l-indigo-500" : "border-l-2 border-l-transparent"}
+                ${isWeekend ? "opacity-60" : ""}`}>
+              {/* Day label */}
+              <div className="flex-shrink-0 w-12 pt-0.5 text-center">
+                <div className={`text-[10px] uppercase tracking-wider ${isToday ? "text-amber-400" : "text-zinc-600"}`}>{dayLabel}</div>
+                <div className={`text-sm font-semibold ${isToday ? "text-amber-400" : isSelected ? "text-indigo-300" : "text-zinc-400"}`}>{dayNum}</div>
+              </div>
+              {/* Events */}
+              <div className="flex-1 min-w-0 flex flex-wrap gap-1 py-0.5">
+                {dayEvents.length === 0 ? (
+                  <span className="text-xs text-zinc-700 italic">No events</span>
+                ) : dayEvents.map(evt => {
+                  const projColor = evt.project ? colorMap.get(evt.project) : null;
+                  const bgColor = projColor ?? "#52525b";
+                  return (
+                    <span key={evt.id + date.toISOString()} className="inline-flex items-center gap-1.5 text-xs px-2 py-1 rounded-md max-w-full"
+                      style={{ backgroundColor: bgColor + "18", borderLeft: `2px solid ${bgColor}` }}>
+                      <span className="text-zinc-500 flex-shrink-0">{fmtTime(evt.startTime)}</span>
+                      <span className="text-zinc-300 truncate">{evt.title}</span>
+                    </span>
+                  );
+                })}
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ── SectionBlock ── */
 function SectionBlock({ label, items, section, accent, onAdd, onComplete }: {
   label: string; items: string[]; section: Section; accent: string;
   onAdd: (section: Section, text: string) => void;
@@ -99,8 +237,9 @@ function SectionBlock({ label, items, section, accent, onAdd, onComplete }: {
   );
 }
 
-/* ── Feature 1: Grouped Today Block with drag-between-groups ── */
-function GroupedTodayBlock({ items, projects, overrides, onAdd, onComplete, onReassign }: {
+/* ── Grouped Today Block with drag-between-groups ── */
+function GroupedTodayBlock({ label, items, projects, overrides, onAdd, onComplete, onReassign }: {
+  label: string;
   items: string[];
   projects: Project[];
   overrides: Record<string, string>;
@@ -140,14 +279,12 @@ function GroupedTodayBlock({ items, projects, overrides, onAdd, onComplete, onRe
       gMap.get(groupKey)!.tasks.push({ item, idx: i });
     });
 
-    // Ensure all top 5 projects always have a group (even if empty)
     for (const p of top5) {
       if (!gMap.has(p.id)) {
         gList.push({ projectId: p.id, name: p.name, emoji: p.emoji, color: p.color, tasks: [] });
       }
     }
 
-    // Sort: top 5 first (in project order), Other last
     const pIds = top5.map(p => p.id);
     gList.sort((a, b) => {
       if (a.projectId === null) return 1;
@@ -178,7 +315,7 @@ function GroupedTodayBlock({ items, projects, overrides, onAdd, onComplete, onRe
     <div className="rounded-xl border border-amber-900/40 bg-amber-950/10">
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-4 py-3 min-h-[44px]">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">Today</span>
+          <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">{label}</span>
           {remaining > 0 && <span className="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full">{remaining}</span>}
         </div>
         <div className="flex items-center gap-2">
@@ -250,26 +387,24 @@ function GroupedTodayBlock({ items, projects, overrides, onAdd, onComplete, onRe
 export default function PlannerPage() {
   const [data, setData] = useState<PlannerData | null>(null);
   const [projects, setProjects] = useState<Project[]>([]);
+  const [projectInfos, setProjectInfos] = useState<ProjectInfo[]>([]);
+  const [calEvents, setCalEvents] = useState<CalendarEvent[]>([]);
   const [loading, setLoading] = useState(true);
   const [delOpen, setDelOpen] = useState(false);
-  const [projectOrder, setProjectOrder] = useState<string[]>([]);
   const [taskOverrides, setTaskOverrides] = useState<Record<string, string>>({});
   const [focusDate, setFocusDate] = useState(() => new Date());
-  const [dragOverIdx, setDragOverIdx] = useState<number | null>(null);
-  const [dragActiveIdx, setDragActiveIdx] = useState<number | null>(null);
-  const dragIdx = useRef<number | null>(null);
 
   const fetchData = useCallback(async () => {
-    const [p, r] = await Promise.all([
+    const [p, r, proj, cal] = await Promise.all([
       fetch("/api/planner").then(r => r.json()),
       fetch("/api/roadmap").then(r => r.json()),
+      fetch("/api/projects").then(r => r.json()),
+      fetch("/api/calendar").then(r => r.json()),
     ]);
     setData(p);
     setProjects(r.projects ?? []);
-    try {
-      const s = localStorage.getItem("mc-project-order");
-      if (s) setProjectOrder(JSON.parse(s));
-    } catch { /* no saved order */ }
+    setProjectInfos(proj ?? []);
+    setCalEvents(cal ?? []);
     try {
       const o = localStorage.getItem("mc-task-project-overrides");
       if (o) setTaskOverrides(JSON.parse(o));
@@ -278,19 +413,6 @@ export default function PlannerPage() {
   }, []);
 
   useEffect(() => { fetchData(); }, [fetchData]);
-
-  const orderedProjects = useMemo(() => {
-    const top5 = projects.slice(0, 5);
-    if (projectOrder.length === 0) return top5;
-    const byId = new Map(top5.map(p => [p.id, p]));
-    const ordered: Project[] = [];
-    for (const id of projectOrder) {
-      const p = byId.get(id);
-      if (p) { ordered.push(p); byId.delete(id); }
-    }
-    for (const p of byId.values()) ordered.push(p);
-    return ordered;
-  }, [projects, projectOrder]);
 
   async function addItem(section: Section, item: string) {
     await fetch("/api/planner", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "add", section, item }) });
@@ -308,32 +430,6 @@ export default function PlannerPage() {
     localStorage.setItem("mc-task-project-overrides", JSON.stringify(next));
   }
 
-  function handleDragStart(idx: number) {
-    dragIdx.current = idx;
-    setDragActiveIdx(idx);
-  }
-  function handleDragOver(e: React.DragEvent, idx: number) {
-    e.preventDefault();
-    setDragOverIdx(idx);
-  }
-  function handleDrop(dropIdx: number) {
-    const from = dragIdx.current;
-    if (from === null || from === dropIdx) { setDragOverIdx(null); setDragActiveIdx(null); dragIdx.current = null; return; }
-    const ids = orderedProjects.map(p => p.id);
-    const [moved] = ids.splice(from, 1);
-    ids.splice(dropIdx, 0, moved);
-    setProjectOrder(ids);
-    localStorage.setItem("mc-project-order", JSON.stringify(ids));
-    setDragOverIdx(null);
-    setDragActiveIdx(null);
-    dragIdx.current = null;
-  }
-  function handleDragEnd() {
-    setDragOverIdx(null);
-    setDragActiveIdx(null);
-    dragIdx.current = null;
-  }
-
   if (loading || !data) return (
     <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center">
       <p className="text-zinc-500 text-sm">Loading...</p>
@@ -343,9 +439,11 @@ export default function PlannerPage() {
   const todayLeft = data.today.filter(t => !isDone(t)).length;
   const waitCount = data.delegated.filter(d => !d.status.includes("✅")).length;
   const isDateToday = isSameDay(focusDate, new Date());
+  const focusLabel = isDateToday ? "Today" : formatDateLabel(focusDate);
 
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-zinc-200 pb-12">
+      {/* Header */}
       <div className="px-4 pt-6 pb-4">
         <div className="flex items-center justify-between">
           <div>
@@ -357,61 +455,34 @@ export default function PlannerPage() {
 
       <div className="px-4 space-y-3">
 
-        {/* Top 5 Projects — draggable */}
-        <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 px-4 py-3">
-          <p className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3">Top 5 Projects</p>
-          <div className="space-y-1">
-            {orderedProjects.map((p, i) => {
-              const pct = p.milestoneTotal === 0 ? 0 : Math.round((p.milestoneDone / p.milestoneTotal) * 100);
-              return (
-                <div key={p.id}
-                  draggable
-                  onDragStart={() => handleDragStart(i)}
-                  onDragOver={(e) => handleDragOver(e, i)}
-                  onDrop={() => handleDrop(i)}
-                  onDragEnd={handleDragEnd}
-                  className={`flex items-center gap-2 py-2 px-2 rounded-lg cursor-grab active:cursor-grabbing transition-colors ${dragActiveIdx === i ? "opacity-40" : ""} ${dragOverIdx === i && dragActiveIdx !== i ? "bg-zinc-800/60" : ""}`}>
-                  <span className="text-zinc-700 hover:text-zinc-500 text-xs select-none flex-shrink-0 transition-colors" title="Drag to reorder">⠿</span>
-                  <span className="text-base w-6 flex-shrink-0">{p.emoji}</span>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between">
-                      <span className={`text-xs font-medium ${TITLE[p.color] ?? "text-zinc-300"}`}>{p.name}</span>
-                      <span className="text-xs text-zinc-600">{p.openTasks} open</span>
-                    </div>
-                    <div className="flex items-center gap-2 mt-0.5">
-                      <div className="flex-1 h-1 bg-zinc-800 rounded-full overflow-hidden">
-                        <div className={`h-full rounded-full ${BAR[p.color] ?? "bg-zinc-500"}`} style={{ width: `${pct}%` }} />
-                      </div>
-                      <span className="text-xs text-zinc-700">{pct}%</span>
-                    </div>
-                    {p.currentMilestone && <p className="text-xs text-zinc-600 truncate mt-0.5">{p.currentMilestone.title}</p>}
-                  </div>
+        {/* ═══ Two-column header: Projects + Calendar ═══ */}
+        <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-3">
+
+          {/* LEFT — Top 5 Projects (compact) */}
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 px-3 py-3">
+            <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider mb-2.5">Projects</p>
+            <div className="space-y-1.5">
+              {projectInfos.slice(0, 5).map(p => (
+                <div key={p.id} className="flex items-center gap-2 py-1">
+                  <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ backgroundColor: p.color }} />
+                  <span className="text-xs font-medium text-zinc-200 flex-1 truncate">{p.name}</span>
+                  <StatusBadge status={p.status} />
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
+
+          {/* RIGHT — Week Calendar */}
+          <WeekCalendar
+            events={calEvents}
+            projectInfos={projectInfos}
+            focusDate={focusDate}
+            onSelectDate={setFocusDate}
+          />
         </div>
 
-        {/* Date navigation strip */}
-        <div className="flex items-center justify-center gap-4 py-1">
-          <button onClick={() => setFocusDate(prev => { const d = new Date(prev); d.setDate(d.getDate() - 1); return d; })}
-            className="text-zinc-500 hover:text-zinc-300 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-zinc-800 transition-colors">
-            <span className="text-sm">◀</span>
-          </button>
-          <div className="text-center min-w-[140px]">
-            <span className={`text-sm font-medium ${isDateToday ? "text-amber-400" : "text-zinc-300"}`}>
-              {formatDateLabel(focusDate)}
-            </span>
-            {isDateToday && <span className="ml-2 text-[10px] text-amber-500/70 uppercase tracking-wider">Today</span>}
-          </div>
-          <button onClick={() => setFocusDate(prev => { const d = new Date(prev); d.setDate(d.getDate() + 1); return d; })}
-            className="text-zinc-500 hover:text-zinc-300 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-zinc-800 transition-colors">
-            <span className="text-sm">▶</span>
-          </button>
-        </div>
-
-        {/* Today — grouped by project */}
-        <GroupedTodayBlock items={data.today} projects={projects} overrides={taskOverrides}
+        {/* ═══ Focused date tasks ═══ */}
+        <GroupedTodayBlock label={focusLabel} items={isDateToday ? data.today : data.today} projects={projects} overrides={taskOverrides}
           onAdd={addItem} onComplete={completeItem} onReassign={handleReassign} />
 
         {/* This Week */}
