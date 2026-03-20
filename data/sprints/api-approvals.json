@@ -1,0 +1,157 @@
+{
+  "projectId": "api-approvals",
+  "updatedAt": "2026-03-20T15:14:57.968622Z",
+  "milestones": [
+    {
+      "id": "m1",
+      "title": "Third-Party Integrations",
+      "description": "API access requests, developer program applications, and partner approvals needed to unlock product features.",
+      "targetDate": "2026-06-01",
+      "status": "in-progress",
+      "sprints": [
+        {
+          "id": "s1",
+          "title": "Active Approvals",
+          "status": "in-progress",
+          "tasks": [
+            {
+              "id": "api-001",
+              "title": "Meta App Review \u2014 instagram_content_publish",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": "2026-04-17",
+              "url": "https://developers.facebook.com/apps/798073232859278/app-review/",
+              "notes": "Unlocks: restaurant owners can post menu photos to Instagram/Facebook from AI-R. App ID: 798073232859278. Submitted during social-001 build session."
+            },
+            {
+              "id": "api-002",
+              "title": "Olo Developer Program",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": null,
+              "url": "https://developer.olo.com",
+              "notes": "Unlocks: commission-free consumer ordering for 800+ brands. Flagged as Week 4 miss \u2014 apply ASAP."
+            },
+            {
+              "id": "api-003",
+              "title": "Uber Eats API Access",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": null,
+              "url": "https://developer.uber.com/dashboard",
+              "notes": "Unlocks: KitchenHub-style delivery order sync for Uber Eats. Uber One fee hike live Mar 19."
+            },
+            {
+              "id": "api-004",
+              "title": "DoorDash Partnership API",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": null,
+              "url": "mailto:partnerships@doordash.com",
+              "notes": "Unlocks: delivery order sync + chargeback data. Email partnerships@doordash.com."
+            },
+            {
+              "id": "api-005",
+              "title": "Check Payroll (checkhq.com)",
+              "status": "in-progress",
+              "submittedAt": "2026-03-11",
+              "expectedBy": null,
+              "url": "https://checkhq.com",
+              "notes": "Jacqueline Haboush-Flores (jacqueline@checkhq.com) reached out Mar 11. Overview sent \u2014 API + Check Components (iframe UIs), W2/1099, 2-day payroll. Replied Mar 20 requesting call any day after 2 PM ET. Waiting on scheduling."
+            },
+            {
+              "id": "api-006",
+              "title": "KitchenHub API",
+              "status": "todo",
+              "submittedAt": null,
+              "expectedBy": null,
+              "url": "https://www.kitchenhub.com/developers",
+              "notes": "Unlocks: kh-002 \u2014 delivery order sync. May require partnership agreement."
+            },
+            {
+              "id": "api-007",
+              "title": "Google Ads API",
+              "status": "done",
+              "submittedAt": "2026-03-20",
+              "expectedBy": null,
+              "url": "https://developers.google.com/google-ads/api/docs/get-started/introduction",
+              "notes": "Developer token issued: 9wcwS52jkAJZfqBG7OLOsA. Manager account: 414-228-6017. Access level: Test Account. Apply for Basic to hit production."
+            },
+            {
+              "id": "api-008",
+              "title": "QuickBooks Online \u2014 Intuit Developer",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": null,
+              "url": "https://developer.intuit.com",
+              "notes": "Unlocks: qb-001 \u2014 QuickBooks daily sales export from AI-R. Need sandbox + production app."
+            },
+            {
+              "id": "api-009",
+              "title": "GrubHub API / Partner Integration",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": null,
+              "url": "https://get.grubhub.com/restaurant-partners/",
+              "notes": "Unlocks: delivery order sync for GrubHub orders into AI-R dashboard. Outreach sent 2026-03-20."
+            },
+            {
+              "id": "api-010",
+              "title": "KitchenHub API (unified DoorDash + Uber Eats + GrubHub)",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": null,
+              "url": "https://www.trykitchenhub.com/developer",
+              "notes": "KitchenHub = ONE API for DoorDash + Uber Eats + GrubHub. Has Reseller/White-label program for POS platforms. Demo form submitted 2026-03-20. Reseller program outreach in progress. Tech: kh-002 sprint task in ai-r.json."
+            },
+            {
+              "id": "api-011",
+              "title": "Otter Restaurant Platform Partnership",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": null,
+              "url": "https://otterhq.com",
+              "notes": "Otter = delivery aggregator + POS. Become-a-partner form submitted 2026-03-20. Tech integration + referral/reseller partnership angle."
+            },
+            {
+              "id": "api-012",
+              "title": "OpenTable API Integration",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": null,
+              "url": "https://developer.opentable.com",
+              "notes": "Follow-up email sent 2026-03-20. Neil previously applied as Red Bar restaurant. Now pitching as AI-R platform integration \u2014 reservations on floor plan + manager dashboard."
+            },
+            {
+              "id": "api-013",
+              "title": "Resy API Integration",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": null,
+              "url": "https://developer.resy.com",
+              "notes": "First outreach 2026-03-20. Tock sunsetting summer 2026 = opportunity. Pitching Resy as AI-R reservation layer for independent restaurants."
+            },
+            {
+              "id": "api-014",
+              "title": "Yelp Fusion API",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": null,
+              "url": "https://www.yelp.com/developers",
+              "notes": "First outreach 2026-03-20. Want reviews + ratings on AI-R dashboard + reputation management module."
+            },
+            {
+              "id": "api-015",
+              "title": "SevenRooms API Integration",
+              "status": "in-progress",
+              "submittedAt": "2026-03-20",
+              "expectedBy": "2026-04-01",
+              "url": "https://developer.sevenrooms.com",
+              "notes": "\u26a0\ufe0f TIME SENSITIVE \u2014 DoorDash acquiring SevenRooms. Outreach sent 2026-03-20 before acquisition closes. Pitching AI-R as independent restaurant alternative to DoorDash-controlled guest data. Reservations + guest profiles on AI-R floor plan."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

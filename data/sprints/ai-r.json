@@ -561,7 +561,9 @@
             {
               "id": "t86",
               "title": "One-click publish to domain",
-              "status": "queued"
+              "status": "done",
+              "notes": "One-click domain publish. Vercel Domains API, Cloudflare DoH DNS verification, 3-step checklist UI (DNS + Vercel + SSL). Domain stored in restaurants.settings.website.customDomain JSONB. Files: api/pwa/domain/connect, api/pwa/domain/verify, components/home/website-builder/DomainConnect, website-builder page modified.",
+              "completedAt": "2026-03-20"
             }
           ]
         },
@@ -1110,6 +1112,13 @@
               "title": "Press/investor one-pager — AI ordering platform positioning",
               "status": "queued",
               "notes": "While Square/Toast retrofit AI, AI-R was built for it. One integration → all AI platforms. The moat is the API-first architecture."
+            },
+            {
+              "id": "kh-002",
+              "title": "KitchenHub delivery order aggregator",
+              "status": "done",
+              "completedAt": "2026-03-20",
+              "notes": "API key auth, webhook + cron sync, upserts to transactions with platform source (doordash/ubereats/grubhub), settings UI with sync status and webhook URL. Files: lib/kitchenhub/client.ts, api/pwa/integrations/kitchenhub/, api/webhooks/kitchenhub, api/cron/kitchenhub-sync, settings/integrations/kitchenhub page, vercel.json updated."
             }
           ]
         }
@@ -1117,12 +1126,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "1dbb447",
-    "message": "fix: fallback to location-only search when name+location returns no results",
+    "hash": "ebdd6d2",
+    "message": "feat: KitchenHub delivery order aggregator — API key auth, webhook + cron sync, platform badges, settings UI",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "ebdd6d2",
+      "message": "feat: KitchenHub delivery order aggregator — API key auth, webhook + cron sync, platform badges, settings UI",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "1dbb447",
       "message": "fix: fallback to location-only search when name+location returns no results",
@@ -1174,12 +1189,6 @@
     {
       "hash": "3f4af14",
       "message": "fix: add paymentStatus and source to RenderTable interface",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "266395a",
-      "message": "feat: ChatGPT Action — openapi.json, restaurant discovery API, AI ordering landing page",
       "branch": "neil",
       "date": "2026-03-20"
     }
