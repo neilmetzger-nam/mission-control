@@ -1154,12 +1154,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "565ecff",
-    "message": "feat: DoorDash report email scraper — weekly Gmail IMAP poll, ZIP parser, upserts payouts/errors/transactions, Monday 9AM cron",
+    "hash": "77467bc",
+    "message": "docs: AI-R architecture overview — surfaces, auth model, API structure, integrations, Mermaid diagram",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "77467bc",
+      "message": "docs: AI-R architecture overview — surfaces, auth model, API structure, integrations, Mermaid diagram",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "565ecff",
       "message": "feat: DoorDash report email scraper — weekly Gmail IMAP poll, ZIP parser, upserts payouts/errors/transactions, Monday 9AM cron",
@@ -1211,12 +1217,6 @@
     {
       "hash": "44b3801",
       "message": "fix: trim openapi description to under 300 chars",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "d7a4e88",
-      "message": "fix: type cast for body from resolveTenantFromBody",
       "branch": "neil",
       "date": "2026-03-20"
     }
