@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "81f8c9f",
-    "message": "fix: pull modifier prices from DB instead of hardcoded table",
+    "hash": "d6de8d3",
+    "message": "fix: look up active cart by caller phone when no cart token provided",
     "branch": "neil",
-    "date": "2026-03-19"
+    "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "d6de8d3",
+      "message": "fix: look up active cart by caller phone when no cart token provided",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "81f8c9f",
       "message": "fix: pull modifier prices from DB instead of hardcoded table",
@@ -1036,12 +1042,6 @@
     {
       "hash": "5e6a868",
       "message": "fix: explicit String(id) cast for resolveViaAlias — Vercel strict TS check",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "b9bf4e8",
-      "message": "fix: remove middleware.ts — proxy.ts is the Next.js 16 convention, can't have both",
       "branch": "neil",
       "date": "2026-03-19"
     }
