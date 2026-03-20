@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "5d90cda",
-    "message": "fix: pass caller_phone via body from EL, use for cart lookup and SMS destination",
+    "hash": "1d97213",
+    "message": "fix: accept cart_token from request body in resolve-and-add",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "1d97213",
+      "message": "fix: accept cart_token from request body in resolve-and-add",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "5d90cda",
       "message": "fix: pass caller_phone via body from EL, use for cart lookup and SMS destination",
@@ -1036,12 +1042,6 @@
     {
       "hash": "52a037b",
       "message": "fix: re-enable Stripe checkout for phone orders — payment over phone via SMS link",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "d8179b6",
-      "message": "fix: TypeScript fixes for Vercel build — Stripe!, cart null checks",
       "branch": "neil",
       "date": "2026-03-19"
     }
