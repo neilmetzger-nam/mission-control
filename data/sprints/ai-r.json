@@ -1126,6 +1126,13 @@
               "status": "done",
               "completedAt": "2026-03-20",
               "notes": "OAuth 2.0, daily sales export as SalesReceipt, food/bev category split, chart of accounts mapping UI, auto-refresh tokens, minorversion=73. Files: lib/quickbooks/client.ts, api/auth/quickbooks/callback, api/pwa/integrations/quickbooks (route/accounts/export), settings/integrations/quickbooks page."
+            },
+            {
+              "id": "payroll-001",
+              "title": "Check Payroll Phase 1 — labor summary + dashboard widget",
+              "status": "done",
+              "completedAt": "2026-03-20",
+              "notes": "API key auth, labor summary from shifts+staff+transactions, FOH/BOH split, LaborCostWidget on dashboard, full settings UI. Phase 2 (push to Check API for payroll runs) = separate session when Check credentials arrive."
             }
           ]
         }
@@ -1133,12 +1140,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "34b9793",
-    "message": "feat: QuickBooks Online OAuth 2.0 integration — daily sales export as SalesReceipt, food/bev split, account mapping UI, auto-refresh tokens",
+    "hash": "3cd5095",
+    "message": "feat: Check payroll Phase 1 — API key auth, labor summary (shifts+staff+transactions), FOH/BOH split widget on dashboard, settings UI",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "3cd5095",
+      "message": "feat: Check payroll Phase 1 — API key auth, labor summary (shifts+staff+transactions), FOH/BOH split widget on dashboard, settings UI",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "34b9793",
       "message": "feat: QuickBooks Online OAuth 2.0 integration — daily sales export as SalesReceipt, food/bev split, account mapping UI, auto-refresh tokens",
@@ -1190,12 +1203,6 @@
     {
       "hash": "97a08a3",
       "message": "fix: add openapi.json to public routes so ChatGPT can fetch it",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "9a184fa",
-      "message": "feat: source filter pills on To Go tab — Staff, Joe, OpenAI, Alexa, Google, Website",
       "branch": "neil",
       "date": "2026-03-20"
     }
