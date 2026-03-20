@@ -1147,12 +1147,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "a480fe6",
-    "message": "fix: add nodejs runtime to chargeback routes (pdf-parse incompatible with edge runtime)",
+    "hash": "b4137b3",
+    "message": "fix: update pnpm lockfile for pdf-parse dependency",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "b4137b3",
+      "message": "fix: update pnpm lockfile for pdf-parse dependency",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "a480fe6",
       "message": "fix: add nodejs runtime to chargeback routes (pdf-parse incompatible with edge runtime)",
@@ -1204,12 +1210,6 @@
     {
       "hash": "da99885",
       "message": "fix: ChatGPT Actions — move tenant_id/cart_token to request body, body-aware tenant resolver",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "d51f752",
-      "message": "fix: add red-bar-sushi slug aliases to tenant resolver for ChatGPT",
       "branch": "neil",
       "date": "2026-03-20"
     }
