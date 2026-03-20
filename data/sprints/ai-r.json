@@ -1117,12 +1117,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "d51f752",
-    "message": "fix: add red-bar-sushi slug aliases to tenant resolver for ChatGPT",
+    "hash": "da99885",
+    "message": "fix: ChatGPT Actions — move tenant_id/cart_token to request body, body-aware tenant resolver",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "da99885",
+      "message": "fix: ChatGPT Actions — move tenant_id/cart_token to request body, body-aware tenant resolver",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "d51f752",
       "message": "fix: add red-bar-sushi slug aliases to tenant resolver for ChatGPT",
@@ -1174,12 +1180,6 @@
     {
       "hash": "4af751f",
       "message": "feat: phone orders in To Go tab with PAID/UNPAID badge",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "d1609a6",
-      "message": "feat: unpaid badge on phone orders only, table colors improved",
       "branch": "neil",
       "date": "2026-03-20"
     }
