@@ -979,12 +979,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "834e02a",
-    "message": "fix: look up cart by caller phone in checkout routes, no cart token needed",
+    "hash": "5d90cda",
+    "message": "fix: pass caller_phone via body from EL, use for cart lookup and SMS destination",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "5d90cda",
+      "message": "fix: pass caller_phone via body from EL, use for cart lookup and SMS destination",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "834e02a",
       "message": "fix: look up cart by caller phone in checkout routes, no cart token needed",
@@ -1036,12 +1042,6 @@
     {
       "hash": "d8179b6",
       "message": "fix: TypeScript fixes for Vercel build — Stripe!, cart null checks",
-      "branch": "neil",
-      "date": "2026-03-19"
-    },
-    {
-      "hash": "0d8d8b4",
-      "message": "fix: skip Stripe for phone orders — use mock checkout, pay at pickup for now",
       "branch": "neil",
       "date": "2026-03-19"
     }
