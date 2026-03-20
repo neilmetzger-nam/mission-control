@@ -1175,6 +1175,13 @@
               "status": "done",
               "completedAt": "2026-03-20",
               "notes": "DB persistence (waitlist_entries), Twilio SMS on join + table ready, public /waitlist/[slug] with live position polling. Components switched from localStorage to API. Migration needs to run: database/migrations/waitlist_entries.sql"
+            },
+            {
+              "id": "sections-001a",
+              "title": "Server sections Session A — section_type, section_role, sections_mode",
+              "status": "done",
+              "completedAt": "2026-03-20",
+              "notes": "section_type (dining/bar/patio/pool) + section_role (server/bartender/food_runner) + sections_mode (none/assigned/mixed) on restaurants table. FloorMapView gated on mode. Session B (Settings UI) + Session C (Tip out) still needed."
             }
           ]
         }
@@ -1182,12 +1189,18 @@
     }
   ],
   "lastCommit": {
-    "hash": "ed0d82e",
-    "message": "fix: remove extra closing brace in chargeback page",
+    "hash": "e769a24",
+    "message": "feat: chargeback lead capture — DB persist, Gmail email to lead + Dave, ZIP/CSV/PDF support",
     "branch": "neil",
     "date": "2026-03-20"
   },
   "recentCommits": [
+    {
+      "hash": "e769a24",
+      "message": "feat: chargeback lead capture — DB persist, Gmail email to lead + Dave, ZIP/CSV/PDF support",
+      "branch": "neil",
+      "date": "2026-03-20"
+    },
     {
       "hash": "ed0d82e",
       "message": "fix: remove extra closing brace in chargeback page",
@@ -1239,12 +1252,6 @@
     {
       "hash": "4c869c8",
       "message": "feat: Chargeback Fighter — public lead gen page, PDF analysis via Claude, dispute letter generation, email capture",
-      "branch": "neil",
-      "date": "2026-03-20"
-    },
-    {
-      "hash": "3cd5095",
-      "message": "feat: Check payroll Phase 1 — API key auth, labor summary (shifts+staff+transactions), FOH/BOH split widget on dashboard, settings UI",
       "branch": "neil",
       "date": "2026-03-20"
     }
