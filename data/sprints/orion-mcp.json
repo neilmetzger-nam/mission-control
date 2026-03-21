@@ -1,10 +1,10 @@
 {
   "projectId": "orion-mcp",
-  "updatedAt": "2026-03-19",
+  "updatedAt": "2026-03-21",
   "milestones": [
     {
       "id": "m1",
-      "title": "MCP v1 — Live",
+      "title": "MCP v1 \u2014 Live",
       "description": "Core agent orchestration layer deployed",
       "targetDate": "2026-03-07",
       "status": "done",
@@ -47,8 +47,8 @@
     },
     {
       "id": "m2",
-      "title": "MCP v2 — Agentic Chat Widget",
-      "description": "Embeddable widget: chat → intent → agent executes → human approves → live",
+      "title": "MCP v2 \u2014 Agentic Chat Widget",
+      "description": "Embeddable widget: chat \u2192 intent \u2192 agent executes \u2192 human approves \u2192 live",
       "targetDate": "2026-07-01",
       "status": "in-progress",
       "sprints": [
@@ -59,29 +59,29 @@
           "tasks": [
             {
               "id": "t4",
-              "title": "POST /api/tasks/create — accepts intent + tenant + context",
+              "title": "POST /api/tasks/create \u2014 accepts intent + tenant + context",
               "status": "queued",
               "assignee": "agent",
               "notes": [
                 "Core of MCP v2",
-                "Intent detected → task created → agent assigned"
+                "Intent detected \u2192 task created \u2192 agent assigned"
               ]
             },
             {
               "id": "t5",
-              "title": "Task queue in Upstash — agents poll for work",
+              "title": "Task queue in Upstash \u2014 agents poll for work",
               "status": "queued",
               "assignee": "agent",
               "notes": []
             },
             {
               "id": "t6",
-              "title": "Intent router — map natural language to task types",
+              "title": "Intent router \u2014 map natural language to task types",
               "status": "queued",
               "assignee": "agent",
               "notes": [
                 "Train on real AI-R owner requests from beta",
-                "Kill feature: owner types request → agent does it → owner approves"
+                "Kill feature: owner types request \u2192 agent does it \u2192 owner approves"
               ]
             },
             {
@@ -90,9 +90,9 @@
               "status": "done",
               "assignee": "agent",
               "notes": [
-                "floor_plan_import: photo → Claude Vision → table map JSON",
-                "menu_cleanup: analyze menu → surface issues → auto-fix with approval",
-                "delivery_statement_upload: statement → chargeback detection",
+                "floor_plan_import: photo \u2192 Claude Vision \u2192 table map JSON",
+                "menu_cleanup: analyze menu \u2192 surface issues \u2192 auto-fix with approval",
+                "delivery_statement_upload: statement \u2192 chargeback detection",
                 "go_live_assistant: final checklist walkthrough",
                 "EL widget = voice/UI layer, MCP = brain behind it",
                 "Page context injected into every agent call so agent knows what owner is doing"
@@ -100,12 +100,12 @@
             },
             {
               "id": "t6c",
-              "title": "generate_report — natural language → SQL → visual chart via Nano",
+              "title": "generate_report \u2014 natural language \u2192 SQL \u2192 visual chart via Nano",
               "status": "done",
               "assignee": "agent",
               "notes": [
                 "Owner: \"show me Tuesday 3-5pm sales by category\"",
-                "MCP: parse intent → query Neon → structure data → send to Nano Pro 2",
+                "MCP: parse intent \u2192 query Neon \u2192 structure data \u2192 send to Nano Pro 2",
                 "Nano: generates visual chart image",
                 "Maestro: responds with image",
                 "Reference: agency/projects/ai-r/strategy/operator-faqs.md"
@@ -113,19 +113,19 @@
             },
             {
               "id": "t6d",
-              "title": "AI-R ops task types — daily voice commands",
+              "title": "AI-R ops task types \u2014 daily voice commands",
               "status": "done",
               "assignee": "agent",
               "notes": [
-                "fix_time_punch — Tom forgot to clock out",
-                "add_special — O-Toro platter tonight, limit 5",
-                "86_item — we are out of salmon",
-                "reprint_receipt — table 4",
-                "move_table — 7 to 12",
-                "update_price — Pad Thai to 17",
-                "get_shift_summary — how are we doing tonight",
-                "apply_comp — comp table 3 dessert",
-                "These are the daily value — why owners dont churn"
+                "fix_time_punch \u2014 Tom forgot to clock out",
+                "add_special \u2014 O-Toro platter tonight, limit 5",
+                "86_item \u2014 we are out of salmon",
+                "reprint_receipt \u2014 table 4",
+                "move_table \u2014 7 to 12",
+                "update_price \u2014 Pad Thai to 17",
+                "get_shift_summary \u2014 how are we doing tonight",
+                "apply_comp \u2014 comp table 3 dessert",
+                "These are the daily value \u2014 why owners dont churn"
               ]
             }
           ]
@@ -137,7 +137,7 @@
           "tasks": [
             {
               "id": "t7",
-              "title": "Chat widget — <script> tag drop-in for any product",
+              "title": "Chat widget \u2014 <script> tag drop-in for any product",
               "status": "queued",
               "assignee": "agent",
               "notes": [
@@ -146,7 +146,7 @@
             },
             {
               "id": "t8",
-              "title": "Shared context store — all chats write to same KV",
+              "title": "Shared context store \u2014 all chats write to same KV",
               "status": "queued",
               "assignee": "agent",
               "notes": [
@@ -156,12 +156,12 @@
             },
             {
               "id": "t9",
-              "title": "Approval flow — task updates push back to widget",
+              "title": "Approval flow \u2014 task updates push back to widget",
               "status": "queued",
               "assignee": "agent",
               "notes": [
                 "SSE or polling",
-                "Human approves → live"
+                "Human approves \u2192 live"
               ]
             }
           ]
@@ -173,7 +173,7 @@
           "tasks": [
             {
               "id": "t10",
-              "title": "Sentinel v1 — Orion-specific security scanner",
+              "title": "Sentinel v1 \u2014 Orion-specific security scanner",
               "status": "queued",
               "assignee": "agent",
               "notes": [
@@ -187,16 +187,16 @@
         },
         {
           "id": "s5",
-          "title": "Molly — Marketing Agent",
+          "title": "Molly \u2014 Marketing Agent",
           "status": "queued",
           "tasks": [
             {
               "id": "t11",
-              "title": "Molly v1 — draft posts from sprint completions",
+              "title": "Molly v1 \u2014 draft posts from sprint completions",
               "status": "done",
               "assignee": "agent",
               "notes": [
-                "Monitors sprint completions → drafts LinkedIn/X/HN content → routes to review queue",
+                "Monitors sprint completions \u2192 drafts LinkedIn/X/HN content \u2192 routes to review queue",
                 "Building tonight (Mar 8)"
               ],
               "completedAt": "2026-03-13"
@@ -215,32 +215,32 @@
         },
         {
           "id": "s-mcp-v2-done",
-          "title": "MCP v2 — Task Queue + Intent Router (COMPLETE)",
+          "title": "MCP v2 \u2014 Task Queue + Intent Router (COMPLETE)",
           "status": "done",
           "tasks": [
             {
               "id": "mv1",
-              "title": "POST /api/tasks — create task with intent classification",
+              "title": "POST /api/tasks \u2014 create task with intent classification",
               "status": "done",
               "notes": [
-                "Intent router maps natural language → taskType",
-                "Agent router maps taskType → specialist agent",
+                "Intent router maps natural language \u2192 taskType",
+                "Agent router maps taskType \u2192 specialist agent",
                 "Returns taskId, taskType, estimatedAgent, needsConfirmation"
               ]
             },
             {
               "id": "mv2",
-              "title": "GET /api/tasks — list tasks by restaurant + status",
+              "title": "GET /api/tasks \u2014 list tasks by restaurant + status",
               "status": "done"
             },
             {
               "id": "mv3",
-              "title": "PATCH /api/tasks/[taskId] — update task status",
+              "title": "PATCH /api/tasks/[taskId] \u2014 update task status",
               "status": "done"
             },
             {
               "id": "mv4",
-              "title": "Confirmation queue — /api/tasks/confirm",
+              "title": "Confirmation queue \u2014 /api/tasks/confirm",
               "status": "done",
               "notes": [
                 "Destructive actions flagged: menu_delete, bulk_update, 10+ items",
@@ -254,7 +254,7 @@
               "title": "Role-based delegation schema",
               "status": "done",
               "notes": [
-                "Owner → GM → Manager escalation chain",
+                "Owner \u2192 GM \u2192 Manager escalation chain",
                 "Configurable permissions per agent",
                 "Auth middleware checks role"
               ]
@@ -294,29 +294,29 @@
           "tasks": [
             {
               "id": "t1",
-              "title": "generate_media — abstract hardcoded Fal",
+              "title": "generate_media \u2014 abstract hardcoded Fal",
               "status": "done",
               "completedAt": "2026-03-18",
               "completedBy": "7d18d04"
             },
             {
               "id": "t2",
-              "title": "score_pronunciation — Time Trek core mechanic",
+              "title": "score_pronunciation \u2014 Time Trek core mechanic",
               "status": "todo"
             },
             {
               "id": "t3",
-              "title": "text_to_speech — EL wrapper with R2 caching",
+              "title": "text_to_speech \u2014 EL wrapper with R2 caching",
               "status": "todo"
             },
             {
               "id": "t4",
-              "title": "transcribe_audio — Whisper/Deepgram wrapper",
+              "title": "transcribe_audio \u2014 Whisper/Deepgram wrapper",
               "status": "todo"
             },
             {
               "id": "t5",
-              "title": "get_usage_stats — billing UI",
+              "title": "get_usage_stats \u2014 billing UI",
               "status": "todo"
             }
           ]
@@ -325,25 +325,25 @@
     },
     {
       "id": "m-orion-studio-launch",
-      "title": "Orion Studio — Public Launch",
-      "description": "Productize Mission Control → orionstudio.ai. Live product by end of March.",
+      "title": "Orion Studio \u2014 Public Launch",
+      "description": "Productize Mission Control \u2192 orionstudio.ai. Live product by end of March.",
       "targetDate": "2026-03-31",
       "status": "in-progress",
       "sprints": [
         {
           "id": "s-os-w1",
-          "title": "Week 1 (Mar 13-16) — Foundation",
+          "title": "Week 1 (Mar 13-16) \u2014 Foundation",
           "status": "in-progress",
           "tasks": [
             {
               "id": "os-w1-1",
-              "title": "Domain + site live ✅",
+              "title": "Domain + site live \u2705",
               "status": "done",
               "completedAt": "2026-03-13"
             },
             {
               "id": "os-w1-2",
-              "title": "Product brief + build plan ✅",
+              "title": "Product brief + build plan \u2705",
               "status": "done",
               "completedAt": "2026-03-13"
             },
@@ -359,19 +359,19 @@
             },
             {
               "id": "os-w1-5",
-              "title": "Carol demo — screen share real MC + send orionstudio.ai",
+              "title": "Carol demo \u2014 screen share real MC + send orionstudio.ai",
               "status": "todo"
             },
             {
               "id": "os-w1-6",
-              "title": "Intake form → dave@orionstudio.ai email capture wired",
+              "title": "Intake form \u2192 dave@orionstudio.ai email capture wired",
               "status": "todo"
             }
           ]
         },
         {
           "id": "s-os-w2",
-          "title": "Week 2 (Mar 17-23) — First Design Partners",
+          "title": "Week 2 (Mar 17-23) \u2014 First Design Partners",
           "status": "queued",
           "tasks": [
             {
@@ -393,19 +393,33 @@
             },
             {
               "id": "os-w2-4",
-              "title": "Document Intake process → playbook",
+              "title": "Document Intake process \u2192 playbook",
               "status": "todo"
             },
             {
               "id": "os-w2-5",
               "title": "Collect feedback, identify top 3 missing features",
               "status": "todo"
+            },
+            {
+              "id": "mc-save-session-001",
+              "title": "Save Session button \u2014 MC Planner + sidebar",
+              "status": "done",
+              "assignee": "agent",
+              "completedAt": "2026-03-21",
+              "notes": [
+                "Claude Code built: POST /api/session/save endpoint",
+                "SaveSessionButton.tsx component with idle/saving/saved/error states",
+                "Button placed in Planner header + sidebar bottom",
+                "OPENCLAW_WEBHOOK_URL wired in .env.local (updated to 127.0.0.1:18789)",
+                "TODO: confirm exact OpenClaw inbound webhook path for landing checklist trigger"
+              ]
             }
           ]
         },
         {
           "id": "s-os-w3",
-          "title": "Week 3 (Mar 24-28) — Multi-Tenant + Polish",
+          "title": "Week 3 (Mar 24-28) \u2014 Multi-Tenant + Polish",
           "status": "queued",
           "tasks": [
             {
@@ -415,7 +429,7 @@
             },
             {
               "id": "os-w3-2",
-              "title": "Auth layer (Clerk) — founders log in at orionstudio.ai/dashboard",
+              "title": "Auth layer (Clerk) \u2014 founders log in at orionstudio.ai/dashboard",
               "status": "todo"
             },
             {
@@ -432,7 +446,7 @@
         },
         {
           "id": "s-os-w4",
-          "title": "Week 4 (Mar 29-31) — Launch",
+          "title": "Week 4 (Mar 29-31) \u2014 Launch",
           "status": "queued",
           "tasks": [
             {
@@ -452,7 +466,7 @@
             },
             {
               "id": "os-w4-4",
-              "title": "Carol intro to her network — soft launch",
+              "title": "Carol intro to her network \u2014 soft launch",
               "status": "todo"
             }
           ]
@@ -473,14 +487,14 @@
           "tasks": [
             {
               "id": "int1",
-              "title": "Notion API integration — read founder workspace on Intake",
+              "title": "Notion API integration \u2014 read founder workspace on Intake",
               "status": "todo",
               "priority": "high",
-              "notes": "Notion has full API. Connect workspace → Dave reads pages/DBs overnight → morning brief."
+              "notes": "Notion has full API. Connect workspace \u2192 Dave reads pages/DBs overnight \u2192 morning brief."
             },
             {
               "id": "int2",
-              "title": "Notion → Orion data mapper — pages to sprint/memory format",
+              "title": "Notion \u2192 Orion data mapper \u2014 pages to sprint/memory format",
               "status": "done",
               "priority": "high",
               "completedAt": "2026-03-18",
@@ -488,14 +502,14 @@
             },
             {
               "id": "int3",
-              "title": "NotebookLM source ingestion — accept document list on Intake",
+              "title": "NotebookLM source ingestion \u2014 accept document list on Intake",
               "status": "todo",
               "priority": "medium",
               "notes": "No public API yet. Workaround: accept same source docs (PDFs, links) directly."
             },
             {
               "id": "int4",
-              "title": "Intake UI — \"Connect Notion\" button on onboarding flow",
+              "title": "Intake UI \u2014 \"Connect Notion\" button on onboarding flow",
               "status": "todo",
               "priority": "high"
             },
@@ -525,13 +539,13 @@
     },
     {
       "hash": "409e714",
-      "message": "fix: correct Nano Banana Pro model ID — nano-banana-pro-preview not nano-banana-pro",
+      "message": "fix: correct Nano Banana Pro model ID \u2014 nano-banana-pro-preview not nano-banana-pro",
       "branch": "neil",
       "date": "2026-03-19"
     },
     {
       "hash": "0acfab6",
-      "message": "fix: enhance mode uses Nano Banana Pro with owner photo as reference — not Fal",
+      "message": "fix: enhance mode uses Nano Banana Pro with owner photo as reference \u2014 not Fal",
       "branch": "neil",
       "date": "2026-03-19"
     },
@@ -543,25 +557,25 @@
     },
     {
       "hash": "a87bbbf",
-      "message": "feat: lock winning enhance prompt — 'expertly plated, same bowl, blurred bg' formula",
+      "message": "feat: lock winning enhance prompt \u2014 'expertly plated, same bowl, blurred bg' formula",
       "branch": "neil",
       "date": "2026-03-19"
     },
     {
       "hash": "bbe19e2",
-      "message": "feat: prompt engine — subject detection, cuisine modifiers, style overrides, safety suffix (9/9 tests pass)",
+      "message": "feat: prompt engine \u2014 subject detection, cuisine modifiers, style overrides, safety suffix (9/9 tests pass)",
       "branch": "neil",
       "date": "2026-03-19"
     },
     {
       "hash": "5fbf24f",
-      "message": "docs: image prompt engineering — simple/advanced modes, per-cuisine defaults, reference image rules, video pipeline",
+      "message": "docs: image prompt engineering \u2014 simple/advanced modes, per-cuisine defaults, reference image rules, video pipeline",
       "branch": "main",
       "date": "2026-03-18"
     },
     {
       "hash": "20391b7",
-      "message": "feat: smart image routing — Imagen 4.0 (text2img), Gemini 3.1 (reference-based), Fal (enhance/restyle)\n\nAI-R sends 'I need a photo' + optional references. Orion decides:\n- No reference → Imagen 4.0 (best food quality, free)\n- Restaurant reference photo → Gemini 3.1 Flash Image (style-matched, free)\n- Owner's food photo → Fal flux/dev img2img (enhance or restyle)\n- Fallback → Fal text2img\n\nCuisine-aware prompt builder with per-cuisine plating details.\nPrompt safety rules enforced (no logos, no faces, blurred backgrounds).",
+      "message": "feat: smart image routing \u2014 Imagen 4.0 (text2img), Gemini 3.1 (reference-based), Fal (enhance/restyle)\n\nAI-R sends 'I need a photo' + optional references. Orion decides:\n- No reference \u2192 Imagen 4.0 (best food quality, free)\n- Restaurant reference photo \u2192 Gemini 3.1 Flash Image (style-matched, free)\n- Owner's food photo \u2192 Fal flux/dev img2img (enhance or restyle)\n- Fallback \u2192 Fal text2img\n\nCuisine-aware prompt builder with per-cuisine plating details.\nPrompt safety rules enforced (no logos, no faces, blurred backgrounds).",
       "branch": "main",
       "date": "2026-03-18"
     },
@@ -573,7 +587,7 @@
     },
     {
       "hash": "020bed5",
-      "message": "docs: CFO guardrails — lessons learned, undo spec, safety rules",
+      "message": "docs: CFO guardrails \u2014 lessons learned, undo spec, safety rules",
       "branch": "main",
       "date": "2026-03-18"
     }
