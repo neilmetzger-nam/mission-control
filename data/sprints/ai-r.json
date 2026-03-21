@@ -1,6 +1,6 @@
 {
   "projectId": "ai-r",
-  "updatedAt": "2026-03-20",
+  "updatedAt": "2026-03-21",
   "milestones": [
     {
       "id": "m1",
@@ -1182,6 +1182,13 @@
               "status": "done",
               "completedAt": "2026-03-20",
               "notes": "section_type (dining/bar/patio/pool) + section_role (server/bartender/food_runner) + sections_mode (none/assigned/mixed) on restaurants table. FloorMapView gated on mode. Session B (Settings UI) + Session C (Tip out) still needed."
+            },
+            {
+              "id": "sections-001b",
+              "title": "Server sections Session B — Settings UI",
+              "status": "done",
+              "completedAt": "2026-03-20",
+              "notes": "3-way mode toggle (None/Assigned/Mixed), section CRUD with color picker + type selector, staff assignment panel with roles, unassigned pool, section overview grid. Settings tab added. Session C (tip out) still needed."
             }
           ]
         }
