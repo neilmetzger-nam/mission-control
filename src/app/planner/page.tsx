@@ -288,11 +288,12 @@ function SectionBlock({ label, items, section, accent, onAdd, onComplete }: {
 }
 
 /* ── Grouped Today Block with drag-between-groups ── */
-function GroupedTodayBlock({ label, items, projects, overrides, onAdd, onComplete, onReassign }: {
+function GroupedTodayBlock({ label, items, projects, overrides, timedEvents = [], onAdd, onComplete, onReassign }: {
   label: string;
   items: string[];
   projects: Project[];
   overrides: Record<string, string>;
+  timedEvents?: CalendarEvent[];
   onAdd: (section: Section, text: string) => void;
   onComplete: (section: Section, index: number) => void;
   onReassign: (taskKey: string, targetProjectId: string | null) => void;
@@ -376,6 +377,41 @@ function GroupedTodayBlock({ label, items, projects, overrides, onAdd, onComplet
       </button>
       {open && (
         <div className="px-4 pb-3">
+          {/* TODAY'S SCHEDULE — timed calendar events */}
+          {timedEvents.length > 0 && (
+            <>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-[10px] font-bold text-zinc-600 uppercase tracking-wider">Today&apos;s Schedule</span>
+                <div className="flex-1 h-px bg-zinc-800" />
+              </div>
+              <div className="space-y-1 mb-3">
+                {timedEvents
+                  .slice()
+                  .sort((a, b) => a.startTime.localeCompare(b.startTime))
+                  .map(evt => {
+                    const proj = evt.project ? projects.find(p => p.id === evt.project) : null;
+                    return (
+                      <div key={evt.id} className="flex items-center gap-2 min-h-[36px] px-2 rounded-lg">
+                        <span className="text-[11px] font-mono text-zinc-500 shrink-0 w-16">
+                          {fmtTime(evt.startTime)} <span className="text-zinc-700">→</span> {fmtTime(evt.endTime)}
+                        </span>
+                        <span className="text-sm text-zinc-300 flex-1 truncate">{evt.title}</span>
+                        {proj && (
+                          <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: proj.color }} />
+                        )}
+                      </div>
+                    );
+                  })}
+              </div>
+            </>
+          )}
+          {/* TASKS divider */}
+          {timedEvents.length > 0 && (
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-[10px] font-bold text-zinc-600 uppercase tracking-wider">Tasks</span>
+              <div className="flex-1 h-px bg-zinc-800" />
+            </div>
+          )}
           {groups.map(g => {
             const groupKey = g.projectId ?? "__other__";
             const isDropTarget = dragOverGroup === groupKey && dragActiveTask !== null;
@@ -484,6 +520,7 @@ export default function PlannerPage() {
   }
 
   const neilEvents = useMemo(() => calEvents.filter(e => !e.owner || e.owner === "neil"), [calEvents]);
+  const timedToday = useMemo(() => neilEvents.filter(e => eventAppliesToDate(e, focusDate) && !e.allDay && e.startTime), [neilEvents, focusDate]);
 
   if (loading || !data) return (
     <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center">
@@ -582,7 +619,7 @@ export default function PlannerPage() {
 
         {/* ═══ Focused date tasks ═══ */}
         <GroupedTodayBlock label={focusLabel} items={isDateToday ? data.today : data.today} projects={projects} overrides={taskOverrides}
-          onAdd={addItem} onComplete={completeItem} onReassign={handleReassign} />
+          timedEvents={timedToday} onAdd={addItem} onComplete={completeItem} onReassign={handleReassign} />
 
         {/* This Week */}
         <SectionBlock label="This Week" items={data.thisWeek} section="thisWeek"

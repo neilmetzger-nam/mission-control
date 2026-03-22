@@ -180,5 +180,18 @@
     "project": "ai-r",
     "notes": "Reseller/white-label partnership + Red Bar test. polly@trykitchenhub.com | (917) 722-4847. Keep Telegram open for Dave support.",
     "recurring": null
+  },
+  {
+    "id": "redbar-mar22",
+    "title": "Red Bar — Saturday Service",
+    "owner": "neil",
+    "date": "2026-03-22",
+    "startTime": "11:15",
+    "endTime": "21:00",
+    "allDay": false,
+    "type": "block",
+    "project": "ai-r",
+    "notes": null,
+    "recurring": null
   }
 ]
