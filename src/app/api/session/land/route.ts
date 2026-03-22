@@ -57,7 +57,7 @@ export async function POST() {
             Authorization: `Bearer ${hookToken}`,
           },
           body: JSON.stringify({
-            text: "🛬 Neil just landed the plane. Write the landing handoff summary now: update memory/handoff.md with what happened this session, update memory/preflight-brief.md with current state, and close any completed loops.",
+            text: "🛬 Neil just landed the plane. Do these 3 things now: (1) Update memory/handoff.md with what happened this session and mark completed loops as ✅. (2) Update memory/preflight-brief.md with current state. (3) Send Neil a Telegram message confirming the landing with a 3-bullet summary of what was captured and how many open loops remain.",
             mode: "now",
           }),
         });
