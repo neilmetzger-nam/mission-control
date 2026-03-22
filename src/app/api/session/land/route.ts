@@ -4,6 +4,7 @@ import path from "path";
 
 const HOME = process.env.HOME ?? "/Users/neilmetzger";
 const HANDOFF_PATH = path.join(HOME, ".openclaw", "workspace", "memory", "handoff.md");
+const BRIEF_PATH = path.join(HOME, ".openclaw", "workspace", "memory", "preflight-brief.md");
 const SESSION_PATH = path.join(process.cwd(), "data", "session-context.json");
 
 export async function POST() {
@@ -40,7 +41,16 @@ export async function POST() {
       fs.writeFileSync(HANDOFF_PATH, content, "utf-8");
     } catch { /* noop */ }
 
-    // 3. Reset session context
+    // 3. Update preflight brief with landing status
+    try {
+      const dt = new Date().toLocaleString("en-US", {
+        month: "short", day: "numeric", hour: "numeric", minute: "2-digit", hour12: true,
+      });
+      const brief = `## Preflight Brief\n- 🛬 Last landed: ${dt} — ${openLoops} open loops remaining\n- 🧠 Dave is writing the full handoff summary now — reload brief in ~1 minute\n- ⚠️ Run Pre-Flight to start a new session and get current context\n`;
+      fs.writeFileSync(BRIEF_PATH, brief, "utf-8");
+    } catch { /* noop */ }
+
+    // 4. Reset session context
     try {
       fs.writeFileSync(SESSION_PATH, JSON.stringify({ sessionStart: landedAt }, null, 2), "utf-8");
     } catch { /* noop */ }
