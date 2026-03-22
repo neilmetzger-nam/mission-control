@@ -75,6 +75,13 @@
               "status": "done",
               "completedAt": "2026-03-22",
               "notes": "Aggregates open loops (handoff.md), marketing queue (not-started/draft), and \u26a0\ufe0f brief lines. Filters out items already in PLANNER.md. Source-colored badges. \u2192 Today / \u2192 Week buttons with optimistic removal + \u2713 flash. Collapsed state in localStorage."
+            },
+            {
+              "id": "t_calendar_day_panel",
+              "title": "Projects card fill + calendar day panel with schedule & section summaries",
+              "status": "done",
+              "completedAt": "2026-03-22",
+              "notes": "Projects card h-full with \u2192 All projects footer. Hourly grid replaced with compact Day Panel: filtered schedule (no agent events), up to 5 today tasks, Week/Month/Quarter counts."
             }
           ]
         }

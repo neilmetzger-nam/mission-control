@@ -57,20 +57,16 @@ const COLOR_MAP: Record<GaugeColor, { ring: string; text: string; bg: string }> 
   red:    { ring: "stroke-red-500",      text: "text-red-400",     bg: "bg-red-500/5" },
 };
 
-function ArcGauge({ data, isLast }: { data: GaugeData; isLast?: boolean }) {
+function ArcGauge({ data, isLast, isActive, onClick }: { data: GaugeData; isLast?: boolean; isActive?: boolean; onClick?: () => void }) {
   const { ring, text, bg } = COLOR_MAP[data.color];
   const filled = (data.pct / 100) * ARC_LENGTH;
   const gap = ARC_LENGTH - filled;
   const isRed = data.color === "red";
 
   return (
-    <div className={`group relative flex flex-col items-center rounded-xl border border-zinc-800 ${bg} px-2 py-3`}>
-      {/* Tooltip */}
-      <div className="absolute bottom-full mb-1.5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10
-        bg-zinc-800 border border-zinc-700 text-zinc-300 text-[10px] px-2.5 py-1.5 rounded-lg whitespace-pre-line max-w-[220px] shadow-lg">
-        {data.tooltip}
-      </div>
-
+    <div
+      onClick={onClick}
+      className={`relative flex flex-col items-center rounded-xl border ${isActive ? "border-zinc-600 ring-1 ring-inset ring-zinc-600" : "border-zinc-800"} ${bg} px-2 py-3 cursor-pointer transition-colors`}>
       <svg width="80" height="68" viewBox="0 0 80 68" className={isRed ? "animate-cockpit-pulse" : ""}>
         {/* Track (background arc) */}
         <circle
@@ -121,6 +117,13 @@ function PulseStyle() {
       .animate-cockpit-pulse {
         animation: cockpit-pulse 2s ease-in-out infinite;
       }
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(-4px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.15s ease;
+      }
     `}</style>
   );
 }
@@ -128,6 +131,7 @@ function PulseStyle() {
 /* ── Main Panel ── */
 export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanelProps) {
   const [gauges, setGauges] = useState<GaugeData[]>([]);
+  const [activeGauge, setActiveGauge] = useState<string | null>(null);
 
   const isDone = (t: string) => t.startsWith("~~") && t.endsWith("~~");
 
@@ -248,8 +252,28 @@ export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanel
         <InfoTip text="Cockpit Gauges \u2014 real-time plane health. You are both the pilot and the destination. Dave is the copilot and the engine. These 6 gauges tell you how well the engine is running so you can decide when to refuel, recalibrate, or land." />
       </div>
       <div className="grid grid-cols-3 lg:grid-cols-6 gap-2">
-        {gauges.map((g, i) => <ArcGauge key={g.id} data={g} isLast={i === gauges.length - 1} />)}
+        {gauges.map((g, i) => (
+          <ArcGauge key={g.id} data={g} isLast={i === gauges.length - 1}
+            isActive={activeGauge === g.id}
+            onClick={() => setActiveGauge(prev => prev === g.id ? null : g.id)} />
+        ))}
       </div>
+      {activeGauge && (() => {
+        const g = gauges.find(x => x.id === activeGauge);
+        if (!g) return null;
+        const { text } = COLOR_MAP[g.color];
+        return (
+          <div className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 mt-2 relative animate-fade-in">
+            <button onClick={() => setActiveGauge(null)}
+              className="absolute top-2.5 right-3 text-zinc-500 hover:text-zinc-300 text-sm transition-colors">✕</button>
+            <div className="flex items-center justify-between pr-6">
+              <span className="text-sm font-semibold text-white">{g.emoji} {g.label}</span>
+              <span className={`text-sm ${text}`}>{g.value}</span>
+            </div>
+            <p className="text-sm text-zinc-300 leading-relaxed mt-1">{g.description}</p>
+          </div>
+        );
+      })()}
     </>
   );
 }

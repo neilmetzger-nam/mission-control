@@ -232,6 +232,15 @@ function WeekCalendar({ events, projectInfos, focusDate, onSelectDate, plannerTo
           <p className="text-xs text-zinc-500">📆 This Month · <span className="text-zinc-400">{monthCount} items</span></p>
           <p className="text-xs text-zinc-500">🗓️ This Quarter · <span className="text-zinc-400">{quarterCount} items</span></p>
         </div>
+
+        {/* View links */}
+        <div className="flex items-center gap-1 text-[10px]">
+          <Link href="/calendar?view=month" className="text-zinc-600 hover:text-zinc-400 transition-colors">Monthly View</Link>
+          <span className="text-zinc-700">·</span>
+          <Link href="/calendar?view=quarter" className="text-zinc-600 hover:text-zinc-400 transition-colors">Quarterly View</Link>
+          <span className="text-zinc-700">·</span>
+          <Link href="/calendar?view=year" className="text-zinc-600 hover:text-zinc-400 transition-colors">Yearly View</Link>
+        </div>
       </div>
     </div>
   );
