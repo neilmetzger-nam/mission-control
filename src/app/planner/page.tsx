@@ -107,22 +107,18 @@ function StatusBadge({ status }: { status: string }) {
   );
 }
 
-/* ── Week Calendar with hourly grid ── */
-const GRID_START = 8; // 8 AM
-const GRID_END = 20;  // 8 PM
-const GRID_HOURS = GRID_END - GRID_START; // 12 hours
-const ROW_H = 40; // px per hour
+/* ── Week Calendar with Day Panel ── */
+const AGENT_FILTER = /nightly|sync|outreach|check|intel|pi\b/i;
 
-function timeToMinutes(t: string): number {
-  const [h, m] = t.split(":").map(Number);
-  return h * 60 + m;
-}
-
-function WeekCalendar({ events, projectInfos, focusDate, onSelectDate }: {
+function WeekCalendar({ events, projectInfos, focusDate, onSelectDate, plannerToday, plannerWeek, plannerMonth, plannerQuarter }: {
   events: CalendarEvent[];
   projectInfos: ProjectInfo[];
   focusDate: Date;
   onSelectDate: (d: Date) => void;
+  plannerToday: string[];
+  plannerWeek: string[];
+  plannerMonth: string[];
+  plannerQuarter: string[];
 }) {
   const [weekStart, setWeekStart] = useState(() => getMonday(focusDate));
   const days = useMemo(() => getWeekDays(weekStart), [weekStart]);
@@ -136,14 +132,21 @@ function WeekCalendar({ events, projectInfos, focusDate, onSelectDate }: {
     setWeekStart(getMonday(focusDate));
   }, [focusDate]);
 
-  const eventsForDay = useCallback((date: Date) => {
-    return events
-      .filter(e => eventAppliesToDate(e, date))
-      .sort((a, b) => a.startTime.localeCompare(b.startTime));
-  }, [events]);
-
   const today = new Date();
-  const selectedDayEvents = useMemo(() => eventsForDay(focusDate), [eventsForDay, focusDate]);
+  const isSelectedToday = isSameDay(focusDate, today);
+
+  const realEvents = useMemo(() => {
+    return events
+      .filter(e => eventAppliesToDate(e, focusDate) && !e.allDay && e.startTime)
+      .filter(e => e.owner === "neil" || (!e.owner))
+      .filter(e => !AGENT_FILTER.test(e.title))
+      .sort((a, b) => a.startTime.localeCompare(b.startTime));
+  }, [events, focusDate]);
+
+  const todayTasks = plannerToday.filter(t => !isDone(t)).slice(0, 5);
+  const weekCount = plannerWeek.filter(t => !isDone(t)).length;
+  const monthCount = plannerMonth.filter(t => !isDone(t)).length;
+  const quarterCount = plannerQuarter.filter(t => !isDone(t)).length;
 
   return (
     <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 overflow-hidden flex flex-col">
@@ -182,52 +185,52 @@ function WeekCalendar({ events, projectInfos, focusDate, onSelectDate }: {
         </div>
       </div>
 
-      {/* Hourly grid for selected day */}
-      <div className="relative overflow-y-auto" style={{ height: GRID_HOURS * ROW_H + 1 }}>
-        {/* Hour grid lines + labels */}
-        {Array.from({ length: GRID_HOURS + 1 }, (_, i) => {
-          const hour = GRID_START + i;
-          const label = hour === 0 ? "12a" : hour < 12 ? `${hour}a` : hour === 12 ? "12p" : `${hour - 12}p`;
-          return (
-            <div key={hour} className="absolute left-0 right-0 flex items-start" style={{ top: i * ROW_H }}>
-              <span className="text-[9px] text-zinc-600 w-8 text-right pr-1.5 -mt-[5px] flex-shrink-0 select-none">{i < GRID_HOURS ? label : ""}</span>
-              <div className="flex-1 border-t border-zinc-800/50" />
-            </div>
-          );
-        })}
-
-        {/* Events positioned absolutely */}
-        <div className="absolute left-8 right-1 top-0" style={{ height: GRID_HOURS * ROW_H }}>
-          {selectedDayEvents.map(evt => {
-            const startMin = timeToMinutes(evt.startTime);
-            const endMin = timeToMinutes(evt.endTime);
-            const gridStartMin = GRID_START * 60;
-            const gridEndMin = GRID_END * 60;
-
-            // Clamp to grid range
-            const clampedStart = Math.max(startMin, gridStartMin);
-            const clampedEnd = Math.min(endMin, gridEndMin);
-            if (clampedStart >= gridEndMin || clampedEnd <= gridStartMin) return null;
-
-            const topPx = ((clampedStart - gridStartMin) / 60) * ROW_H;
-            const heightPx = Math.max(((clampedEnd - clampedStart) / 60) * ROW_H, 4);
-            const projColor = evt.project ? colorMap.get(evt.project) : null;
-            const color = projColor ?? "#52525b";
-            const showText = heightPx >= 18;
-
-            return (
-              <div key={evt.id} className="absolute left-0 right-0 rounded-sm overflow-hidden cursor-default group"
-                style={{ top: topPx, height: heightPx, backgroundColor: color + "20", borderLeft: `3px solid ${color}` }}
-                title={`${fmtTime(evt.startTime)}–${fmtTime(evt.endTime)} ${evt.title}`}>
-                {showText && (
-                  <div className="px-1.5 py-0.5 flex items-center gap-1.5 h-full">
-                    <span className="text-[10px] text-zinc-400 flex-shrink-0">{fmtTime(evt.startTime)}</span>
-                    <span className="text-[10px] text-zinc-200 truncate">{evt.title}</span>
+      {/* Day Panel */}
+      <div className="max-h-72 overflow-y-auto px-3 py-2.5 space-y-3">
+        {/* Section A — Schedule */}
+        {realEvents.length > 0 && (
+          <div>
+            <p className="text-[9px] text-zinc-600 uppercase tracking-wider mb-1">Schedule</p>
+            <div className="space-y-1">
+              {realEvents.map(evt => {
+                const projColor = evt.project ? colorMap.get(evt.project) : null;
+                return (
+                  <div key={evt.id} className="flex items-center gap-2 min-h-[24px]">
+                    <span className="text-[11px] font-mono text-amber-400/80 shrink-0">{fmtTime(evt.startTime)}–{fmtTime(evt.endTime)}</span>
+                    <span className="text-sm text-zinc-200 flex-1 truncate">{evt.title}</span>
+                    {projColor && <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: projColor }} />}
                   </div>
-                )}
-              </div>
-            );
-          })}
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Section B — Today's Tasks */}
+        <div>
+          <p className="text-[9px] text-zinc-600 uppercase tracking-wider mb-1">Tasks</p>
+          {!isSelectedToday && (
+            <p className="text-xs text-zinc-600 italic mb-1">Tasks shown are from Today</p>
+          )}
+          {todayTasks.length > 0 ? (
+            <div className="space-y-1">
+              {todayTasks.map((item, i) => (
+                <div key={i} className="flex items-center gap-2 min-h-[22px]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-600 shrink-0" />
+                  <span className="text-sm text-zinc-300 truncate">{display(item)}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-xs text-zinc-600 italic">No tasks</p>
+          )}
+        </div>
+
+        {/* Section C — Week/Month/Quarter summaries */}
+        <div className="space-y-0.5">
+          <p className="text-xs text-zinc-500">📅 This Week · <span className="text-zinc-400">{weekCount} items</span></p>
+          <p className="text-xs text-zinc-500">📆 This Month · <span className="text-zinc-400">{monthCount} items</span></p>
+          <p className="text-xs text-zinc-500">🗓️ This Quarter · <span className="text-zinc-400">{quarterCount} items</span></p>
         </div>
       </div>
     </div>
@@ -599,7 +602,7 @@ export default function PlannerPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
 
           {/* LEFT — Top 5 Projects (compact) */}
-          <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 px-3 py-3">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 px-3 py-3 h-full flex flex-col">
             <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider mb-2.5">Projects</p>
             <div className="space-y-1.5">
               {projectInfos.slice(0, 5).map(p => (
@@ -610,6 +613,7 @@ export default function PlannerPage() {
                 </div>
               ))}
             </div>
+            <Link href="/projects" className="text-[10px] text-zinc-500 hover:text-zinc-300 mt-auto pt-3 transition-colors">→ All projects</Link>
           </div>
 
           {/* RIGHT — Week Calendar */}
@@ -618,6 +622,10 @@ export default function PlannerPage() {
             projectInfos={projectInfos}
             focusDate={focusDate}
             onSelectDate={setFocusDate}
+            plannerToday={data.today}
+            plannerWeek={data.thisWeek}
+            plannerMonth={data.thisMonth}
+            plannerQuarter={data.thisQuarter}
           />
         </div>
 
