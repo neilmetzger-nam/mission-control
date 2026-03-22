@@ -41,6 +41,9 @@ const PROJECT_SUB = [
   { suffix: "/agents", label: "Agent Activity", emoji: "🤖" },
   { suffix: "/docs", label: "Docs", emoji: "📄" },
   { suffix: "/marketing", label: "Marketing", emoji: "📣" },
+  { suffix: "/infrastructure", label: "Infrastructure", emoji: "🖥️" },
+  { suffix: "/security", label: "Security", emoji: "🔒" },
+  { suffix: "/config", label: "Config", emoji: "⚙️" },
 ];
 
 function isActive(pathname: string, href: string) {

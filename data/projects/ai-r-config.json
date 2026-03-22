@@ -1,0 +1,27 @@
+{
+  "projectId": "ai-r",
+  "updatedAt": "2026-03-22",
+  "env": [
+    { "key": "DATABASE_URL", "env": "production", "status": "set", "notes": "Neon Postgres — ep-crimson-lake" },
+    { "key": "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY", "env": "production", "status": "set", "notes": "Clerk test keys active" },
+    { "key": "CLERK_SECRET_KEY", "env": "production", "status": "set", "notes": "" },
+    { "key": "ORION_INTERNAL_KEY", "env": "production", "status": "set", "notes": "Pi print server auth" },
+    { "key": "SQUARE_ACCESS_TOKEN", "env": "production", "status": "missing", "notes": "Needs Obie to add production keys" },
+    { "key": "TWILIO_ACCOUNT_SID", "env": "production", "status": "missing", "notes": "Not yet wired" },
+    { "key": "NEXT_PUBLIC_IS_CLOUD", "env": "production", "status": "set", "notes": "" }
+  ],
+  "services": [
+    { "id": "vercel", "name": "Vercel", "status": "live", "url": "https://neil.ai-restaurant.net", "notes": "Deploys from neil branch" },
+    { "id": "neon", "name": "Neon Postgres", "status": "live", "url": "https://console.neon.tech", "notes": "ep-crimson-lake — AI-R DB" },
+    { "id": "clerk", "name": "Clerk Auth", "status": "live", "url": "https://dashboard.clerk.com", "notes": "Test keys — needs production before launch" },
+    { "id": "square", "name": "Square", "status": "partial", "url": "https://developer.squareup.com", "notes": "Integration built, production keys missing" },
+    { "id": "orion-mcp", "name": "Orion MCP", "status": "live", "url": "http://localhost:3002", "notes": "Local only — not yet public" }
+  ],
+  "security": [
+    { "id": "s1", "area": "Auth bypass", "severity": "low", "status": "known", "notes": "/home routes skip Clerk in dev (NODE_ENV=development) — intentional, neil branch only, never ship to main" },
+    { "id": "s2", "area": "Square keys missing", "severity": "high", "status": "open", "notes": "Production Square access token not in Vercel env — payments will fail in prod" },
+    { "id": "s3", "area": "Branch protection", "severity": "medium", "status": "open", "notes": "All work on neil branch — main is Obie's production. Never merge neil → main without review." },
+    { "id": "s4", "area": "Clerk test keys", "severity": "medium", "status": "open", "notes": "Still on test keys — need production Clerk keys from Obie before beta launch" },
+    { "id": "s5", "area": "RESTAURANT_ID hardcoded", "severity": "low", "status": "resolved", "notes": "Fixed — UUID string, never Number(). Pattern locked in MEMORY.md." }
+  ]
+}
