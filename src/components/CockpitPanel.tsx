@@ -195,7 +195,7 @@ export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanel
       ? "No open loops"
       : loopTooltipLines.join("\n");
     const loopGauge: GaugeData = {
-      id: "loops", emoji: "\u2705", label: "Open Loops",
+      id: "loops", emoji: loopsRes.status === "green" ? "\u2705" : loopsRes.status === "amber" ? "\u26A0\uFE0F" : "\uD83D\uDED1", label: "Open Loops",
       value: String(loopCount), pct: loopPct, color: loopsRes.status,
       tooltip: loopTooltip,
       description: GAUGE_DESCRIPTIONS.loops,
