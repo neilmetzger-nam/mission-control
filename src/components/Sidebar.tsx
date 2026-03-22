@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import SaveSessionButton from "@/components/SaveSessionButton";
+import PreflightButton from "@/components/PreflightButton";
 
 const GLOBAL_NAV = [
   { href: "/", label: "Dashboard", emoji: "🏠" },
@@ -153,8 +155,14 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
         })}
       </nav>
 
+      {/* Flight Controls */}
+      <div className="px-3 pt-2 pb-1 shrink-0 border-t border-zinc-800 space-y-1.5">
+        <PreflightButton compact />
+        <SaveSessionButton compact />
+      </div>
+
       {/* Status */}
-      <div className="px-4 py-3 border-t border-zinc-800 shrink-0">
+      <div className="px-4 py-3 shrink-0">
         <div className="flex items-center gap-2 text-xs text-zinc-500">
           <span className="w-2 h-2 rounded-full bg-green-500" />
           Orion online

@@ -1,5 +1,11 @@
 "use client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import SaveSessionButton from "@/components/SaveSessionButton";
+import PreflightButton from "@/components/PreflightButton";
+
+const CockpitPanel = dynamic(() => import("@/components/CockpitPanel"), { ssr: false });
+const PreflightBrief = dynamic(() => import("@/components/PreflightBrief"), { ssr: false });
 
 interface DelegatedItem { item: string; who: string; status: string; }
 interface Project { id: string; name: string; emoji: string; color: string; openTasks: number; milestoneDone: number; milestoneTotal: number; currentMilestone: { title: string } | null; }
@@ -463,6 +469,8 @@ export default function PlannerPage() {
     localStorage.setItem("mc-task-project-overrides", JSON.stringify(next));
   }
 
+  const neilEvents = useMemo(() => calEvents.filter(e => !e.owner || e.owner === "neil"), [calEvents]);
+
   if (loading || !data) return (
     <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center">
       <p className="text-zinc-500 text-sm">Loading...</p>
@@ -471,7 +479,6 @@ export default function PlannerPage() {
 
   const todayLeft = data.today.filter(t => !isDone(t)).length;
   const waitCount = data.delegated.filter(d => !d.status.includes("✅")).length;
-  const neilEvents = useMemo(() => calEvents.filter(e => !e.owner || e.owner === "neil"), [calEvents]);
   const isDateToday = isSameDay(focusDate, new Date());
   const focusLabel = isDateToday ? "Today" : formatDateLabel(focusDate);
 
@@ -484,10 +491,18 @@ export default function PlannerPage() {
             <h1 className="text-xl font-bold text-white">Planner</h1>
             <p className="text-xs text-zinc-500 mt-0.5">{todayLeft} today · {waitCount} waiting</p>
           </div>
+          <div className="flex items-center gap-2">
+            <PreflightButton />
+            <SaveSessionButton />
+          </div>
         </div>
       </div>
 
       <div className="px-4 space-y-3">
+
+        {/* Cockpit Instrument Panel */}
+        <CockpitPanel plannerToday={data.today} plannerWeek={data.thisWeek} />
+        <PreflightBrief />
 
         {/* ═══ Two-column header: Projects + Calendar ═══ */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">

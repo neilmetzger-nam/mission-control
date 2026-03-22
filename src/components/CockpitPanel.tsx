@@ -1,0 +1,218 @@
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+
+/* ── Types ── */
+type GaugeColor = "green" | "amber" | "red";
+
+interface GaugeData {
+  id: string;
+  emoji: string;
+  label: string;
+  value: string;
+  pct: number;          // 0-100, drives arc fill
+  color: GaugeColor;
+  tooltip: string;
+}
+
+interface CockpitPanelProps {
+  plannerToday: string[];
+  plannerWeek: string[];
+}
+
+/* ── SVG Arc Gauge ── */
+const RADIUS = 34;
+const STROKE = 5;
+const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+const ARC_FRACTION = 0.75; // 270° arc
+const ARC_LENGTH = CIRCUMFERENCE * ARC_FRACTION;
+
+const COLOR_MAP: Record<GaugeColor, { ring: string; text: string; bg: string }> = {
+  green:  { ring: "stroke-emerald-500", text: "text-emerald-400", bg: "bg-emerald-500/5" },
+  amber:  { ring: "stroke-amber-500",   text: "text-amber-400",   bg: "bg-amber-500/5" },
+  red:    { ring: "stroke-red-500",      text: "text-red-400",     bg: "bg-red-500/5" },
+};
+
+function ArcGauge({ data }: { data: GaugeData }) {
+  const { ring, text, bg } = COLOR_MAP[data.color];
+  const filled = (data.pct / 100) * ARC_LENGTH;
+  const gap = ARC_LENGTH - filled;
+  const isRed = data.color === "red";
+
+  return (
+    <div className={`group relative flex flex-col items-center rounded-xl border border-zinc-800 ${bg} px-2 py-3`}>
+      {/* Tooltip */}
+      <div className="absolute bottom-full mb-1.5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10
+        bg-zinc-800 border border-zinc-700 text-zinc-300 text-[10px] px-2.5 py-1.5 rounded-lg whitespace-pre-line max-w-[220px] shadow-lg">
+        {data.tooltip}
+      </div>
+
+      <svg width="80" height="68" viewBox="0 0 80 68" className={isRed ? "animate-cockpit-pulse" : ""}>
+        {/* Track (background arc) */}
+        <circle
+          cx="40" cy="40" r={RADIUS}
+          fill="none"
+          stroke="currentColor"
+          className="text-zinc-800"
+          strokeWidth={STROKE}
+          strokeDasharray={`${ARC_LENGTH} ${CIRCUMFERENCE - ARC_LENGTH}`}
+          strokeDashoffset={-CIRCUMFERENCE * 0.125}
+          strokeLinecap="round"
+          transform="rotate(0 40 40)"
+        />
+        {/* Filled arc */}
+        <circle
+          cx="40" cy="40" r={RADIUS}
+          fill="none"
+          className={ring}
+          strokeWidth={STROKE}
+          strokeDasharray={`${filled} ${gap + (CIRCUMFERENCE - ARC_LENGTH)}`}
+          strokeDashoffset={-CIRCUMFERENCE * 0.125}
+          strokeLinecap="round"
+          style={{ transition: "stroke-dasharray 0.6s ease" }}
+        />
+        {/* Center value */}
+        <text x="40" y="42" textAnchor="middle" dominantBaseline="central"
+          fontSize="11" fontWeight="bold"
+          fill={data.color === "green" ? "#34d399" : data.color === "amber" ? "#fbbf24" : "#f87171"}>
+          {data.value}
+        </text>
+      </svg>
+      <span className="text-[10px] text-zinc-500 mt-0.5">{data.emoji} {data.label}</span>
+    </div>
+  );
+}
+
+/* ── Pulse animation (injected via style tag) ── */
+function PulseStyle() {
+  return (
+    <style suppressHydrationWarning>{`
+      @keyframes cockpit-pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+      }
+      .animate-cockpit-pulse {
+        animation: cockpit-pulse 2s ease-in-out infinite;
+      }
+    `}</style>
+  );
+}
+
+/* ── Main Panel ── */
+export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanelProps) {
+  const [gauges, setGauges] = useState<GaugeData[]>([]);
+
+  const isDone = (t: string) => t.startsWith("~~") && t.endsWith("~~");
+
+  const refresh = useCallback(async () => {
+    // Fetch all 3 API endpoints in parallel
+    const [ctxRes, memRes, loopsRes] = await Promise.all([
+      fetch("/api/session/context").then(r => r.json()).catch(() => ({ pctRemaining: 0, minutesElapsed: 0, status: "red" })),
+      fetch("/api/session/memory-freshness").then(r => r.json()).catch(() => ({ oldestAgeHours: null, status: "red" })),
+      fetch("/api/session/open-loops").then(r => r.json()).catch(() => ({ openCount: 0, items: [], status: "green" })),
+    ]);
+
+    // 1. Context
+    const ctxPct = ctxRes.pctRemaining ?? 0;
+    const ctxGauge: GaugeData = {
+      id: "context", emoji: "\u{1F9E0}", label: "Context",
+      value: `${ctxPct}%`, pct: ctxPct, color: ctxRes.status,
+      tooltip: `~${ctxRes.minutesElapsed ?? 0}m elapsed — ${ctxPct}% context remaining`,
+    };
+
+    // 2. Last Save (client-only — localStorage)
+    let saveMins = -1;
+    try {
+      const ts = localStorage.getItem("mc-last-save");
+      if (ts) saveMins = Math.round((Date.now() - Number(ts)) / 60000);
+    } catch { /* noop */ }
+    const saveColor: GaugeColor = saveMins < 0 || saveMins > 180 ? "red" : saveMins > 60 ? "amber" : "green";
+    const savePct = saveMins < 0 ? 0 : Math.max(0, 100 - Math.round((saveMins / 180) * 100));
+    const saveGauge: GaugeData = {
+      id: "save", emoji: "\u{1F4BE}", label: "Last Save",
+      value: saveMins < 0 ? "—" : saveMins < 60 ? `${saveMins}m` : `${Math.round(saveMins / 60)}h`,
+      pct: savePct, color: saveColor,
+      tooltip: saveMins < 0 ? "Never saved this session" : `Last save ${saveMins}m ago`,
+    };
+
+    // 3. Memory freshness
+    const memHours = memRes.oldestAgeHours;
+    const memPct = memHours === null ? 0 : Math.max(0, 100 - Math.round((memHours / 72) * 100));
+    const memGauge: GaugeData = {
+      id: "memory", emoji: "\u{1F4C2}", label: "Memory",
+      value: memHours === null ? "—" : memHours < 24 ? `${memHours}h` : `${Math.round(memHours / 24)}d`,
+      pct: memPct, color: memRes.status,
+      tooltip: memHours === null ? "No memory files found" : `Oldest file: ${memRes.oldestFile ?? "?"} (${memHours}h ago)`,
+    };
+
+    // 4. Flight Time (client-only — localStorage)
+    let flightMins = 0;
+    try {
+      let start = localStorage.getItem("mc-session-start");
+      if (!start) {
+        start = String(Date.now());
+        localStorage.setItem("mc-session-start", start);
+      }
+      flightMins = Math.round((Date.now() - Number(start)) / 60000);
+    } catch { /* noop */ }
+    const flightColor: GaugeColor = flightMins > 120 ? "red" : flightMins > 60 ? "amber" : "green";
+    const flightPct = Math.max(0, 100 - Math.round((flightMins / 180) * 100));
+    const flightGauge: GaugeData = {
+      id: "flight", emoji: "\u{1F501}", label: "Flight Time",
+      value: flightMins < 60 ? `${flightMins}m` : `${Math.floor(flightMins / 60)}h${flightMins % 60}m`,
+      pct: flightPct, color: flightColor,
+      tooltip: `Browser session: ${flightMins}m`,
+    };
+
+    // 5. Open Loops
+    const loopCount = loopsRes.openCount ?? 0;
+    const loopItems: string[] = loopsRes.items ?? [];
+    const loopPct = loopCount === 0 ? 100 : Math.max(0, 100 - loopCount * 20);
+    const loopTooltipLines = loopItems.slice(0, 3).map(s => `• ${s}`);
+    if (loopCount > 3) loopTooltipLines.push(`…and ${loopCount - 3} more`);
+    const loopTooltip = loopCount === 0
+      ? "No open loops"
+      : loopTooltipLines.join("\n");
+    const loopGauge: GaugeData = {
+      id: "loops", emoji: "\u2705", label: "Open Loops",
+      value: String(loopCount), pct: loopPct, color: loopsRes.status,
+      tooltip: loopTooltip,
+    };
+
+    // 6. Planner
+    const todayActive = plannerToday.filter(t => !isDone(t)).length;
+    const weekActive = plannerWeek.filter(t => !isDone(t)).length;
+    const plannerColor: GaugeColor = todayActive > 0 ? "green" : weekActive > 0 ? "amber" : "red";
+    const plannerPct = todayActive > 0 ? 100 : weekActive > 0 ? 50 : 0;
+    const plannerGauge: GaugeData = {
+      id: "planner", emoji: "\u{1F4CB}", label: "Planner",
+      value: todayActive > 0 ? `${todayActive}` : weekActive > 0 ? `${weekActive}w` : "0",
+      pct: plannerPct, color: plannerColor,
+      tooltip: todayActive > 0
+        ? `${todayActive} item${todayActive !== 1 ? "s" : ""} today`
+        : weekActive > 0
+          ? `No today items — ${weekActive} this week`
+          : "Planner is empty",
+    };
+
+    setGauges([ctxGauge, saveGauge, memGauge, flightGauge, loopGauge, plannerGauge]);
+  }, [plannerToday, plannerWeek]);
+
+  // Initial load + 60s interval
+  useEffect(() => {
+    refresh();
+    const id = setInterval(refresh, 60000);
+    return () => clearInterval(id);
+  }, [refresh]);
+
+  if (gauges.length === 0) return null;
+
+  return (
+    <>
+      <PulseStyle />
+      <div className="grid grid-cols-3 lg:grid-cols-6 gap-2">
+        {gauges.map(g => <ArcGauge key={g.id} data={g} />)}
+      </div>
+    </>
+  );
+}
