@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import SaveSessionButton from "@/components/SaveSessionButton";
 import PreflightButton from "@/components/PreflightButton";
+import LandingButton from "@/components/LandingButton";
 
 const CockpitPanel = dynamic(() => import("@/components/CockpitPanel"), { ssr: false });
 const PreflightBrief = dynamic(() => import("@/components/PreflightBrief"), { ssr: false });
@@ -558,6 +559,7 @@ export default function PlannerPage() {
           <div className="flex items-center gap-2">
             <PreflightButton />
             <SaveSessionButton />
+            <LandingButton />
           </div>
         </div>
       </div>
