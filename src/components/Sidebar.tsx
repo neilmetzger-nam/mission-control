@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import SaveSessionButton from "@/components/SaveSessionButton";
 import PreflightButton from "@/components/PreflightButton";
+import LandingButton from "@/components/LandingButton";
 
 const GLOBAL_NAV = [
   { href: "/", label: "Dashboard", emoji: "🏠" },
@@ -164,6 +165,7 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
       <div className="px-3 pt-2 pb-1 shrink-0 border-t border-zinc-800 space-y-1.5">
         <PreflightButton compact />
         <SaveSessionButton compact />
+        <LandingButton compact />
       </div>
 
       {/* Status */}
