@@ -2,6 +2,20 @@
 
 import { useCallback, useEffect, useState } from "react";
 
+/* ── InfoTip — CSS-only hover popover ── */
+function InfoTip({ text, alignRight }: { text: string; alignRight?: boolean }) {
+  return (
+    <span className="group/info relative inline-flex ml-1 cursor-default select-none">
+      <span className="text-[10px] text-zinc-600 hover:text-zinc-400">{"\u24D8"}</span>
+      <span className={`hidden group-hover/info:block absolute top-1/2 -translate-y-1/2 z-20
+        bg-zinc-900 border border-zinc-700 rounded-xl p-3 text-xs text-zinc-300 leading-relaxed shadow-xl w-64
+        ${alignRight ? "right-0" : "left-full ml-1.5"}`}>
+        {text}
+      </span>
+    </span>
+  );
+}
+
 /* ── Types ── */
 type GaugeColor = "green" | "amber" | "red";
 
@@ -13,7 +27,17 @@ interface GaugeData {
   pct: number;          // 0-100, drives arc fill
   color: GaugeColor;
   tooltip: string;
+  description: string;
 }
+
+const GAUGE_DESCRIPTIONS: Record<string, string> = {
+  context: "How much of Dave\u2019s active memory window is left this session. Green = plenty of runway. Red = time to save and start fresh.",
+  save: "Minutes since the last Save Session checkpoint. Saving commits Dave\u2019s working state to memory files. Green = recent. Red = context at risk if session ends.",
+  memory: "How fresh Dave\u2019s memory files are. Measures the oldest file Dave relies on. Green = loaded today. Red = stale \u2014 Dave may be working from outdated context.",
+  flight: "How long this browser session has been open. Longer sessions = more drift risk. Green = fresh. Red = consider a landing and new preflight.",
+  loops: "Unresolved items in handoff.md \u2014 things Dave flagged but hasn\u2019t closed yet. Green = clear. Red = decisions or blockers piling up that need your attention.",
+  planner: "Your task load right now. Shows active items in Today (number) or This Week (number + w). Red = planner is empty \u2014 nothing queued for Dave to work from.",
+};
 
 interface CockpitPanelProps {
   plannerToday: string[];
@@ -33,7 +57,7 @@ const COLOR_MAP: Record<GaugeColor, { ring: string; text: string; bg: string }> 
   red:    { ring: "stroke-red-500",      text: "text-red-400",     bg: "bg-red-500/5" },
 };
 
-function ArcGauge({ data }: { data: GaugeData }) {
+function ArcGauge({ data, isLast }: { data: GaugeData; isLast?: boolean }) {
   const { ring, text, bg } = COLOR_MAP[data.color];
   const filled = (data.pct / 100) * ARC_LENGTH;
   const gap = ARC_LENGTH - filled;
@@ -78,7 +102,10 @@ function ArcGauge({ data }: { data: GaugeData }) {
           {data.value}
         </text>
       </svg>
-      <span className="text-[10px] text-zinc-500 mt-0.5">{data.emoji} {data.label}</span>
+      <span className="flex items-center text-[10px] text-zinc-500 mt-0.5">
+        {data.emoji} {data.label}
+        {data.description && <InfoTip text={data.description} alignRight={isLast} />}
+      </span>
     </div>
   );
 }
@@ -118,6 +145,7 @@ export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanel
       id: "context", emoji: "\u{1F9E0}", label: "Context",
       value: `${ctxPct}%`, pct: ctxPct, color: ctxRes.status,
       tooltip: `~${ctxRes.minutesElapsed ?? 0}m elapsed — ${ctxPct}% context remaining`,
+      description: GAUGE_DESCRIPTIONS.context,
     };
 
     // 2. Last Save (client-only — localStorage)
@@ -133,6 +161,7 @@ export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanel
       value: saveMins < 0 ? "—" : saveMins < 60 ? `${saveMins}m` : `${Math.round(saveMins / 60)}h`,
       pct: savePct, color: saveColor,
       tooltip: saveMins < 0 ? "Never saved this session" : `Last save ${saveMins}m ago`,
+      description: GAUGE_DESCRIPTIONS.save,
     };
 
     // 3. Memory freshness
@@ -143,6 +172,7 @@ export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanel
       value: memHours === null ? "—" : memHours < 24 ? `${memHours}h` : `${Math.round(memHours / 24)}d`,
       pct: memPct, color: memRes.status,
       tooltip: memHours === null ? "No memory files found" : `Oldest file: ${memRes.oldestFile ?? "?"} (${memHours}h ago)`,
+      description: GAUGE_DESCRIPTIONS.memory,
     };
 
     // 4. Flight Time (client-only — localStorage)
@@ -162,6 +192,7 @@ export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanel
       value: flightMins < 60 ? `${flightMins}m` : `${Math.floor(flightMins / 60)}h${flightMins % 60}m`,
       pct: flightPct, color: flightColor,
       tooltip: `Browser session: ${flightMins}m`,
+      description: GAUGE_DESCRIPTIONS.flight,
     };
 
     // 5. Open Loops
@@ -177,6 +208,7 @@ export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanel
       id: "loops", emoji: "\u2705", label: "Open Loops",
       value: String(loopCount), pct: loopPct, color: loopsRes.status,
       tooltip: loopTooltip,
+      description: GAUGE_DESCRIPTIONS.loops,
     };
 
     // 6. Planner
@@ -193,6 +225,7 @@ export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanel
         : weekActive > 0
           ? `No today items — ${weekActive} this week`
           : "Planner is empty",
+      description: GAUGE_DESCRIPTIONS.planner,
     };
 
     setGauges([ctxGauge, saveGauge, memGauge, flightGauge, loopGauge, plannerGauge]);
@@ -210,8 +243,12 @@ export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanel
   return (
     <>
       <PulseStyle />
+      <div className="flex items-center mb-1.5">
+        <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Cockpit</span>
+        <InfoTip text="Cockpit Gauges \u2014 real-time plane health. You are both the pilot and the destination. Dave is the copilot and the engine. These 6 gauges tell you how well the engine is running so you can decide when to refuel, recalibrate, or land." />
+      </div>
       <div className="grid grid-cols-3 lg:grid-cols-6 gap-2">
-        {gauges.map(g => <ArcGauge key={g.id} data={g} />)}
+        {gauges.map((g, i) => <ArcGauge key={g.id} data={g} isLast={i === gauges.length - 1} />)}
       </div>
     </>
   );
