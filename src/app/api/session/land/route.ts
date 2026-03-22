@@ -31,7 +31,7 @@ export async function POST() {
       const dt = new Date().toLocaleString("en-US", {
         month: "short", day: "numeric", hour: "numeric", minute: "2-digit", hour12: true,
       });
-      const entry = `\n- 🛬 Landed: ${dt} — ${openLoops} open loops remaining\n`;
+      const entry = `\n- ✅ 🛬 Landed: ${dt} — ${openLoops} open loops remaining\n`;
       if (content.includes("## Landings")) {
         content = content.replace(/(## Landings[^\n]*\n)/, `$1${entry}`);
       } else {
