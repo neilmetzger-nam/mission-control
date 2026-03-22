@@ -89,6 +89,13 @@
               "status": "done",
               "completedAt": "2026-03-22",
               "notes": "Replaced hover tooltips with click-to-expand detail card below gauge grid. Active gauge gets ring highlight. fade-in animation. Monthly/Quarterly/Yearly placeholder links in calendar day panel footer."
+            },
+            {
+              "id": "t_accordion_gauges",
+              "title": "Accordion gauge expansion + pre-flight stamps last save",
+              "status": "done",
+              "completedAt": "2026-03-22",
+              "notes": "Click gauge to expand description inline. Pre-flight now stamps mc-last-save so Last Save gauge reads green after preflight. Removed standalone detail card and hover \u24d8 tips from gauges."
             }
           ]
         }

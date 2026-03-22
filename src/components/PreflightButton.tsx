@@ -13,7 +13,11 @@ export default function PreflightButton({ compact }: { compact?: boolean }) {
     try {
       const res = await fetch("/api/session/preflight", { method: "POST" });
       if (!res.ok) throw new Error("request failed");
-      try { localStorage.setItem("mc-session-start", String(Date.now())); } catch { /* noop */ }
+      try {
+        localStorage.setItem("mc-session-start", String(Date.now()));
+        localStorage.setItem("mc-last-save", String(Date.now()));
+        window.dispatchEvent(new Event("mc-refresh"));
+      } catch { /* noop */ }
       try { localStorage.setItem("mc-last-save", String(Date.now())); } catch { /* noop */ }
       setStatus("done");
       setTimeout(() => setStatus("idle"), 3000);

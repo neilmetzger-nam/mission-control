@@ -215,11 +215,13 @@ export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanel
     setGauges([ctxGauge, saveGauge, memGauge, flightGauge, loopGauge, plannerGauge]);
   }, [plannerToday, plannerWeek]);
 
-  // Initial load + 60s interval
+  // Initial load + 60s interval + listen for mc-refresh event (fired by PreflightButton/SaveSessionButton)
   useEffect(() => {
     refresh();
     const id = setInterval(refresh, 60000);
-    return () => clearInterval(id);
+    const onRefresh = () => refresh();
+    window.addEventListener("mc-refresh", onRefresh);
+    return () => { clearInterval(id); window.removeEventListener("mc-refresh", onRefresh); };
   }, [refresh]);
 
   if (gauges.length === 0) return null;
