@@ -58,7 +58,7 @@ const COLOR_MAP: Record<GaugeColor, { ring: string; text: string; bg: string }> 
 };
 
 function ArcGauge({ data, isLast, isActive, onClick }: { data: GaugeData; isLast?: boolean; isActive?: boolean; onClick?: () => void }) {
-  const { ring, text, bg } = COLOR_MAP[data.color];
+  const { ring, bg } = COLOR_MAP[data.color];
   const filled = (data.pct / 100) * ARC_LENGTH;
   const gap = ARC_LENGTH - filled;
   const isRed = data.color === "red";
@@ -66,42 +66,29 @@ function ArcGauge({ data, isLast, isActive, onClick }: { data: GaugeData; isLast
   return (
     <div
       onClick={onClick}
-      className={`relative flex flex-col items-center rounded-xl border ${isActive ? "border-zinc-600 ring-1 ring-inset ring-zinc-600" : "border-zinc-800"} ${bg} px-2 py-3 cursor-pointer transition-colors`}>
-      <svg width="80" height="68" viewBox="0 0 80 68" className={isRed ? "animate-cockpit-pulse" : ""}>
-        {/* Track (background arc) */}
-        <circle
-          cx="40" cy="40" r={RADIUS}
-          fill="none"
-          stroke="currentColor"
-          className="text-zinc-800"
-          strokeWidth={STROKE}
-          strokeDasharray={`${ARC_LENGTH} ${CIRCUMFERENCE - ARC_LENGTH}`}
-          strokeDashoffset={-CIRCUMFERENCE * 0.125}
-          strokeLinecap="round"
-          transform="rotate(0 40 40)"
-        />
-        {/* Filled arc */}
-        <circle
-          cx="40" cy="40" r={RADIUS}
-          fill="none"
-          className={ring}
-          strokeWidth={STROKE}
-          strokeDasharray={`${filled} ${gap + (CIRCUMFERENCE - ARC_LENGTH)}`}
-          strokeDashoffset={-CIRCUMFERENCE * 0.125}
-          strokeLinecap="round"
-          style={{ transition: "stroke-dasharray 0.6s ease" }}
-        />
-        {/* Center value */}
-        <text x="40" y="42" textAnchor="middle" dominantBaseline="central"
-          fontSize="11" fontWeight="bold"
-          fill={data.color === "green" ? "#34d399" : data.color === "amber" ? "#fbbf24" : "#f87171"}>
-          {data.value}
-        </text>
-      </svg>
-      <span className="flex items-center text-[10px] text-zinc-500 mt-0.5">
-        {data.emoji} {data.label}
-        {data.description && <InfoTip text={data.description} alignRight={isLast} />}
-      </span>
+      className={`relative flex flex-col items-center rounded-xl border overflow-hidden transition-all duration-200 cursor-pointer
+        ${isActive ? "border-zinc-700 ring-1 ring-inset ring-zinc-700 bg-zinc-800/60" : `border-zinc-800 ${bg}`}`}>
+      <div className="px-2 py-3 flex flex-col items-center">
+        <svg width="80" height="68" viewBox="0 0 80 68" className={isRed ? "animate-cockpit-pulse" : ""}>
+          <circle cx="40" cy="40" r={RADIUS} fill="none" stroke="currentColor" className="text-zinc-800"
+            strokeWidth={STROKE} strokeDasharray={`${ARC_LENGTH} ${CIRCUMFERENCE - ARC_LENGTH}`}
+            strokeDashoffset={-CIRCUMFERENCE * 0.125} strokeLinecap="round" transform="rotate(0 40 40)" />
+          <circle cx="40" cy="40" r={RADIUS} fill="none" className={ring} strokeWidth={STROKE}
+            strokeDasharray={`${filled} ${gap + (CIRCUMFERENCE - ARC_LENGTH)}`}
+            strokeDashoffset={-CIRCUMFERENCE * 0.125} strokeLinecap="round"
+            style={{ transition: "stroke-dasharray 0.6s ease" }} />
+          <text x="40" y="42" textAnchor="middle" dominantBaseline="central" fontSize="11" fontWeight="bold"
+            fill={data.color === "green" ? "#34d399" : data.color === "amber" ? "#fbbf24" : "#f87171"}>
+            {data.value}
+          </text>
+        </svg>
+        <span className="text-[10px] text-zinc-500 mt-0.5">{data.emoji} {data.label}</span>
+      </div>
+      {isActive && data.description && (
+        <div className="border-t border-zinc-700/50 mt-0 pt-2 pb-2.5 px-2.5 text-[11px] text-zinc-400 leading-relaxed">
+          {data.description}
+        </div>
+      )}
     </div>
   );
 }
@@ -116,13 +103,6 @@ function PulseStyle() {
       }
       .animate-cockpit-pulse {
         animation: cockpit-pulse 2s ease-in-out infinite;
-      }
-      @keyframes fade-in {
-        from { opacity: 0; transform: translateY(-4px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      .animate-fade-in {
-        animation: fade-in 0.15s ease;
       }
     `}</style>
   );
@@ -258,22 +238,6 @@ export default function CockpitPanel({ plannerToday, plannerWeek }: CockpitPanel
             onClick={() => setActiveGauge(prev => prev === g.id ? null : g.id)} />
         ))}
       </div>
-      {activeGauge && (() => {
-        const g = gauges.find(x => x.id === activeGauge);
-        if (!g) return null;
-        const { text } = COLOR_MAP[g.color];
-        return (
-          <div className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 mt-2 relative animate-fade-in">
-            <button onClick={() => setActiveGauge(null)}
-              className="absolute top-2.5 right-3 text-zinc-500 hover:text-zinc-300 text-sm transition-colors">✕</button>
-            <div className="flex items-center justify-between pr-6">
-              <span className="text-sm font-semibold text-white">{g.emoji} {g.label}</span>
-              <span className={`text-sm ${text}`}>{g.value}</span>
-            </div>
-            <p className="text-sm text-zinc-300 leading-relaxed mt-1">{g.description}</p>
-          </div>
-        );
-      })()}
     </>
   );
 }

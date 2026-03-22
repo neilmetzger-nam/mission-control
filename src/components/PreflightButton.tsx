@@ -14,6 +14,7 @@ export default function PreflightButton({ compact }: { compact?: boolean }) {
       const res = await fetch("/api/session/preflight", { method: "POST" });
       if (!res.ok) throw new Error("request failed");
       try { localStorage.setItem("mc-session-start", String(Date.now())); } catch { /* noop */ }
+      try { localStorage.setItem("mc-last-save", String(Date.now())); } catch { /* noop */ }
       setStatus("done");
       setTimeout(() => setStatus("idle"), 3000);
     } catch {

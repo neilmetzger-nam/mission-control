@@ -82,6 +82,13 @@
               "status": "done",
               "completedAt": "2026-03-22",
               "notes": "Projects card h-full with \u2192 All projects footer. Hourly grid replaced with compact Day Panel: filtered schedule (no agent events), up to 5 today tasks, Week/Month/Quarter counts."
+            },
+            {
+              "id": "t_gauge_cards",
+              "title": "Gauge click-to-expand detail cards + calendar view links",
+              "status": "done",
+              "completedAt": "2026-03-22",
+              "notes": "Replaced hover tooltips with click-to-expand detail card below gauge grid. Active gauge gets ring highlight. fade-in animation. Monthly/Quarterly/Yearly placeholder links in calendar day panel footer."
             }
           ]
         }
