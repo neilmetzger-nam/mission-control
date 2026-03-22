@@ -7,6 +7,7 @@ import PreflightButton from "@/components/PreflightButton";
 
 const CockpitPanel = dynamic(() => import("@/components/CockpitPanel"), { ssr: false });
 const PreflightBrief = dynamic(() => import("@/components/PreflightBrief"), { ssr: false });
+const PendingFeed = dynamic(() => import("@/components/PendingFeed"), { ssr: false });
 
 interface DelegatedItem { item: string; who: string; status: string; }
 interface Project { id: string; name: string; emoji: string; color: string; openTasks: number; milestoneDone: number; milestoneTotal: number; currentMilestone: { title: string } | null; }
@@ -590,6 +591,9 @@ export default function PlannerPage() {
             </div>
           );
         })()}
+
+        {/* ═══ Pending Feed ═══ */}
+        <PendingFeed onPromote={fetchData} />
 
         {/* ═══ Two-column header: Projects + Calendar ═══ */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">

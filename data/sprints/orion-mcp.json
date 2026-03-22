@@ -61,6 +61,13 @@
               "status": "done",
               "completedAt": "2026-03-22",
               "notes": "data/marketing.json seed data. GET/POST API route. Full /marketing page with queue, by-project cards, strategy doc stubs. Marketing rhythm block on planner between PreflightBrief and projects/calendar grid."
+            },
+            {
+              "id": "t_unified_today",
+              "title": "Unified Today view \u2014 timed events merged inline with task list",
+              "status": "done",
+              "completedAt": "2026-03-22",
+              "notes": "TODAY'S SCHEDULE divider + timed event rows (time, arrow, title, project dot) pinned above task groups. Updates when you select different dates in WeekCalendar. Events display-only, not checkable/draggable."
             }
           ]
         }

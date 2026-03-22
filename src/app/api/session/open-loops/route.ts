@@ -21,7 +21,7 @@ export async function GET() {
 
     let total = 0;
     let open = 0;
-    const items: string[] = [];
+    const items: { text: string; source: string }[] = [];
 
     for (const line of lines) {
       const trimmed = line.trim();
@@ -30,7 +30,7 @@ export async function GET() {
         if (!trimmed.includes("✅")) {
           open++;
           if (items.length < 8) {
-            items.push(trimmed.replace(/^[-*]\s+/, ""));
+            items.push({ text: trimmed.replace(/^[-*]\s+/, ""), source: "handoff" });
           }
         }
       }
