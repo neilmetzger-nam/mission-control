@@ -47,6 +47,13 @@
               "status": "done",
               "completedAt": "2026-03-22",
               "notes": "Fixed PLANNER.md headers so parser works. Added PreflightBrief component (reads memory/preflight-brief.md). Open loops gauge tooltip now shows actual item text. PreflightBrief renders below cockpit panel in planner page."
+            },
+            {
+              "id": "t_infotips",
+              "title": "Info tooltips on cockpit gauges + copilot brief header",
+              "status": "done",
+              "completedAt": "2026-03-22",
+              "notes": "Inline InfoTip component (CSS hover, no JS state). Per-gauge descriptions + panel header tip. Copilot Brief header tip. alignRight prop on last gauge to prevent clipping."
             }
           ]
         }

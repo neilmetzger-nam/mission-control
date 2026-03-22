@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import SaveSessionButton from "@/components/SaveSessionButton";
 import PreflightButton from "@/components/PreflightButton";
 
@@ -10,9 +11,19 @@ const PreflightBrief = dynamic(() => import("@/components/PreflightBrief"), { ss
 interface DelegatedItem { item: string; who: string; status: string; }
 interface Project { id: string; name: string; emoji: string; color: string; openTasks: number; milestoneDone: number; milestoneTotal: number; currentMilestone: { title: string } | null; }
 interface ProjectInfo { id: string; name: string; status: string; phase: string; color: string; }
+interface MktItem { id: string; title: string; project: string; status: string; channel: string; }
+interface MktData { weekOf: string; queue: MktItem[]; }
 interface CalendarEvent { id: string; title: string; owner: string; date: string; startTime: string; endTime: string; allDay: boolean; type: string; project: string | null; notes: string | null; recurring: string | null; }
 interface PlannerData { today: string[]; thisWeek: string[]; thisMonth: string[]; thisQuarter: string[]; thisYear: string[]; top5: string[]; delegated: DelegatedItem[]; }
 type Section = "today" | "thisWeek" | "thisMonth" | "thisQuarter";
+
+const MKT_PROJECTS: Record<string, { label: string; emoji: string; color: string }> = {
+  "ai-r": { label: "AI-R", emoji: "🍽️", color: "text-orange-400" },
+  "plate-ai": { label: "PlateAI", emoji: "🥗", color: "text-green-400" },
+  "time-trek": { label: "Time Trek", emoji: "🌍", color: "text-blue-400" },
+  "studio": { label: "Studio", emoji: "🎬", color: "text-purple-400" },
+  "ember-azure": { label: "Ember & Azure", emoji: "🔥", color: "text-red-400" },
+};
 
 const isDone = (t: string) => t.startsWith("~~") && t.endsWith("~~");
 const display = (t: string) => t.replace(/^~~|~~$/g, "").replace(/^\*\*|\*\*$/g, "");
@@ -432,18 +443,21 @@ export default function PlannerPage() {
   const [delOpen, setDelOpen] = useState(false);
   const [taskOverrides, setTaskOverrides] = useState<Record<string, string>>({});
   const [focusDate, setFocusDate] = useState(() => new Date());
+  const [mktData, setMktData] = useState<MktData | null>(null);
 
   const fetchData = useCallback(async () => {
-    const [p, r, proj, cal] = await Promise.all([
+    const [p, r, proj, cal, mkt] = await Promise.all([
       fetch("/api/planner").then(r => r.json()),
       fetch("/api/roadmap").then(r => r.json()),
       fetch("/api/projects").then(r => r.json()),
       fetch("/api/calendar").then(r => r.json()),
+      fetch("/api/marketing").then(r => r.json()).catch(() => null),
     ]);
     setData(p);
     setProjects(r.projects ?? []);
     setProjectInfos(proj ?? []);
     setCalEvents(Array.isArray(cal) ? cal : []);
+    if (mkt) setMktData(mkt);
     try {
       const o = localStorage.getItem("mc-task-project-overrides");
       if (o) setTaskOverrides(JSON.parse(o));
@@ -503,6 +517,42 @@ export default function PlannerPage() {
         {/* Cockpit Instrument Panel */}
         <CockpitPanel plannerToday={data.today} plannerWeek={data.thisWeek} />
         <PreflightBrief />
+
+        {/* ═══ Marketing Rhythm ═══ */}
+        {mktData && mktData.queue.length > 0 && (() => {
+          const q = mktData.queue;
+          const drafts = q.filter(i => i.status === "draft").length;
+          const notStarted = q.filter(i => i.status === "not-started").length;
+          const posted = q.filter(i => i.status === "posted").length;
+          const allPosted = drafts === 0 && notStarted === 0;
+          const actionable = q.filter(i => i.status === "draft" || i.status === "not-started").slice(0, 3);
+          return (
+            <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 px-4 py-3">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">📣 Marketing This Week</span>
+                <Link href="/marketing" className="text-[10px] text-indigo-400 hover:text-indigo-300">→ all</Link>
+              </div>
+              <p className="text-xs text-zinc-500 mb-2">
+                {drafts} drafts · {notStarted} not started · {posted} posted
+              </p>
+              {allPosted ? (
+                <p className="text-xs text-emerald-400">✅ All done this week</p>
+              ) : (
+                <div className="space-y-1.5">
+                  {actionable.map(item => {
+                    const proj = MKT_PROJECTS[item.project];
+                    return (
+                      <div key={item.id} className="flex items-center gap-2 text-xs">
+                        {proj && <span className={proj.color}>{proj.emoji}</span>}
+                        <span className="text-zinc-300 truncate">{item.title}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          );
+        })()}
 
         {/* ═══ Two-column header: Projects + Calendar ═══ */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">

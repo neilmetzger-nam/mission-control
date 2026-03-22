@@ -1,0 +1,14 @@
+{
+  "weekOf": "2026-03-22",
+  "queue": [
+    { "id": "m1", "title": "LinkedIn: DoorDash AI agent angle", "project": "ai-r", "status": "draft", "channel": "linkedin" },
+    { "id": "m2", "title": "LinkedIn: Uber Eats fee hike post", "project": "ai-r", "status": "draft", "channel": "linkedin" },
+    { "id": "m3", "title": "Olo Connect outreach email", "project": "ai-r", "status": "draft", "channel": "email" },
+    { "id": "m4", "title": "AI-R blog: First-party vs second-party AI", "project": "ai-r", "status": "not-started", "channel": "blog" },
+    { "id": "m5", "title": "Chargebacks blog post", "project": "ai-r", "status": "not-started", "channel": "blog" },
+    { "id": "m6", "title": "Time Trek competitive matrix (PolyChat + Babbel)", "project": "time-trek", "status": "not-started", "channel": "research" },
+    { "id": "m7", "title": "PlateAI Square Marketplace listing copy review", "project": "plate-ai", "status": "not-started", "channel": "listing" }
+  ],
+  "channels": ["linkedin", "email", "blog", "listing", "research"],
+  "projects": ["ai-r", "plate-ai", "time-trek", "studio", "ember-azure"]
+}

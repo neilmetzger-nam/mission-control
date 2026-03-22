@@ -18,6 +18,7 @@ const GLOBAL_NAV = [
   { href: "/memory", label: "Memory", emoji: "🧠" },
   { href: "/config", label: "Config", emoji: "⚙️" },
   { href: "/briefing", label: "Briefing", emoji: "📋", highlight: true },
+  { href: "/marketing", label: "Marketing", emoji: "📣" },
 ];
 
 const PROJECTS = [
