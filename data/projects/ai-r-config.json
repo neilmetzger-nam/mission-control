@@ -169,8 +169,8 @@
     {
       "key": "MCP_URL",
       "group": "Internal",
-      "status": "warning",
-      "notes": "localhost:3002 \u2014 local only, needs public URL for production"
+      "status": "set",
+      "notes": "https://orion-mcp.vercel.app \u2014 public, live"
     },
     {
       "key": "MCP_KEY_ADMIN",
@@ -251,9 +251,9 @@
     {
       "id": "orion-mcp",
       "name": "Orion MCP",
-      "status": "warning",
-      "url": "http://localhost:3002",
-      "notes": "LOCAL ONLY \u2014 MCP_URL=localhost:3002. AI-R breaks if Mac mini is off or unreachable. Must deploy publicly before beta."
+      "status": "live",
+      "url": "https://orion-mcp.vercel.app",
+      "notes": "Public \u2014 orion-mcp.vercel.app. Deployed Mar 22."
     },
     {
       "id": "qbo",
@@ -331,8 +331,8 @@
       "id": "s8",
       "area": "Orion MCP not publicly deployed",
       "severity": "high",
-      "status": "open",
-      "notes": "MCP_URL=localhost:3002 means AI-R depends on Neil's Mac mini being on and reachable. Single point of failure. Fix: deploy Orion MCP to Vercel/Railway/Fly.io and update MCP_URL env var in Vercel. One env var change \u2014 no code needed."
+      "status": "resolved",
+      "notes": "Fixed Mar 22 \u2014 deployed to orion-mcp.vercel.app. MCP_URL updated in AI-R Vercel env."
     }
   ]
 }

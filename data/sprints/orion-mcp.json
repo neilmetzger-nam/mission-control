@@ -187,8 +187,9 @@
             {
               "id": "t_public_deploy",
               "title": "Deploy Orion MCP to public URL \u2014 remove localhost dependency",
-              "status": "queued",
-              "notes": "AI-R currently points to localhost:3002. Before beta, deploy MCP publicly (Vercel/Railway/Fly.io) and update MCP_URL in AI-R Vercel env. One env var change, no code rewrite needed. Blocks: multi-tenant AI-R, any customer onboarding."
+              "status": "done",
+              "notes": "Deployed to orion-mcp.vercel.app. Fixed Upstash token trailing newline. KV healthy. AI-R MCP_URL updated.",
+              "completedAt": "2026-03-22"
             }
           ]
         },
