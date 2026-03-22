@@ -50,7 +50,7 @@ export async function POST() {
     const hookToken = process.env.OPENCLAW_HOOK_TOKEN;
     if (hookUrl && hookToken) {
       try {
-        await fetch(`${hookUrl}/hooks/wake`, {
+        await fetch(hookUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
