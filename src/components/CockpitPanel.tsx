@@ -83,7 +83,7 @@ function ArcGauge({ data, isLast, isActive, onClick }: { data: GaugeData; isLast
           </text>
         </svg>
         {data.id === "loops" ? (
-          <a href="/memory" className="text-[10px] text-zinc-500 hover:text-red-400 mt-0.5 transition-colors">
+          <a href="/loops" className="text-[10px] text-zinc-500 hover:text-red-400 mt-0.5 transition-colors">
             {data.emoji} Close Loops →
           </a>
         ) : (
