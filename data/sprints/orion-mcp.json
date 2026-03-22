@@ -183,6 +183,12 @@
                 "apply_comp \u2014 comp table 3 dessert",
                 "These are the daily value \u2014 why owners dont churn"
               ]
+            },
+            {
+              "id": "t_public_deploy",
+              "title": "Deploy Orion MCP to public URL \u2014 remove localhost dependency",
+              "status": "queued",
+              "notes": "AI-R currently points to localhost:3002. Before beta, deploy MCP publicly (Vercel/Railway/Fly.io) and update MCP_URL in AI-R Vercel env. One env var change, no code rewrite needed. Blocks: multi-tenant AI-R, any customer onboarding."
             }
           ]
         },

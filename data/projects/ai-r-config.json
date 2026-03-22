@@ -6,7 +6,7 @@
     "ui": "HeroUI v2 + Tailwind",
     "auth": "Clerk",
     "db": "Neon Postgres (Drizzle ORM)",
-    "hosting": "Vercel (neil branch → neil.ai-restaurant.net)",
+    "hosting": "Vercel (neil branch \u2192 neil.ai-restaurant.net)",
     "state": "Redux Toolkit + TanStack Query",
     "payments": "Square (primary) + Stripe (fallback)",
     "ai": "OpenAI + Anthropic + Gemini",
@@ -16,57 +16,323 @@
     "mcp": "Orion MCP (localhost:3002)"
   },
   "env": [
-    { "key": "DATABASE_URL", "group": "Database", "status": "set", "notes": "Neon Postgres — ep-divine-sea pooler, us-east-1" },
-    { "key": "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY", "group": "Auth", "status": "set", "notes": "Test keys — needs production before beta launch" },
-    { "key": "CLERK_SECRET_KEY", "group": "Auth", "status": "set", "notes": "Test keys — needs production before beta launch" },
-    { "key": "SQUARE_ACCESS_TOKEN", "group": "Payments", "status": "set", "notes": "EAAAl1WJ — Red Bar live token" },
-    { "key": "SQUARE_LOCATION_ID", "group": "Payments", "status": "set", "notes": "L4BMAT2DZWQP0 — Red Bar location" },
-    { "key": "SQUARE_TERMINAL_DEVICE_ID", "group": "Payments", "status": "set", "notes": "Terminal 1 — 516WS21606100346" },
-    { "key": "SQUARE_TERMINAL_DEVICE_ID_2", "group": "Payments", "status": "set", "notes": "Terminal 2 — 516WS21606100686" },
-    { "key": "STRIPE_SECRET_KEY", "group": "Payments", "status": "set", "notes": "Live key — sk_live_51HXWfJ..." },
-    { "key": "OPENAI_API_KEY", "group": "AI", "status": "set", "notes": "sk-proj-g9Zf..." },
-    { "key": "ANTHROPIC_API_KEY", "group": "AI", "status": "set", "notes": "sk-ant-api03..." },
-    { "key": "GEMINI_API_KEY", "group": "AI", "status": "set", "notes": "Google Gemini — AIzaSyD0..." },
-    { "key": "GOOGLE_API_KEY", "group": "AI", "status": "set", "notes": "Google API — AIzaSyD2..." },
-    { "key": "ELEVENLABS_API_KEY", "group": "Voice", "status": "set", "notes": "ElevenLabs TTS" },
-    { "key": "NEXT_PUBLIC_ELEVENLABS_AGENT_ID", "group": "Voice", "status": "set", "notes": "Maestro agent — agent_0001kc8g..." },
-    { "key": "TWILIO_ACCOUNT_SID", "group": "SMS", "status": "set", "notes": "ACb8391ed..." },
-    { "key": "TWILIO_AUTH_TOKEN", "group": "SMS", "status": "set", "notes": "" },
-    { "key": "TWILIO_PHONE_NUMBER", "group": "SMS", "status": "set", "notes": "+18333247207 — PlateAI/AI-R SMS line" },
-    { "key": "BLOB_READ_WRITE_TOKEN", "group": "Storage", "status": "set", "notes": "Vercel Blob — vercel_blob_rw_Trf4ZFtw..." },
-    { "key": "META_APP_ID", "group": "Social", "status": "set", "notes": "798073232859278 — AI-R Meta app" },
-    { "key": "META_APP_SECRET", "group": "Social", "status": "set", "notes": "" },
-    { "key": "QBO_CLIENT_ID", "group": "Accounting", "status": "set", "notes": "QuickBooks Online — sandbox mode" },
-    { "key": "QBO_CLIENT_SECRET", "group": "Accounting", "status": "set", "notes": "" },
-    { "key": "QBO_REDIRECT_URI", "group": "Accounting", "status": "set", "notes": "https://neil.ai-restaurant.net/api/auth/quickbooks/callback" },
-    { "key": "QBO_ENVIRONMENT", "group": "Accounting", "status": "warning", "notes": "Still sandbox — switch to production before launch" },
-    { "key": "ORION_INTERNAL_KEY", "group": "Internal", "status": "set", "notes": "Pi print server + Orion MCP auth" },
-    { "key": "MCP_URL", "group": "Internal", "status": "warning", "notes": "localhost:3002 — local only, needs public URL for production" },
-    { "key": "MCP_KEY_ADMIN", "group": "Internal", "status": "set", "notes": "Orion admin key" },
-    { "key": "NEXT_PUBLIC_RESTAURANT_ID", "group": "Internal", "status": "set", "notes": "a613ecc0-... Red Bar tenant ID" },
-    { "key": "PI_BOX_URL", "group": "Internal", "status": "set", "notes": "https://pi.ai-restaurant.net — Red Bar Pi print server" }
+    {
+      "key": "DATABASE_URL",
+      "group": "Database",
+      "status": "set",
+      "notes": "Neon Postgres \u2014 ep-divine-sea pooler, us-east-1"
+    },
+    {
+      "key": "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY",
+      "group": "Auth",
+      "status": "set",
+      "notes": "Test keys \u2014 needs production before beta launch"
+    },
+    {
+      "key": "CLERK_SECRET_KEY",
+      "group": "Auth",
+      "status": "set",
+      "notes": "Test keys \u2014 needs production before beta launch"
+    },
+    {
+      "key": "SQUARE_ACCESS_TOKEN",
+      "group": "Payments",
+      "status": "set",
+      "notes": "EAAAl1WJ \u2014 Red Bar live token"
+    },
+    {
+      "key": "SQUARE_LOCATION_ID",
+      "group": "Payments",
+      "status": "set",
+      "notes": "L4BMAT2DZWQP0 \u2014 Red Bar location"
+    },
+    {
+      "key": "SQUARE_TERMINAL_DEVICE_ID",
+      "group": "Payments",
+      "status": "set",
+      "notes": "Terminal 1 \u2014 516WS21606100346"
+    },
+    {
+      "key": "SQUARE_TERMINAL_DEVICE_ID_2",
+      "group": "Payments",
+      "status": "set",
+      "notes": "Terminal 2 \u2014 516WS21606100686"
+    },
+    {
+      "key": "STRIPE_SECRET_KEY",
+      "group": "Payments",
+      "status": "set",
+      "notes": "Live key \u2014 sk_live_51HXWfJ..."
+    },
+    {
+      "key": "OPENAI_API_KEY",
+      "group": "AI",
+      "status": "set",
+      "notes": "sk-proj-g9Zf..."
+    },
+    {
+      "key": "ANTHROPIC_API_KEY",
+      "group": "AI",
+      "status": "set",
+      "notes": "sk-ant-api03..."
+    },
+    {
+      "key": "GEMINI_API_KEY",
+      "group": "AI",
+      "status": "set",
+      "notes": "Google Gemini \u2014 AIzaSyD0..."
+    },
+    {
+      "key": "GOOGLE_API_KEY",
+      "group": "AI",
+      "status": "set",
+      "notes": "Google API \u2014 AIzaSyD2..."
+    },
+    {
+      "key": "ELEVENLABS_API_KEY",
+      "group": "Voice",
+      "status": "set",
+      "notes": "ElevenLabs TTS"
+    },
+    {
+      "key": "NEXT_PUBLIC_ELEVENLABS_AGENT_ID",
+      "group": "Voice",
+      "status": "set",
+      "notes": "Maestro agent \u2014 agent_0001kc8g..."
+    },
+    {
+      "key": "TWILIO_ACCOUNT_SID",
+      "group": "SMS",
+      "status": "set",
+      "notes": "ACb8391ed..."
+    },
+    {
+      "key": "TWILIO_AUTH_TOKEN",
+      "group": "SMS",
+      "status": "set",
+      "notes": ""
+    },
+    {
+      "key": "TWILIO_PHONE_NUMBER",
+      "group": "SMS",
+      "status": "set",
+      "notes": "+18333247207 \u2014 PlateAI/AI-R SMS line"
+    },
+    {
+      "key": "BLOB_READ_WRITE_TOKEN",
+      "group": "Storage",
+      "status": "set",
+      "notes": "Vercel Blob \u2014 vercel_blob_rw_Trf4ZFtw..."
+    },
+    {
+      "key": "META_APP_ID",
+      "group": "Social",
+      "status": "set",
+      "notes": "798073232859278 \u2014 AI-R Meta app"
+    },
+    {
+      "key": "META_APP_SECRET",
+      "group": "Social",
+      "status": "set",
+      "notes": ""
+    },
+    {
+      "key": "QBO_CLIENT_ID",
+      "group": "Accounting",
+      "status": "set",
+      "notes": "QuickBooks Online \u2014 sandbox mode"
+    },
+    {
+      "key": "QBO_CLIENT_SECRET",
+      "group": "Accounting",
+      "status": "set",
+      "notes": ""
+    },
+    {
+      "key": "QBO_REDIRECT_URI",
+      "group": "Accounting",
+      "status": "set",
+      "notes": "https://neil.ai-restaurant.net/api/auth/quickbooks/callback"
+    },
+    {
+      "key": "QBO_ENVIRONMENT",
+      "group": "Accounting",
+      "status": "warning",
+      "notes": "Still sandbox \u2014 switch to production before launch"
+    },
+    {
+      "key": "ORION_INTERNAL_KEY",
+      "group": "Internal",
+      "status": "set",
+      "notes": "Pi print server + Orion MCP auth"
+    },
+    {
+      "key": "MCP_URL",
+      "group": "Internal",
+      "status": "warning",
+      "notes": "localhost:3002 \u2014 local only, needs public URL for production"
+    },
+    {
+      "key": "MCP_KEY_ADMIN",
+      "group": "Internal",
+      "status": "set",
+      "notes": "Orion admin key"
+    },
+    {
+      "key": "NEXT_PUBLIC_RESTAURANT_ID",
+      "group": "Internal",
+      "status": "set",
+      "notes": "a613ecc0-... Red Bar tenant ID"
+    },
+    {
+      "key": "PI_BOX_URL",
+      "group": "Internal",
+      "status": "set",
+      "notes": "https://pi.ai-restaurant.net \u2014 Red Bar Pi print server"
+    }
   ],
   "services": [
-    { "id": "vercel", "name": "Vercel", "status": "live", "url": "https://neil.ai-restaurant.net", "notes": "neil branch — auto-deploy on push. Main is Obie's production." },
-    { "id": "neon", "name": "Neon Postgres", "status": "live", "url": "https://console.neon.tech", "notes": "ep-divine-sea — AI-R DB. Drizzle ORM." },
-    { "id": "clerk", "name": "Clerk Auth", "status": "warning", "url": "https://dashboard.clerk.com", "notes": "Test keys active — need production keys from Obie before beta." },
-    { "id": "square", "name": "Square", "status": "live", "url": "https://developer.squareup.com", "notes": "Red Bar live token. 2 terminals registered." },
-    { "id": "stripe", "name": "Stripe", "status": "live", "url": "https://dashboard.stripe.com", "notes": "Live key active — fallback payment processor." },
-    { "id": "vercel-blob", "name": "Vercel Blob", "status": "live", "url": "https://vercel.com/neil-metzgers-projects", "notes": "Image/file storage." },
-    { "id": "elevenlabs", "name": "ElevenLabs", "status": "live", "url": "https://elevenlabs.io", "notes": "Maestro voice agent — agent_0001kc8g." },
-    { "id": "twilio", "name": "Twilio", "status": "live", "url": "https://console.twilio.com", "notes": "SMS line 833-324-7207." },
-    { "id": "orion-mcp", "name": "Orion MCP", "status": "warning", "url": "http://localhost:3002", "notes": "Local only — not yet public. All AI-R business logic routes here." },
-    { "id": "qbo", "name": "QuickBooks Online", "status": "warning", "url": "https://developer.intuit.com", "notes": "Sandbox mode — needs production switch before launch." },
-    { "id": "meta", "name": "Meta / Facebook", "status": "live", "url": "https://developers.facebook.com/apps/798073232859278", "notes": "AI-R app — Marketing API + Instagram." },
-    { "id": "pi", "name": "Red Bar Pi", "status": "live", "url": "http://100.68.30.87:3333", "notes": "Print server at Red Bar. Tailscale only." }
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "status": "live",
+      "url": "https://neil.ai-restaurant.net",
+      "notes": "neil branch \u2014 auto-deploy on push. Main is Obie's production."
+    },
+    {
+      "id": "neon",
+      "name": "Neon Postgres",
+      "status": "live",
+      "url": "https://console.neon.tech",
+      "notes": "ep-divine-sea \u2014 AI-R DB. Drizzle ORM."
+    },
+    {
+      "id": "clerk",
+      "name": "Clerk Auth",
+      "status": "warning",
+      "url": "https://dashboard.clerk.com",
+      "notes": "Test keys active \u2014 need production keys from Obie before beta."
+    },
+    {
+      "id": "square",
+      "name": "Square",
+      "status": "live",
+      "url": "https://developer.squareup.com",
+      "notes": "Red Bar live token. 2 terminals registered."
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "status": "live",
+      "url": "https://dashboard.stripe.com",
+      "notes": "Live key active \u2014 fallback payment processor."
+    },
+    {
+      "id": "vercel-blob",
+      "name": "Vercel Blob",
+      "status": "live",
+      "url": "https://vercel.com/neil-metzgers-projects",
+      "notes": "Image/file storage."
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "status": "live",
+      "url": "https://elevenlabs.io",
+      "notes": "Maestro voice agent \u2014 agent_0001kc8g."
+    },
+    {
+      "id": "twilio",
+      "name": "Twilio",
+      "status": "live",
+      "url": "https://console.twilio.com",
+      "notes": "SMS line 833-324-7207."
+    },
+    {
+      "id": "orion-mcp",
+      "name": "Orion MCP",
+      "status": "warning",
+      "url": "http://localhost:3002",
+      "notes": "LOCAL ONLY \u2014 MCP_URL=localhost:3002. AI-R breaks if Mac mini is off or unreachable. Must deploy publicly before beta."
+    },
+    {
+      "id": "qbo",
+      "name": "QuickBooks Online",
+      "status": "warning",
+      "url": "https://developer.intuit.com",
+      "notes": "Sandbox mode \u2014 needs production switch before launch."
+    },
+    {
+      "id": "meta",
+      "name": "Meta / Facebook",
+      "status": "live",
+      "url": "https://developers.facebook.com/apps/798073232859278",
+      "notes": "AI-R app \u2014 Marketing API + Instagram."
+    },
+    {
+      "id": "pi",
+      "name": "Red Bar Pi",
+      "status": "live",
+      "url": "http://100.68.30.87:3333",
+      "notes": "Print server at Red Bar. Tailscale only."
+    }
   ],
   "security": [
-    { "id": "s1", "area": "Auth bypass in dev", "severity": "low", "status": "known", "notes": "/home routes skip Clerk when NODE_ENV=development — intentional, neil branch only, never ship to main." },
-    { "id": "s2", "area": "Clerk test keys", "severity": "medium", "status": "open", "notes": "Still on test keys — need production Clerk keys from Obie before beta launch." },
-    { "id": "s3", "area": "Branch protection", "severity": "medium", "status": "open", "notes": "All work on neil branch. Main is Obie's production. Never merge neil → main without review." },
-    { "id": "s4", "area": "MCP local only", "severity": "medium", "status": "open", "notes": "Orion MCP runs on localhost:3002 — all AI/business logic breaks if MCP isn't running locally." },
-    { "id": "s5", "area": "QBO sandbox", "severity": "low", "status": "open", "notes": "QuickBooks still in sandbox mode — accounting data won't sync to real QBO until switched." },
-    { "id": "s6", "area": "RESTAURANT_ID hardcoded", "severity": "low", "status": "resolved", "notes": "Fixed — UUID string, never Number(). Pattern locked in MEMORY.md." },
-    { "id": "s7", "area": "Live Stripe key in env", "severity": "low", "status": "known", "notes": "sk_live key active in .env.local — normal for production, but keep out of git." }
+    {
+      "id": "s1",
+      "area": "Auth bypass in dev",
+      "severity": "low",
+      "status": "known",
+      "notes": "/home routes skip Clerk when NODE_ENV=development \u2014 intentional, neil branch only, never ship to main."
+    },
+    {
+      "id": "s2",
+      "area": "Clerk test keys",
+      "severity": "medium",
+      "status": "open",
+      "notes": "Still on test keys \u2014 need production Clerk keys from Obie before beta launch."
+    },
+    {
+      "id": "s3",
+      "area": "Branch protection",
+      "severity": "medium",
+      "status": "open",
+      "notes": "All work on neil branch. Main is Obie's production. Never merge neil \u2192 main without review."
+    },
+    {
+      "id": "s4",
+      "area": "MCP local only",
+      "severity": "medium",
+      "status": "open",
+      "notes": "Orion MCP runs on localhost:3002 \u2014 all AI/business logic breaks if MCP isn't running locally."
+    },
+    {
+      "id": "s5",
+      "area": "QBO sandbox",
+      "severity": "low",
+      "status": "open",
+      "notes": "QuickBooks still in sandbox mode \u2014 accounting data won't sync to real QBO until switched."
+    },
+    {
+      "id": "s6",
+      "area": "RESTAURANT_ID hardcoded",
+      "severity": "low",
+      "status": "resolved",
+      "notes": "Fixed \u2014 UUID string, never Number(). Pattern locked in MEMORY.md."
+    },
+    {
+      "id": "s7",
+      "area": "Live Stripe key in env",
+      "severity": "low",
+      "status": "known",
+      "notes": "sk_live key active in .env.local \u2014 normal for production, but keep out of git."
+    },
+    {
+      "id": "s8",
+      "area": "Orion MCP not publicly deployed",
+      "severity": "high",
+      "status": "open",
+      "notes": "MCP_URL=localhost:3002 means AI-R depends on Neil's Mac mini being on and reachable. Single point of failure. Fix: deploy Orion MCP to Vercel/Railway/Fly.io and update MCP_URL env var in Vercel. One env var change \u2014 no code needed."
+    }
   ]
 }
